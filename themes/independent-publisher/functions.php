@@ -621,6 +621,7 @@ function independent_publisher_has_full_width_featured_image() {
  * Return true if post has the custom field post_cover_overlay_post_title set to true
  */
 function independent_publisher_post_has_post_cover_title() {
+	/* probably going to put logic for new custom field here */
 	$post_has_cover_title 	= get_post_meta( get_the_ID(), 'post_cover_overlay_post_title', true);
 
 	$has_full_width_featured_image = independent_publisher_has_full_width_featured_image();
