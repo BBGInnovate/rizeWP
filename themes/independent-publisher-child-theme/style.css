@@ -1,0 +1,228 @@
+/*
+Theme Name: Independent Publisher Child Theme
+Theme URI: http://independentpublisher.me/
+Author: Raam Dev
+Author URI: http://raamdev.com
+Description: A clean minimal theme for independent publishers. Ideal for single-author blogs.
+Template: independent-publisher
+Version: 1.2.4
+License: GNU GPLv3
+License URI: http://www.gnu.org/copyleft/gpl.html
+Tags: light, white, blue, two-columns, left-sidebar, flexible-width, custom-background, custom-colors, custom-menu, editor-style, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
+
+Based on _s http://underscores.me
+and Publish by Konstantin Kovshenin http://kovshenin.com/themes/publish
+
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+and Blueprint http://www.blueprintcss.org/
+*/
+
+/* =Imports styles from the parent theme
+-------------------------------------------------------------- */
+@import url('../independent-publisher/style.css');
+
+/* =Theme customization starts here. Add your own custom styles.
+-------------------------------------------------------------- */
+
+/* Custom Africa Rizing styles */
+h1.entry-title a, h1.site-title a{color: #333;}
+h1.site-title a{text-transform: uppercase;}
+h1.site-title a .orangeHighlight {color: orange;}
+
+
+@media only screen and (max-width: 400px){
+	#masthead .site-logo img, .single-column-layout #masthead .site-logo img {max-width:50px;}
+	body #masthead .site-title, .single-column-layout #masthead .site-title{
+		padding:10px 0 0 0;
+		font-size: 24px;
+	}
+}
+
+
+@media only screen and (max-width: 500px){
+	#page {margin-top:25px;}
+	#masthead .site-logo{
+		float:left;
+		margin-right: 10px;
+	}
+	#masthead .site-title, .single-column-layout #masthead .site-title{
+		padding-top:20px;
+		font-size: 30px;
+	}
+	.site-description, #masthead .site-navigation{display: none;}
+
+	.blog article {padding: 10px 0;}
+
+	/* styling sidebar nav links as full-width links */
+	aside .main-navigation ul, .widget-area ul, .widget-area ol{
+		margin-left:-20px; 
+		margin-right:-20px;
+	}
+	aside ul li{
+		border-top: 1px solid #CCC;
+		margin:0;
+		padding:0;
+	}
+	aside ul li a{
+		padding: 5px 20px;
+		margin:0;
+		width:90%;
+	}
+	aside ul li:last-of-type{
+		border-bottom: 1px solid #CCC;
+	}
+}
+
+
+
+
+
+/* experimenting with styles for images sizes */
+.entry-content img.size-medium{width: 100% !important;}
+.entry-content img.size-mugshot{width: 50% !important; max-width: 200px; float: left; margin-right: 20px;}
+
+@media only screen and (min-width: 700px) {
+	.entry-content img.size-medium{width: 50% !important; float: right; margin: 5px 20px;}
+}
+
+
+.blog .first-post img{margin: 0 0 0 0;}
+
+/* Remove theme CSS styling that is causing skin tones to be unintentionally darker on featured images */
+.single.post-cover-overlay-post-title .post-cover-title-wrapper, .page.post-cover-overlay-post-title .post-cover-title-wrapper{background: transparent;}
+.single.post-cover-overlay-post-title .post-cover-title-image, .page.post-cover-overlay-post-title .post-cover-title-image {opacity: 1; }
+.single.post-cover-overlay-post-title .post-cover-title-head .entry-subtitle, .single.post-cover-overlay-post-title .post-cover-title-head .entry-title, .page.post-cover-overlay-post-title .post-cover-title-head .entry-subtitle, .page.post-cover-overlay-post-title .post-cover-title-head .entry-title {text-shadow: 2px 2px 4px #000;}
+
+.postCoverResponsive { height:150px !important; }
+@media (min-width: 200px) {
+/* .postCoverResponsive { height:150px !important; } */
+}
+@media (min-width: 300px) {
+.postCoverResponsive { height:250px !important; }
+}
+@media (min-width: 700px) {
+.postCoverResponsive { height:400px !important; }
+}
+@media (min-width: 1024px) {
+.postCoverResponsive { height:500px !important; }
+}
+@media (min-width: 2048px) {
+.postCoverResponsive { height:1000px !important; }
+}
+
+.listThumbnail{float:left; margin: 5px 15px 15px 0; width: 50%; max-width: 150px; height: 100px; background-size: cover; background: no-repeat center center / cover;  }
+
+/*Move post title and info below featured image on mobile and reset colors */
+@media (max-width: 699px) {
+	.single.post-cover-overlay-post-title .post-cover-title-head, .page.post-cover-overlay-post-title .post-cover-title-head{
+		position: relative;
+		background-image:none;
+	}
+	.single.post-cover-overlay-post-title .post-cover-title-head .entry-subtitle, .single.post-cover-overlay-post-title .post-cover-title-head .entry-title, .page.post-cover-overlay-post-title .post-cover-title-head .entry-subtitle, .page.post-cover-overlay-post-title .post-cover-title-head .entry-title{
+		text-shadow: none;
+		color: #333;
+	}
+
+	/* reset byline and date colors*/
+	/*.single.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta, .single.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta a, .page.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta, .page.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta a{*/
+	.single.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta, .page.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta /*, .single.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta .entry-title-meta-post-date a*/{
+		color: #b3b3b1;
+	}
+	.single.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta a, .page.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta a{
+		color: orange;
+	}
+}
+
+
+@media (max-width: 500px){
+	.single.post-cover-overlay-post-title .post-cover-title-head .post-cover-title, .page.post-cover-overlay-post-title .post-cover-title-head .post-cover-title{
+		padding:20px;
+	}
+	footer.entry-meta {display:none;}
+}
+
+/* Cutline and photo styles */
+.wp-caption-text {
+	text-align: left;
+	font-size: 80%;
+	font-family: sans-serif;
+	font-weight: bold;
+}
+.wp-caption {
+	border: none;
+}
+.wp-caption img{
+	margin:0;
+}
+
+/*.post .entry-title a{color: orange;}*/
+.post .entry-content a:first-of-type p{color: #333;}
+
+
+
+
+
+/* Staff styles for the about/mission page */
+#staff h3{margin-bottom:0;}
+
+#staff.section{width: 100%; margin: 0; padding: 35px 0 0 0;}
+#staff .member{width: 100%; display: block; margin: 0; padding: 10px 0; border-top: solid 1px #CCC; clear:both;}
+#staff .member .photo{width: 36%; margin: 0 4% 10px 0; float:left; /*border-radius: 10px*/}
+
+#staff .member .photo img.square{width: 100%; padding: 0; height: auto;}
+#staff .member .photo img.rectangle{display: none; width: 100%; padding: 0; height: auto;}
+#staff .member .profile{padding:0; float: right; width: 60%;}
+#staff .member .profile p{font-family: "Myriad Pro", Helvetica, Arial, sans-serif; margin:0;}
+#staff .member .profile h4{font-family: "Myriad Pro", Helvetica, Arial, sans-serif; font-size: 20px; margin: 0; clear: none;}
+#staff .member .profile p.biography{margin-top: 10px; font-size: .8em; line-height: 1.4em; margin-bottom: 10px; }
+
+@media only screen and (min-width: 700px) {
+	#staff.section{width: 100%; margin: 0; padding: 35px 0 0 0;}
+	#staff .member{width: 46%; display: inline-block; margin: 0 2% 30px 0; padding: 0; vertical-align: top; border-top: none;}
+
+	#staff .member .profile{padding:0;  float: right; width: 60%;}
+	#staff .member .photo{width: 36%; margin: 0 4% 0 0;}
+
+	#staff h3{margin-bottom:30px;}
+}
+
+
+/* Uncomment this style definition to hide the green bar on Quote Formatted posts: */
+
+/*
+.format-quote blockquote {
+	border-left: none;
+	padding-left: 0;
+}
+*/
+
+/* Uncomment this style definition to use the original, Mac-specific font stack */
+
+/*
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.pinglist,
+#taglist,
+.comment-form-author label,
+.comment-form-email label,
+.comment-form-url label,
+.comment-form-comment label,
+.comment-form-subscriptions label,
+.comment-form-reply-title {
+	font-family: "Myriad Pro","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+}
+*/
+
+/* Uncomment this style definition to use a long dash in ```<cite>```: */
+
+/*
+blockquote cite:before {
+content: "\2014 \0020";
+}
+*/
