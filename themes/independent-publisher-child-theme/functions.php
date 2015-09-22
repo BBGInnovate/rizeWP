@@ -112,8 +112,13 @@ function my_custom_sizes( $sizes ) {
 
 						$featured_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), apply_filters( 'independent_publisher_full_width_featured_image_size', 'independent_publisher_post_thumbnail' ));
 						$featured_image_url = $featured_image_url[0];
+						$postCoverTitleWrapperExtraClass="postCoverTitleAlwaysBelow";
+						$post_has_cover_title_rize 	= get_post_meta( get_the_ID(), 'post_cover_overlay_post_title_rize', true);
+						if ( ( $post_has_cover_title_rize === '1' || $post_has_cover_title_rize === 'true' ) ) {
+							$postCoverTitleWrapperExtraClass="";
+						}
 					?>
-						<div class="post-cover-title-wrapper">
+						<div class="post-cover-title-wrapper <?php echo $postCoverTitleWrapperExtraClass; ?>">
 							<div class="post-cover-title-image postCoverResponsive" ></div>
 								<div class="post-cover-title-head">
 									<header class="post-cover-title">
