@@ -27,7 +27,7 @@ get_header(); ?>
 					// setup the cateogory ID
 					$cat_id= $cat->term_id;
 					// Make a header for the cateogry
-					echo "<h2>".$cat->name."</h2>";
+					echo "<h2 class='categoryName'>".$cat->name."</h2>";
 					// create a custom wordpress query
 					query_posts("cat=$cat_id&posts_per_page=100");
 					// start the wordpress loop!
