@@ -48,7 +48,7 @@ get_header(); ?>
 												$useFullThumbnail=false;
 
 												if( $wp_query->current_post == 0 && !is_paged() ) { 
-													$useFullThumbnail=true;
+													$useFullThumbnail=false;
 												}
 
 												if ( $useFullThumbnail && has_post_thumbnail() ) {
@@ -182,7 +182,7 @@ get_header(); ?>
 
 
 
-						
+
 
 					<?php endwhile; endif; // done our wordpress loop. Will start again for each category ?>
 
