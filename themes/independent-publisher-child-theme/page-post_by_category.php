@@ -15,6 +15,51 @@
 
 get_header(); ?>
 
+<style type="text/css">
+	.category a{color: #999; font-weight: normal; letter-spacing: 1px; font-size: .8em;}
+	ul.fullWidth {
+		margin-left:20px;
+	}
+	h1.entry-title a:hover, h1.site-title a:hover {
+    	color: #333;
+	}
+	ul.fullWidth li a{
+		font-family: Arial, sans-serif;
+		color: #F15A29;
+	}
+	@media screen and ( max-width: 500px ) {
+		.category a{color: #FFF; font-weight: normal; letter-spacing: 1px; font-size: .7em; background-color: #333; padding:6px 12px 3px 20px; margin: -20px;}
+
+		/*.category:hover a{background-color: #900;}*/
+		.category:hover a{background-color: orange;}
+
+		ul.fullWidth{
+			margin-left:-20px; 
+			margin-right:-20px;
+		}
+		ul.fullWidth li{
+			list-style-type: none;
+			border-top: 1px solid #CCC;
+			margin:0;
+			padding:0;
+		}
+		ul.fullWidth li a{
+			display: inline-block;
+			padding: 5px 20px;
+			margin:0;
+			width:90%;
+		}
+		ul.fullWidth li:last-of-type{
+			border-bottom: 1px solid #CCC;
+		}
+
+		.blog article{
+			border-bottom: none;
+		}
+	}
+
+</style>
+
 	<div id="primary" class="content-area">
 		<main id="content" class="site-content" role="main">
 
@@ -27,7 +72,7 @@ get_header(); ?>
 					// setup the cateogory ID
 					$cat_id= $cat->term_id;
 					// Make a header for the cateogry
-					echo "<h2 class='categoryName'>".$cat->name."</h2>";
+					echo "<h4 class='category'><a href='#'>".$cat->name."</a></h2>";
 					// create a custom wordpress query
 					query_posts("cat=$cat_id&posts_per_page=100");
 					// start the wordpress loop!
@@ -45,7 +90,7 @@ get_header(); ?>
 											
 											<?php
 												/* ODDI: Show large image on first instance in loop */
-												$useFullThumbnail=false;
+												$useFullThumbnail=true;
 
 												if( $wp_query->current_post == 0 && !is_paged() ) { 
 													$useFullThumbnail=false;
@@ -129,54 +174,15 @@ get_header(); ?>
 										</div>
 										<!-- .entry-content -->
 
-										<?php 
-										/* Show Continue Reading link when this is a Standard post format AND 
-										 * One-Sentence Excerpts options is enabled AND
-									 	 * we're not showing the first post full content AND 
-									 	 * this is not a sticky post 
-									 	 */
-										?>
-										<?php if ( false === get_post_format() && independent_publisher_generate_one_sentence_excerpts() && independent_publisher_is_not_first_post_full_content() && ! is_sticky() ) : ?>
-											<?php independent_publisher_continue_reading_link(); ?>
-										<?php endif; ?>
-
 										<footer class="entry-meta">
-
-											<?php 
-											/* Show author name and post categories only when post type == post AND 
-											 * we're not showing the first post full content 
-											 */ 
-											?>
-											<?php if ( 'post' == get_post_type() && independent_publisher_is_not_first_post_full_content() ) : // post type == post conditional hides category text for Pages on Search ?>
-												<?php independent_publisher_posted_author_cats() ?>
-											<?php endif; ?>
-
-											<?php /* Show post date when show post date option enabled */
-											?>
-											<?php if ( independent_publisher_show_date_entry_meta() ) : ?>
-												<?php echo independent_publisher_get_post_date() ?>
-											<?php endif; ?>
-
-											<?php 
-											/* Show post word count when post is not password-protected AND 
-											 * this is a Standard post format AND
-											 * post word count option enabled AND 
-											 * we're not showing the first post full content
-											 */
-											?>
-											<?php if ( ! post_password_required() && false === get_post_format() && independent_publisher_show_post_word_count() && independent_publisher_is_not_first_post_full_content() ) : ?>
-												<?php echo independent_publisher_get_post_word_count() ?>
-											<?php endif; ?>
-
-											<?php /* Show comments link only when post is not password-protected AND comments are enabled on this post */ ?>
-											<?php if ( ! post_password_required() && comments_open() && ! independent_publisher_hide_comments() ) : ?>
-												<span class="comments-link"><?php comments_popup_link( __( 'Comment', 'independent-publisher' ), __( '1 Comment', 'independent-publisher' ), __( '% Comments', 'independent-publisher' ) ); ?></span>
-											<?php endif; ?>
-
-											<?php $separator = apply_filters( 'independent_publisher_entry_meta_separator', '|' ); ?>
-											<?php edit_post_link( __( 'Edit', 'independent-publisher' ), '<span class="sep"> ' . $separator . ' </span> <span class="edit-link">', '</span>' ); ?>
-
+											<?php //first iteration of this file had stuff here, but removing for now ?>
 										</footer>
+
+										<ul class="fullWidth">
+											<li><a href="">Chale Wote shines spotlight on artists</a></li>
+											<li><a href="">8 ways to improve the environment</a></li>
+										</ul>
+
 										<!-- .entry-meta -->
 									</article><!-- #post-<?php the_ID(); ?> -->
 
