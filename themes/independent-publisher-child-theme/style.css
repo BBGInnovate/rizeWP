@@ -31,14 +31,23 @@ h1.entry-title a, h1.site-title a{color: #333;}
 h1.site-title a{text-transform: uppercase;}
 h1.site-title a .orangeHighlight {color: orange;}
 
+h1.site-title{font-size: 42px; line-height: 36px;}
+h1.site-title .author.vcard{font-size: 26px; line-height: 24px; display:block;}
+
 
 @media only screen and (max-width: 400px){
 	#masthead .site-logo img, .single-column-layout #masthead .site-logo img {max-width:50px;}
 	body #masthead .site-title, .single-column-layout #masthead .site-title{
 		padding:10px 0 0 0;
+		/*font-size: 24px;*/
+	}
+}
+@media only screen and (max-width: 320px){
+	body #masthead .site-title, .single-column-layout #masthead .site-title{
 		font-size: 24px;
 	}
 }
+
 
 
 @media only screen and (max-width: 500px){
