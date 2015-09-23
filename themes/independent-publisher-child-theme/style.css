@@ -154,7 +154,16 @@ article h5.entry-category a{background-color: transparent; color: #999; padding:
 	text-shadow: none;
 	color: #333;
 }
+.single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow .post-cover-title-head .entry-title-meta a{
+	color:orange;
+}
 
+@media only screen and (min-width: 1201px) {
+	.single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow .post-cover-title-head .entry-title-meta{
+		display: none;
+	}
+}
+.post-cover-overlay-post-title #page {margin-top:0;}
 
 /* Experimenting with title below */
 
