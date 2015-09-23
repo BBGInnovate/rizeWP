@@ -50,6 +50,7 @@ h1.site-title .author.vcard{font-size: 26px; line-height: 24px; display:block;}
 }
 
 
+
 @media only screen and (max-width: 500px){
 	#page {margin-top:25px;}
 	#masthead .site-logo{
@@ -138,6 +139,26 @@ article h5.entry-category a{background-color: transparent; color: #999; padding:
 }
 
 .listThumbnail{float:left; margin: 5px 15px 15px 0; width: 50%; max-width: 150px; height: 100px; background-size: cover; background: no-repeat center center / cover;  }
+
+
+
+
+
+
+/* Experimenting with title below */
+.single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow .post-cover-title-head, .page.post-cover-overlay-post-title .postCoverTitleAlwaysBelow .post-cover-title-head{
+	position: relative;
+	background-image:none;
+}
+.single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow .post-cover-title-head .entry-subtitle, .single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow .post-cover-title-head .entry-title, .page.post-cover-overlay-post-title .postCoverTitleAlwaysBelow .post-cover-title-head .entry-subtitle, .page.post-cover-overlay-post-title .postCoverTitleAlwaysBelow .post-cover-title-head .entry-title{
+	text-shadow: none;
+	color: #333;
+}
+
+
+/* Experimenting with title below */
+
+
 
 /*Move post title and info below featured image on mobile and reset colors */
 @media (max-width: 699px) {
