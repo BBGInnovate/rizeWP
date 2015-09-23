@@ -163,7 +163,6 @@ article h5.entry-category a{background-color: transparent; color: #999; padding:
 		display: none;
 	}
 }
-.post-cover-overlay-post-title #page {margin-top:0;}
 
 /* Experimenting with title below */
 
@@ -247,6 +246,64 @@ footer.entry-meta .byline{display: inline-block;}
 
 	#staff h3{margin-bottom:30px;}
 }
+
+
+/* page by category post */
+
+	.pagePostByCategory .category a{color: #999; font-weight: normal; letter-spacing: 1px; font-size: .8em; text-transform: uppercase;}
+	.pagePostByCategory ul.fullWidth {
+		margin-left:20px;
+	}
+	.pagePostByCategory h1.entry-title {line-height: .8em;}
+	.pagePostByCategory h1.entry-title a {font-size: .8em;}
+	.pagePostByCategory h1.entry-title a:hover, h1.site-title a:hover {
+    	color: #333;
+	}
+	.pagePostByCategory ul.fullWidth li a{
+		font-family: Arial, sans-serif;
+		color: orange;
+	}
+	.pagePostByCategory ul.fullWidth li a:hover{
+		color: #F15A29;
+	}
+
+	.pagePostByCategory .page article {padding-bottom:0;}
+
+	.pagePostByCategory .entry-content a:hover {text-decoration: none;}			
+
+	@media screen and ( max-width: 500px ) {
+		.pagePostByCategory #content article:first-of-type h1.entry-title {font-size: 2.8em; line-height: .6em;}
+
+		.pagePostByCategory h1.entry-title {line-height: .7em;}
+		.pagePostByCategory h1.entry-title a {font-size: .7em;}
+
+		.pagePostByCategory h4.category a{color: #FFF; font-weight: normal; letter-spacing: 1px; font-size: .7em; background-color: orange; padding:6px 12px 3px 20px; margin: -20px;}
+		.pagePostByCategory .category a:hover{background-color: #333;}
+
+		.pagePostByCategory ul.fullWidth{
+			margin-left:-20px; 
+			margin-right:-20px;
+		}
+		.pagePostByCategory ul.fullWidth li{
+			list-style-type: none;
+			border-top: 1px solid #CCC;
+			margin:0;
+			padding:0;
+		}
+		.pagePostByCategory ul.fullWidth li a{
+			display: inline-block;
+			padding: 5px 20px;
+			margin:0;
+			width:90%;
+		}
+		.pagePostByCategory ul.fullWidth li:last-of-type{
+			border-bottom: 1px solid #CCC;
+		}
+
+		.pagePostByCategory .blog article{
+			border-bottom: none;
+		}
+	}
 
 
 /* Uncomment this style definition to hide the green bar on Quote Formatted posts: */

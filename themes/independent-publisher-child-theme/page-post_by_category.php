@@ -18,58 +18,7 @@ get_header(); ?>
 <style type="text/css">
 
 
-	.category a{color: #999; font-weight: normal; letter-spacing: 1px; font-size: .8em; text-transform: uppercase;}
-	ul.fullWidth {
-		margin-left:20px;
-	}
-	h1.entry-title {line-height: .8em;}
-	h1.entry-title a {font-size: .8em;}
-	h1.entry-title a:hover, h1.site-title a:hover {
-    	color: #333;
-	}
-	ul.fullWidth li a{
-		font-family: Arial, sans-serif;
-		color: orange;
-	}
-	ul.fullWidth li a:hover{
-		color: #F15A29;
-	}
 
-	.entry-content a:hover {text-decoration: none;}			
-
-	@media screen and ( max-width: 500px ) {
-		#content article:first-of-type h1.entry-title {font-size: 2.8em; line-height: .6em;}
-
-		h1.entry-title {line-height: .7em;}
-		h1.entry-title a {font-size: .7em;}
-
-		h4.category a{color: #FFF; font-weight: normal; letter-spacing: 1px; font-size: .7em; background-color: orange; padding:6px 12px 3px 20px; margin: -20px;}
-		.category a:hover{background-color: #333;}
-
-		ul.fullWidth{
-			margin-left:-20px; 
-			margin-right:-20px;
-		}
-		ul.fullWidth li{
-			list-style-type: none;
-			border-top: 1px solid #CCC;
-			margin:0;
-			padding:0;
-		}
-		ul.fullWidth li a{
-			display: inline-block;
-			padding: 5px 20px;
-			margin:0;
-			width:90%;
-		}
-		ul.fullWidth li:last-of-type{
-			border-bottom: 1px solid #CCC;
-		}
-
-		.blog article{
-			border-bottom: none;
-		}
-	}
 
 </style>
 
