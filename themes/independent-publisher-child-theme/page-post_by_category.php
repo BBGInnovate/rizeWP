@@ -196,9 +196,10 @@ get_header(); ?>
 							<?php else: ?>
 									<li><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'independent-publisher' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></li>
 							<?php endif; ?>
-							</ul>
+							
 
 					<?php endwhile; endif; // done our wordpress loop. Will start again for each category ?>
+					</ul> <!-- .fullWidth -->
 					</div> <!-- .categoryContainer -->
 
 
