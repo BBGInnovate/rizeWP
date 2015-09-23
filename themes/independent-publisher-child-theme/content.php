@@ -13,7 +13,7 @@
 		 * we're on the home page AND this is not a sticky post 
 		 */ 
 		?>
-		
+
 		<?php
 			/* ODDI: Show large image on first instance in loop */
 			$useFullThumbnail=false;
@@ -22,11 +22,11 @@
 				$useFullThumbnail=true;
 			}
 
-			if ( $useFullThumbnail && has_post_thumbnail() ) {
-				the_post_thumbnail();
-			}
-			
-		?>
+			if ( $useFullThumbnail && has_post_thumbnail() ) { ?>
+				<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'independent-publisher' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">
+				<?php the_post_thumbnail(); ?>
+				</a>
+			<?php } ?>
 		
 		<?php if ( independent_publisher_show_full_content_first_post() && ( independent_publisher_is_very_first_standard_post() && is_home() && ! is_sticky() ) ) : ?>
 			<h2 class="entry-title-meta">
@@ -54,7 +54,12 @@
 		<?php 
 			
 			if( !$useFullThumbnail && has_post_thumbnail() ) { 
+				?>
 
+				<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'independent-publisher' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">
+
+
+				<?php
 				/* ODDI: Add thumbnail for each post in loop */
 				$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumbnail' ); 
 				$url = $thumb['0']; 
@@ -64,6 +69,11 @@
 
 				/*echo "<img src='$url' alt='$alt_text' class='listThumbnail'/>"; */
 				echo "<div class='listThumbnail' style='background-image: url(".$url.");'></div>"; 
+				?>
+
+				</a>
+
+				<?php
 			}
 		?>
 
