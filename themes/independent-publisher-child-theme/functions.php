@@ -57,7 +57,9 @@ function independent_publisher_stylesheet() {
  * This also applies the changes to JetPack's Infinite Scroll footer, if you're using that module.
  */
 function independent_publisher_footer_credits() {
-	$my_custom_footer = 'Project Rize is a new digital media startup developed by <a href="http://bbg.gov/" target="_blank">US International Media</a> in partnership with <a href="http://voanews.com/" target="_blank">VOA News</a> to promote open discourse, democratic ideals and sustainable, civil societies throughout the world.';
+	$creativecommons = '<div id="creativecommons"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><br />This work by <a xmlns:cc="http://creativecommons.org/ns#" href="http://africa.rizing.org" property="cc:attributionName" rel="cc:attributionURL">Africa Rizing</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</div>';
+
+	$my_custom_footer = '<div id="attribution">Project Rize is a new digital media startup developed by <a href="http://bbg.gov/" target="_blank">US International Media</a> in partnership with <a href="http://voanews.com/" target="_blank">VOA News</a> to promote open discourse, democratic ideals and sustainable, civil societies throughout the world.</div>'.$creativecommons;
 	return $my_custom_footer;
 }
 
@@ -122,6 +124,11 @@ function my_custom_sizes( $sizes ) {
 							<div class="post-cover-title-image postCoverResponsive" ></div>
 								<div class="post-cover-title-head">
 									<header class="post-cover-title">
+										<?php if ( independent_publisher_categorized_blog() ) { ?>
+										<h5 class='entry-category'>
+											<?php echo independent_publisher_post_categories( '', true ); ?>
+										</h5>
+										<?php } ?>
 										<h1 class="entry-title" itemprop="name">
 											<?php echo get_the_title(); ?>
 										</h1>
