@@ -30,11 +30,18 @@ get_header(); ?>
 				$cats = get_categories(); 
 
 				// loop through the categries
+				$currentCategoryNum=0;
 				foreach ($cats as $cat) {
+					$currentCategoryNum=$currentCategoryNum+1;
 					$cat_id= $cat->term_id;
 					echo "<div class='categoryContainer'>";
 					echo "<h4 class='category'><a href='#'>".$cat->name."</a></h2>";
+					
 					query_posts("cat=$cat_id&posts_per_page=3&orderby=post_date&order=desc");
+					
+					global $wp_query; 
+					$totalPostsInCategory = $wp_query->found_posts;
+
 
 					// start the wordpress loop!
 					$postNumInCategory=0;
@@ -57,7 +64,12 @@ get_header(); ?>
 												/* ODDI: Show large image on first instance in loop */
 												$useFullThumbnail=true;
 
+
+												/*
 												if( $wp_query->current_post == 0 && !is_paged() ) { 
+													$useFullThumbnail=false;
+												}*/
+												if ($currentCategoryNum > 1) {
 													$useFullThumbnail=false;
 												}
 
@@ -141,14 +153,23 @@ get_header(); ?>
 										</div>
 										<!-- .entry-content -->
 									</article><!-- #post-<?php the_ID(); ?> -->
-							<ul class="fullWidth">
+							<?php 
+								if ($totalPostsInCategory > 1) {
+									echo '<ul class="fullWidth">';
+								}
+							?>
+
 							<?php else: ?>
 									<li><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'independent-publisher' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></li>
 							<?php endif; ?>
 							
 
 					<?php endwhile; endif; // done our wordpress loop. Will start again for each category ?>
-					</ul> <!-- .fullWidth -->
+					<?php 
+						if ($totalPostsInCategory > 1) {
+							echo '</ul> <!-- .fullWidth -->';
+						}
+					?>
 					</div> <!-- .categoryContainer -->
 
 
