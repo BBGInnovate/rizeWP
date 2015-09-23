@@ -74,7 +74,7 @@ get_header(); ?>
 </style>
 
 	<div id="primary" class="content-area">
-		<main id="content" class="site-content" role="main">
+		<main id="content" class="site-content pagePostByCategory" role="main">
 
 			<?php
 				// get all the categories from the database
@@ -197,7 +197,7 @@ get_header(); ?>
 									<li><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'independent-publisher' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></li>
 							<?php endif; ?>
 							</ul>
-									
+
 					<?php endwhile; endif; // done our wordpress loop. Will start again for each category ?>
 					</div> <!-- .categoryContainer -->
 
