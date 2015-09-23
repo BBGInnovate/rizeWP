@@ -63,9 +63,13 @@
 					<?php 
 						/*** ODDI CUSTOM - the menu shouldn't show if it's not defined or has no items */
 						if (has_nav_menu( 'primary' )) {
-							$items = wp_get_nav_menu_items( 'primary');
-							if ( count ($items) > 0) {
-								wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 1 ) ); 
+							$menu_name='primary';
+							if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_name ] ) ) {
+								$menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
+								$menu_items = wp_get_nav_menu_items($menu->term_id);
+								if ( count ($menu_items) > 0) {
+									wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 1 ) ); 
+								}
 							}
 						}
 					?>
