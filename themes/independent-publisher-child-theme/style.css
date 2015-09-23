@@ -111,6 +111,10 @@ article h5.entry-category a{background-color: transparent; color: #999; padding:
 
 .blog .first-post img{margin: 0 0 0 0;}
 
+.post .entry-content a p {
+    color: #333;
+}
+
 /* Remove theme CSS styling that is causing skin tones to be unintentionally darker on featured images */
 .single.post-cover-overlay-post-title .post-cover-title-wrapper, .page.post-cover-overlay-post-title .post-cover-title-wrapper{background: transparent;}
 .single.post-cover-overlay-post-title .post-cover-title-image, .page.post-cover-overlay-post-title .post-cover-title-image {opacity: 1; }
