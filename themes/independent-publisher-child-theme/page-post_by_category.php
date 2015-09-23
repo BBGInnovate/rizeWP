@@ -43,8 +43,8 @@ get_header(); ?>
 		h1.entry-title {line-height: .7em;}
 		h1.entry-title a {font-size: .7em;}
 
-		h4.category a{color: #FFF; font-weight: normal; letter-spacing: 1px; font-size: .7em; background-color: #333; padding:6px 12px 3px 20px; margin: -20px;}
-		.category:hover a{background-color: orange;}
+		h4.category a{color: #FFF; font-weight: normal; letter-spacing: 1px; font-size: .7em; background-color: orange; padding:6px 12px 3px 20px; margin: -20px;}
+		.category a:hover{background-color: #333;}
 
 		ul.fullWidth{
 			margin-left:-20px; 

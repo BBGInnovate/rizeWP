@@ -90,7 +90,7 @@ h1.site-title .author.vcard{font-size: 26px; line-height: 24px; display:block;}
 	}
 }
 
-h5.entry-category a{background-color: orange; color: #FFF; padding: 5px 8px 4px 8px; text-transform: uppercase; font-size: .7em; letter-spacing: 0px}
+h5.entry-category a{background-color: orange; color: #FFF; padding: 5px 8px 4px 8px; text-transform: uppercase; font-size: .7em; letter-spacing: 1px; font-weight: normal;}
 h5.entry-category {margin-bottom: 0;}
 
 article h5.entry-category a{background-color: transparent; color: #999; padding: 0; text-transform: uppercase; font-size: .7em; letter-spacing: 1px; font-weight: normal;}
