@@ -77,20 +77,23 @@ get_header(); ?>
 		<main id="content" class="site-content" role="main">
 
 			<?php
-			// get all the categories from the database
-			$cats = get_categories(); 
+				// get all the categories from the database
+				$cats = get_categories(); 
 
 				// loop through the categries
 				foreach ($cats as $cat) {
-					// setup the cateogory ID
 					$cat_id= $cat->term_id;
-					// Make a header for the cateogry
+					echo "<div class='categoryContainer'>";
 					echo "<h4 class='category'><a href='#'>".$cat->name."</a></h2>";
-					// create a custom wordpress query
-					query_posts("cat=$cat_id&posts_per_page=100");
-					// start the wordpress loop!
-					if (have_posts()) : while (have_posts()) : the_post(); ?>
+					query_posts("cat=$cat_id&posts_per_page=3&orderby=post_date&order=desc");
 
+					// start the wordpress loop!
+					$postNumInCategory=0;
+					if (have_posts()) : while (have_posts()) : the_post(); $postNumInCategory=$postNumInCategory+1; 
+							if ($postNumInCategory==1) : 
+							
+							?>
+									
 									<article id="post-<?php the_ID(); ?>" <?php independent_publisher_post_classes(); ?>>
 										<header class="entry-header">
 											<?php 
@@ -188,20 +191,15 @@ get_header(); ?>
 											<?php endif; ?>
 										</div>
 										<!-- .entry-content -->
-
-										<ul class="fullWidth">
-											<li><a href="">Chale Wote shines spotlight on artists</a></li>
-											<li><a href="">8 ways to improve the environment</a></li>
-										</ul>
-
-										<!-- .entry-meta -->
 									</article><!-- #post-<?php the_ID(); ?> -->
-
-
-
-
-
+							<ul class="fullWidth">
+							<?php else: ?>
+									<li><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'independent-publisher' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></li>
+							<?php endif; ?>
+							</ul>
+									
 					<?php endwhile; endif; // done our wordpress loop. Will start again for each category ?>
+					</div> <!-- .categoryContainer -->
 
 
 				<?php } // done the foreach statement ?>
