@@ -38,6 +38,11 @@
 				<?php do_action( 'independent_publisher_entry_title_meta', $separator = ' | ' ); ?>
 			</h2>
 		<?php endif; ?>
+
+		<h5 class='entry-category'>
+			<?php echo independent_publisher_post_categories( '', true ); ?>
+		</h5>
+
 		<h1 class="entry-title">
 			<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'independent-publisher' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
 		</h1>
@@ -45,7 +50,6 @@
 	<!-- .entry-header -->
 
 	<div class="entry-content">
-
 
 		<?php 
 			
@@ -107,9 +111,9 @@
  	 * this is not a sticky post 
  	 */
 	?>
-	<?php if ( false === get_post_format() && independent_publisher_generate_one_sentence_excerpts() && independent_publisher_is_not_first_post_full_content() && ! is_sticky() ) : ?>
+	<?php /*if ( false === get_post_format() && independent_publisher_generate_one_sentence_excerpts() && independent_publisher_is_not_first_post_full_content() && ! is_sticky() ) : ?>
 		<?php independent_publisher_continue_reading_link(); ?>
-	<?php endif; ?>
+	<?php endif; */ ?>
 
 	<footer class="entry-meta">
 
@@ -119,9 +123,10 @@
 		 */ 
 		?>
 		<?php if ( 'post' == get_post_type() && independent_publisher_is_not_first_post_full_content() ) : // post type == post conditional hides category text for Pages on Search ?>
-			<?php independent_publisher_posted_author_cats() ?>
+			<?php /*independent_publisher_posted_author_cats()*/ ?>
+			<?php independent_publisher_posted_author() ?>
 		<?php endif; ?>
-
+		|
 		<?php /* Show post date when show post date option enabled */
 		?>
 		<?php if ( independent_publisher_show_date_entry_meta() ) : ?>
