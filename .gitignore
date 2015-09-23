@@ -12,3 +12,4 @@ plugins/verve-ssl
 upgrade
 uploads
 debug.log
+*.phpintel*

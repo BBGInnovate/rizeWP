@@ -27,13 +27,28 @@ get_header(); ?>
 
 			<?php
 				// get all the categories from the database
-				$cats = get_categories(); 
+				$cats = get_categories();
+				
+				//only use featured categories
+				$featuredCats=[];
+				foreach ($cats as $cat) {
+					$cat_id = $cat->term_id;
+					$term = get_option( "taxonomy_" . $cat_id );
+					if ( $term['featured'] == "1" ) {
+						$featuredCats[] = $cat;
+					}
+				}
+
+				//limit the number of categories to 6
+				array_splice($featuredCats,6);
 
 				// loop through the categries
-				$currentCategoryNum=0;
-				foreach ($cats as $cat) {
-					$currentCategoryNum=$currentCategoryNum+1;
-					$cat_id= $cat->term_id;
+				$currentCategoryNum = 0;
+				foreach ($featuredCats as $cat) {
+					$currentCategoryNum = $currentCategoryNum+1;
+					$cat_id = $cat->term_id;
+					$term = get_option( "taxonomy_" . $cat_id );
+
 					echo "<div class='categoryContainer'>";
 					echo "<h4 class='category'><a href='#'>".$cat->name."</a></h2>";
 					
@@ -62,17 +77,7 @@ get_header(); ?>
 											
 											<?php
 												/* ODDI: Show large image on first instance in loop */
-												$useFullThumbnail=true;
-
-
-												/*
-												if( $wp_query->current_post == 0 && !is_paged() ) { 
-													$useFullThumbnail=false;
-												}*/
-												if ($currentCategoryNum > 1) {
-													$useFullThumbnail=false;
-												}
-
+												$useFullThumbnail=($currentCategoryNum==1);
 												if ( $useFullThumbnail && has_post_thumbnail() ) {
 													the_post_thumbnail();
 												}

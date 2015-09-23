@@ -173,3 +173,58 @@ function my_custom_sizes( $sizes ) {
 		}
 	}
 
+
+	/***** ODDI CUSTOM - HOOK INTO CATEGORY MANAGEMENT FORM TO ALLOW USERS TO SPECIFY THAT A CATEGORY IS FEATURED */
+	//http://php.quicoto.com/add-metadata-categories-wordpress/
+	function xg_edit_featured_category_field( $term ){
+		//http://php.quicoto.com/add-metadata-categories-wordpress/
+		$term_id = $term->term_id;
+		$term_meta = get_option( "taxonomy_$term_id" );         
+	?>
+		<tr class="form-field">
+			<th scope="row">
+				<label for="term_meta[featured]"><?php echo _e('Featured') ?></label>
+				<td>
+					<select name="term_meta[featured]" id="term_meta[featured]">
+						<option value="0" <?=($term_meta['featured'] == 0) ? 'selected': ''?>><?php echo _e('No'); ?></option>
+						<option value="1" <?=($term_meta['featured'] == 1) ? 'selected': ''?>><?php echo _e('Yes'); ?></option>
+					</select>                   
+				</td>
+			</th>
+		</tr>
+	<?php
+	} //end xg_edit_featured_category_field
+	add_action( 'category_edit_form_fields', 'xg_edit_featured_category_field' );
+
+	// Save the field
+	function xg_save_tax_meta( $term_id ){ 
+	    if ( isset( $_POST['term_meta'] ) ) {
+			$term_meta = array();
+			// Be careful with the intval here. If it's text you could use sanitize_text_field()
+			$term_meta['featured'] = isset ( $_POST['term_meta']['featured'] ) ? intval( $_POST['term_meta']['featured'] ) : '';
+			// Save the option array.
+			update_option( "taxonomy_$term_id", $term_meta );
+		} 
+	} // save_tax_meta
+	add_action( 'edited_category', 'xg_save_tax_meta', 10, 2 ); 
+
+	// Add column to Category list
+	function xg_featured_category_columns($columns)
+	{
+	    return array_merge($columns, 
+	              array('featured' =>  __('Featured')));
+	}
+	add_filter('manage_edit-category_columns' , 'xg_featured_category_columns');
+
+	// Add the value to the column
+	function xg_featured_category_columns_values( $deprecated, $column_name, $term_id) {
+		if($column_name === 'featured'){ 
+			$term_meta = get_option( "taxonomy_$term_id" );
+			if($term_meta['featured'] === 1){
+				echo _e('Yes');
+			}else{
+				echo _e('No');
+			}	
+		}
+	}
+	add_action( 'manage_category_custom_column' , 'xg_featured_category_columns_values', 10, 3 );
