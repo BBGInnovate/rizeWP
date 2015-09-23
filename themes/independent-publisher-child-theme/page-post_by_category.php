@@ -16,21 +16,34 @@
 get_header(); ?>
 
 <style type="text/css">
-	.category a{color: #999; font-weight: normal; letter-spacing: 1px; font-size: .8em;}
+
+
+	.category a{color: #999; font-weight: normal; letter-spacing: 1px; font-size: .8em; text-transform: uppercase;}
 	ul.fullWidth {
 		margin-left:20px;
 	}
+	h1.entry-title {line-height: .8em;}
+	h1.entry-title a {font-size: .8em;}
 	h1.entry-title a:hover, h1.site-title a:hover {
     	color: #333;
 	}
 	ul.fullWidth li a{
 		font-family: Arial, sans-serif;
+		color: orange;
+	}
+	ul.fullWidth li a:hover{
 		color: #F15A29;
 	}
-	@media screen and ( max-width: 500px ) {
-		.category a{color: #FFF; font-weight: normal; letter-spacing: 1px; font-size: .7em; background-color: #333; padding:6px 12px 3px 20px; margin: -20px;}
 
-		/*.category:hover a{background-color: #900;}*/
+	.entry-content a:hover {text-decoration: none;}			
+
+	@media screen and ( max-width: 500px ) {
+		#content article:first-of-type h1.entry-title {font-size: 2.8em; line-height: .6em;}
+
+		h1.entry-title {line-height: .7em;}
+		h1.entry-title a {font-size: .7em;}
+
+		h4.category a{color: #FFF; font-weight: normal; letter-spacing: 1px; font-size: .7em; background-color: #333; padding:6px 12px 3px 20px; margin: -20px;}
 		.category:hover a{background-color: orange;}
 
 		ul.fullWidth{
@@ -132,8 +145,10 @@ get_header(); ?>
 													$img_id = get_post_thumbnail_id($post->ID); // This gets just the ID of the img
 													$alt_text = get_post_meta($img_id , '_wp_attachment_image_alt', true);
 
+
 													/*echo "<img src='$url' alt='$alt_text' class='listThumbnail'/>"; */
 													echo "<div class='listThumbnail' style='background-image: url(".$url.");'></div>"; 
+													/*echo "<a href='".$the_permalink."'><div class='listThumbnail' style='background-image: url(".$url.");'></div></a>";*/ 
 												}
 											?>
 
@@ -173,10 +188,6 @@ get_header(); ?>
 											<?php endif; ?>
 										</div>
 										<!-- .entry-content -->
-
-										<footer class="entry-meta">
-											<?php //first iteration of this file had stuff here, but removing for now ?>
-										</footer>
 
 										<ul class="fullWidth">
 											<li><a href="">Chale Wote shines spotlight on artists</a></li>
