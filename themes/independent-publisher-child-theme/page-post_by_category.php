@@ -30,22 +30,47 @@ get_header(); ?>
 				$cats = get_categories();
 				
 				//only use featured categories
-				$featuredCats=[];
+				$featuredCatsByID=[];
 				foreach ($cats as $cat) {
 					$cat_id = $cat->term_id;
 					$term = get_option( "taxonomy_" . $cat_id );
 					if ( $term['featured'] == "1" ) {
-						$featuredCats[] = $cat;
+						$featuredCatsByID[$cat_id] = $cat;
 					}
+				}
+				
+				//re-order the 6 featured category ids based on their most recently updated post date, while not reusing posts
+				$postIDsUsed=[];
+				$categoryModifiedDates=[];
+				foreach ($featuredCatsByID as $cat_id => $cat) {
+					$args = array(
+						'cat' => $cat_id,
+						'post__not_in' => $postIDsUsed,
+						'posts_per_page' => 1,
+						'orderby' => 'post_date',
+						'order' => 'desc'
+					);
+					query_posts( $args ); 
+					if (have_posts()) : while (have_posts()) : 
+						the_post();
+						$categoryModifiedDates[$cat_id] = get_the_time('U');
+					endwhile; endif;
+				}
+				arsort($categoryModifiedDates);
+
+				$featuredCatsInOrder = [];
+				foreach ( $categoryModifiedDates as $cat_id => $catModDate ) {
+					$featuredCatsInOrder[] = $featuredCatsByID[$cat_id]; 
 				}
 
 				//limit the number of categories to 6
-				array_splice($featuredCats,6);
+				array_splice($featuredCatsInOrder,6);
 
-				// loop through the categries
+
+				// loop through the categories and display the first post in each
 				$postIDsUsed=[];
 				$currentCategoryNum = 0;
-				foreach ($featuredCats as $cat) {
+				foreach ($featuredCatsInOrder as $cat) {
 					$currentCategoryNum = $currentCategoryNum+1;
 					$cat_id = $cat->term_id;
 					$term = get_option( "taxonomy_" . $cat_id );
@@ -62,8 +87,6 @@ get_header(); ?>
 					);
 					query_posts( $args ); 
 
-					//query_posts("cat=$cat_id&posts_per_page=3&orderby=post_date&order=desc");
-
 					global $wp_query; 
 					$totalPostsInCategory = $wp_query->found_posts;
 
@@ -75,7 +98,7 @@ get_header(); ?>
 							$postNumInCategory=$postNumInCategory+1; 
 							$postIDsUsed[]=$post->ID;
 							if ($postNumInCategory==1) : 
-							
+								
 							?>
 									
 									<article id="post-<?php the_ID(); ?>" <?php independent_publisher_post_classes(); ?>>
@@ -85,7 +108,9 @@ get_header(); ?>
 											 * Show Full Content First Post enabled AND 
 											 * this is the very first standard post AND 
 											 * we're on the home page AND this is not a sticky post 
-											 */ 
+											 */
+
+											 echo "<!-- category modified " . get_the_date('F j, Y g:i a') . "-->";
 											?>
 											
 											<?php
