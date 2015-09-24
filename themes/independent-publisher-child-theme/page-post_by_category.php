@@ -50,7 +50,7 @@ get_header(); ?>
 					$term = get_option( "taxonomy_" . $cat_id );
 
 					echo "<div class='categoryContainer'>";
-					echo "<h4 class='category'><a href='#'>".$cat->name."</a></h2>";
+					echo "<h4 class='category'><a href=" . get_category_link($cat_id) . ">".$cat->name."</a></h2>";
 					
 					query_posts("cat=$cat_id&posts_per_page=3&orderby=post_date&order=desc");
 					
