@@ -79,10 +79,13 @@ get_header(); ?>
 												/* ODDI: Show large image on first instance in loop */
 												$useFullThumbnail=($currentCategoryNum==1);
 												if ( $useFullThumbnail && has_post_thumbnail() ) {
-													the_post_thumbnail();
-												}
-												
-											?>
+													?>
+													<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'independent-publisher' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">
+													<?php
+													the_post_thumbnail();?>
+													</a>
+												<?php } ?>
+											
 											
 											<?php if ( independent_publisher_show_full_content_first_post() && ( independent_publisher_is_very_first_standard_post() && is_home() && ! is_sticky() ) ) : ?>
 												<h2 class="entry-title-meta">
@@ -106,6 +109,10 @@ get_header(); ?>
 											<?php 
 												
 												if( !$useFullThumbnail && has_post_thumbnail() ) { 
+												?>
+												<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'independent-publisher' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">
+
+												<?php
 
 													/* ODDI: Add thumbnail for each post in loop */
 													$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumbnail' ); 
@@ -115,9 +122,11 @@ get_header(); ?>
 													$alt_text = get_post_meta($img_id , '_wp_attachment_image_alt', true);
 
 
-													/*echo "<img src='$url' alt='$alt_text' class='listThumbnail'/>"; */
+													
 													echo "<div class='listThumbnail' style='background-image: url(".$url.");'></div>"; 
-													/*echo "<a href='".$the_permalink."'><div class='listThumbnail' style='background-image: url(".$url.");'></div></a>";*/ 
+													?>
+												</a>
+												<?php
 												}
 											?>
 
