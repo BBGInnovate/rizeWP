@@ -465,29 +465,36 @@ and Blueprint http://www.blueprintcss.org/
 	border-bottom: none;
 }
 
+.pagePostByCategory ul.fullWidth li a{
+	font-family: Arial, sans-serif;
+	color: orange;
+}
+.pagePostByCategory ul.fullWidth li a:hover{
+	color: #F15A29;
+}
 
+.pagePostByCategory ul.fullWidth {
+	margin-left:20px;
+}
+.pagePostByCategory .category a{
+	color: #999; 
+	font-size: .8em; 
+}
 
 @media screen and ( min-width: 500px ) {
-
-	.pagePostByCategory .category a{
-		color: #999; 
-		font-size: .8em; 
-	}
-	.pagePostByCategory ul.fullWidth {
-		margin-left:20px;
-	}
 	.pagePostByCategory h1.entry-title {line-height: .8em;}
 	.pagePostByCategory h1.entry-title a {font-size: .8em;}
 	.pagePostByCategory h1.entry-title a:hover, h1.site-title a:hover {
 		color: #333;
 	}
-	.pagePostByCategory ul.fullWidth li a{
-		font-family: Arial, sans-serif;
-		color: orange;
+	.pagePostByCategory ul.fullWidth{
+		margin-left: 0; 
+		margin-right: 0;
 	}
-	.pagePostByCategory ul.fullWidth li a:hover{
-		color: #F15A29;
+	.pagePostByCategory ul.fullWidth li{
+		list-style-type: disc;
+		border-top: none;
+		margin:0;
+		padding:0;
 	}
-
-	.pagePostByCategory .entry-content a:hover {text-decoration: none;}
 }
