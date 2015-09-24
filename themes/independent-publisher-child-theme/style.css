@@ -27,149 +27,205 @@ and Blueprint http://www.blueprintcss.org/
 -------------------------------------------------------------- */
 
 /* Custom Africa Rizing styles */
-h1.entry-title a, h1.site-title a{color: #333;}
-h1.site-title a{text-transform: uppercase;}
-h1.site-title a .orangeHighlight {color: orange;}
 
-h1.site-title{font-size: 42px; line-height: 36px;}
-h1.site-title .author.vcard{font-size: 26px; line-height: 24px; display:block;}
 
-.site-master-logo a img{opacity: 1;}
+/* Trying to refactor CSS for mobile first-------------------------------------------- */
 
-@media only screen and (max-width: 400px){
-	#masthead .site-logo img, .single-column-layout #masthead .site-logo img {max-width:50px;}
-	body #masthead .site-title, .single-column-layout #masthead .site-title{
-		padding:10px 0 0 0;
-		/*font-size: 24px;*/
+/* site-wide styles ----------- */
+
+	h1.entry-title a, h1.site-title a{color: #333;}
+	h1.site-title a{text-transform: uppercase;}
+	h1.site-title a .orangeHighlight {color: orange;}
+
+	h1.site-title .author.vcard{
+		font-size: 26px; 
+		line-height: 24px; 
+		display:block;
 	}
-}
-@media only screen and (max-width: 320px){
-	body #masthead .site-title, .single-column-layout #masthead .site-title{
-		font-size: 24px;
+
+	.site-master-logo a img{
+		opacity: 1;
 	}
-}
+
+	.site-description, #masthead .site-navigation{
+		display: none;
+	}
+
+	#page.site{
+		margin-top: 10px;
+	}
 
 
-
-@media only screen and (max-width: 500px){
 	#page {margin-top:25px;}
+
 	#masthead .site-logo{
 		float:left;
-		margin-right: 10px;
+		margin-right: 3px;
 	}
 	#masthead .site-title, .single-column-layout #masthead .site-title{
 		padding-top:20px;
 		font-size: 30px;
 	}
-	.site-description, #masthead .site-navigation{display: none;}
 
-	.blog article {padding: 10px 0;}
 
-	/* styling sidebar nav links as full-width links */
-	aside .main-navigation ul, .widget-area ul, .widget-area ol{
-		margin-left:-20px; 
-		margin-right:-20px;
+
+	@media only screen and (max-width: 400px){
+		#masthead .site-logo img, .single-column-layout #masthead .site-logo img {
+			max-width:50px;
+		}
+		body #masthead .site-title, .single-column-layout #masthead .site-title{
+			padding:10px 0 0 0;
+		}
 	}
-	aside ul li{
+
+	body #masthead .site-title, .single-column-layout #masthead .site-title{
+		font-size: 24px;
+	}
+
+	@media only screen and (min-width: 320px){
+		body #masthead .site-title, .single-column-layout #masthead .site-title{
+			font-size: 30px;
+		}
+	}
+
+	@media only screen and (min-width: 500px){
+		body #masthead .site-title, .single-column-layout #masthead .site-title{
+			font-size: 42px;
+			line-height: 36px;
+			padding-top:0;
+		}
+		#masthead .site-logo{
+			float:none;
+			margin-right: 0px;
+		}
+		#page.site{
+			margin-top: 50px;
+		}
+		.site-description, #masthead .site-navigation{
+			display: block;
+		}
+
+	}
+	@media only screen and (min-width: 1200px){
+		.home .site-header {
+			position: fixed;
+			margin-left: -220px;
+			padding-right: 20px;
+		}
+
+
+	}
+
+	/* Footer navigation styles */
+	#footerNav {
+		position: fixed; 
+		bottom: 0; 
+		width: 100%; 
+		margin: 0; 
+		padding:0; 
+		background-color: #FFF; 
 		border-top: 1px solid #CCC;
+	}
+	#footerNav .maxWidth1200{
+		max-width: 1200px; 
+		margin: 0 auto;
+	}
+	#footerNav ul{
+		margin:0; 
+		padding:0; 
+	}
+	#footerNav ul li{
+		display: inline-block;
+		width: 18.5%; 
+		height: 40px; 
+		padding: 0; 
+		margin: 0; 
+		text-align: center; 
+		border-right: 1px dotted #CCC;}
+	#footerNav ul li:last-of-type {
+		border-right: none;
+	}
+	#footerNav ul li a{
+		display: block; 
+		width: 100%; 
+		height:100%; 
+		font-family: Arial, sans-serif; 
+		font-weight: bold; 
+		font-size: .7em; 
+		color: #666; 
+		padding:0; 
 		margin:0;
-		padding:0;
 	}
-	aside ul li a{
-		padding: 5px 20px;
+/* -----------site-wide */
+
+
+
+
+/* post specific styles ----------- */
+
+	.entry-title-meta .sep{color: #CCC;}
+
+	/* Cutline styles */
+	.wp-caption-text {
+		text-align: left;
+		font-size: 80%;
+		font-family: sans-serif;
+		font-weight: bold;
+	}
+	.wp-caption {
+		border: none;
+	}
+	.wp-caption img{
 		margin:0;
-		width:90%;
 	}
-	aside ul li:last-of-type{
-		border-bottom: 1px solid #CCC;
+
+
+	@media (min-width: 700px) {
+		/* bumping up leading on wide screen view of articles */
+		.entry-content p {
+			line-height: 1.8em;
+		}
 	}
-}
 
-@media only screen and (min-width: 1201px) {
-	.single.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta-author, .page.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta-author{
-		display: none;
+	@media only screen and (min-width: 1201px) {
+		/* hide redundant metadata on wide screen because it appears in left column */
+		.single.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta-author, .page.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta-author{
+			display: none;
+		}
 	}
-}
-
-h5.entry-category a{background-color: orange; color: #FFF; padding: 5px 8px 4px 8px; text-transform: uppercase; font-size: .7em; letter-spacing: 1px; font-weight: normal;}
-h5.entry-category {margin-bottom: 0;}
-
-article h5.entry-category a{background-color: transparent; color: #999; padding: 0; text-transform: uppercase; font-size: .7em; letter-spacing: 1px; font-weight: normal;}
-
-.single.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta, .page.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta{margin-top:5px;}
-.single.post-cover-overlay-post-title .post-cover-title-head, .page.post-cover-overlay-post-title .post-cover-title-head {
-	padding-bottom:0;
-}
-
-/* experimenting with styles for images sizes */
-.entry-content img.size-medium{width: 100% !important;}
-.entry-content img.size-mugshot{width: 50% !important; max-width: 200px; float: left; margin-right: 20px;}
-
-@media only screen and (min-width: 700px) {
-	.entry-content img.size-medium{width: 50% !important; float: right; margin: 5px 20px;}
-}
-
-
-.blog .first-post img{margin: 0 0 0 0;}
-
-.post .entry-content a p {
-    color: #333;
-}
-
-/* Remove theme CSS styling that is causing skin tones to be unintentionally darker on featured images */
-.single.post-cover-overlay-post-title .post-cover-title-wrapper, .page.post-cover-overlay-post-title .post-cover-title-wrapper{background: transparent;}
-.single.post-cover-overlay-post-title .post-cover-title-image, .page.post-cover-overlay-post-title .post-cover-title-image {opacity: 1; }
-.single.post-cover-overlay-post-title .post-cover-title-head .entry-subtitle, .single.post-cover-overlay-post-title .post-cover-title-head .entry-title, .page.post-cover-overlay-post-title .post-cover-title-head .entry-subtitle, .page.post-cover-overlay-post-title .post-cover-title-head .entry-title {text-shadow: 2px 2px 4px #000;}
-
-.postCoverResponsive { height:150px !important; }
-@media (min-width: 200px) {
-/* .postCoverResponsive { height:150px !important; } */
-}
-@media (min-width: 300px) {
-.postCoverResponsive { height:250px !important; }
-}
-@media (min-width: 700px) {
-.postCoverResponsive { height:400px !important; }
-}
-@media (min-width: 1024px) {
-.postCoverResponsive { height:500px !important; }
-}
-@media (min-width: 2048px) {
-.postCoverResponsive { height:1000px !important; }
-}
-
-.listThumbnail{float:left; margin: 5px 15px 15px 0; width: 50%; max-width: 150px; height: 100px; background-size: cover; background: no-repeat center center / cover;  }
 
 
 
 
-
-
-/* Experimenting with title below */
-.single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow .post-cover-title-head, .page.post-cover-overlay-post-title .postCoverTitleAlwaysBelow .post-cover-title-head{
-	position: relative;
-	background-image:none;
-}
-.single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow .post-cover-title-head .entry-subtitle, .single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow .post-cover-title-head .entry-title, .page.post-cover-overlay-post-title .postCoverTitleAlwaysBelow .post-cover-title-head .entry-subtitle, .page.post-cover-overlay-post-title .postCoverTitleAlwaysBelow .post-cover-title-head .entry-title{
-	text-shadow: none;
-	color: #333;
-}
-.single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow .post-cover-title-head .entry-title-meta a{
-	color:orange;
-}
-
-@media only screen and (min-width: 1201px) {
-	.single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow .post-cover-title-head .entry-title-meta{
-		display: none;
+	.single.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta, .page.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta{
+		margin-top:5px;
 	}
-}
+	.single.post-cover-overlay-post-title .post-cover-title-head, .page.post-cover-overlay-post-title .post-cover-title-head {
+		padding-bottom:0;
+	}
 
-/* Experimenting with title below */
+
+	/* Moving post title and meta below images tagged .postCoverTitleAlwaysBelow */
+	.single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow .post-cover-title-head, .page.post-cover-overlay-post-title .postCoverTitleAlwaysBelow .post-cover-title-head{
+		position: relative;
+		background-image:none;
+	}
+	.single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow .post-cover-title-head .entry-subtitle, .single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow .post-cover-title-head .entry-title, .page.post-cover-overlay-post-title .postCoverTitleAlwaysBelow .post-cover-title-head .entry-subtitle, .page.post-cover-overlay-post-title .postCoverTitleAlwaysBelow .post-cover-title-head .entry-title{
+		text-shadow: none;
+		color: #333;
+	}
+	.single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow .post-cover-title-head .entry-title-meta a{
+		color:orange;
+	}
+
+	@media only screen and (min-width: 1201px) {
+		.single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow .post-cover-title-head .entry-title-meta{
+			display: none;
+		}
+	}
 
 
-
-/*Move post title and info below featured image on mobile and reset colors */
-@media (max-width: 699px) {
+	/*Move post title and info below featured image on mobile and reset colors */
 	.single.post-cover-overlay-post-title .post-cover-title-head, .page.post-cover-overlay-post-title .post-cover-title-head{
 		position: relative;
 		background-image:none;
@@ -178,169 +234,260 @@ article h5.entry-category a{background-color: transparent; color: #999; padding:
 		text-shadow: none;
 		color: #333;
 	}
-
-	/* reset byline and date colors*/
-	/*.single.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta, .single.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta a, .page.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta, .page.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta a{*/
-	.single.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta, .page.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta /*, .single.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta .entry-title-meta-post-date a*/{
+	.single.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta, .page.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta {
 		color: #b3b3b1;
 	}
 	.single.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta a, .page.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta a{
 		color: orange;
 	}
-}
-@media (max-width: 500px){
 	.single.post-cover-overlay-post-title .post-cover-title-head .post-cover-title, .page.post-cover-overlay-post-title .post-cover-title-head .post-cover-title{
 		padding:20px;
 	}
+
+	@media (min-width: 500px){
+		.single.post-cover-overlay-post-title .post-cover-title-head .post-cover-title, .page.post-cover-overlay-post-title .post-cover-title-head .post-cover-title{
+			padding:40px;
+		}
+	}
+
+
+	/* Overlay title and meta on feature photo */
+	@media (min-width: 700px) {
+		.single.post-cover-overlay-post-title .post-cover-title-head, .page.post-cover-overlay-post-title .post-cover-title-head{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background-image:linear-gradient(transparent 0%,#000 200%);
+		}
+		.single.post-cover-overlay-post-title .post-cover-title-head .entry-subtitle, .single.post-cover-overlay-post-title .post-cover-title-head .entry-title, .page.post-cover-overlay-post-title .post-cover-title-head .entry-subtitle, .page.post-cover-overlay-post-title .post-cover-title-head .entry-title{
+			text-shadow: 2px 2px 4px #000;
+			color: #FFF;
+		}
+		/* reset byline and date colors*/
+		.single.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta a, .page.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta a{
+			color: #b3b3b1;
+		}
+	}
+
+
+
+/* -----------post view */
+
+
+
+
+
+/* list view specific styles ----------- */
+	.blog article {padding: 5px 0;}
+
+	.post .entry-content a p {
+		color: #333;
+	}
+	/* fixing <p/> color in list view that was changing colors */
+	.post .entry-content a:first-of-type p{
+		color: #333;
+	}
+	.blog .first-post img{
+		margin: 0;
+	}
+
 	footer.entry-meta {display:none;}
-}
-footer.entry-meta .byline{display: inline-block;}
+
+	@media (min-width: 500px){
+		.blog article {padding: 0 0 20px 0;}
+		footer.entry-meta {display:block;}
+		footer.entry-meta .byline{display: inline-block;}
+	}
+
+/* ------------- list view */
 
 
 
 
 
+/* Category styles  -----------*/
+	h5.entry-category a{
+		background-color: orange; 
+		color: #FFF; 
+		padding: 5px 8px 4px 8px; 
+		text-transform: uppercase; 
+		font-size: .7em; 
+		letter-spacing: 1px; 
+		font-weight: normal;
+	}
+	h5.entry-category {
+		margin-bottom: 0;
+	}
+
+	article h5.entry-category a{
+		background-color: transparent; 
+		color: #999; 
+		padding: 0; 
+		text-transform: uppercase; 
+		font-size: .7em; 
+		letter-spacing: 1px; 
+		font-weight: normal;
+	}
+/* ------------- category styles */
 
 
-/* Cutline and photo styles */
-.wp-caption-text {
-	text-align: left;
-	font-size: 80%;
-	font-family: sans-serif;
-	font-weight: bold;
-}
-.wp-caption {
-	border: none;
-}
-.wp-caption img{
-	margin:0;
-}
-
-/*.post .entry-title a{color: orange;}*/
-.post .entry-content a:first-of-type p{color: #333;}
 
 
+/* experimenting with styles for images sizes  -----------*/
+	.entry-content img.size-medium{
+		width: 100% !important;
+	}
+	.entry-content img.size-mugshot{
+		width: 50% !important; 
+		max-width: 200px; 
+		float: left; 
+		margin-right: 20px;
+	}
+
+	@media only screen and (min-width: 700px) {
+		.entry-content img.size-medium{
+			width: 50% !important; 
+			float: right; 
+			margin: 5px 20px;
+		}
+	}
+
+	/* Remove theme CSS styling that is causing skin tones to be darker on featured images */
+	.single.post-cover-overlay-post-title .post-cover-title-wrapper, .page.post-cover-overlay-post-title .post-cover-title-wrapper{background: transparent;}
+	.single.post-cover-overlay-post-title .post-cover-title-image, .page.post-cover-overlay-post-title .post-cover-title-image {opacity: 1; }
+
+	.postCoverResponsive { height:150px !important; }
+	@media (min-width: 300px) {
+		.postCoverResponsive { height:250px !important; }
+	}
+	@media (min-width: 700px) {
+		.postCoverResponsive { height:400px !important; }
+	}
+	@media (min-width: 1024px) {
+		.postCoverResponsive { height:500px !important; }
+	}
+	@media (min-width: 2048px) {
+		.postCoverResponsive { height:1000px !important; }
+	}
+
+	.listThumbnail{
+		float:left; 
+		margin: 5px 15px 15px 0; 
+		width: 50%; 
+		max-width: 150px; 
+		height: 100px; 
+		background-size: cover; 
+		background: no-repeat center center / cover;
+	}
+
+/* ------------- images styles */
 
 
 
-/* Staff styles for the about/mission page */
-#staff h3{margin-bottom:0;}
 
-#staff.section{width: 100%; margin: 0; padding: 35px 0 0 0;}
-#staff .member{width: 100%; display: block; margin: 0; padding: 10px 0; border-top: solid 1px #CCC; clear:both;}
-#staff .member .photo{width: 36%; margin: 0 4% 10px 0; float:left; /*border-radius: 10px*/}
+/* Staff styles for the about/mission page  -----------*/
 
-#staff .member .photo img.square{width: 100%; padding: 0; height: auto;}
-#staff .member .photo img.rectangle{display: none; width: 100%; padding: 0; height: auto;}
-#staff .member .profile{padding:0; float: right; width: 60%;}
-#staff .member .profile p{font-family: "Myriad Pro", Helvetica, Arial, sans-serif; margin:0;}
-#staff .member .profile h4{font-family: "Myriad Pro", Helvetica, Arial, sans-serif; font-size: 20px; margin: 0; clear: none;}
-#staff .member .profile p.biography{margin-top: 10px; font-size: .8em; line-height: 1.4em; margin-bottom: 10px; }
+	#staff h3{margin-bottom:0;}
 
-@media only screen and (min-width: 700px) {
 	#staff.section{width: 100%; margin: 0; padding: 35px 0 0 0;}
-	#staff .member{width: 46%; display: inline-block; margin: 0 2% 30px 0; padding: 0; vertical-align: top; border-top: none;}
+	#staff .member{width: 100%; display: block; margin: 0; padding: 10px 0; border-top: solid 1px #CCC; clear:both;}
+	#staff .member .photo{width: 36%; margin: 0 4% 10px 0; float:left; /*border-radius: 10px*/}
 
-	#staff .member .profile{padding:0;  float: right; width: 60%;}
-	#staff .member .photo{width: 36%; margin: 0 4% 0 0;}
+	#staff .member .photo img.square{width: 100%; padding: 0; height: auto;}
+	#staff .member .photo img.rectangle{display: none; width: 100%; padding: 0; height: auto;}
+	#staff .member .profile{padding:0; float: right; width: 60%;}
+	#staff .member .profile p{font-family: "Myriad Pro", Helvetica, Arial, sans-serif; margin:0;}
+	#staff .member .profile h4{font-family: "Myriad Pro", Helvetica, Arial, sans-serif; font-size: 20px; margin: 0; clear: none;}
+	#staff .member .profile p.biography{margin-top: 10px; font-size: .8em; line-height: 1.4em; margin-bottom: 10px; }
 
-	#staff h3{margin-bottom:30px;}
-}
+	@media only screen and (min-width: 700px) {
+		#staff.section{width: 100%; margin: 0; padding: 35px 0 0 0;}
+		#staff .member{width: 46%; display: inline-block; margin: 0 2% 30px 0; padding: 0; vertical-align: top; border-top: none;}
+
+		#staff .member .profile{padding:0;  float: right; width: 60%;}
+		#staff .member .photo{width: 36%; margin: 0 4% 0 0;}
+
+		#staff h3{margin-bottom:30px;}
+	}
+/* ------------- staff styles */
+
+
+
+/* ----------------------------------------------------------------------------------------REFACTORED MOBILE */
+
+
+
+
 
 
 /* page by category post */
 
-.pagePostByCategory .category a{color: #999; font-weight: normal; letter-spacing: 1px; font-size: .8em; text-transform: uppercase;}
-.pagePostByCategory ul.fullWidth {
-	margin-left:20px;
+#page .pagePostByCategory article {padding-bottom:0;}
+.categoryContainer{margin-bottom: 50px;}
+
+.pagePostByCategory .category a{
+	font-weight: normal; 
+	letter-spacing: 1px; 
+	text-transform: uppercase;
 }
-.pagePostByCategory h1.entry-title {line-height: .8em;}
-.pagePostByCategory h1.entry-title a {font-size: .8em;}
-.pagePostByCategory h1.entry-title a:hover, h1.site-title a:hover {
-	color: #333;
+
+
+.pagePostByCategory #content article:first-of-type h1.entry-title {font-size: 2.8em; line-height: .6em;}
+
+.pagePostByCategory h1.entry-title {line-height: .7em;}
+.pagePostByCategory h1.entry-title a {font-size: .7em;}
+
+.pagePostByCategory h4.category a{color: #FFF; font-weight: normal; letter-spacing: 1px; font-size: .7em; background-color: orange; padding:6px 12px 3px 20px; margin: -20px;}
+.pagePostByCategory .category a:hover{background-color: #333;}
+
+.pagePostByCategory ul.fullWidth{
+	margin-left:-20px; 
+	margin-right:-20px;
+}
+.pagePostByCategory ul.fullWidth li{
+	list-style-type: none;
+	border-top: 1px solid #CCC;
+	margin:0;
+	padding:0;
 }
 .pagePostByCategory ul.fullWidth li a{
-	font-family: Arial, sans-serif;
-	color: orange;
+	display: inline-block;
+	padding: 5px 20px;
+	margin:0;
+	width:90%;
 }
-.pagePostByCategory ul.fullWidth li a:hover{
-	color: #F15A29;
+.pagePostByCategory ul.fullWidth li:last-of-type{
+	border-bottom: 1px solid #CCC;
 }
 
-.pagePostByCategory .entry-content a:hover {text-decoration: none;}			
+.pagePostByCategory .blog article{
+	border-bottom: none;
+}
 
-@media screen and ( max-width: 500px ) {
-	#page .pagePostByCategory article {padding-bottom:0;}
-	.categoryContainer{margin-bottom: 50px;}
 
-	.pagePostByCategory #content article:first-of-type h1.entry-title {font-size: 2.8em; line-height: .6em;}
 
-	.pagePostByCategory h1.entry-title {line-height: .7em;}
-	.pagePostByCategory h1.entry-title a {font-size: .7em;}
+@media screen and ( min-width: 500px ) {
 
-	.pagePostByCategory h4.category a{color: #FFF; font-weight: normal; letter-spacing: 1px; font-size: .7em; background-color: orange; padding:6px 12px 3px 20px; margin: -20px;}
-	.pagePostByCategory .category a:hover{background-color: #333;}
-
-	.pagePostByCategory ul.fullWidth{
-		margin-left:-20px; 
-		margin-right:-20px;
+	.pagePostByCategory .category a{
+		color: #999; 
+		font-size: .8em; 
 	}
-	.pagePostByCategory ul.fullWidth li{
-		list-style-type: none;
-		border-top: 1px solid #CCC;
-		margin:0;
-		padding:0;
+	.pagePostByCategory ul.fullWidth {
+		margin-left:20px;
+	}
+	.pagePostByCategory h1.entry-title {line-height: .8em;}
+	.pagePostByCategory h1.entry-title a {font-size: .8em;}
+	.pagePostByCategory h1.entry-title a:hover, h1.site-title a:hover {
+		color: #333;
 	}
 	.pagePostByCategory ul.fullWidth li a{
-		display: inline-block;
-		padding: 5px 20px;
-		margin:0;
-		width:90%;
+		font-family: Arial, sans-serif;
+		color: orange;
 	}
-	.pagePostByCategory ul.fullWidth li:last-of-type{
-		border-bottom: 1px solid #CCC;
+	.pagePostByCategory ul.fullWidth li a:hover{
+		color: #F15A29;
 	}
 
-	.pagePostByCategory .blog article{
-		border-bottom: none;
-	}
+	.pagePostByCategory .entry-content a:hover {text-decoration: none;}
 }
-
-
-/* Uncomment this style definition to hide the green bar on Quote Formatted posts: */
-
-/*
-.format-quote blockquote {
-	border-left: none;
-	padding-left: 0;
-}
-*/
-
-/* Uncomment this style definition to use the original, Mac-specific font stack */
-
-/*
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.pinglist,
-#taglist,
-.comment-form-author label,
-.comment-form-email label,
-.comment-form-url label,
-.comment-form-comment label,
-.comment-form-subscriptions label,
-.comment-form-reply-title {
-	font-family: "Myriad Pro","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
-}
-*/
-
-/* Uncomment this style definition to use a long dash in ```<cite>```: */
-
-/*
-blockquote cite:before {
-content: "\2014 \0020";
-}
-*/
