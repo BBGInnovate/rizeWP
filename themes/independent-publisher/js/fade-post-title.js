@@ -14,7 +14,7 @@ jQuery(function($) {
 
             post_title.css({
                 'margin-bottom' : -(st/post_title_wrapper_height) * post_title_padding +"px",
-                'opacity' : 1 - st/post_title_wrapper_height
+                'opacity' : 1 - (st/post_title_wrapper_height)/2
             });
         });
     }
