@@ -63,13 +63,34 @@ function independent_publisher_footer_credits() {
 	return $my_custom_footer;
 }
 
+function array_swap($key1, $key2, $array) {
+	$newArray = array ();
+	foreach ($array as $key => $value) {
+		if ($key == $key1) {
+			$newArray[$key2] = $array[$key2];
+		} elseif ($key == $key2) {
+			$newArray[$key1] = $array[$key1];
+		} else {
+			$newArray[$key] = $value;
+		}
+	}
+	return $newArray;
+}
+
 add_image_size( 'mugshot', 200, 200 ); // 220 pixels wide by 180 pixels tall, soft proportional crop mode
 add_filter( 'image_size_names_choose', 'my_custom_sizes' );
 
 function my_custom_sizes( $sizes ) {
-    return array_merge( $sizes, array(
-        'mugshot' =>'Mugshot'
-    ) );
+	/*  NOTE: the $sizes array here is simply an associative array.  It doesn't provide actual dimensions.
+		We are hardcoding that Mugshot goes second now (and thumbnail first) ... a more robust solution
+		could leverage something like https://codex.wordpress.org/Function_Reference/get_intermediate_image_sizes 
+	*/
+	$newArray=array( 'mugshot' =>'Mugshot');
+	foreach ($sizes as $key => $value) {
+		$newArray[$key]=$value;
+	}
+	$reorderedSizes=array_swap("mugshot","thumbnail",$newArray);
+	return $reorderedSizes;
 }
 
 /**
