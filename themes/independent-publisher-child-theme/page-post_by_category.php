@@ -75,8 +75,6 @@ get_header(); ?>
 					$cat_id = $cat->term_id;
 					$term = get_option( "taxonomy_" . $cat_id );
 
-					echo "<div class='categoryContainer'>";
-					echo "<h4 class='category'><a href=" . get_category_link($cat_id) . ">".$cat->name."</a></h2>";
 					
 					$args = array(
 						'cat' => $cat_id,
@@ -90,6 +88,10 @@ get_header(); ?>
 					global $wp_query; 
 					$totalPostsInCategory = $wp_query->found_posts;
 
+					if ($totalPostsInCategory > 0) {
+						echo "<div class='categoryContainer'>";
+						echo "<h4 class='category'><a href=" . get_category_link($cat_id) . ">".$cat->name."</a></h2>";
+					}
 
 					// start the wordpress loop!
 					$postNumInCategory=0;
