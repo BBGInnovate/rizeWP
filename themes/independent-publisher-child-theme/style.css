@@ -473,9 +473,6 @@ and Blueprint http://www.blueprintcss.org/
 	color: #F15A29;
 }
 
-.pagePostByCategory ul.fullWidth {
-	margin-left:20px;
-}
 .pagePostByCategory .category a{
 	color: #999; 
 	font-size: .8em; 
@@ -496,5 +493,8 @@ and Blueprint http://www.blueprintcss.org/
 		border-top: none;
 		margin:0;
 		padding:0;
+	}
+	.pagePostByCategory ul.fullWidth {
+		margin-left:20px;
 	}
 }

@@ -25,7 +25,7 @@
 <div id='footerNav'>
 	<div class='maxWidth1200'>
 		<ul>
-			<li><a href='/wprize/index.php/'>home</a></li>
+			<li><a href='/'>home</a></li>
 			<li><a href='index.php/matters/'>matters</a></li>
 			<li><a href='https://www.facebook.com/africarizing'>facebook</a></li>
 			<li><a href='https://twitter.com/africarizing'>twitter</a></li>
