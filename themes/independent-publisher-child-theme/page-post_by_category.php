@@ -43,6 +43,7 @@ get_header(); ?>
 				array_splice($featuredCats,6);
 
 				// loop through the categries
+				$postIDsUsed=[];
 				$currentCategoryNum = 0;
 				foreach ($featuredCats as $cat) {
 					$currentCategoryNum = $currentCategoryNum+1;
@@ -52,15 +53,27 @@ get_header(); ?>
 					echo "<div class='categoryContainer'>";
 					echo "<h4 class='category'><a href=" . get_category_link($cat_id) . ">".$cat->name."</a></h2>";
 					
-					query_posts("cat=$cat_id&posts_per_page=3&orderby=post_date&order=desc");
-					
+					$args = array(
+						'cat' => $cat_id,
+						'post__not_in' => $postIDsUsed,
+						'posts_per_page' => 3,
+						'orderby' => 'post_date',
+						'order' => 'desc'
+					);
+					query_posts( $args ); 
+
+					//query_posts("cat=$cat_id&posts_per_page=3&orderby=post_date&order=desc");
+
 					global $wp_query; 
 					$totalPostsInCategory = $wp_query->found_posts;
 
 
 					// start the wordpress loop!
 					$postNumInCategory=0;
-					if (have_posts()) : while (have_posts()) : the_post(); $postNumInCategory=$postNumInCategory+1; 
+					if (have_posts()) : while (have_posts()) : 
+							the_post(); 
+							$postNumInCategory=$postNumInCategory+1; 
+							$postIDsUsed[]=$post->ID;
 							if ($postNumInCategory==1) : 
 							
 							?>
