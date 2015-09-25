@@ -28,11 +28,10 @@ and Blueprint http://www.blueprintcss.org/
 
 /* Custom Africa Rizing styles */
 
-
-/* Trying to refactor CSS for mobile first-------------------------------------------- */
-
 /* site-wide styles ----------- */
 
+	h1.site-title {float:left;}
+	#menu-social{float:right;}
 	h1.entry-title a, h1.site-title a{color: #333;}
 	h1.site-title a{text-transform: uppercase;}
 	h1.site-title a .orangeHighlight {color: orange;}
@@ -67,6 +66,10 @@ and Blueprint http://www.blueprintcss.org/
 		font-size: 30px;
 	}
 
+	/*links inside of posts are green */
+	.single p a{color: #57ad68;}
+
+
 	footer#colophon{
 		margin-top: 20px;
 		margin-bottom:60px;
@@ -92,6 +95,8 @@ and Blueprint http://www.blueprintcss.org/
 	}
 
 	@media only screen and (min-width: 500px){
+		h1.site-title {float:none;}
+		
 		body #masthead .site-title, .single-column-layout #masthead .site-title{
 			font-size: 42px;
 			line-height: 36px;
@@ -233,7 +238,6 @@ and Blueprint http://www.blueprintcss.org/
 			display: none;
 		}
 	}
-
 
 	/*Move post title and info below featured image on mobile and reset colors */
 	.single.post-cover-overlay-post-title .post-cover-title-head, .page.post-cover-overlay-post-title .post-cover-title-head{
@@ -380,6 +384,10 @@ and Blueprint http://www.blueprintcss.org/
 
 
 /* Category styles  -----------*/
+	.home h5.entry-category, .category h5.entry-category{
+		padding-bottom:12px;
+	}
+
 	h5.entry-category a{
 		background-color: orange; 
 		color: #FFF; 
@@ -395,7 +403,8 @@ and Blueprint http://www.blueprintcss.org/
 
 	article h5.entry-category a{
 		background-color: transparent; 
-		color: #999; 
+		/*color: #999;*/ 
+		color: orange; 
 		padding: 0; 
 		text-transform: uppercase; 
 		font-size: .7em; 
@@ -496,12 +505,6 @@ and Blueprint http://www.blueprintcss.org/
 		color: #999;
 	}
 /* ------------- staff styles */
-
-
-
-/* ----------------------------------------------------------------------------------------REFACTORED MOBILE */
-
-
 
 
 
