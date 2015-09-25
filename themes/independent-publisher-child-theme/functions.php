@@ -153,8 +153,8 @@ function my_custom_sizes( $sizes ) {
 
 										<div id='socialPost'>
 											<ul>
-												<li><a href='https://facebook.com/africarizing'></a></li>
-												<li><a href='https://twitter.com/africarizing'></a></li>
+												<li class='facebook'><a href='https://facebook.com/africarizing'></a></li>
+												<li class='twitter'><a href='https://twitter.com/africarizing'></a></li>
 											</ul>
 										</div>
 

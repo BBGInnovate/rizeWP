@@ -130,7 +130,7 @@ and Blueprint http://www.blueprintcss.org/
 		border-top: 1px solid #CCC;
 	}
 	#footerNav .maxWidth1200{
-		max-width: 1200px; 
+		max-width: 700px; 
 		margin: 0 auto;
 	}
 	#footerNav ul{
@@ -296,19 +296,31 @@ and Blueprint http://www.blueprintcss.org/
 	}
 	.single.post-cover-overlay-post-title #socialPost ul li, .single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow #socialPost ul li{
 		display: inline-block; 
-		background-color: #999; 
-		margin:0 0 0 10px;
-		width: 30px; 
-		height: 30px; 
+		margin:-5px 0 0 5px;
+    	vertical-align: top;
 	}
 	#socialPost ul li a{
 		display: block;
 		width: 30px; 
 		height: 30px; 
+		padding:0;
+    	color: #BBC7D3;
+	}	
+	#socialPost ul li a:hover{
+		text-decoration: none;
+    	color: #999;
 	}
-	#socialPost ul li a::after{
+	#socialPost ul li.facebook a::after{
+		font-family: 'Genericons';
+		font-size: 30px;
 	    content: '\f203';
-    	color: #BBC7D3
+    	vertical-align: top;
+    }
+	#socialPost ul li.twitter a::after{
+		font-family: 'Genericons';
+		font-size: 30px;
+	    content: '\f202';
+    	vertical-align: top;
     }
 
 
@@ -319,11 +331,10 @@ and Blueprint http://www.blueprintcss.org/
 			opacity: 1;
 			position: fixed;
 			top: 250px;
-			right:0;
+			right:10px;
 		}
 		.single.post-cover-overlay-post-title #socialPost ul li{
 			display: block; 
-			background-color: #999; 
 			margin: 0 0 10px 0;
 			width: 30px; 
 			height: 30px; 
@@ -391,6 +402,12 @@ and Blueprint http://www.blueprintcss.org/
 		letter-spacing: 1px; 
 		font-weight: normal;
 	}
+
+	h5.entry-category {
+		margin-bottom: 0;
+	}
+
+
 /* ------------- category styles */
 
 
