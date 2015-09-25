@@ -52,7 +52,7 @@ and Blueprint http://www.blueprintcss.org/
 	/*social main */
 	#menu-social {display: none;}
 	#menu-social{float:right; clear: none;}
-	#menu-social ul{margin-top: 5px;}
+	#menu-social ul{margin-top: 2px;}
 
 
 	#page.site{
@@ -104,7 +104,10 @@ and Blueprint http://www.blueprintcss.org/
 	}
 
 	@media only screen and (min-width: 400px){
-		#menu-social ul{margin-top: 15px;}
+		body #masthead .site-title, .single-column-layout #masthead .site-title{
+			font-size: 30px;
+		}
+		#menu-social ul{margin-top: 12px;}
 	}
 
 	@media only screen and (min-width: 500px){
