@@ -107,17 +107,33 @@ and Blueprint http://www.blueprintcss.org/
 		body #masthead .site-title, .single-column-layout #masthead .site-title{
 			font-size: 30px;
 		}
-		#menu-social ul{margin-top: 12px;}
+		#menu-social ul{margin-top: 14px;}
 	}
 
 	@media only screen and (min-width: 500px){
-		h1.site-title {float:none;}
-
 		body #masthead .site-title, .single-column-layout #masthead .site-title{
 			font-size: 42px;
 			line-height: 36px;
-			padding-top:0;
+			padding-top:15px;
 		}
+		#masthead .site-logo{
+			margin-right: 10px;
+		}
+		.site-logo img{
+			max-width: 60px;
+		}
+	}
+	@media only screen and (min-width: 1200px){
+		.home .site-header {
+			position: fixed;
+			margin-left: -220px;
+			padding-right: 20px;
+		}
+
+		.site-logo img{max-width: 100px;}
+		
+		h1.site-title {float:none;}
+
 		#masthead .site-logo{
 			float:none;
 			margin-right: 0px;
@@ -128,15 +144,6 @@ and Blueprint http://www.blueprintcss.org/
 		.site-description, #masthead .site-navigation{
 			display: block;
 		}
-
-	}
-	@media only screen and (min-width: 1200px){
-		.home .site-header {
-			position: fixed;
-			margin-left: -220px;
-			padding-right: 20px;
-		}
-
 
 	}
 
