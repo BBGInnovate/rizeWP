@@ -50,6 +50,7 @@ and Blueprint http://www.blueprintcss.org/
 	}
 
 	/*social main */
+	#menu-social {display: none;}
 	#menu-social{float:right; clear: none;}
 	#menu-social ul{margin-top: 5px;}
 
@@ -94,11 +95,14 @@ and Blueprint http://www.blueprintcss.org/
 	}
 
 	@media only screen and (min-width: 320px){
+		#menu-social {display: block;}
+		/*
 		body #masthead .site-title, .single-column-layout #masthead .site-title{
 			font-size: 30px;
 		}
+		*/
 	}
-	
+
 	@media only screen and (min-width: 400px){
 		#menu-social ul{margin-top: 15px;}
 	}
