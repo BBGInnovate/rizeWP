@@ -7,6 +7,33 @@
  * @package Independent Publisher
  * @since   Independent Publisher 1.0
  */
+
+
+/* ODDI CUSTOM: we need identifiers on the body */ 
+global $pageBodyID;
+if (! isset( $pageBodyID ) ) {
+	$pageBodyID="defaultPageBody";
+}
+
+global $ogImage;
+if (! isset( $ogImage ) ) {
+	$ogImage="https://africa2.rizing.org/wp-content/uploads/2015/09/cropped-Rize-socialprofiles_500.png";
+}
+
+global $ogTitle;
+if (! isset( $ogTitle ) ) {
+	$ogTitle="AFRICA RIZING";
+}
+
+global $ogDescription;
+if (! isset( $ogDescription ) ) {
+	$ogDescription="Connecting the next generation of global influencers from across the Continent, and around the world to engage in, 'a smarter conversation'";
+}
+
+global $wp;
+$ogUrl = add_query_arg( $wp->query_string, '', home_url( $wp->request ) );
+
+
 ?><!DOCTYPE html>
 <html <?php independent_publisher_html_tag_schema(); ?> <?php language_attributes(); ?>>
 <head>
@@ -25,21 +52,17 @@
 	<meta name="author" content="" />
 
 	<!-- for Facebook -->
-	<meta property="og:title" content="" />
+	<meta property="og:title" content="<?php echo $ogTitle; ?>" />
 	<meta property="og:type" content="website" />
-	<meta property="og:image" content="" />
-	<meta property="og:url" content="" />
-	<meta property="og:description" content="" />
+	<meta property="og:image" content="<?php echo $ogImage; ?>" />
+	<meta property="og:url" content="<?php echo $ogUrl; ?>" />
+	<meta property="og:description" content="<?php echo $ogDescription; ?>" />
 
 
 	<?php 
 		wp_head();
 
-		/* ODDI CUSTOM: we need identifiers on the body */ 
-		global $pageBodyID;
-		if (! isset($pageBodyID)) {
-			$pageBodyID="defaultBody";
-		}
+		
 	?>
 </head>
 
