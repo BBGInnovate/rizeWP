@@ -31,7 +31,6 @@ and Blueprint http://www.blueprintcss.org/
 /* site-wide styles ----------- */
 
 	h1.site-title {float:left;}
-	#menu-social{float:right; clear: none;}
 	h1.entry-title a, h1.site-title a{color: #333;}
 	h1.site-title a{text-transform: uppercase;}
 	h1.site-title a .orangeHighlight {color: orange;}
@@ -49,6 +48,11 @@ and Blueprint http://www.blueprintcss.org/
 	.site-description, #masthead .site-navigation{
 		display: none;
 	}
+
+	/*social main */
+	#menu-social{float:right; clear: none;}
+	#menu-social ul{margin-top: 5px;}
+
 
 	#page.site{
 		margin-top: 10px;
@@ -84,6 +88,7 @@ and Blueprint http://www.blueprintcss.org/
 		}
 	}
 
+
 	body #masthead .site-title, .single-column-layout #masthead .site-title{
 		font-size: 24px;
 	}
@@ -92,6 +97,10 @@ and Blueprint http://www.blueprintcss.org/
 		body #masthead .site-title, .single-column-layout #masthead .site-title{
 			font-size: 30px;
 		}
+	}
+	
+	@media only screen and (min-width: 400px){
+		#menu-social ul{margin-top: 15px;}
 	}
 
 	@media only screen and (min-width: 500px){
