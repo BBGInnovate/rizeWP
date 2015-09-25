@@ -169,12 +169,13 @@ and Blueprint http://www.blueprintcss.org/
 		display: inline-block;
 		/*width: 18.5%; */
 		width: 31%; 
-		height: 40px; 
+		height: 50px; 
 		padding: 0; 
 		margin: 0; 
 		text-align: center; 
 		border-right: 1px dotted #CCC;
 		vertical-align: bottom;
+		background: url(/wprize/wp-content/uploads/2015/09/share_facebook_small.png) top center no-repeat;
 	}
 
 	#footerNav ul li:last-of-type {
@@ -186,9 +187,9 @@ and Blueprint http://www.blueprintcss.org/
 		height:100%; 
 		font-family: Arial, sans-serif; 
 		font-weight: bold; 
-		font-size: .7em; 
+		font-size: .6em; 
 		color: #666; 
-		padding:10px 0 0 0; 
+		padding:30px 0 0 0; 
 		margin:0;
 	}
 	#footerNav ul li a:hover{
