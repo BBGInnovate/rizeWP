@@ -181,3 +181,5 @@ get_header(); ?>
 	<?php endwhile;  endif; ?>
 	</main>
 </div>	
+<?php get_sidebar(); ?>
+<?php get_footer(); ?>

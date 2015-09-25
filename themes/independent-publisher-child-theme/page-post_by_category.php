@@ -13,14 +13,8 @@
  * @since   Independent Publisher 1.0
  */
 
+$pageBodyID = "pagePostByCategory";
 get_header(); ?>
-
-<style type="text/css">
-
-
-
-
-</style>
 
 	<div id="primary" class="content-area">
 		<main id="content" class="site-content pagePostByCategory" role="main">

@@ -6,6 +6,7 @@
  * @since   Independent Publisher 1.0
  */
 
+$pageBodyID="searchPage";
 get_header(); ?>
 
 	<section id="primary" class="content-area">
