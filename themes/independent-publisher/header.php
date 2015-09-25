@@ -32,10 +32,18 @@
 	<meta property="og:description" content="" />
 
 
-	<?php wp_head(); ?>
+	<?php 
+		wp_head();
+
+		/* ODDI CUSTOM: we need identifiers on the body */ 
+		global $pageBodyID;
+		if (! isset($pageBodyID)) {
+			$pageBodyID="defaultBody";
+		}
+	?>
 </head>
 
-<body <?php body_class(); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<body id="<?php echo $pageBodyID; ?>" <?php body_class(); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
 
 <?php // Displays full-width featured image on Single Posts if applicable ?>
 <?php independent_publisher_full_width_featured_image(); ?>
