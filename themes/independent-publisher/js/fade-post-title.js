@@ -1,6 +1,8 @@
 /**
  * Fade the title on scroll if post has "Post Cover Title Style"
  */
+
+/*
 jQuery(function($) {
     var post_title = $('.post-cover-title'),
         post_title_wrapper = $('.post-cover-title-wrapper');
@@ -19,3 +21,4 @@ jQuery(function($) {
         });
     }
 });
+*/
