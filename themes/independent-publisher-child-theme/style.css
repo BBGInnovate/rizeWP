@@ -175,7 +175,7 @@ and Blueprint http://www.blueprintcss.org/
 		text-align: center; 
 		border-right: 1px dotted #CCC;
 		vertical-align: bottom;
-		background: url(/wprize/wp-content/uploads/2015/09/share_facebook_small.png) top center no-repeat;
+		background: url(/wp-content/uploads/2015/09/share_facebook_small.png) top center no-repeat;
 	}
 
 	#footerNav ul li:last-of-type {
