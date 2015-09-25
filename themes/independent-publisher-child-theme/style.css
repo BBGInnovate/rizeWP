@@ -162,9 +162,9 @@ and Blueprint http://www.blueprintcss.org/
 		padding:10px 0 0 0; 
 		margin:0;
 	}
-		#footerNav ul li a:hover{
-			color: orange;
-		}
+	#footerNav ul li a:hover{
+		color: orange;
+	}
 
 /* -----------site-wide */
 
@@ -256,8 +256,12 @@ and Blueprint http://www.blueprintcss.org/
 
 	@media (min-width: 500px){
 		.single.post-cover-overlay-post-title .post-cover-title-head .post-cover-title, .page.post-cover-overlay-post-title .post-cover-title-head .post-cover-title{
-			padding:40px;
+			padding: 40px;
 		}
+		.single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow .post-cover-title-head .post-cover-title{
+			padding: 0 40px;
+		}
+
 	}
 
 
@@ -281,7 +285,55 @@ and Blueprint http://www.blueprintcss.org/
 	}
 
 
+	h5.entry-category a{
+		float: left;
+	}
+	.single.post-cover-overlay-post-title #socialPost ul, .single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow #socialPost ul {
+		position: relative;
+		display: block;
+		float: right;
+		margin: 0;
+	}
+	.single.post-cover-overlay-post-title #socialPost ul li, .single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow #socialPost ul li{
+		display: inline-block; 
+		background-color: #999; 
+		margin:0 0 0 10px;
+		width: 30px; 
+		height: 30px; 
+	}
+	#socialPost ul li a{
+		display: block;
+		width: 30px; 
+		height: 30px; 
+	}
+	#socialPost ul li a::after{
+	    content: '\f203';
+    	color: #BBC7D3
+    }
 
+
+	@media (min-width: 700px){
+		#socialPost{
+		}
+		.single.post-cover-overlay-post-title #socialPost ul {
+			opacity: 1;
+			position: fixed;
+			top: 250px;
+			right:0;
+		}
+		.single.post-cover-overlay-post-title #socialPost ul li{
+			display: block; 
+			background-color: #999; 
+			margin: 0 0 10px 0;
+			width: 30px; 
+			height: 30px; 
+		}
+	}
+	@media (min-width: 1024px) {
+		.single.post-cover-overlay-post-title #socialPost ul {
+			top: 350px;
+		}
+	}
 /* -----------post view */
 
 
@@ -423,7 +475,7 @@ and Blueprint http://www.blueprintcss.org/
 
 	#creativeCommons{
 		font-family: Arial, sans-serif;
-		font-style: .8em;
+		font-style: .6em;
 		color: #999;
 	}
 /* ------------- staff styles */
@@ -512,6 +564,9 @@ and Blueprint http://www.blueprintcss.org/
 		margin-left: 0; 
 		margin-right: 0;
 	}
+	.pagePostByCategory ul.fullWidth {
+		margin-left:20px;
+	}
 	.pagePostByCategory ul.fullWidth li{
 		list-style-type: disc;
 		border-top: none;
@@ -521,7 +576,7 @@ and Blueprint http://www.blueprintcss.org/
 	.pagePostByCategory ul.fullWidth li:last-of-type{
 		border-bottom: none;
 	}
-	.pagePostByCategory ul.fullWidth {
-		margin-left:20px;
+	.pagePostByCategory ul.fullWidth li a{
+		display: block;
 	}
 }

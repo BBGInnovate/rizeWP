@@ -150,6 +150,14 @@ function my_custom_sizes( $sizes ) {
 										<h5 class='entry-category'>
 											<?php echo independent_publisher_post_categories( '', true ); ?>
 										</h5>
+
+										<div id='socialPost'>
+											<ul>
+												<li><a href='https://facebook.com/africarizing'></a></li>
+												<li><a href='https://twitter.com/africarizing'></a></li>
+											</ul>
+										</div>
+
 										<?php } ?>
 										<h1 class="entry-title" itemprop="name">
 											<?php echo get_the_title(); ?>
