@@ -31,7 +31,7 @@ and Blueprint http://www.blueprintcss.org/
 /* site-wide styles ----------- */
 
 	h1.site-title {float:left;}
-	#menu-social{float:right;}
+	#menu-social{float:right; clear: none;}
 	h1.entry-title a, h1.site-title a{color: #333;}
 	h1.site-title a{text-transform: uppercase;}
 	h1.site-title a .orangeHighlight {color: orange;}
@@ -96,7 +96,7 @@ and Blueprint http://www.blueprintcss.org/
 
 	@media only screen and (min-width: 500px){
 		h1.site-title {float:none;}
-		
+
 		body #masthead .site-title, .single-column-layout #masthead .site-title{
 			font-size: 42px;
 			line-height: 36px;
