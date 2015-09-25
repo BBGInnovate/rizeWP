@@ -248,7 +248,8 @@ function independent_publisher_customizer_css() {
  * See http://codex.wordpress.org/AJAX_in_Plugins
  */
 function independent_publisher_customizer_stylesheet() {
-	wp_enqueue_style('customizer', admin_url('admin-ajax.php').'?action=independent_publisher_customizer_css');
+	/* ODDI CUSTOM: remove customizer CSS as it was causing https issue (redirect loop when not logged in) */
+	//wp_enqueue_style('customizer', admin_url('admin-ajax.php').'?action=independent_publisher_customizer_css');
 
 }
 add_action('wp_ajax_independent_publisher_customizer_css', 'independent_publisher_customizer_css');
