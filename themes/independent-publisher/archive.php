@@ -8,6 +8,15 @@
  * @since   Independent Publisher 1.0
  */
 
+$pageBodyID="genericArchivePage";
+if ( is_category() ) {
+	$pageBodyID="categoryPage";
+} elseif ( is_tag() ) {
+	$pageBodyID="tagPage";
+} elseif ( is_author() ) {
+	$pageBodyID="authorPage";
+}
+
 get_header(); ?>
 
 	<section id="primary" class="content-area">
