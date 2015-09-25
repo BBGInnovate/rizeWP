@@ -144,7 +144,7 @@ and Blueprint http://www.blueprintcss.org/
 		.site-description, #masthead .site-navigation{
 			display: block;
 		}
-
+		#footerNav {display: none;}
 	}
 
 	/* Footer navigation styles */
@@ -167,7 +167,8 @@ and Blueprint http://www.blueprintcss.org/
 	}
 	#footerNav ul li{
 		display: inline-block;
-		width: 18.5%; 
+		/*width: 18.5%; */
+		width: 31%; 
 		height: 40px; 
 		padding: 0; 
 		margin: 0; 
@@ -407,7 +408,7 @@ and Blueprint http://www.blueprintcss.org/
 
 
 /* Category styles  -----------*/
-	.home h5.entry-category, .category h5.entry-category{
+	.home h5.entry-category, .category h5.entry-category, .archive h5.entry-category {
 		padding-bottom:12px;
 	}
 

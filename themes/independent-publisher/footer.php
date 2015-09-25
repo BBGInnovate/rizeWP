@@ -27,8 +27,10 @@
 		<ul>
 			<li><a href='/'>home</a></li>
 			<li><a href='/index.php/matters/'>in focus</a></li>
+			<!--
 			<li><a href='https://www.facebook.com/africarizing'>facebook</a></li>
 			<li><a href='https://twitter.com/africarizing'>twitter</a></li>
+		-->
 			<li><a href='/index.php/about/'>mission</a></li>
 		</ul>
 	</div>
