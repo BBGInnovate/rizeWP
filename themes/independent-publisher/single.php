@@ -7,9 +7,12 @@
  
  */
 
+/* we go through the loop once and reset it in order to get some vars for our og tags */
 if ( have_posts() ) {
 	the_post(); 
 
+
+	$metaAuthor= get_the_author() . ": Africa Rizing Bio"; 
 	$ogTitle=get_the_title();
 	//$ogImage=get_the_post_thumbnail($post->ID, 'thumbnail');
 	$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'Full' ); 

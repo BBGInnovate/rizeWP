@@ -10,24 +10,31 @@
 
 
 /* ODDI CUSTOM: we need identifiers on the body */ 
-global $pageBodyID;
+global $ogImage, $ogTitle, $ogDescription;
+global $pageBodyID, $metaAuthor, $metaKeywords;
+
 if (! isset( $pageBodyID ) ) {
 	$pageBodyID="defaultPageBody";
 }
 
-global $ogImage;
 if (! isset( $ogImage ) ) {
 	$ogImage="https://africa2.rizing.org/wp-content/uploads/2015/09/cropped-Rize-socialprofiles_500.png";
 }
 
-global $ogTitle;
 if (! isset( $ogTitle ) ) {
 	$ogTitle="AFRICA RIZING";
 }
 
-global $ogDescription;
 if (! isset( $ogDescription ) ) {
 	$ogDescription="Connecting the next generation of global influencers from across the Continent, and around the world to engage in, 'a smarter conversation'";
+}
+
+if (! isset( $metaAuthor ) ) {
+	$metaAuthor="";
+}
+
+if (! isset( $metaKeywords ) ) {
+	$metaKeywords="";
 }
 
 global $wp;
@@ -48,9 +55,9 @@ $ogUrl=$_SERVER['REQUEST_URI'];
 	<![endif]-->
 
 	<!-- for Google -->
-	<meta name="description" content=""/>
-	<meta name="keywords" content="" />
-	<meta name="author" content="" />
+	<meta name="description" content="<?php echo $ogDescription; ?>"/>
+	<meta name="keywords" content="<?php echo $metaKeywords; ?>" />
+	<meta name="author" content="<?php echo $metaAuthor; ?>" />
 
 	<!-- for Facebook -->
 	<meta property="og:title" content="<?php echo $ogTitle; ?>" />
@@ -59,11 +66,8 @@ $ogUrl=$_SERVER['REQUEST_URI'];
 	<meta property="og:url" content="<?php echo $ogUrl; ?>" />
 	<meta property="og:description" content="<?php echo $ogDescription; ?>" />
 
-
 	<?php 
 		wp_head();
-
-		
 	?>
 </head>
 

@@ -8,6 +8,22 @@
  * @since   Independent Publisher 1.0
  */
 
+/* we go through the loop once and reset it in order to get some vars for our og tags */
+if ( have_posts() ) {
+	the_post(); 
+
+	$ogTitle= get_the_author() . ": Africa Rizing Bio"; 
+
+	/* wordpress's get_avatar function outputs a full image tag ... we just want the src */
+	$fullImageHTML=get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'independent_publisher_author_bio_avatar_size', 100 ) );
+	$xpath = new DOMXPath(@DOMDocument::loadHTML($fullImageHTML));
+	$ogImage = $xpath->evaluate("string(//img/@src)");
+
+	$ogDescription=get_the_author_meta( 'description' );
+
+	rewind_posts();
+}
+
 get_header(); ?>
 
 	<section id="primary" class="content-area">
