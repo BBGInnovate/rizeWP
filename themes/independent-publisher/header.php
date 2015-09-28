@@ -37,7 +37,8 @@ if (! isset( $metaKeywords ) ) {
 	$metaKeywords="";
 }
 
-$ogUrl=get_site_url() . $_SERVER['REQUEST_URI'];
+//$ogUrl=get_site_url() . $_SERVER['REQUEST_URI'];
+$ogUrl = get_permalink();
 
 
 ?><!DOCTYPE html>
