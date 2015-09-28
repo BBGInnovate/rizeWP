@@ -3,8 +3,6 @@ jQuery(document).ready(function() {
     // create social networking pop-ups
     // link selector and pop-up window size
 
-    console.log("check out oddi custom"); 
-
     var shareConfig = {
         Link: "a.share",
         Width: 500,

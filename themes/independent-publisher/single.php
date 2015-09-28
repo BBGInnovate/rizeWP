@@ -17,7 +17,7 @@ if ( have_posts() ) {
 	//$ogImage=get_the_post_thumbnail($post->ID, 'thumbnail');
 	$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'Full' ); 
 	$ogImage = $thumb['0']; 
-	$ogDescription=get_the_excerpt();
+	$ogDescription=independent_publisher_first_sentence_excerpt(); //get_the_excerpt()
 
 	rewind_posts();
 }

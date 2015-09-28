@@ -8,6 +8,7 @@
  * @since   Independent Publisher 1.0
  */
 
+require "config_oddi.php";
 
 /* ODDI CUSTOM: several variables can be passed into the header */ 
 global $ogImage, $ogTitle, $ogDescription;
@@ -18,29 +19,34 @@ if (! isset( $pageBodyID ) ) {
 }
 
 if (! isset( $ogImage ) ) {
-	$ogImage="https://africa2.rizing.org/wp-content/uploads/2015/09/cropped-Rize-socialprofiles_500.png";
+	$ogImage=DEFAULT_IMAGE;
 }
 
 if (! isset( $ogTitle ) ) {
-	$ogTitle="AFRICA RIZING";
+	$ogTitle=DEFAULT_TITLE;
 }
 
 if (! isset( $ogDescription ) ) {
-	$ogDescription="Connecting the next generation of global influencers from across the Continent, and around the world to engage in, 'a smarter conversation'";
+	$ogDescription=DEFAULT_DESCRIPTION;
 }
 
 if (! isset( $metaAuthor ) ) {
-	$metaAuthor="";
+	$metaAuthor=DEFAULT_AUTHOR;
 }
 
 if (! isset( $metaKeywords ) ) {
-	$metaKeywords="";
+	$metaKeywords=DEFAULT_KEYWORDS;
 }
 
-//$ogUrl=get_site_url() . $_SERVER['REQUEST_URI'];
 $ogUrl = get_permalink();
+
+/* remove smart quotes from title */
 $ogTitle = iconv('UTF-8', 'ASCII//TRANSLIT', $ogTitle);  
-$ogDescription = iconv('UTF-8', 'ASCII//TRANSLIT', $ogDescription);  
+
+/* remove html tags, smart quotes and trailing ellipses from description */
+$ogDescription=wp_strip_all_tags($ogDescription); 
+$ogDescription = iconv('UTF-8', 'ASCII//TRANSLIT', $ogDescription); 
+$ogDescription = str_replace("[&hellip;]", "...", $ogDescription); 
 
 
 ?><!DOCTYPE html>
