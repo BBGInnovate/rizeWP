@@ -145,6 +145,8 @@ function my_custom_sizes( $sizes ) {
 						/*** PREPARE TWITTER AND FB SHARE URLS ****/
 						$shareLink=get_permalink();
 						$shareDesc=wp_strip_all_tags(independent_publisher_first_sentence_excerpt()); //get_the_excerpt()
+						// replace Microsoft Word version of single  and double quotations marks (“ ” ‘ ’) with  regular quotes (' and ")
+						$shareDesc = iconv('UTF-8', 'ASCII//TRANSLIT', $shareDesc);    
 						$hashtags="";
 						//$hashtags="testhashtag1,testhashtag2";
 

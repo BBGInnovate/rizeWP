@@ -39,6 +39,8 @@ if (! isset( $metaKeywords ) ) {
 
 //$ogUrl=get_site_url() . $_SERVER['REQUEST_URI'];
 $ogUrl = get_permalink();
+$ogTitle = iconv('UTF-8', 'ASCII//TRANSLIT', $ogTitle);  
+$ogDescription = iconv('UTF-8', 'ASCII//TRANSLIT', $ogDescription);  
 
 
 ?><!DOCTYPE html>
