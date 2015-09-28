@@ -143,15 +143,16 @@ and Blueprint http://www.blueprintcss.org/
 			margin-left: -220px;
 			padding-right: 20px;
 		}
-
-		.site-logo img{max-width: 100px;}
 		
 		h1.site-title {float:none;}
 
 		#masthead .site-logo{
 			float:none;
 			margin-right: 0px;
+			height: 100px;
 		}
+		#masthead .site-logo img{max-width: 120px;}
+
 		#page.site{
 			margin-top: 50px;
 		}
