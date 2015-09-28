@@ -13,6 +13,20 @@
 		 * we're on the home page AND this is not a sticky post 
 		 */ 
 		?>
+		<?php
+			/* ODDI CUSTOM: Show large image on first instance in loop */
+			$useFullThumbnail=false;
+
+			if( $wp_query->current_post == 0 && !is_paged() ) { 
+				$useFullThumbnail=true;
+			}
+
+			if ( $useFullThumbnail && has_post_thumbnail() ) { ?>
+				<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'independent-publisher' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">
+				<?php the_post_thumbnail(); ?>
+				</a>
+			<?php } ?>
+		
 		<?php if ( independent_publisher_show_full_content_first_post() && ( independent_publisher_is_very_first_standard_post() && is_home() && ! is_sticky() ) ) : ?>
 			<h2 class="entry-title-meta">
 				<span class="entry-title-meta-author"><?php independent_publisher_posted_author() ?></span> <?php echo independent_publisher_entry_meta_category_prefix() ?> <?php echo independent_publisher_post_categories( '', true ); ?>
@@ -23,6 +37,11 @@
 				<?php do_action( 'independent_publisher_entry_title_meta', $separator = ' | ' ); ?>
 			</h2>
 		<?php endif; ?>
+
+		<h5 class='entry-category'>
+			<?php echo independent_publisher_post_categories( '', true ); ?>
+		</h5>
+
 		<h1 class="entry-title">
 			<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'independent-publisher' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
 		</h1>
@@ -30,6 +49,33 @@
 	<!-- .entry-header -->
 
 	<div class="entry-content">
+
+		<?php 
+			
+			if( !$useFullThumbnail && has_post_thumbnail() ) { 
+				?>
+
+				<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'independent-publisher' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">
+
+
+				<?php
+				/* ODDI: Add thumbnail for each post in loop */
+				$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumbnail' ); 
+				$url = $thumb['0']; 
+
+				$img_id = get_post_thumbnail_id($post->ID); // This gets just the ID of the img
+				$alt_text = get_post_meta($img_id , '_wp_attachment_image_alt', true);
+
+				/*echo "<img src='$url' alt='$alt_text' class='listThumbnail'/>"; */
+				echo "<div class='listThumbnail' style='background-image: url(".$url.");'></div>"; 
+				?>
+
+				</a>
+
+				<?php
+			}
+		?>
+
 
 		<?php 
 		/* Only show excerpts for Standard post format OR Chat format,
@@ -74,9 +120,9 @@
  	 * this is not a sticky post 
  	 */
 	?>
-	<?php if ( false === get_post_format() && independent_publisher_generate_one_sentence_excerpts() && independent_publisher_is_not_first_post_full_content() && ! is_sticky() ) : ?>
+	<?php /*if ( false === get_post_format() && independent_publisher_generate_one_sentence_excerpts() && independent_publisher_is_not_first_post_full_content() && ! is_sticky() ) : ?>
 		<?php independent_publisher_continue_reading_link(); ?>
-	<?php endif; ?>
+	<?php endif; */ ?>
 
 	<footer class="entry-meta">
 
@@ -86,9 +132,10 @@
 		 */ 
 		?>
 		<?php if ( 'post' == get_post_type() && independent_publisher_is_not_first_post_full_content() ) : // post type == post conditional hides category text for Pages on Search ?>
-			<?php independent_publisher_posted_author_cats() ?>
+			<?php /*independent_publisher_posted_author_cats()*/ ?>
+			<?php independent_publisher_posted_author() ?>
 		<?php endif; ?>
-
+		<span class="sep"> | </span>
 		<?php /* Show post date when show post date option enabled */
 		?>
 		<?php if ( independent_publisher_show_date_entry_meta() ) : ?>
