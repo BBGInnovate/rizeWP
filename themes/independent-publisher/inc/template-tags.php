@@ -735,7 +735,7 @@ if ( ! function_exists( 'independent_publisher_hide_comments' ) ):
 	 * function in a Child Theme.
 	 */
 	function independent_publisher_hide_comments() {
-		return false;
+		return true;
 	}
 endif;
 
