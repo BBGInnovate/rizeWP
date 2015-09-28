@@ -258,3 +258,9 @@ function my_custom_sizes( $sizes ) {
 		}
 	}
 	add_action( 'manage_category_custom_column' , 'xg_featured_category_columns_values', 10, 3 );
+
+	function independent_publisher_stylesheet() {
+		wp_enqueue_style( 'independent-publisher-style', get_stylesheet_uri() );
+		wp_enqueue_style( 'independent-publisher-style-gigi', '/wp-content/themes/independent-publisher-child-theme/style_gigi.css', '', filemtime( get_stylesheet_directory() . '/style_gigi.css') );
+
+	}
