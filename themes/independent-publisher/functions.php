@@ -197,6 +197,10 @@ function independent_publisher_scripts() {
 		wp_enqueue_script( 'fade-post-title', get_template_directory_uri() . '/js/fade-post-title.js', array( 'jquery' ));
 	}
 
+	if ( is_singular() ) {
+		wp_enqueue_script( 'oddiCustom', get_template_directory_uri() . '/js/oddiCustom.js', array( 'jquery' ));	
+	}
+
 	/**
 	 * Load JetPack Sharing Buttons Style Enhancements
 	 */

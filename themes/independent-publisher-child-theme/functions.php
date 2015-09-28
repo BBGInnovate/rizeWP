@@ -141,6 +141,16 @@ function my_custom_sizes( $sizes ) {
 						if ( ( $post_has_cover_title_rize === '1' || $post_has_cover_title_rize === 'true' ) ) {
 							$postCoverTitleWrapperExtraClass="";
 						}
+
+						/*** PREPARE TWITTER AND FB SHARE URLS ****/
+						$shareLink=get_permalink();
+						$shareDesc=wp_strip_all_tags(independent_publisher_first_sentence_excerpt()); //get_the_excerpt()
+						$hashtags="";
+						//$hashtags="testhashtag1,testhashtag2";
+
+						$twitterURL="//twitter.com/intent/tweet?url=" . urlencode(get_permalink()) . "&text=" . urlencode($shareDesc) . "&hashtags=" . urlencode($hashtags);
+						$fbUrl="//www.facebook.com/sharer/sharer.php?u=" . urlencode(get_permalink());
+
 					?>
 						<div class="post-cover-title-wrapper <?php echo $postCoverTitleWrapperExtraClass; ?>">
 							<div class="post-cover-title-image postCoverResponsive" ></div>
@@ -153,8 +163,8 @@ function my_custom_sizes( $sizes ) {
 
 										<div id='socialPost'>
 											<ul>
-												<li class='facebook'><a href='https://facebook.com/africarizing'></a></li>
-												<li class='twitter'><a href='https://twitter.com/africarizing'></a></li>
+												<li class='facebook'><a class="share" id="facebook" href="<?php echo $fbUrl; ?>"></a></li>
+												<li class='twitter'><a class="share" id="twitter" href="<?php echo $twitterURL; ?>"></a></li>
 											</ul>
 										</div>
 
