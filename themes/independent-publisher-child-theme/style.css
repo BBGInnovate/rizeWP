@@ -60,11 +60,17 @@ and Blueprint http://www.blueprintcss.org/
 
 
 	#page {margin-top:25px;}
+	#masthead .site-logo {
+	}
 
 	#masthead .site-logo{
+		display: none;
 		float:left;
 		margin-right: 3px;
-		display: none;
+		height: 55px;
+	}
+	#masthead .site-logo img, .single-column-layout #masthead .site-logo img {
+	    max-width: 40px;
 	}
 	#masthead .site-title, .single-column-layout #masthead .site-title{
 		padding-top:20px;
@@ -80,14 +86,8 @@ and Blueprint http://www.blueprintcss.org/
 		margin-bottom:60px;
 	}
 
-		#masthead .site-logo {
-			height: 55px;
-		}
 
 	@media only screen and (max-width: 400px){
-		#masthead .site-logo img, .single-column-layout #masthead .site-logo img {
-			max-width:50px;
-		}
 		body #masthead .site-title, .single-column-layout #masthead .site-title{
 			padding:10px 0 0 0;
 		}
@@ -99,8 +99,15 @@ and Blueprint http://www.blueprintcss.org/
 	}
 
 	@media only screen and (min-width: 320px){
+		#masthead .site-logo{
+			display: block;
+		}
+	}
+	@media only screen and (min-width: 350px){
 		#menu-social {display: block;}
 	}
+
+
 
 	@media only screen and (min-width: 400px){
 		body #masthead .site-title, .single-column-layout #masthead .site-title{
@@ -108,8 +115,7 @@ and Blueprint http://www.blueprintcss.org/
 			padding-top: 10px;
 		}
 		#masthead .site-logo {
-			height: 70px;
-			display: block;
+			height: 60px;
 		}
 		#masthead .site-logo img{
 			max-width: 60px;
@@ -122,6 +128,9 @@ and Blueprint http://www.blueprintcss.org/
 			font-size: 40px;
 			line-height: 36px;
 			padding-top:15px;
+		}
+		#masthead .site-logo {
+			height: 70px;
 		}
 		.site-logo img{
 			max-width: 60px;
