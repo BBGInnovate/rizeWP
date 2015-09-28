@@ -9,7 +9,7 @@
  */
 
 
-/* ODDI CUSTOM: we need identifiers on the body */ 
+/* ODDI CUSTOM: several variables can be passed into the header */ 
 global $ogImage, $ogTitle, $ogDescription;
 global $pageBodyID, $metaAuthor, $metaKeywords;
 
@@ -37,8 +37,6 @@ if (! isset( $metaKeywords ) ) {
 	$metaKeywords="";
 }
 
-global $wp;
-//$ogUrl = add_query_arg( $wp->query_string, '', home_url( $wp->request ) ); 
 $ogUrl=get_site_url() . $_SERVER['REQUEST_URI'];
 
 
@@ -60,11 +58,19 @@ $ogUrl=get_site_url() . $_SERVER['REQUEST_URI'];
 	<meta name="author" content="<?php echo $metaAuthor; ?>" />
 
 	<!-- for Facebook -->
-	<meta property="og:title" content="<?php echo $ogTitle; ?>" />
+	<meta property="og:locale" content="en_US">
 	<meta property="og:type" content="website" />
+	<meta property="og:title" content="<?php echo $ogTitle; ?>" />
+	<meta property="og:description" content="<?php echo $ogDescription; ?>" />
 	<meta property="og:image" content="<?php echo $ogImage; ?>" />
 	<meta property="og:url" content="<?php echo $ogUrl; ?>" />
-	<meta property="og:description" content="<?php echo $ogDescription; ?>" />
+
+	<!-- for Twitter -->
+	<meta property="twitter:card" content="summary">
+	<meta property="twitter:title" content="<?php echo $ogTitle; ?>">
+	<meta property="twitter:description" content="<?php echo $ogDescription; ?>">
+	<meta property="twitter:image" content="<?php echo $ogImage; ?>">
+	<meta property="twitter:url" content="<?php echo $ogUrl; ?>">
 
 	<?php 
 		wp_head();
