@@ -31,7 +31,8 @@ if (! isset( $ogDescription ) ) {
 }
 
 global $wp;
-$ogUrl = add_query_arg( $wp->query_string, '', home_url( $wp->request ) );
+//$ogUrl = add_query_arg( $wp->query_string, '', home_url( $wp->request ) ); 
+$ogUrl=$_SERVER['REQUEST_URI'];
 
 
 ?><!DOCTYPE html>
