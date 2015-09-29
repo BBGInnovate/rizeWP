@@ -143,7 +143,7 @@
 			<?php /*independent_publisher_posted_author_cats()*/ ?>
 			<?php independent_publisher_posted_author() ?>
 		<?php endif; ?>
-		<span class="sep"> | </span>
+		<span class="sep sep-byline"> | </span>
 		<?php /* Show post date when show post date option enabled */
 		?>
 		<?php if ( independent_publisher_show_date_entry_meta() ) : ?>

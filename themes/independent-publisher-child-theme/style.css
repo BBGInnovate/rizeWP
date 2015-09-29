@@ -465,12 +465,13 @@ and Blueprint http://www.blueprintcss.org/
 		font-size: 2em;
 	}
 
-	footer.entry-meta {display:none;}
+	footer.entry-meta .sep.sep-byline{display: none;}
 
 	@media (min-width: 500px){
 		.blog article {padding: 0 0 20px 0;}
 		footer.entry-meta {display:block;}
 		footer.entry-meta .byline{display: inline-block;}
+		footer.entry-meta .sep.sep-byline{display: inline-block;}
 	}
 
 /* ------------- list view */
