@@ -4,9 +4,12 @@ themes/twentyfifteen
 plugins/advanced-custom-fields
 plugins/akismet
 plugins/hello.php
+plugins/google-analytics-track-outbound-links
 plugins/index.php
+plugins/post-types-order
 plugins/simple-embed-code
 plugins/ssl-insecure-content-fixer
+plugins/taxonomy-terms-order
 plugins/velvet-blues-update-urls
 plugins/verve-ssl
 upgrade
