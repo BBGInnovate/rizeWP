@@ -812,6 +812,9 @@ if ( ! function_exists( 'independent_publisher_post_word_count' ) ):
 		global $post;
 		$content = get_post_field( 'post_content', $post->ID );
 		$count   = str_word_count( strip_tags( $content ) );
+		$wordsPerMinute = 200;
+
+		$count = $count / $wordsPerMinute;
 
 		return number_format( $count );
 	}
