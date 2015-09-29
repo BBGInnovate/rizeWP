@@ -180,6 +180,8 @@ and Blueprint http://www.blueprintcss.org/
 		margin:0; 
 		padding:0; 
 	}
+
+
 	#footerNav ul li{
 		display: inline-block;
 		/*width: 18.5%; */
@@ -190,14 +192,29 @@ and Blueprint http://www.blueprintcss.org/
 		text-align: center; 
 		border-right: 1px dotted #CCC;
 		vertical-align: bottom;
-		background: url(/wp-content/uploads/2015/09/menu_icons.png) no-repeat center 0px;
+		background: url(/wp-content/uploads/2015/09/menu_icons_150.png) no-repeat center 0px / 35px 150px;
+		/*background: url(/wp-content/uploads/2015/09/menu_icons.png) no-repeat center 0px;*/
 	}
 	#footerNav ul li.focus{
-		background: url(/wp-content/uploads/2015/09/menu_icons.png) no-repeat center -50px;
+		background: url(/wp-content/uploads/2015/09/menu_icons_150.png) no-repeat center -50px / 35px 150px;
+		/*background: url(/wp-content/uploads/2015/09/menu_icons.png) no-repeat center -50px;*/
 	}
 	#footerNav ul li.mission{
-		background: url(/wp-content/uploads/2015/09/menu_icons.png) no-repeat center -100px;
+		background: url(/wp-content/uploads/2015/09/menu_icons_150.png) no-repeat center -100px / 35px 150px;
+		/*background: url(/wp-content/uploads/2015/09/menu_icons.png) no-repeat center -100px;*/
 	}
+
+	/* Retina-specific stuff here */
+	/*
+	@media  (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+		#footerNav ul li.focus{
+			background: url(/wp-content/uploads/2015/09/menu_icons_150.png) no-repeat center -50px;
+		}
+		#footerNav ul li.mission{
+			background: url(/wp-content/uploads/2015/09/menu_icons_150.png) no-repeat center -100px;
+		}
+	}
+	*/
 
 	#footerNav ul li:last-of-type {
 		border-right: none;
