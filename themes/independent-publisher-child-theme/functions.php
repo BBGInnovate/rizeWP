@@ -151,11 +151,24 @@ function my_custom_sizes( $sizes ) {
 						$ogDescription = iconv('UTF-8', 'ASCII//TRANSLIT', $ogDescription); //smart quotes
 						$ogDescription = str_replace("[&hellip;]", "...", $ogDescription);  
 
-						
+						//the title/headline field, followed by the URL and the author's twitter handle
+						$twitterText= "";
+						$twitterText .= get_the_title();
+						$twitterHandle = get_the_author_meta( 'twitterHandle' );
+						if ( $twitterHandle && $twitterHandle != '' ) {
+							$twitterText .= " by @" . $twitterHandle; 
+						} else {
+							$authorDisplayName=get_the_author();
+							if ($authorDisplayName && $authorDisplayName!='') {
+								$twitterText .= " by " . $authorDisplayName;
+							}
+						}
+						$twitterText .= " " . (get_permalink());
 						$hashtags="";
 						//$hashtags="testhashtag1,testhashtag2";
 
-						$twitterURL="//twitter.com/intent/tweet?url=" . urlencode(get_permalink()) . "&text=" . urlencode($ogDescription) . "&hashtags=" . urlencode($hashtags);
+						///$twitterURL="//twitter.com/intent/tweet?url=" . urlencode(get_permalink()) . "&text=" . urlencode($ogDescription) . "&hashtags=" . urlencode($hashtags);
+						$twitterURL="//twitter.com/intent/tweet?text=" . urlencode($twitterText);
 						$fbUrl="//www.facebook.com/sharer/sharer.php?u=" . urlencode(get_permalink());
 
 					?>
