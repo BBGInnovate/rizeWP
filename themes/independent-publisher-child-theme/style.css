@@ -338,6 +338,9 @@ and Blueprint http://www.blueprintcss.org/
 	h5.entry-category a{
 		float: left;
 	}
+
+	/*Social links in posts*/
+
 	.single.post-cover-overlay-post-title #socialPost ul, .single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow #socialPost ul {
 		position: relative;
 		display: block;
@@ -355,25 +358,25 @@ and Blueprint http://www.blueprintcss.org/
 		height: 30px; 
 		padding:0;
     	color: #BBC7D3;
-	}	
+	}
+
 	#socialPost ul li a:hover{
 		text-decoration: none;
-    	color: #999;
 	}
 	#socialPost ul li.facebook a::after{
 		font-family: 'Genericons';
 		font-size: 30px;
 	    content: '\f203';
     	vertical-align: top;
+    	color: #3b5998;/*facebook*/
     }
 	#socialPost ul li.twitter a::after{
 		font-family: 'Genericons';
 		font-size: 30px;
 	    content: '\f202';
     	vertical-align: top;
+    	color: #55acee;/*twitter*/
     }
-
-
 	@media (min-width: 700px){
 		#socialPost{
 		}
@@ -381,14 +384,46 @@ and Blueprint http://www.blueprintcss.org/
 			opacity: 1;
 			position: fixed;
 			top: 250px;
-			right:10px;
+			right:0;
+
+			padding: 5px 15px 8px 10px;
+			background-color: #FFF;
+			border-radius: 10px 0px 0px 10px;
+			box-shadow: 0px 0px 3px #999;
 		}
+		.single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow #socialPost ul {
+			position: relative;
+			top: 0;
+			padding: 0;
+			background-color: transparent;
+			border-radius: none;
+			box-shadow: none;
+		}
+
+		/* Adding styling for :before label of "SHARE" */
+		.single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow #socialPost ul {
+			color:#999;
+			font-family: Arial, sans-serif;
+			font-weight: bold;
+			font-size:12px;
+			top: 5px;
+		}
+		.single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow #socialPost ul:before{
+			content: 'SHARE';
+		}
+		.single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow #socialPost ul li{
+			margin-top: -15px;
+		}
+
 		.single.post-cover-overlay-post-title #socialPost ul li{
 			display: block; 
 			margin: 0 0 10px 0;
 			width: 30px; 
 			height: 30px; 
 		}
+
+
+
 	}
 	@media (min-width: 1024px) {
 		.single.post-cover-overlay-post-title #socialPost ul {
@@ -414,6 +449,10 @@ and Blueprint http://www.blueprintcss.org/
 	.blog .first-post img{
 		margin: 0;
 	}
+
+.post-excerpts h1.entry-title, .enhanced-excerpts .first-post h1.entry-title{
+	font-size: 2em;
+}
 
 	footer.entry-meta {display:none;}
 
