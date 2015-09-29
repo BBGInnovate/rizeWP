@@ -91,7 +91,7 @@ class Featured_Post
         $post_type = ((isset($_GET['post_type']) && $_GET['post_type'] != "") ? $_GET['post_type'] : 'post');
         $count = $this->total_featured($post_type);
         $class = @$_GET['post_status'] == 'featured' ? "current" : '';
-        $views['featured'] = "<a class=\"" . $class . "\" id=\"featured-post-filter\" href=\"edit.php?&post_status=featured&post_type={$post_type}\">Featured <span class=\"count\">({$count})</span></a>";
+        $views['featured'] = "<a class=\"" . $class . "\" id=\"featured-post-filter\" href=\"edit.php?&post_status=featured&post_type={$post_type}\">In Focus <span class=\"count\">({$count})</span></a>";
         return $views;
     }
     function total_featured($post_type = "post") {
