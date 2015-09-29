@@ -18,7 +18,7 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="content" class="site-content pagePostByCategory" role="main">
-			<p><em>Here are the topics we're focused on covering right now.</em></p>
+			<p class="summary">Here are the topics we're focused on covering right now.</p>
 			<?php
 				// get all the categories from the database
 				$cats = get_categories();

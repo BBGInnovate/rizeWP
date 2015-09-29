@@ -24,8 +24,9 @@ get_header(); ?>
 
 			<?php if ( have_posts() ) : ?>
 
-				<header class="page-header">
-					<h1 class="page-title">
+				<!--<header class="page-header">-->
+
+					<h4 class="page-title category">
 						<?php
 						if ( is_category() ) {
 							printf( '%s', '<span>' . single_cat_title( '', false ) . '</span>' );
@@ -78,7 +79,7 @@ get_header(); ?>
 
 						}
 						?>
-					</h1>
+					</h4>
 					<?php
 					if ( is_category() ) {
 						// Show an optional category description
@@ -88,9 +89,9 @@ get_header(); ?>
 						$taxonomy_stats = apply_filters( 'independent_publisher_taxonomy_category_stats', independent_publisher_taxonomy_archive_stats( 'category' ) );
 
 						if ( ! empty( $category_description ) ) { // show the description + the taxonomy stats
-							echo apply_filters( 'category_archive_meta', '<div class="taxonomy-description">' . $category_description . $taxonomy_stats . '</div>' );
+							echo apply_filters( 'category_archive_meta', '<div class="taxonomy-description summary">' . $category_description  . '</div>' );
 						} else { // there was description set, so let's just show some stats
-							echo apply_filters( 'category_archive_meta', '<div class="taxonomy-description">' . $taxonomy_stats . '</div>' );
+							/* echo apply_filters( 'category_archive_meta', '<div class="taxonomy-description">' . $taxonomy_stats . '</div>' );*/
 						}
 
 					} elseif ( is_tag() ) {
@@ -110,7 +111,7 @@ get_header(); ?>
 					}
 					?>
 					<?php independent_publisher_content_nav( 'nav-above' ); ?>
-				</header><!-- .page-header -->
+				<!--</header> --><!-- .page-header -->
 
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>

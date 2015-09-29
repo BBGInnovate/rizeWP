@@ -57,7 +57,7 @@ and Blueprint http://www.blueprintcss.org/
 	#page.site{
 		margin-top: 10px;
 	}
-
+	.summary{font-style: italic;}
 
 	#page {margin-top:25px;}
 	#masthead .site-logo {
@@ -207,12 +207,6 @@ and Blueprint http://www.blueprintcss.org/
 	/* Retina-specific stuff here */
 	/*
 	@media  (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
-		#footerNav ul li.focus{
-			background: url(/wp-content/uploads/2015/09/menu_icons_150.png) no-repeat center -50px;
-		}
-		#footerNav ul li.mission{
-			background: url(/wp-content/uploads/2015/09/menu_icons_150.png) no-repeat center -100px;
-		}
 	}
 	*/
 
