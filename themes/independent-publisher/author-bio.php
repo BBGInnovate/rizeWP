@@ -16,6 +16,14 @@
 			<?php if ( get_the_author_meta( 'description' ) ) : ?>
 				<?php the_author_meta( 'description' ); ?>
 			<?php endif; ?>
+			<?php 
+				/* ODDI CUSTOM: add twitter handle to bio */
+				$twitterHandle = get_the_author_meta( 'twitterHandle' );
+				if ( $twitterHandle && $twitterHandle != '' ) {
+					$twitterHandle=str_replace("@", "", $twitterHandle);
+					echo '<div id="authorTwitter"><a href="//www.twitter.com/' . $twitterHandle. '">@' . $twitterHandle . '</a></div>';
+				}
+			?>
 		</p>
 	</div>
 	<!-- .author-description -->
