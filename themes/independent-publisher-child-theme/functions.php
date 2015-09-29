@@ -221,8 +221,16 @@ function my_custom_sizes( $sizes ) {
 	}
 
 
+	/***** enqueue two stylesheets for easier collaboration temporarily */
+	function independent_publisher_stylesheet() {
+		wp_enqueue_style( 'independent-publisher-style', get_stylesheet_uri() );
+		wp_enqueue_style( 'independent-publisher-style-gigi', '/wp-content/themes/independent-publisher-child-theme/style_gigi.css', '', filemtime( get_stylesheet_directory() . '/style_gigi.css') );
+
+	}
+
+
 	/***** ODDI CUSTOM - HOOK INTO CATEGORY MANAGEMENT FORM TO ALLOW USERS TO SPECIFY THAT A CATEGORY IS FEATURED */
-	//http://php.quicoto.com/add-metadata-categories-wordpress/
+	//taken from http://php.quicoto.com/add-metadata-categories-wordpress/
 	function xg_edit_featured_category_field( $term ){
 		//http://php.quicoto.com/add-metadata-categories-wordpress/
 		$term_id = $term->term_id;
@@ -276,8 +284,14 @@ function my_custom_sizes( $sizes ) {
 	}
 	add_action( 'manage_category_custom_column' , 'xg_featured_category_columns_values', 10, 3 );
 
-	function independent_publisher_stylesheet() {
-		wp_enqueue_style( 'independent-publisher-style', get_stylesheet_uri() );
-		wp_enqueue_style( 'independent-publisher-style-gigi', '/wp-content/themes/independent-publisher-child-theme/style_gigi.css', '', filemtime( get_stylesheet_directory() . '/style_gigi.css') );
-
+	/*===================================================================================
+	 * Add Author Metadata - found @ http://www.paulund.co.uk/how-to-display-author-bio-with-wordpress
+	 * =================================================================================*/
+	function add_to_author_profile( $contactmethods ) {
+		$contactmethods['twitterHandle'] = 'Twitter Handle';
+		//$contactmethods['linkedin_profile'] = 'Linkedin Profile URL'; 
+		return $contactmethods;
 	}
+	add_filter( 'user_contactmethods', 'add_to_author_profile', 10, 1);
+
+
