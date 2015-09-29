@@ -450,9 +450,9 @@ and Blueprint http://www.blueprintcss.org/
 		margin: 0;
 	}
 
-.post-excerpts h1.entry-title, .enhanced-excerpts .first-post h1.entry-title{
-	font-size: 2em;
-}
+	.post-excerpts .first-post h1.entry-title, .enhanced-excerpts .first-post h1.entry-title{
+		font-size: 2em;
+	}
 
 	footer.entry-meta {display:none;}
 
