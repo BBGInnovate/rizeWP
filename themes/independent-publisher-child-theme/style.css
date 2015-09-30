@@ -627,6 +627,7 @@ and Blueprint http://www.blueprintcss.org/
 /* in focus styles ------------- */
 #inFocus.page h1.entry-title{
 	font-size: 1.2em;
+	line-height: 1.3em;
 	padding:10px 0 0 0;
 	width: 100%;
 	margin:10px 0 0 0;
@@ -635,14 +636,19 @@ and Blueprint http://www.blueprintcss.org/
 }
 #inFocus.page article:first-of-type h1.entry-title{
 	font-size: 1.8em;
+	line-height: 1em;
 	padding:10px 0 0 0;
 	margin:10px 0 10px 0;
 	letter-spacing: 0;
     font-weight: bold;
 }
+#inFocus .entry-content a:hover{
+	text-decoration: none;
+}
 
 #inFocus.page article {
     padding: 0 0 10px 0;
+    border-bottom: 1px solid #CCC;
 }
 
 #inFocus .entry-content, .entry-summary {
