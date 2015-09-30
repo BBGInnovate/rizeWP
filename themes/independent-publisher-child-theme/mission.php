@@ -27,7 +27,7 @@ get_header(); ?>
 
 <p>At Africa Rizing, our mission is to connect the next generation of global influencers from across the Continent, throughout the diaspora and around the world. Together we will discover new voices and amplify new ideas that result in lasting change.</p>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Qn6FRPWzW-0" class='youtubeVideo' frameborder="0" allowfullscreen></iframe>
+<iframe width="100%" height="395" src="https://www.youtube.com/embed/Qn6FRPWzW-0" class='youtubeVideo' frameborder="0" allowfullscreen></iframe>
 
 <h3>Connect with us</h3>
 Africa Rizing brings you new forms of digital storytelling across social media networks. By connecting you to our team of digital journalists, designers and developers, our goal is to include the audience in our collaborative, iterative approach to telling the stories that matter to you.
