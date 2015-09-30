@@ -19,7 +19,7 @@
 			/* ODDI CUSTOM: Show large image on first instance in loop */
 			$useFullThumbnail=false;
 			$useSmallThumbnail=true;
-			if ( ($wp_query->current_post == 0 && !is_paged()) ||
+			if ( ($pageBodyID!="inFocus" && ($wp_query->current_post == 0 && !is_paged())) ||
 				 ($pageBodyID=="inFocus" && $featuredInFocusPostID == $post->ID)
 			   ) { 
 				$useFullThumbnail=true;
