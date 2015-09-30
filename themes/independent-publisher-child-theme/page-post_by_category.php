@@ -13,7 +13,7 @@
  * @since   Independent Publisher 1.0
  */
 
-echo "this page is deprecated.  go to in-focus!"; die();
+echo "<h1>THIS PAGE HAS MOVED TO IN-FOCUS</h1>"; die();
 
 $pageBodyID = "pagePostByCategory";
 get_header(); ?>
