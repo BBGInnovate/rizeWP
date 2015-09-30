@@ -192,6 +192,8 @@ and Blueprint http://www.blueprintcss.org/
 		text-align: center; 
 		border-right: 1px dotted #CCC;
 		vertical-align: bottom;
+	}
+	#footerNav ul li.home{
 		background: url(/wp-content/uploads/2015/09/menu_icons_150.png) no-repeat center 0px / 35px 150px;
 		/*background: url(/wp-content/uploads/2015/09/menu_icons.png) no-repeat center 0px;*/
 	}
@@ -205,8 +207,8 @@ and Blueprint http://www.blueprintcss.org/
 	}
 
 	/* Hightlight the footer nav for the current page */
-	#frontPage #footerNav ul li{
-		background: url(/wp-content/uploads/2015/09/menu_icons_150.png) no-repeat center 0px / 35px 150px;
+	#frontPage #footerNav ul li.home{
+		background: url(/wp-content/uploads/2015/09/menu_icons_selected.png) no-repeat center 0px / 35px 150px;
 	}
 
 	#inFocus #footerNav ul li.focus{
