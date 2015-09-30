@@ -110,7 +110,10 @@ get_header(); ?>
 						echo independent_publisher_date_archive_description();
 					}
 					?>
-					<?php independent_publisher_content_nav( 'nav-above' ); ?>
+					<?php 
+						
+						//independent_publisher_content_nav( 'nav-above' ); 
+					?>
 				<!--</header> --><!-- .page-header -->
 
 				<?php /* Start the Loop */ ?>
