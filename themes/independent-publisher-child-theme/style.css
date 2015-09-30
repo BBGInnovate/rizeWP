@@ -77,6 +77,10 @@ and Blueprint http://www.blueprintcss.org/
 		font-size: 30px;
 	}
 
+	.clearAll{
+		clear:both;
+	}
+
 	/*links inside of posts are green */
 	.single p a{color: #57ad68;}
 
@@ -195,15 +199,12 @@ and Blueprint http://www.blueprintcss.org/
 	}
 	#footerNav ul li.home{
 		background: url(/wp-content/uploads/2015/09/menu_icons_150.png) no-repeat center 0px / 35px 150px;
-		/*background: url(/wp-content/uploads/2015/09/menu_icons.png) no-repeat center 0px;*/
 	}
 	#footerNav ul li.focus{
 		background: url(/wp-content/uploads/2015/09/menu_icons_150.png) no-repeat center -50px / 35px 150px;
-		/*background: url(/wp-content/uploads/2015/09/menu_icons.png) no-repeat center -50px;*/
 	}
 	#footerNav ul li.mission{
 		background: url(/wp-content/uploads/2015/09/menu_icons_150.png) no-repeat center -100px / 35px 150px;
-		/*background: url(/wp-content/uploads/2015/09/menu_icons.png) no-repeat center -100px;*/
 	}
 
 	/* Hightlight the footer nav for the current page */
@@ -214,6 +215,11 @@ and Blueprint http://www.blueprintcss.org/
 	#inFocus #footerNav ul li.focus{
 		background: url(/wp-content/uploads/2015/09/menu_icons_selected.png) no-repeat center -50px / 35px 150px;
 	}
+
+	#pageMission #footerNav ul li.mission{
+		background: url(/wp-content/uploads/2015/09/menu_icons_selected.png) no-repeat center -100px / 35px 150px;
+	}
+
 
 
 
@@ -357,6 +363,8 @@ and Blueprint http://www.blueprintcss.org/
 		float: left;
 	}
 
+
+
 	/*Social links in posts*/
 
 	.single.post-cover-overlay-post-title #socialPost ul, .single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow #socialPost ul {
@@ -455,6 +463,7 @@ and Blueprint http://www.blueprintcss.org/
 
 
 /* list view specific styles ----------- */
+
 	.blog article {padding: 5px 0;}
 
 	.post .entry-content a p {
@@ -488,6 +497,7 @@ and Blueprint http://www.blueprintcss.org/
 
 
 /* Category styles  -----------*/
+
 	.home h5.entry-category, .category h5.entry-category, .archive h5.entry-category {
 		padding-bottom:12px;
 	}
@@ -507,7 +517,6 @@ and Blueprint http://www.blueprintcss.org/
 
 	article h5.entry-category a{
 		background-color: transparent; 
-		/*color: #999;*/ 
 		color: orange; 
 		padding: 0; 
 		text-transform: uppercase; 
@@ -615,6 +624,7 @@ and Blueprint http://www.blueprintcss.org/
 
 /* page by category post */
 
+/*
 #page .pagePostByCategory article {padding-bottom:0;}
 .categoryContainer{margin-bottom: 50px;}
 
@@ -704,6 +714,7 @@ and Blueprint http://www.blueprintcss.org/
 		display: block;
 	}
 }
+*/
 
 /* customizer CSS stuff */
 a, a:visited, a:hover, a:focus, a:active { color:#57ad68; }
