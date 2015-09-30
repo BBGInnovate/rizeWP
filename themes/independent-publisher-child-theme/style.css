@@ -204,11 +204,16 @@ and Blueprint http://www.blueprintcss.org/
 		/*background: url(/wp-content/uploads/2015/09/menu_icons.png) no-repeat center -100px;*/
 	}
 
-	/* Retina-specific stuff here */
-	/*
-	@media  (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+	/* Hightlight the footer nav for the current page */
+	#frontPage #footerNav ul li{
+		background: url(/wp-content/uploads/2015/09/menu_icons_150.png) no-repeat center 0px / 35px 150px;
 	}
-	*/
+
+	#inFocus #footerNav ul li.focus{
+		background: url(/wp-content/uploads/2015/09/menu_icons_selected.png) no-repeat center -50px / 35px 150px;
+	}
+
+
 
 	#footerNav ul li:last-of-type {
 		border-right: none;

@@ -27,10 +27,6 @@
 		<ul>
 			<li class='home'><a href='/'>home</a></li>
 			<li class='focus'><a href='/index.php/in-focus/'>in focus</a></li>
-			<!--
-			<li><a href='https://www.facebook.com/africarizing'>facebook</a></li>
-			<li><a href='https://twitter.com/africarizing'>twitter</a></li>
-		-->
 			<li class='mission'><a href='/index.php/about/'>mission</a></li>
 		</ul>
 	</div>
