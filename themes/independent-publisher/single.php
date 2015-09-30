@@ -14,6 +14,9 @@ if ( have_posts() ) {
 
 	$metaAuthor= get_the_author() . ": Africa Rizing Bio"; 
 	$ogTitle=get_the_title();
+
+	$metaKeywords= strip_tags(get_the_tag_list('',', ',''));
+
 	//$ogImage=get_the_post_thumbnail($post->ID, 'thumbnail');
 	$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'Full' ); 
 	$ogImage = $thumb['0']; 
