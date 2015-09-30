@@ -81,6 +81,9 @@ $ogDescription = str_replace("[&hellip;]", "...", $ogDescription);
 	<meta property="twitter:image" content="<?php echo $ogImage; ?>">
 	<meta property="twitter:url" content="<?php echo $ogUrl; ?>">
 
+	<!-- other og:tags -->
+	<meta property="og:site_name" content="<?php echo get_bloginfo('name'); ?>" />
+
 	<?php 
 		wp_head();
 	?>
