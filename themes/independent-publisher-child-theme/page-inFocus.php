@@ -30,8 +30,6 @@ get_header(); ?>
 				endwhile; endif; // done our wordpress loop. Will start again for each category 
 				rewind_posts();
 
-				echo 'after the feature';
-
 				$postNumInCategory=0;
 				$counter=0;
 				if (have_posts()) : while (have_posts()) : 
