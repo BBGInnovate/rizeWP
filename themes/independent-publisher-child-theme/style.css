@@ -480,6 +480,9 @@ and Blueprint http://www.blueprintcss.org/
 	.post-excerpts .first-post h1.entry-title, .enhanced-excerpts .first-post h1.entry-title{
 		font-size: 2em;
 	}
+	.post-excerpts h1.entry-title, .enhanced-excerpts h1.entry-title {
+		font-size: 1.6em;
+	}
 
 	footer.entry-meta .sep.sep-byline{display: none;}
 
@@ -618,8 +621,6 @@ and Blueprint http://www.blueprintcss.org/
 		color: #999;
 	}
 /* ------------- staff styles */
-
-
 
 
 

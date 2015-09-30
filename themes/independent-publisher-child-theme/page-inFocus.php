@@ -13,7 +13,7 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="content" class="site-content" role="main">
-			<p><em>Here are the topics we're focused on covering right now.</em></p>
+			<p><em>Here are the stories we're focused on covering right now.</em></p>
 			<?php
 				//$query_string."&featured=yes"
 				query_posts("posts_per_page=10&orderby=post_date&order=desc&featured=yes"); 
