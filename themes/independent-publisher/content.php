@@ -1,10 +1,39 @@
 <?php
-/**
- * @package Independent Publisher
- * @since   Independent Publisher 1.0
- */
+	/**
+	 * @package Independent Publisher
+	 * @since   Independent Publisher 1.0
+	 */
+
+	global $pageBodyID; 
+	global $featuredInFocusPostID;
+
+	/* ODDI CUSTOM: Show large image on first instance in loop */
+	$useFullThumbnail=false;
+	$useSmallThumbnail=true;
+	if ( ($pageBodyID!="inFocus" && ($wp_query->current_post == 0 && !is_paged())) ||
+		 ($pageBodyID=="inFocus" && $featuredInFocusPostID == $post->ID)
+	   ) { 
+		$useFullThumbnail=true;
+		$useSmallThumbnail=false;
+	}
+	/* don't use small thumbnail on the in focus page */
+	if ($pageBodyID=="inFocus") {
+		$useSmallThumbnail=false;
+	}
+
+	$eliminateExcerptAndFullText=false;  
+	if ($pageBodyID=="inFocus" && $post->ID != $featuredInFocusPostID) {
+		$eliminateExcerptAndFullText=true;
+	}
+
+	$customClass="";
+	if ($pageBodyID=="inFocus" && $featuredInFocusPostID == $post->ID) {
+		$customClass="inFocusSticky";
+	}
+
+
 ?>
-<article id="post-<?php the_ID(); ?>" <?php independent_publisher_post_classes(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php independent_publisher_post_classes($customClass); ?>>
 	<header class="entry-header">
 		<?php 
 		/* Show entry title meta only when 
@@ -12,28 +41,10 @@
 		 * this is the very first standard post AND 
 		 * we're on the home page AND this is not a sticky post 
 		 */ 
-			global $pageBodyID; 
-			global $featuredInFocusPostID;
+			
 		?>
 		<?php
-			/* ODDI CUSTOM: Show large image on first instance in loop */
-			$useFullThumbnail=false;
-			$useSmallThumbnail=true;
-			if ( ($pageBodyID!="inFocus" && ($wp_query->current_post == 0 && !is_paged())) ||
-				 ($pageBodyID=="inFocus" && $featuredInFocusPostID == $post->ID)
-			   ) { 
-				$useFullThumbnail=true;
-				$useSmallThumbnail=false;
-			}
-			/* don't use small thumbnail on the in focus page */
-			if ($pageBodyID=="inFocus") {
-				$useSmallThumbnail=false;
-			}
-
-			$eliminateExcerptAndFullText=false;  
-			if ($pageBodyID=="inFocus" && $post->ID != $featuredInFocusPostID) {
-				$eliminateExcerptAndFullText=true;
-			}
+			
 
 			if ( $useFullThumbnail && has_post_thumbnail() ) { ?>
 				<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'independent-publisher' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">

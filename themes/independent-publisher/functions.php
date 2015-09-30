@@ -1030,10 +1030,13 @@ endif;
 /**
  * Add classes to article based on current theme settings
  */
-function independent_publisher_post_classes() {
+function independent_publisher_post_classes($customClasses) {
 	global $wp_query;
 
-	if ( independent_publisher_show_full_content_first_post() &&
+
+	if ( $customClasses && $customClasses != '') {
+		post_class( $customClasses); //oddi custom
+	} elseif ( independent_publisher_show_full_content_first_post() &&
 		 ( independent_publisher_is_very_first_standard_post() &&
 		   is_home() &&
 		   ! is_sticky()
