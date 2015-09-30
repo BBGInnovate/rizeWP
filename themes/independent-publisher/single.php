@@ -22,7 +22,7 @@ if ( have_posts() ) {
 	rewind_posts();
 }
 
-
+$pageBodyID="postDetail";
 get_header(); ?>
 
 	<div id="primary" class="content-area">

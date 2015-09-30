@@ -23,7 +23,7 @@ if ( have_posts() ) {
 
 	rewind_posts();
 }
-
+$pageBodyID="authorPage";
 get_header(); ?>
 
 	<section id="primary" class="content-area">

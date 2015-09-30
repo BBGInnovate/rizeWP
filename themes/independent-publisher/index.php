@@ -12,6 +12,7 @@
  * @since   Independent Publisher 1.0
  */
 
+$pageBodyID="frontPage";
 get_header(); ?>
 
 	<div id="primary" class="content-area">
