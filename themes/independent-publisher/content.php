@@ -12,13 +12,27 @@
 		 * this is the very first standard post AND 
 		 * we're on the home page AND this is not a sticky post 
 		 */ 
+			global $pageBodyID; 
+			global $featuredInFocusPostID;
 		?>
 		<?php
 			/* ODDI CUSTOM: Show large image on first instance in loop */
 			$useFullThumbnail=false;
-
-			if( $wp_query->current_post == 0 && !is_paged() ) { 
+			$useSmallThumbnail=true;
+			if ( ($wp_query->current_post == 0 && !is_paged()) ||
+				 ($pageBodyID=="inFocus" && $featuredInFocusPostID == $post->ID)
+			   ) { 
 				$useFullThumbnail=true;
+				$useSmallThumbnail=false;
+			}
+			/* don't use small thumbnail on the in focus page */
+			if ($pageBodyID=="inFocus") {
+				$useSmallThumbnail=false;
+			}
+
+			$eliminateExcerptAndFullText=false;  
+			if ($pageBodyID=="inFocus" && $post->ID != $featuredInFocusPostID) {
+				$eliminateExcerptAndFullText=true;
 			}
 
 			if ( $useFullThumbnail && has_post_thumbnail() ) { ?>
@@ -27,7 +41,9 @@
 				</a>
 			<?php } ?>
 		
-		<?php if ( independent_publisher_show_full_content_first_post() && ( independent_publisher_is_very_first_standard_post() && is_home() && ! is_sticky() ) ) : ?>
+		<?php 
+
+		if ( independent_publisher_show_full_content_first_post() && ( independent_publisher_is_very_first_standard_post() && is_home() && ! is_sticky() ) ) : ?>
 			<h2 class="entry-title-meta">
 				<span class="entry-title-meta-author"><?php independent_publisher_posted_author() ?></span> <?php echo independent_publisher_entry_meta_category_prefix() ?> <?php echo independent_publisher_post_categories( '', true ); ?>
 				<span class="entry-title-meta-post-date">
@@ -60,7 +76,7 @@
 
 		<?php 
 			
-			if( !$useFullThumbnail && has_post_thumbnail() ) { 
+			if( $useSmallThumbnail && has_post_thumbnail() ) { 
 				?>
 
 				<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'independent-publisher' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">
@@ -92,31 +108,34 @@
 		 * this is not the very first standard post when Show Full Content First Post enabled 
 		 */
 		?>
-		<?php if ( ( ! get_post_format() || 'chat' === get_post_format() ) &&
-				   ( ! ( independent_publisher_is_very_first_standard_post() && is_sticky() ) ) &&
-				   ( independent_publisher_use_post_excerpts() || independent_publisher_generate_one_sentence_excerpts() ) &&
-				   ( ! ( independent_publisher_show_full_content_first_post() && independent_publisher_is_very_first_standard_post() && is_home() ) )
-		) :
-			?>
 
-			<?php the_excerpt(); ?>
+		<?php if (! $eliminateExcerptAndFullText ) : ?>	
+			<?php if ( ( ! get_post_format() || 'chat' === get_post_format() ) &&
+					   ( ! ( independent_publisher_is_very_first_standard_post() && is_sticky() ) ) &&
+					   ( independent_publisher_use_post_excerpts() || independent_publisher_generate_one_sentence_excerpts() ) &&
+					   ( ! ( independent_publisher_show_full_content_first_post() && independent_publisher_is_very_first_standard_post() && is_home() ) )
+			) :
+				?>
 
-		<?php
-		else : ?>
+				<?php the_excerpt(); ?>
 
-			<?php /* Only show featured image for Standard post and gallery post formats */ ?>
-			<?php if ( has_post_thumbnail() && in_array( get_post_format(), array( 'gallery', false ) ) ) : ?>
-				<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'independent_publisher' ), the_title_attribute( 'echo=0' ) ) ); ?>"><?php the_post_thumbnail( 'independent_publisher_post_thumbnail' ); ?></a>
+			<?php
+			else : ?>
+
+				<?php /* Only show featured image for Standard post and gallery post formats */ ?>
+				<?php if ( has_post_thumbnail() && in_array( get_post_format(), array( 'gallery', false ) ) ) : ?>
+					<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'independent_publisher' ), the_title_attribute( 'echo=0' ) ) ); ?>"><?php the_post_thumbnail( 'independent_publisher_post_thumbnail' ); ?></a>
+				<?php endif; ?>
+
+				<?php the_content( independent_publisher_continue_reading_text() ); ?>
+				<?php wp_link_pages(
+					array(
+						'before' => '<div class="page-links">' . __( 'Pages:', 'independent-publisher' ),
+						'after'  => '</div>'
+					)
+				); ?>
+
 			<?php endif; ?>
-
-			<?php the_content( independent_publisher_continue_reading_text() ); ?>
-			<?php wp_link_pages(
-				array(
-					'before' => '<div class="page-links">' . __( 'Pages:', 'independent-publisher' ),
-					'after'  => '</div>'
-				)
-			); ?>
-
 		<?php endif; ?>
 	</div>
 	<!-- .entry-content -->

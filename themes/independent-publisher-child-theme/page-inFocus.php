@@ -19,12 +19,12 @@ get_header(); ?>
 				query_posts("posts_per_page=10&orderby=post_date&order=desc&featured=yes"); 
 				
 				/* determine whether any of these posts are pinned */
-				$featuredPostID=0;
+				$featuredInFocusPostID=0;
 				if (have_posts()) : while (have_posts()) : 
 					the_post();
 					$isPinnedFocusPost = get_post_meta(get_the_ID(), 'pinned_in_focus_post', true);
         			if ( ( $isPinnedFocusPost === '1' || $isPinnedFocusPost === 'true' ) ) {
-						$featuredPostID=get_the_ID();
+						$featuredInFocusPostID=get_the_ID();
 						get_template_part( 'content', get_post_format() );
 					}
 				endwhile; endif; // done our wordpress loop. Will start again for each category 
@@ -34,7 +34,7 @@ get_header(); ?>
 				$counter=0;
 				if (have_posts()) : while (have_posts()) : 
 					the_post(); 
-					if ($featuredPostID != get_the_ID()) {
+					if ($featuredInFocusPostID != get_the_ID()) {
 						$counter=$counter+1;
 						if ($counter<5) {
 							get_template_part( 'content', get_post_format() );	
