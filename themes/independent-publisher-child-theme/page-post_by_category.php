@@ -13,8 +13,11 @@
  * @since   Independent Publisher 1.0
  */
 
+echo "this page is deprecated.  go to in-focus!"; die();
+
 $pageBodyID = "pagePostByCategory";
 get_header(); ?>
+
 
 	<div id="primary" class="content-area">
 		<main id="content" class="site-content pagePostByCategory" role="main">
@@ -97,7 +100,7 @@ get_header(); ?>
 								
 							?>
 									
-									<article id="post-<?php the_ID(); ?>" <?php independent_publisher_post_classes(); ?>>
+									<article id="post-<?php the_ID(); ?>" <?php independent_publisher_post_classes(''); ?>>
 										<header class="entry-header">
 											<?php 
 											/* Show entry title meta only when 

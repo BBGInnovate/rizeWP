@@ -26,7 +26,7 @@
 	<div class='maxWidth1200'>
 		<ul>
 			<li class='home'><a href='/'>home</a></li>
-			<li class='focus'><a href='/index.php/matters/'>in focus</a></li>
+			<li class='focus'><a href='/index.php/in-focus/'>in focus</a></li>
 			<!--
 			<li><a href='https://www.facebook.com/africarizing'>facebook</a></li>
 			<li><a href='https://twitter.com/africarizing'>twitter</a></li>
