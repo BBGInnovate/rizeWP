@@ -15,7 +15,7 @@
 
 ?>
 
-<div style='background:url(https://africa2.rizing.org/wp-content/uploads/2015/08/background.jpg) center center/cover; width: 100%; height: 400px;'></div>
+<div style='' id='missionBackground'></div>
 
 <?php
 $pageBodyID = "pageMission";
@@ -51,7 +51,9 @@ Being active in the communities we cover is at the core of Africa Rizing and our
 
 <div class='member'>
 	<div class='photo' style='background:#FFF url(../../wp-content/uploads/2015/08/mugshot_victoria_okoye.jpg) center center; background-size: cover;'>
+		<a href='/index.php/author/vokoye/'>
 		<img src='../../wp-content/uploads/2015/08/transparentSquare.png' class='square'/>
+		</a>
 	</div>
 	<div class='profile'>
 		<h4>Victoria Okoye</h4>
@@ -62,7 +64,9 @@ Being active in the communities we cover is at the core of Africa Rizing and our
 
 <div class='member'>
 	<div class='photo' style='background:#FFF url(../../wp-content/uploads/2015/08/mugshot_melb4freepress.jpg) center center; background-size: cover;'>
+		<a href='/index.php/author/mbailey/'>
 		<img src='../../wp-content/uploads/2015/08/transparentSquare.png' class='square'/>
+		</a>
 	</div>
 	<div class='profile'>
 		<h4>Mel Bailey</h4>
@@ -73,7 +77,9 @@ Being active in the communities we cover is at the core of Africa Rizing and our
 
 <div class='member'>
 	<div class='photo' style='background:#FFF url(../../wp-content/uploads/2015/08/mugshot_coraliesl.jpg) center center; background-size: cover;'>
+		<a href='/index.php/author/csaintlouis/'>
 		<img src='../../wp-content/uploads/2015/08/transparentSquare.png' class='square'/>
+		</a>
 	</div>
 	<div class='profile'>
 		<h4>Coralie Saint-Louis</h4>
@@ -84,7 +90,9 @@ Being active in the communities we cover is at the core of Africa Rizing and our
 
 <div class='member'>
 	<div class='photo' style='background:#FFF url(../../wp-content/uploads/2015/09/mugshot_eonwona.jpg) center center; background-size: cover;'>
+		<a href='/index.php/author/eonwona/'>
 		<img src='../../wp-content/uploads/2015/08/transparentSquare.png' class='square'/>
+		</a>
 	</div>
 	<div class='profile'>
 		<h4>Eunice Onwona</h4>
@@ -107,7 +115,13 @@ Being active in the communities we cover is at the core of Africa Rizing and our
 <div class='clearAll'></div>
 <div id="creativeCommons"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><br />This work by <a xmlns:cc="http://creativecommons.org/ns#" href="http://africa.rizing.org" property="cc:attributionName" rel="cc:attributionURL">Africa Rizing</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</div>
 
-<style>	#map-rize{width:100%; height: 300px; margin-top: 25px;} h1.entry-title{display:none !important;}</style>
+<style>	
+#map-rize{width:100%; height: 300px; margin-top: 25px;} h1.entry-title{display:none !important;}
+#missionBackground{width: 100%; height: 300px; background:url(https://africa2.rizing.org/wp-content/uploads/2015/08/background.jpg) center center/cover;}
+@media only screen and (min-width: 700px) {
+#missionBackground{height: 400px;}
+}
+</style>
 
 
 <script src='//api.tiles.mapbox.com/mapbox.js/v2.2.0/mapbox.js'></script>
