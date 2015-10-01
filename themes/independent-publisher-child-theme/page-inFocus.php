@@ -15,8 +15,16 @@ get_header(); ?>
 		<main id="content" class="site-content" role="main">
 			<p><em>Here are the stories we're focused on covering right now.</em></p>
 			<?php
-				//$query_string."&featured=yes"
-				query_posts("posts_per_page=10&orderby=post_date&order=desc&featured=yes"); 
+
+				$qParams=array( 
+					'post_type' => array('post', 'page'),
+					'posts_per_page' => 10,
+					'orderby' => 'post_date',
+					'order' => 'desc',
+					'featured' => 'yes'
+				);
+				query_posts($qParams);
+				//query_posts("posts_per_page=10&post_type=page,post&orderby=post_date&order=desc&featured=yes"); 
 				
 				/* determine whether any of these posts are pinned */
 				$featuredInFocusPostID=0;
