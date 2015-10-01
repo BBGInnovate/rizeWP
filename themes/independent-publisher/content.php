@@ -148,7 +148,7 @@
 		<?php independent_publisher_continue_reading_link(); ?>
 	<?php endif; */ ?>
 
-	<?php if ( $displayExcerpt ):  ?>
+	<?php if ( true || $displayExcerpt ):  ?>
 		<footer class="entry-meta">
 
 			<?php 
