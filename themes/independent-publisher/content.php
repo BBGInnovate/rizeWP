@@ -6,55 +6,78 @@
 
 	global $pageBodyID; 
 	global $featuredInFocusPostID;
+	global $stickyDisplayed;
 
 	/* ODDI CUSTOM: Show large image on first instance in loop */
-	$useFullThumbnail=false;
-	$useSmallThumbnail=true;
-	if ( ($pageBodyID!="inFocus" && ($wp_query->current_post == 0 && !is_paged())) ||
-		 ($pageBodyID=="inFocus" && $featuredInFocusPostID == $post->ID)
-	   ) { 
-		$useFullThumbnail=true;
-		$useSmallThumbnail=false;
+	$useFullThumbnail = false;
+	$useSmallThumbnail = false;
+	$displayExcerpt=true;
+	if ( empty ($stickyDisplayed)) {
+		$stickyDisplayed=false;
 	}
-	/* don't use small thumbnail on the in focus page */
-	if ($pageBodyID=="inFocus") {
-		$useSmallThumbnail=false;
+	
+	if ( $pageBodyID == 'inFocus') {
+		/*** IN FOCUS BEHAVIOR DEFINED HERE ****/
+
+		//show full thumbnail for sticky in-focus post
+		if ($featuredInFocusPostID == $post->ID) {
+			$useFullThumbnail=true;
+		}
+
+		//hide excerpts for all non-sticky in-focus posts
+		if ($featuredInFocusPostID != $post->ID) {
+			$displayExcerpt=false;
+		}
+
+	} else {
+		/**** MOST PAGES FOLLOW THIS BEHAVIOR ****/
+		if (!is_paged()) {
+			
+			//first page behavior different than all that follow
+			if (is_sticky() || ( ($wp_query->current_post == 0) && ! $stickyDisplayed)) {
+				//show full thumbnail for first post
+				$useFullThumbnail=true;
+				$stickyDisplayed=true;
+			} else {
+				//show small thimbnail for the rest
+				$useFullThumbnail=false;
+				$useSmallThumbnail=true;
+			}
+		} else {
+			//'OLDER POST' page behavior.  No thumbnails, no excerpts
+			$displayExcerpt=false;
+		}
 	}
 
-	$eliminateExcerptAndFullText=false;  
-	if ($pageBodyID=="inFocus" && $post->ID != $featuredInFocusPostID) {
-		$eliminateExcerptAndFullText=true;
+	/* SAFETY CHECK IN CASE THEY FORGET THUMBNAIL */
+	if ( ! has_post_thumbnail() ) {
+		$useFullThumbnail=false;
+		$useSmallThumbnail=false;
 	}
-
+	
 	$customClass="";
-	if ($pageBodyID=="inFocus" && $featuredInFocusPostID == $post->ID) {
+	if ($pageBodyID=='inFocus' && ($featuredInFocusPostID == $post->ID)) {
 		$customClass="inFocusSticky";
 	}
-
-
 ?>
 <article id="post-<?php the_ID(); ?>" <?php independent_publisher_post_classes($customClass); ?>>
 	<header class="entry-header">
 		
 		<?php
-			
-
-			if ( $useFullThumbnail && has_post_thumbnail() ) { ?>
+			if ( $useFullThumbnail) : 
+		?>
 				<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'independent-publisher' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">
 				<?php the_post_thumbnail(); ?>
 				</a>
-			<?php } ?>
-		
-
-		<?php global $pageBodyID;
-			if ( $pageBodyID != "categoryPage") { 
-				?>
+		<?php 
+			endif; 
+			if ( $pageBodyID != "categoryPage") :
+		?>
 				<h5 class='entry-category'>
 					<?php echo independent_publisher_post_categories( '', true ); ?>
 				</h5>
-
-				<?php 
-			}
+		<?php 
+			endif;
 		?>
 
 
@@ -68,7 +91,7 @@
 
 		<?php 
 			
-			if( $useSmallThumbnail && has_post_thumbnail() ) { 
+			if( $useSmallThumbnail) { 
 				?>
 
 				<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'independent-publisher' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">
@@ -101,32 +124,14 @@
 		 */
 		?>
 
-		<?php if (! $eliminateExcerptAndFullText ) : ?>	
+		<?php if ( $displayExcerpt ) : ?>	
 			<?php if ( ( ! get_post_format() || 'chat' === get_post_format() ) &&
 					   ( ! ( independent_publisher_is_very_first_standard_post() && is_sticky() ) ) &&
 					   ( independent_publisher_use_post_excerpts() || independent_publisher_generate_one_sentence_excerpts() ) &&
 					   ( ! ( independent_publisher_show_full_content_first_post() && independent_publisher_is_very_first_standard_post() && is_home() ) )
 			) :
 				?>
-
 				<?php the_excerpt(); ?>
-
-			<?php
-			else : ?>
-
-				<?php /* Only show featured image for Standard post and gallery post formats */ ?>
-				<?php if ( has_post_thumbnail() && in_array( get_post_format(), array( 'gallery', false ) ) ) : ?>
-					<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'independent_publisher' ), the_title_attribute( 'echo=0' ) ) ); ?>"><?php the_post_thumbnail( 'independent_publisher_post_thumbnail' ); ?></a>
-				<?php endif; ?>
-
-				<?php the_content( independent_publisher_continue_reading_text() ); ?>
-				<?php wp_link_pages(
-					array(
-						'before' => '<div class="page-links">' . __( 'Pages:', 'independent-publisher' ),
-						'after'  => '</div>'
-					)
-				); ?>
-
 			<?php endif; ?>
 		<?php endif; ?>
 	</div>
@@ -143,7 +148,7 @@
 		<?php independent_publisher_continue_reading_link(); ?>
 	<?php endif; */ ?>
 
-	<?php if (! $eliminateExcerptAndFullText):  ?>
+	<?php if ( $displayExcerpt ):  ?>
 		<footer class="entry-meta">
 
 			<?php 
