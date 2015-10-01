@@ -32,7 +32,7 @@
 	} else {
 		/**** MOST PAGES FOLLOW THIS BEHAVIOR ****/
 		if (!is_paged()) {
-			
+
 			//first page behavior different than all that follow
 			if (is_sticky() || ( ($wp_query->current_post == 0) && ! $stickyDisplayed)) {
 				//show full thumbnail for first post
@@ -71,7 +71,7 @@
 				</a>
 		<?php 
 			endif; 
-			if ( $pageBodyID != "categoryPage") :
+			if ( $pageBodyID != "categoryPage" && strlen(independent_publisher_post_categories())>0) :
 		?>
 				<h5 class='entry-category'>
 					<?php echo independent_publisher_post_categories( '', true ); ?>
