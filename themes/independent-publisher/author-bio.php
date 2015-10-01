@@ -8,7 +8,7 @@
 ?>
 <div class="author-bio">
 	<div class="author-avatar">
-		<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'independent_publisher_author_bio_avatar_size', 100 ) ); ?>
+		<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'independent_publisher_author_bio_avatar_size', 150 ) ); ?>
 	</div>
 	<!-- .author-avatar -->
 	<div class="author-description">
@@ -19,9 +19,16 @@
 			<?php 
 				/* ODDI CUSTOM: add twitter handle to bio */
 				$twitterHandle = get_the_author_meta( 'twitterHandle' );
+				$website = get_the_author_meta( 'user_url' );
+
+				if ( $website && $website != '' ) {
+					$website=' | <a href="' . $website . '">' . $website . '</a>';
+				}
+
+
 				if ( $twitterHandle && $twitterHandle != '' ) {
 					$twitterHandle=str_replace("@", "", $twitterHandle);
-					echo '<div id="authorTwitter"><a href="//www.twitter.com/' . $twitterHandle. '">@' . $twitterHandle . '</a></div>';
+					echo '<div id="authorContact"><a href="//www.twitter.com/' . $twitterHandle. '">@' . $twitterHandle . '</a> ' . $website .'</div>';
 				}
 			?>
 		</p>

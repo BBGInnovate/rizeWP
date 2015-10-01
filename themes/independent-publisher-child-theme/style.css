@@ -368,6 +368,24 @@ and Blueprint http://www.blueprintcss.org/
 
 
 
+	/* author stuff --------*/
+	.post-author-bottom h1.site-title {
+		float: none;
+	}
+	.post-author-bottom .site-description{
+		display: block;
+	}
+	.archive .page-title, .archive .archive-title {
+		margin: 20px 0 5px 0;
+	}
+	#authorContact{
+		font-family: Arial, sans-serif; 
+		font-size:.8em; 
+	}
+	/* --------- author stuff */
+
+
+
 	/*Social links in posts*/
 
 	.single.post-cover-overlay-post-title #socialPost ul, .single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow #socialPost ul {
