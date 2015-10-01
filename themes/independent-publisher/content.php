@@ -126,7 +126,7 @@
 
 		<?php if ( $displayExcerpt ) : ?>	
 			<?php if ( ( ! get_post_format() || 'chat' === get_post_format() ) &&
-					   ( ! ( independent_publisher_is_very_first_standard_post() && is_sticky() ) ) &&
+					   //( ! ( independent_publisher_is_very_first_standard_post() && is_sticky() ) ) &&
 					   ( independent_publisher_use_post_excerpts() || independent_publisher_generate_one_sentence_excerpts() ) &&
 					   ( ! ( independent_publisher_show_full_content_first_post() && independent_publisher_is_very_first_standard_post() && is_home() ) )
 			) :
