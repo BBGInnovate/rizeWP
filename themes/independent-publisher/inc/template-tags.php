@@ -40,15 +40,20 @@ if ( ! function_exists( 'independent_publisher_content_nav' ) ) :
 		<nav role="navigation" id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?>">
 			<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'independent-publisher' ); ?></h1>
 
+			<?php 
+				$customMaxPages = 1 + ceil(($wp_query->found_posts - get_option( 'homepage_post_count' ))/(get_option('posts_per_page'))); 
+				echo "<!-- customMax is " . $customMaxPages . "-->";
+			?>
+
 			<?php if ( is_single() ) : // navigation links for single posts ?>
 
 				<?php previous_post_link( '<div class="nav-previous"><button>%link</button></div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'independent-publisher' ) . '</span> %title' ); ?>
 				<?php next_post_link( '<div class="nav-next"><button>%link</button></div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'independent-publisher' ) . '</span>' ); ?>
 
-			<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
+			<?php elseif ( $customMaxPages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
-				<?php if ( get_next_posts_link() ) : ?>
-					<div class="nav-previous"><?php next_posts_link( '<button>' . __( '<span class="meta-nav">&larr;</span> Older posts', 'independent-publisher' ) . '</button>' ); ?></div>
+				<?php if ( get_next_posts_link('',$customMaxPages) ) : ?>
+					<div class="nav-previous"><?php next_posts_link( '<button>' . __( '<span class="meta-nav">&larr;</span> Older posts', 'independent-publisher' ) . '</button>' ,$customMaxPages ); ?></div>
 				<?php endif; ?>
 
 				<?php if ( get_previous_posts_link() ) : ?>

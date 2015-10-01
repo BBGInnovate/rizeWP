@@ -308,3 +308,49 @@ function my_custom_sizes( $sizes ) {
 	add_filter( 'user_contactmethods', 'add_to_author_profile', 10, 1);
 
 
+	/*===================================================================================
+	 * CUSTOM PAGINATION LOGIC - we show X posts on front page but more posts on 'older post' pages
+	 * the next several functions are for adding that functionality and also making it available in wordpress settings
+	 * =================================================================================*/
+	
+	add_action('pre_get_posts', 'myprefix_query_offset', 1 ); 
+	function myprefix_query_offset(&$query) {	
+		
+		if ( ! ($query->is_home() &&  $query->is_main_query()) ) {
+		    return;
+		}
+		$ppp = get_option('posts_per_page');
+
+		if ( is_paged() ) {
+			$offset = -1 * ($ppp - get_option( 'homepage_post_count' ));
+			$page_offset = $offset + ( (get_query_var('paged')-1) * $ppp );
+			$query->set('offset', $page_offset);
+		} else {
+			//we handle the custom logic for the first page in index.php - so nothing to do in this clause
+		}
+	}
+	
+	// add a custom field to the 'READING' section of wordpress with the homepage post count
+	function homepage_post_count_callback( $args ) {
+		$val = get_option( 'homepage_post_count' );
+		if (! $val ) {
+			$val = 0;
+		}
+		$html = '<input type="text" id="homepage_post_count" name="homepage_post_count" value="' . $val . '" size="3" />';
+		$html .= '<label for="homepage_post_count"></label>';
+		echo $html;
+	}
+
+	function oddi_settings_api_init() {
+		add_settings_field(
+			'homepage_post_count',
+			'Home Page Post Count',
+			'homepage_post_count_callback',
+			'reading'
+		);
+		register_setting('reading','homepage_post_count');
+	}
+		 
+	add_action( 'admin_init', 'oddi_settings_api_init' );
+	
+	

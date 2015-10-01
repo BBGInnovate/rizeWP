@@ -8,7 +8,6 @@
  * @since   Independent Publisher 1.0
  */
 
-require "config_oddi.php";
 
 /* ODDI CUSTOM: several variables can be passed into the header */ 
 global $ogImage, $ogTitle, $ogDescription;

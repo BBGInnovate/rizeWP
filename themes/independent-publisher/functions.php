@@ -11,6 +11,10 @@
  *
  * @since Independent Publisher 1.0
  */
+
+require "config_oddi.php";
+
+
 if ( ! isset( $content_width ) ) {
 	$content_width = 700;
 } /* pixels */

@@ -12,26 +12,26 @@
  * @since   Independent Publisher 1.0
  */
 
+
+global $wp_query;
 $pageBodyID="frontPage";
-get_header(); ?>
+get_header(); 
+
+?>
 
 	<div id="primary" class="content-area">
 		<main id="content" class="site-content" role="main">
-
 			<?php if ( have_posts() ) : ?>
-
 				<?php /* Start the Loop */ ?>
-				<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php
-					/* Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
+
+				<?php while ( have_posts() ) : the_post(); 
+					/* CUSTOM BEHAVIOR -  only show first two posts on homepage */
+					if ( ! is_paged() && $wp_query->current_post > (get_option( 'homepage_post_count' )-1)) {
+						continue;
+					}
 					get_template_part( 'content', get_post_format() );
-					?>
-
-				<?php endwhile; ?>
+				endwhile; ?>
 
 				<?php independent_publisher_content_nav( 'nav-below' ); ?>
 
