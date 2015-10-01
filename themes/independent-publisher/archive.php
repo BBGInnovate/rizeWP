@@ -103,8 +103,8 @@ get_header(); ?>
 
 						if ( ! empty( $tag_description ) ) { // show the description + the taxonomy stats
 							echo apply_filters( 'tag_archive_meta', '<div class="taxonomy-description">' . $tag_description . $taxonomy_stats . '</div>' );
-						} else { // there was description set, so let's just show some stats
-							echo apply_filters( 'tag_archive_meta', '<div class="taxonomy-description">' . $taxonomy_stats . '</div>' );
+						} else { // there was no description set, so let's just show some stats
+							/*echo apply_filters( 'tag_archive_meta', '<div class="taxonomy-description">' . $taxonomy_stats . '</div>' );*/
 						}
 					} elseif ( is_day() || is_month() || is_year() ) {
 						echo independent_publisher_date_archive_description();
