@@ -483,7 +483,7 @@ if ( ! function_exists( 'independent_publisher_posted_author_bottom_card' ) ) :
 						$website = get_the_author_meta( 'user_url' );
 
 						if ( $website && $website != '' ) {
-							$website='<span class="sep"> | </span><a href="' . $website . '">' . $website . '</a>';
+							$website='<br/><a href="' . $website . '">' . $website . '</a>';
 						}
 
 						if ( $twitterHandle && $twitterHandle != '' ) {

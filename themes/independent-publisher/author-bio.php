@@ -12,10 +12,6 @@
 	</div>
 	<!-- .author-avatar -->
 	<div class="author-description">
-		<p class="author-bio">
-			<?php if ( get_the_author_meta( 'description' ) ) : ?>
-				<?php the_author_meta( 'description' ); ?>
-			<?php endif; ?>
 			<?php 
 				/* ODDI CUSTOM: add twitter handle to bio */
 				$twitterHandle = get_the_author_meta( 'twitterHandle' );
@@ -30,6 +26,10 @@
 					echo '<div id="authorContact"><a href="//www.twitter.com/' . $twitterHandle. '">@' . $twitterHandle . '</a> ' . $website .'</div>';
 				}
 			?>
+		<p class="author-bio">
+			<?php if ( get_the_author_meta( 'description' ) ) : ?>
+				<?php the_author_meta( 'description' ); ?>
+			<?php endif; ?>
 		</p>
 	</div>
 	<!-- .author-description -->

@@ -325,7 +325,8 @@ and Blueprint http://www.blueprintcss.org/
 		color: #b3b3b1;
 	}
 	.single.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta a, .page.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta a{
-		color: orange;
+		/*color: orange;*/
+		color: #57ad68;
 	}
 	.single.post-cover-overlay-post-title .post-cover-title-head .post-cover-title, .page.post-cover-overlay-post-title .post-cover-title-head .post-cover-title{
 		padding:20px;
@@ -385,6 +386,10 @@ and Blueprint http://www.blueprintcss.org/
 	.sep{
 		color:#999;
 	}
+	#authorPage #authorContact{
+		margin-bottom: 10px
+	}
+
 	/* --------- author stuff */
 
 
