@@ -382,6 +382,9 @@ and Blueprint http://www.blueprintcss.org/
 		font-family: Arial, sans-serif; 
 		font-size:.8em; 
 	}
+	.sep{
+		color:#999;
+	}
 	/* --------- author stuff */
 
 

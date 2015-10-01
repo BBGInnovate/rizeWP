@@ -22,9 +22,8 @@
 				$website = get_the_author_meta( 'user_url' );
 
 				if ( $website && $website != '' ) {
-					$website=' | <a href="' . $website . '">' . $website . '</a>';
+					$website='<span class="sep"> | </span><a href="' . $website . '">' . $website . '</a>';
 				}
-
 
 				if ( $twitterHandle && $twitterHandle != '' ) {
 					$twitterHandle=str_replace("@", "", $twitterHandle);
