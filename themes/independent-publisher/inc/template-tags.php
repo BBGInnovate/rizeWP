@@ -42,6 +42,10 @@ if ( ! function_exists( 'independent_publisher_content_nav' ) ) :
 
 			<?php 
 				$customMaxPages = 1 + ceil(($wp_query->found_posts - get_option( 'homepage_post_count' ))/(get_option('posts_per_page'))); 
+				
+				if (! is_home() ) {
+					$customMaxPages=$wp_query->max_num_pages;
+				}
 				echo "<!-- customMax is " . $customMaxPages . "-->";
 			?>
 
