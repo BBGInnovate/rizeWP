@@ -30,7 +30,7 @@ and Blueprint http://www.blueprintcss.org/
 
 /* site-wide styles ----------- */
 
-	h1.site-title {float:left;}
+	h1.site-title {float:left;	font-weight: 700;}
 	h1.entry-title a, h1.site-title a{color: #333;}
 	h1.site-title a{text-transform: uppercase;}
 	h1.site-title a .orangeHighlight {color: orange;}
@@ -264,6 +264,9 @@ and Blueprint http://www.blueprintcss.org/
 		margin:0;
 	}
 
+	#postDetail .entry-content ul li, .entry-content ol li{
+		margin-bottom: 10px;
+	}
 
 	@media (min-width: 700px) {
 		/* bumping up leading on wide screen view of articles */
@@ -473,6 +476,7 @@ and Blueprint http://www.blueprintcss.org/
 
 	.post-excerpts .first-post h1.entry-title, .enhanced-excerpts .first-post h1.entry-title{
 		font-size: 2em;
+		font-weight: 700;
 	}
 	.post-excerpts h1.entry-title, .enhanced-excerpts h1.entry-title {
 		font-size: 1.6em;
@@ -626,7 +630,6 @@ and Blueprint http://www.blueprintcss.org/
 		width: 100%;
 		margin:10px 0 0 0;
 		letter-spacing: 0;
-		font-weight: normal;
 	}
 	#inFocus.page article:first-of-type h1.entry-title{
 		font-size: 1.8em;
@@ -634,7 +637,7 @@ and Blueprint http://www.blueprintcss.org/
 		padding:10px 0 0 0;
 		margin:10px 0 10px 0;
 		letter-spacing: 0;
-		font-weight: bold;
+		font-weight: 700;
 	}
 	#inFocus .entry-content a:hover{
 		text-decoration: none;
