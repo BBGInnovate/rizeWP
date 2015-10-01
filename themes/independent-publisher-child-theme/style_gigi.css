@@ -1,2 +1,29 @@
 /* STYLE_GIGI.css - temporary styles file for collaboration */
-/* TESTING */
+
+#categoryPage h4.page-title.category, #inFocus h1.page-title {
+	color: #FFA500;
+}
+
+#categoryPage .summary, #inFocus p.intro {
+	font-style: italic;
+    font-size: 1.2em;
+    color: #999;
+    margin-top: -10px;
+    line-height: 1.3em;
+    margin-bottom: 40px;
+}
+
+#inFocus.page h1.entry-title {
+    font-size: 1.3em;
+    line-height: 1.3em;
+    padding: 10px 0 0 0;
+    width: 100%;
+    margin: 10px 0 0 0;
+    letter-spacing: 0;
+    font-weight: 600;
+}
+
+#inFocus.page article {
+    padding: 0 0 10px 0;
+    border-bottom: 1px solid #ccc;
+}

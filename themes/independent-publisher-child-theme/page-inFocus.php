@@ -13,7 +13,8 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="content" class="site-content" role="main">
-			<p><em>Here are the stories we're focused on covering right now.</em></p>
+			<h1 class="page-title">In Focus</h1>
+			<p class="intro">Here are the stories we're focused on covering right now.</p>
 			<?php
 
 				$qParams=array( 
