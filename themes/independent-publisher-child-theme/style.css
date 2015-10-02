@@ -180,12 +180,14 @@ and Blueprint http://www.blueprintcss.org/
 	#menuButton{
 		background: url(/wp-content/uploads/2015/10/menuButton.png) center center / cover;
 	}
-	#categoryMenu, #categoryMenu ul  {
+	#categoryMenu {
+		margin: 0;
+		display: block;
+	}
+	#categoryMenu ul  {
 		margin: 0;
 		display: block;
 		clear: both;
-	}
-	#categoryMenu ul  {
 		margin: 0 -20px 20px -20px;
 	}
 	#categoryMenu ul#dropdown{display: none;}
