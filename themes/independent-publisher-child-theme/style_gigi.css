@@ -1,98 +1,72 @@
 /* STYLE_GIGI.css - temporary styles file for collaboration */
 
-#categoryPage h4.page-title.category, #inFocus h1.page-title {
-	color: #FFA500;
-}
 
-#categoryPage .summary, #inFocus p.intro {
-	font-style: italic;
-    font-size: 1.2em;
-    color: #999;
-    margin-top: -10px;
-    line-height: 1.3em;
-    margin-bottom: 40px;
-}
-
-#inFocus.page h1.entry-title {
-    font-size: 1.3em;
-    line-height: 1.3em;
-    padding: 10px 0 0 0;
-    width: 100%;
-    margin: 10px 0 0 0;
-    letter-spacing: 0;
-    font-weight: 600;
-}
-
-#inFocus.page article {
-    padding: 0 0 10px 0;
-    border-bottom: 1px solid #ccc;
-}
 
 /* Styles for the "Featured in this story" section */
 #featured-section {
-    margin-top: 3em;
-    margin-bottom: 2em;
-    border-top: 1px dashed #FFA500;
-    font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
-    display: block;
-    position: relative;
+	margin-top: 3em;
+	margin-bottom: 2em;
+	border-top: 1px dashed #FFA500;
+	font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
+	display: block;
+	position: relative;
 }
 
 #featured-section h3.featured-title {
-    color: #FFA500;
-    font-size: 1.2em;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: .02em;
-    margin-top: 1em;
-    margin-bottom: 1.5em;
+	color: #FFA500;
+	font-size: 1.2em;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: .02em;
+	margin-top: 1em;
+	margin-bottom: 1.5em;
 }
 
 #featured-section .featured-card {
-    width: 100%;
-    min-height: 100px;
-    margin-bottom: 3em;
+	width: 100%;
+	min-height: 100px;
+	margin-bottom: 3em;
 }
 
 #featured-section .featured-card img {
-    float: left;
-    max-width: 100px;
-    border: solid 2px #ccc;
+	float: left;
+	max-width: 100px;
+	border: solid 2px #ccc;
 }
 
 #featured-section .featured-card .featured-profile {
-    margin-left: 120px;
-    float: none;
+	margin-left: 120px;
+	float: none;
 }
 
  .featured-profile p.featured-name {
-    font-size: 1.2em;
-    font-weight: 600;
-    margin-bottom: 0;
-    float: none;
-    clear: none;
-    margin-left: 0;
+	font-size: 1.2em;
+	font-weight: 600;
+	margin-bottom: 0;
+	float: none;
+	clear: none;
+	margin-left: 0;
 }
 
 .featured-profile p.featured-desc {
-    font-size: 1em;
-    color: #929292;
-    margin-bottom: 0;
+	font-size: 1em;
+	color: #929292;
+	margin-bottom: 0;
 }
 
 .featured-profile p.featured-links {
-    font-size: 1em;
-    color: #57ad68;
+	font-size: 1em;
+	color: #57ad68;
 }
 
 #featured-section h6 {
-    font-size: 1.1em;
-    text-transform: uppercase;
-    font-weight: 600;
+	font-size: 1.1em;
+	text-transform: uppercase;
+	font-weight: 600;
 }
 
 #featured-section p.featured-also {
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-size: 1em;
-    margin: 0;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 1em;
+	margin: 0;
 }

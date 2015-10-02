@@ -543,6 +543,9 @@ and Blueprint http://www.blueprintcss.org/
 	footer.entry-meta .sep.sep-byline{display: none;}
 
 	@media (min-width: 500px){
+		.post-excerpts .first-post h1.entry-title, .enhanced-excerpts .first-post h1.entry-title{
+			font-size: 2em;
+		}
 		.blog article {padding: 0 0 20px 0;}
 		footer.entry-meta {display:block;}
 		footer.entry-meta .byline{display: inline-block;}
@@ -552,7 +555,7 @@ and Blueprint http://www.blueprintcss.org/
 
 	@media (min-width: 700px){
 		.post-excerpts .first-post h1.entry-title, .enhanced-excerpts .first-post h1.entry-title{
-			font-size: 2em;
+			font-size: 3em;
 		}
 		.post-excerpts h1.entry-title, .enhanced-excerpts h1.entry-title {
 			font-size: 1.6em;
@@ -691,29 +694,46 @@ and Blueprint http://www.blueprintcss.org/
 
 
 /* in focus styles ------------- */
-	#inFocus.page h1.entry-title{
-		font-size: 1.2em;
+
+
+	#categoryPage h4.page-title.category, #inFocus h1.page-title {
+		color: #FFA500;
+		color: #333;
+		margin:10px 0 0 0;
+		font-size: 1.5em;
+	}
+	#categoryPage .summary, #inFocus p.intro {
+		font-style: italic;
+		font-size: 1em;
+		color: #999;
+		margin-top: 0px;
 		line-height: 1.3em;
+		margin-bottom: 30px;
+	}
+
+	#inFocus.page h1.entry-title{
+		font-size: 1.3em;
+		line-height: 1em;
 		padding:10px 0 0 0;
 		width: 100%;
 		margin:10px 0 0 0;
 		letter-spacing: 0;
 	}
+
 	#inFocus.page article:first-of-type h1.entry-title{
-		font-size: 1.8em;
+		font-size: 1.6em;
 		line-height: 1em;
 		padding:10px 0 0 0;
 		margin:10px 0 10px 0;
-		letter-spacing: 0;
-		font-weight: 700;
+		font-weight: 900;
 	}
 	#inFocus .entry-content a:hover{
 		text-decoration: none;
 	}
 
 	#inFocus.page article {
-	    padding: 0 0 10px 0;
-	    border-bottom: 1px solid #EEE;
+		padding: 0 0 10px 0;
+		border-bottom: 1px solid #CCC;
 	}
 
 	#inFocus .entry-content, .entry-summary {
@@ -725,10 +745,12 @@ and Blueprint http://www.blueprintcss.org/
 		padding:0 0 10px 0;
 		margin:0;
 		border-top: none;
-		/*border-bottom: 1px solid #eee;*/
 	}
 
 	@media only screen and (min-width: 700px) {
+		#categoryPage h4.page-title.category, #inFocus h1.page-title {
+			font-size: 2.5em;
+		}
 		#inFocus.page h1.entry-title{
 			font-size: 1.8em;
 		}
