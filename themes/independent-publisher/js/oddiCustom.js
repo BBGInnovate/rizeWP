@@ -52,4 +52,11 @@ jQuery(document).ready(function() {
 
         return !!popup;
     }
+
+    //Dropdown navigation
+    jQuery("#menuButton" ).click(function() {
+        jQuery( "#categoryMenu #dropdown" ).slideToggle("drop");
+        jQuery('#categoryMenu #dropdown').scrollTo( 0 , 100 );
+    });
+        //$( "#container" ).click(function() {$('#menu #dropdown').hide();});
 });

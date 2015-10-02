@@ -117,6 +117,11 @@ $ogDescription = str_replace("[&hellip;]", "...", $ogDescription);
 			<?php endif; ?>
 		</div>
 
+
+
+
+
+
 		<?php // Show navigation menu on everything except Single pages, unless Show Primary Nav Menu on Single Pages is enabled ?>
 		<?php if ( ! is_single() || independent_publisher_show_nav_on_single() ) : ?>
 			<nav role="navigation" class="site-navigation main-navigation">
@@ -135,5 +140,26 @@ $ogDescription = str_replace("[&hellip;]", "...", $ogDescription);
 		<?php do_action( 'independent_publisher_header_after' ); ?>
 	</header>
 	<!-- #masthead .site-header -->
+
+		<div id="menuButton">
+		</div>
+		<div id="categoryMenu">
+			<ul id='dropdown'>
+			 <?php 
+			  $categories = get_categories(); 
+			  foreach ($categories as $category) {
+				echo "<a href='". get_category_link( $category->term_id ) . "'><li>".$category->category_nicename."</li></a>";
+			  	/*$option = '<option value="/category/'.$category->category_nicename.'">';
+				$option .= $category->cat_name;
+				$option .= ' ('.$category->category_count.')';
+				$option .= '</option>';
+				echo $option;*/
+			  }
+			 ?>
+			 <a href='http://facebook.com' class='social'><li>Facebook</li></a>
+			 <a href='http://twitter.com' class='social'><li>Twitter</li></a>
+			</ul>
+		</div><!-- categoryMenu -->
+
 
 	<div id="main" class="site-main">
