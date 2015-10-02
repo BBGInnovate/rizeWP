@@ -55,11 +55,11 @@ if ( ! function_exists( 'independent_publisher_content_nav' ) ) :
 			<?php elseif ( $customMaxPages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
 				<?php if ( get_next_posts_link('',$customMaxPages) ) : ?>
-					<div class="nav-previous"><?php next_posts_link( '<button>' . __( '<span class="meta-nav">&larr;</span> Older posts', 'independent-publisher' ) . '</button>' ,$customMaxPages ); ?></div>
+					<div class="nav-previous"><?php next_posts_link( '<button>' . __( 'Older posts', 'independent-publisher' ) . '</button>' ,$customMaxPages ); ?></div>
 				<?php endif; ?>
 
 				<?php if ( get_previous_posts_link() ) : ?>
-					<div class="nav-next"><?php previous_posts_link( '<button>' . __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'independent-publisher' ) . '</button>' ); ?></div>
+					<div class="nav-next"><?php previous_posts_link( '<button>' . __( 'Newer posts', 'independent-publisher' ) . '</button>' ); ?></div>
 				<?php endif; ?>
 
 			<?php endif; ?>
