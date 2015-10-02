@@ -323,7 +323,16 @@ function my_custom_sizes( $sizes ) {
 
 		if ( is_paged() ) {
 			$offset = -1 * ($ppp - get_option( 'homepage_post_count' ));
+			$sticky_posts = get_option( 'sticky_posts' );
+			$numStickies=0;
+			if (is_array($sticky_posts)) {
+				$numStickies=sizeof($sticky_posts);
+				$offset=$offset-$numStickies;
+			}
+			//note ... if we make more posts sticky than can take up a whole page, we'd have an issue.  
+			//not worrying about that edge case as it's not feasible.
 			$page_offset = $offset + ( (get_query_var('paged')-1) * $ppp );
+
 			$query->set('offset', $page_offset);
 		} else {
 			//we handle the custom logic for the first page in index.php - so nothing to do in this clause
