@@ -70,3 +70,42 @@
 	font-size: 1em;
 	margin: 0;
 }
+
+.site-main article.sticky {
+	margin-bottom: 0;
+	padding-right: 0;
+	padding-right: 0;
+	padding-left: 0;
+	background: #FFF;
+	border-radius: 0;
+}
+
+.post-excerpts.paged .first-post h1.entry-title {
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.paging-navigation button {
+    background: url("http://localhost/wprize/wp-content/uploads/2015/10/arrows.png") no-repeat 2% -125% / 33px;
+    padding-left: 20px;
+    color: #57ad68;
+	font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	text-transform: lowercase;
+}
+
+.paging-navigation button .meta-nav {
+	visibility: hidden;
+}
+
+
+@media (min-width: 700px) {
+	.post-excerpts.paged .first-post h1.entry-title {
+	    font-size: 1.6em;
+	}
+}
+
+
+
+
+
