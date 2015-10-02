@@ -538,6 +538,7 @@ and Blueprint http://www.blueprintcss.org/
 	}
 	.post-excerpts h1.entry-title, .enhanced-excerpts h1.entry-title {
 		font-size: 1.3em;
+		letter-spacing: 0;
 	}
 
 	footer.entry-meta .sep.sep-byline{display: none;}
@@ -699,7 +700,7 @@ and Blueprint http://www.blueprintcss.org/
 	#categoryPage h4.page-title.category, #inFocus h1.page-title {
 		color: #FFA500;
 		color: #333;
-		margin:10px 0 0 0;
+		margin:10px 0 5px 0;
 		font-size: 1.5em;
 	}
 	#categoryPage .summary, #inFocus p.intro {
