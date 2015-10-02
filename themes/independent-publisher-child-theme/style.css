@@ -282,8 +282,34 @@ and Blueprint http://www.blueprintcss.org/
 		}
 	}
 
+	#creativeCommons{
+		font-family: Arial, sans-serif;
+		font-style: .6em;
+		color: #b3b3b1;
+		text-align: center; 
+		padding-bottom:10px; 
+		border-bottom:1px dotted #CCC
+	}
 
+	@media only screen and (min-width: 1201px) {
+		#creativeCommons{
+			position: absolute;
+			top: 1500px;
+			text-align: right;
+			border-bottom: none;
+			width:900px;
+		}
+		#creativeCommons #container {
+			position: absolute;
+			width: 170px;
+			left: -230px;
+		}
+	}
 
+	.single article.post, .single footer.entry-meta{
+		margin-bottom:0;
+	}
+	.single .widget-area{padding:0;}
 
 	.single.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta, .page.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta{
 		margin-top:5px;
@@ -687,11 +713,6 @@ and Blueprint http://www.blueprintcss.org/
 		#staff h3{margin-bottom:30px;}
 	}
 
-	#creativeCommons{
-		font-family: Arial, sans-serif;
-		font-style: .6em;
-		color: #999;
-	}
 /* ------------- staff styles */
 
 

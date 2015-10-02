@@ -113,7 +113,7 @@ Being active in the communities we cover is at the core of Africa Rizing and our
 </div>
 </div>
 <div class='clearAll'></div>
-<div id="creativeCommons"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><br />This work by <a xmlns:cc="http://creativecommons.org/ns#" href="http://africa.rizing.org" property="cc:attributionName" rel="cc:attributionURL">Africa Rizing</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</div>
+
 
 <style>	
 #map-rize{width:100%; height: 300px; margin-top: 25px;} h1.entry-title{display:none !important;}

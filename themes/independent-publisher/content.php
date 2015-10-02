@@ -151,6 +151,9 @@
 	<?php if ( true || $displayExcerpt ):  ?>
 		<footer class="entry-meta">
 
+
+
+
 			<?php 
 			/* Show author name and post categories only when post type == post AND 
 			 * we're not showing the first post full content 
