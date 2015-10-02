@@ -17,6 +17,13 @@ if ( ! function_exists( 'independent_publisher_content_nav' ) ) :
 	function independent_publisher_content_nav( $nav_id ) {
 		global $wp_query, $post;
 
+		$customMaxPages = 1 + ceil(($wp_query->found_posts - get_option( 'homepage_post_count' ))/(get_option('posts_per_page'))); 
+		
+		if (! is_home() ) {
+			$customMaxPages=$wp_query->max_num_pages;
+		}
+		echo "<!-- customMax is " . $customMaxPages . "-->";
+
 		// Don't print empty markup on single pages if there's nowhere to navigate.
 		if ( is_single() ) {
 			$previous = ( is_attachment() ) ? get_post( $post->post_parent ) : get_adjacent_post( false, '', true );
@@ -28,7 +35,7 @@ if ( ! function_exists( 'independent_publisher_content_nav' ) ) :
 		}
 
 		// Don't print empty markup in archives if there's only one page.
-		if ( $wp_query->max_num_pages < 2 && ( is_home() || is_archive() || is_search() ) ) {
+		if ( $customMaxPages < 2 && ( is_home() || is_archive() || is_search() ) ) {
 			return;
 		}
 
@@ -39,15 +46,6 @@ if ( ! function_exists( 'independent_publisher_content_nav' ) ) :
 		?>
 		<nav role="navigation" id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?>">
 			<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'independent-publisher' ); ?></h1>
-
-			<?php 
-				$customMaxPages = 1 + ceil(($wp_query->found_posts - get_option( 'homepage_post_count' ))/(get_option('posts_per_page'))); 
-				
-				if (! is_home() ) {
-					$customMaxPages=$wp_query->max_num_pages;
-				}
-				echo "<!-- customMax is " . $customMaxPages . "-->";
-			?>
 
 			<?php if ( is_single() ) : // navigation links for single posts ?>
 
