@@ -392,6 +392,35 @@ and Blueprint http://www.blueprintcss.org/
 	.post-author-bottom .site-logo img {
 		max-width: 150px;
 	}
+
+	.archive.author .archive-title{max-width: 100%; margin:0;}
+	.author h1.archive-title{text-align: center; width: 100%; /*text-align:left;*/}
+	.author .author-avatar{text-align: center; margin-top: 10px;/*text-align:left;*/}
+	.author .author-avatar img{margin-top: 0; float: none;/* margin-top: -85; float: left;*/}
+
+	.author .author-description{
+		margin:0;
+		text-align: center;
+	}
+
+	@media (min-width: 500px){
+		.author .author-avatar{text-align: left; margin-top: 10px;}
+		.author .author-avatar img{margin-top: 0; float: left;}
+
+		.archive.author .archive-title{max-width: 80%; margin:0; padding: 0 0 0 170px;}
+		.author h1.archive-title{text-align: left; width: auto; clear:none; font-size: 2.5em;}
+
+		.author .author-description{
+			padding:0 0 0 170px;
+			text-align: left;
+		}
+	}
+	@media (min-width: 700px){
+		.author h1.archive-title{font-size: 3.5em;}
+	}
+
+
+
 	/* --------- author stuff */
 
 
@@ -503,11 +532,12 @@ and Blueprint http://www.blueprintcss.org/
 	}
 
 	.post-excerpts .first-post h1.entry-title, .enhanced-excerpts .first-post h1.entry-title{
-		font-size: 2em;
+		font-size: 1.5em;
+		/*font-size: 2em;*/
 		font-weight: 700;
 	}
 	.post-excerpts h1.entry-title, .enhanced-excerpts h1.entry-title {
-		font-size: 1.6em;
+		font-size: 1.3em;
 	}
 
 	footer.entry-meta .sep.sep-byline{display: none;}
@@ -517,6 +547,16 @@ and Blueprint http://www.blueprintcss.org/
 		footer.entry-meta {display:block;}
 		footer.entry-meta .byline{display: inline-block;}
 		footer.entry-meta .sep.sep-byline{display: inline-block;}
+	}
+
+
+	@media (min-width: 700px){
+		.post-excerpts .first-post h1.entry-title, .enhanced-excerpts .first-post h1.entry-title{
+			font-size: 2em;
+		}
+		.post-excerpts h1.entry-title, .enhanced-excerpts h1.entry-title {
+			font-size: 1.6em;
+		}
 	}
 
 /* ------------- list view */

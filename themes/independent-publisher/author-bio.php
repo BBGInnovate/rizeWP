@@ -10,7 +10,9 @@
 	<div class="author-avatar">
 		<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'independent_publisher_author_bio_avatar_size', 150 ) ); ?>
 	</div>
-	<!-- .author-avatar -->
+	
+	<h1 class="archive-title"><?php printf( '%s', '<span class="vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' ); ?></h1>
+
 	<div class="author-description">
 			<?php 
 				/* ODDI CUSTOM: add twitter handle to bio */
