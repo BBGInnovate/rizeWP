@@ -401,6 +401,8 @@ and Blueprint http://www.blueprintcss.org/
 	.author .author-description{
 		margin:0;
 		text-align: center;
+		color: #999;
+		font-style: italic;
 	}
 
 	@media (min-width: 500px){

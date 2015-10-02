@@ -31,7 +31,7 @@
 #featured-section .featured-card img {
 	float: left;
 	max-width: 100px;
-	border: solid 2px #ccc;
+	border: solid 1px #ccc;
 }
 
 #featured-section .featured-card .featured-profile {
