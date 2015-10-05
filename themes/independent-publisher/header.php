@@ -62,7 +62,7 @@ $ogDescription = str_replace('"','&qout;',$ogDescription);
 	<![endif]-->
 
 	<meta name="apple-mobile-web-app-title" content="AfricaRizing" />
-	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="/images/retina_icon.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="/wp-content/images/retina-icon.png" />
 
 	<!-- for Google -->
 	<meta name="description" content="<?php echo $ogDescription; ?>"/>
