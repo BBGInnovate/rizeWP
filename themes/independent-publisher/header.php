@@ -46,7 +46,7 @@ $ogTitle = iconv('UTF-8', 'ASCII//TRANSLIT', $ogTitle);
 $ogDescription = wp_strip_all_tags($ogDescription); 
 $ogDescription = iconv('UTF-8', 'ASCII//TRANSLIT', $ogDescription); 
 $ogDescription = str_replace("[&hellip;]", "...", $ogDescription); 
-$ogDescription = str_replace('"','&qout;')
+$ogDescription = str_replace('"','&qout;',$ogDescription);
 
 
 ?><!DOCTYPE html>
