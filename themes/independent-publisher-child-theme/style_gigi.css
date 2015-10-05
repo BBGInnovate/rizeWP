@@ -146,10 +146,6 @@
 	border-radius: 50%
 }
 
-#staff .member .photo img.square {
-    max-height: 150px;
-}
-
 #staff .member .profile p.role {
     font-size: smaller;
     line-height: 1.2em;
