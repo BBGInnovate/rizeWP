@@ -56,5 +56,6 @@ jQuery(document).ready(function() {
 	//Dropdown navigation
 	jQuery("#footerNav .trending" ).click(function() {
 		jQuery( "#trendingMenu #dropdown" ).slideToggle("drop");
+		jQuery( "#footerNav .trending" ).toggleClass( "menuOpen" )
 	});
 });
