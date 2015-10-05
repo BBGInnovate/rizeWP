@@ -153,13 +153,8 @@ $ogDescription = str_replace("[&hellip;]", "...", $ogDescription);
 				<a href='https://twitter.com/africarizing' class='social twitter'><li>Twitter</li></a>
 				<?php 
 				$categories = get_categories(); 
-				foreach ($categories as $category) {
-				echo "<a href='". get_category_link( $category->term_id ) . "'><li>".$category->category_nicename."</li></a>";
-					/*$option = '<option value="/category/'.$category->category_nicename.'">';
-				$option .= $category->cat_name;
-				$option .= ' ('.$category->category_count.')';
-				$option .= '</option>';
-				echo $option;*/
+					foreach ($categories as $category) {
+					echo "<a href='". get_category_link( $category->term_id ) . "'><li>".$category->category_nicename."</li></a>";
 				}
 				?>
 			</ul>

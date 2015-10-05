@@ -28,6 +28,7 @@
 			<li class='home'><a href='/'>home</a></li>
 			<li class='focus'><a href='/index.php/in-focus/'>in focus</a></li>
 			<li class='mission'><a href='/index.php/about/'>mission</a></li>
+			<li class='categories'><a href='/index.php/categories/'>trending</a></li>
 		</ul>
 	</div>
 </div>

@@ -256,7 +256,7 @@ and Blueprint http://www.blueprintcss.org/
 			right:40px;
 		}
 		#categoryMenu ul  {
-			margin: 0;
+			margin: 0 -40px;
 		}
 		#categoryMenu ul li{
 			padding: 5px 40px;
@@ -264,14 +264,19 @@ and Blueprint http://www.blueprintcss.org/
 
 	}
 	@media (min-width: 700px) {
-
-
+		#categoryMenu ul  {
+			margin: 0;
+		}
 	}
 
 	@media (min-width: 1200px){
+		#menuButton{
+			display: none;
+		}
+		/*
 		#categoryMenu{
 			position: absolute;
-			width: 910px;
+			width: 950px;
 			pointer-events: none;
 		}
 		#categoryMenu ul#dropdown{
@@ -294,10 +299,7 @@ and Blueprint http://www.blueprintcss.org/
 
 		#categoryMenu ul a:last-of-type li{
 			border-bottom: none;
-		}
-		#menuButton{
-			display: none;
-		}
+		}*/
 		#categoryMenu ul a.social{
 			display: none;
 		}
@@ -329,8 +331,9 @@ and Blueprint http://www.blueprintcss.org/
 
 	#footerNav ul li{
 		display: inline-block;
-		/*width: 18.5%; */
-		width: 31%; 
+		/*width: 18.5%;*/
+		width: 23.5%;
+		/*width: 31%; */
 		height: 50px; 
 		padding: 0; 
 		margin: 0; 
@@ -347,6 +350,9 @@ and Blueprint http://www.blueprintcss.org/
 	#footerNav ul li.mission{
 		background: url(/wp-content/uploads/2015/09/menu_icons_150.png) no-repeat center -100px / 35px 150px;
 	}
+	#footerNav ul li.categories{
+		background: url(/wp-content/uploads/2015/09/menu_icons_150.png) no-repeat center -100px / 35px 150px;
+	}
 
 	/* Hightlight the footer nav for the current page */
 	#frontPage #footerNav ul li.home{
@@ -359,6 +365,9 @@ and Blueprint http://www.blueprintcss.org/
 
 	#pageMission #footerNav ul li.mission{
 		background: url(/wp-content/uploads/2015/09/menu_icons_selected.png) no-repeat center -100px / 35px 150px;
+	}
+	#footerNav ul li.categories{
+		background: url(/wp-content/uploads/2015/09/menu_icons_150.png) no-repeat center -100px / 35px 150px;
 	}
 
 
