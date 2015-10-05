@@ -37,6 +37,7 @@
     } else {
 		//$menu_list = '<ul><li>Menu "' . $menu_name . '" not defined.</li></ul>';
     }
+    echo $menu_list;
 ?>
 <div id='footerNav'>
 	<div class='maxWidth1200'>
