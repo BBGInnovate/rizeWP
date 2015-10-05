@@ -162,6 +162,21 @@
     color: 929292;
 }
 
+/* Social menu: hide on screens under 700px on homepage + on article pages */
+#menu-social, #postDetail div#menu-social {
+    display: none;
+}
+
+/* Share icons: add "share" on articles with headlines over images */
+.single.post-cover-overlay-post-title #socialPost ul:before {
+    content: "SHARE";
+    color: #999;
+    font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Media queries */
 @media (min-width: 500px) {
 	#staff .member .profile p.biography {
 		font-size: .8em;
@@ -177,6 +192,10 @@
 	#categoryPage .summary, #inFocus p.intro {
 		font-size: .95em;
 	}
+
+	#menu-social {
+    display: block;
+}
 }
 
 
