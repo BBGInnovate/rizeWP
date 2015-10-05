@@ -32,7 +32,7 @@
     if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_name ] ) ) {
 		$menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
 		$menu_items = wp_get_nav_menu_items($menu->term_id);
-		$menu_list = '<ul id="footerBurger">';
+		$menu_list = '<div id="trendingMenu"><ul id="dropdown">';
 		foreach ( (array) $menu_items as $key => $menu_item ) {
 		    $title = $menu_item->title;
 		    $url = $menu_item->url;
@@ -43,10 +43,10 @@
 		    	}
 		    }
 		    if ( ! $excludeThisLink) {
-		    	$menu_list .= '<li><a href="' . $url . '">' . $title . '</a></li>';	
+		    	$menu_list .= '<a href="' . $url . '"><li>' . $title . '</li></a>';	
 		    }
 		}
-		$menu_list .= '</ul>';
+		$menu_list .= '</ul></div>';
     } else {
 		//$menu_list = '<ul><li>Menu "' . $menu_name . '" not defined.</li></ul>';
     }
@@ -58,7 +58,7 @@
 			<li class='home'><a href='/'>home</a></li>
 			<li class='focus'><a href='/index.php/in-focus/'>in focus</a></li>
 			<li class='mission'><a href='/index.php/about/'>mission</a></li>
-			<li class='categories'><a href='/index.php/categories/'>trending</a></li>
+			<li class='trending'><a>trending</a></li>
 		</ul>
 	</div>
 </div>

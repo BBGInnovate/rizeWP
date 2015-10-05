@@ -171,58 +171,47 @@ and Blueprint http://www.blueprintcss.org/
 
 
 	/* CategoryMenu ------- */
-
-	#menuButton{
-		width: 20px;
-		height:20px;
-		padding: 0;
-		margin:0;
-		position: absolute;
-		top: 22px;
-		right:20px;
-	}
-	#menuButton{
-		background: url(/wp-content/uploads/2015/10/menuButton.png) center center / cover;
-		/*background: url(/wp-content/uploads/2015/10/menuButton.png) center center / cover;*/
-	}
-	#categoryMenu {
+	#trendingMenu {
 		margin: 0;
 		display: block;
+		position: fixed;
+		bottom: 30px;
+		width: 100%;
+		background-color: #FFF;
 	}
-	#categoryMenu ul  {
+	#trendingMenu ul  {
 		margin: 0;
-		display: block;
+		display: none;
 		clear: both;
 		margin: 0 -20px 20px -20px;
 	}
-	#categoryMenu ul#dropdown{
-		display: none;
-		-moz-box-shadow: inset 0 0 10px #CCC;
-		-webkit-box-shadow: inset 0 0 10px #CCC;
-		box-shadow: inset 0 0 10px #999;
+	#trendingMenu ul#dropdown{
+		/*display: none;*/
+		box-shadow: 0 0 10px #999;
 		margin-bottom: 20px
 	}
 
-	#categoryMenu ul li{
+	#trendingMenu ul li{
 		list-style-type: none;
 		margin: 0;
 		padding: 5px 20px;
 		border-top: 1px solid #CCC;
 		font-family: Arial, sans-serif;
+		text-align: center;
 	}
-	#categoryMenu ul a:last-of-type li{
+	#trendingMenu ul a:last-of-type li{
 		border-bottom: 1px solid #CCC;
 	}
 
-	#categoryMenu ul a.social:hover{
+	#trendingMenu ul a.social:hover{
 		text-decoration: none;
 	}
 
-	#categoryMenu ul a li:hover{
+	#trendingMenu ul a li:hover{
 		background-color: #EEE;
 	}
 
-	#categoryMenu ul a.facebook li::before{
+	#trendingMenu ul a.facebook li::before{
 		font-family: 'Genericons';
 		font-size: 18px;
 		margin-right: 5px;
@@ -230,7 +219,7 @@ and Blueprint http://www.blueprintcss.org/
     	vertical-align: top;
     	color: #3b5998;/*facebook*/
     }
-	#categoryMenu ul a.twitter li::before{
+	#trendingMenu ul a.twitter li::before{
 		font-family: 'Genericons';
 		font-size: 18px;
 		margin-right: 5px;
@@ -241,67 +230,28 @@ and Blueprint http://www.blueprintcss.org/
 
 
 	@media (min-width: 400px) {
-		#menuButton{
-			width: 25px;
-			height:25px;
-			top: 22px;
-			right:20px;
-		}
-	}
-	@media (min-width: 500px) {
-		#menuButton{
-			width: 30px;
-			height:30px;
-			top: 22px;
-			right:40px;
-		}
-		#categoryMenu ul  {
-			margin: 0 -40px;
-		}
-		#categoryMenu ul li{
-			padding: 5px 40px;
-		}
 
 	}
-	@media (min-width: 700px) {
-		#categoryMenu ul  {
-			margin: 0;
+	@media (min-width: 500px) {
+		#trendingMenu ul  {
+			margin: 0 -40px;
 		}
+		#trendingMenu ul li{
+			padding: 5px 40px;
+		}
+	}
+	@media (min-width: 700px) {
+		/*
+		#trendingMenu ul  {
+			margin: 0 auto;
+			width: 700px;
+		}
+		*/
 	}
 
 	@media (min-width: 1200px){
-		#menuButton{
-			display: none;
-		}
-		/*
-		#categoryMenu{
-			position: absolute;
-			width: 950px;
-			pointer-events: none;
-		}
-		#categoryMenu ul#dropdown{
-			display: block !important;
-			width:200px;
-			float: right;
-			pointer-events: auto;
-			-moz-box-shadow: none;
-			-webkit-box-shadow: none;
-			box-shadow: none;
-		}
-		#categoryMenu ul li{
-			padding: 0;
-			border-top: none;
-			font-size: .8em;
-		}
-		#categoryMenu ul a li:hover{
-			background-color: transparent;
-		}
-
-		#categoryMenu ul a:last-of-type li{
-			border-bottom: none;
-		}*/
-		#categoryMenu ul a.social{
-			display: none;
+		#trendingMenu ul  {
+			display: none !important;
 		}
 	}
 	/* ------- Category Menu */
@@ -342,32 +292,33 @@ and Blueprint http://www.blueprintcss.org/
 		vertical-align: bottom;
 	}
 	#footerNav ul li.home{
-		background: url(/wp-content/uploads/2015/09/menu_icons_150.png) no-repeat center 0px / 35px 150px;
+		/*background: url(/wp-content/uploads/2015/09/menu_icons_150.png) no-repeat center 0px / 35px 150px;*/
+		background: url(../../images/menu_icons_unselected.png) no-repeat center 0px / 35px 200px;
 	}
 	#footerNav ul li.focus{
-		background: url(/wp-content/uploads/2015/09/menu_icons_150.png) no-repeat center -50px / 35px 150px;
+		background: url(../../images/menu_icons_unselected.png) no-repeat center -50px / 35px 200px;
 	}
 	#footerNav ul li.mission{
-		background: url(/wp-content/uploads/2015/09/menu_icons_150.png) no-repeat center -100px / 35px 150px;
+		background: url(../../images/menu_icons_unselected.png) no-repeat center -100px / 35px 200px;
 	}
-	#footerNav ul li.categories{
-		background: url(/wp-content/uploads/2015/09/menu_icons_150.png) no-repeat center -100px / 35px 150px;
+	#footerNav ul li.trending{
+		background: url(../../images/menu_icons_unselected.png) no-repeat center -150px / 35px 200px;
 	}
 
 	/* Hightlight the footer nav for the current page */
 	#frontPage #footerNav ul li.home{
-		background: url(/wp-content/uploads/2015/09/menu_icons_selected.png) no-repeat center 0px / 35px 150px;
+		background: url(../../images/menu_icons_unselected.png) no-repeat center 0px / 35px 200px;
 	}
 
 	#inFocus #footerNav ul li.focus{
-		background: url(/wp-content/uploads/2015/09/menu_icons_selected.png) no-repeat center -50px / 35px 150px;
+		background: url(../../images/menu_icons_unselected.png) no-repeat center -50px / 35px 200px;
 	}
 
 	#pageMission #footerNav ul li.mission{
-		background: url(/wp-content/uploads/2015/09/menu_icons_selected.png) no-repeat center -100px / 35px 150px;
+		background: url(../../images/menu_icons_unselected.png) no-repeat center -100px / 35px 200px;
 	}
-	#footerNav ul li.categories{
-		background: url(/wp-content/uploads/2015/09/menu_icons_150.png) no-repeat center -100px / 35px 150px;
+	#footerNav ul li.trending{
+		background: url(../../images/menu_icons_unselected.png) no-repeat center -150px / 35px 200px;
 	}
 
 
@@ -783,6 +734,27 @@ and Blueprint http://www.blueprintcss.org/
 
 /* ------------- category styles */
 
+
+
+
+/* Video youtube embed styles */
+
+.embed-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0;
+	overflow: hidden;
+	max-width: 100%;
+} 
+.embed-container iframe, .embed-container object, .embed-container embed {
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	width: 100%; 
+	height: 100%;
+}
+
+/* -------------youtube embeds */
 
 
 

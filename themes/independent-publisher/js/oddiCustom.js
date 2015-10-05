@@ -54,7 +54,7 @@ jQuery(document).ready(function() {
 	}
 
 	//Dropdown navigation
-	jQuery("#menuButton" ).click(function() {
-		jQuery( "#categoryMenu #dropdown" ).slideToggle("drop");
+	jQuery("#footerNav .trending" ).click(function() {
+		jQuery( "#trendingMenu #dropdown" ).slideToggle("drop");
 	});
 });

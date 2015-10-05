@@ -144,20 +144,5 @@ $ogDescription = str_replace("[&hellip;]", "...", $ogDescription);
 	</header>
 	<!-- #masthead .site-header -->
 
-		<div id="menuButton">
-		</div>
-		<div id="categoryMenu">
-			<ul id='dropdown'>
-				<a href='https://facebook.com/africarizing' class='social facebook'><li>Facebook</li></a>
-				<a href='https://twitter.com/africarizing' class='social twitter'><li>Twitter</li></a>
-				<?php 
-				$categories = get_categories(); 
-					foreach ($categories as $category) {
-					echo "<a href='". get_category_link( $category->term_id ) . "'><li>".$category->category_nicename."</li></a>";
-				}
-				?>
-			</ul>
-		</div><!-- categoryMenu -->
-
 
 	<div id="main" class="site-main">
