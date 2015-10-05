@@ -27,9 +27,8 @@ get_header(); ?>
 
 <p>At Africa Rizing, our mission is to connect the next generation of global influencers from across the Continent, throughout the diaspora and around the world. Together we will discover new voices and amplify new ideas that result in lasting change.</p>
 
-<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 <div class='embed-container'>
-<iframe width="100%" src="https://www.youtube.com/embed/Qn6FRPWzW-0" class='youtubeVideo' frameborder="0" allowfullscreen></iframe>
+<iframe width="100%" src="https://www.youtube.com/embed/Qn6FRPWzW-0" frameborder="0" allowfullscreen></iframe>
 </div>
 
 <h3>Connect with us</h3>
@@ -240,24 +239,9 @@ function centerMap(){
 
 
 
-	//Resize YouTube videos proportionately 
-	function resizeIframes(){
-		/*
-		var aspectRatio = jQuery("iframe.youtubeVideo").width()/jQuery("iframe.youtubeVideo").height();
-		var columnWidth = jQuery("#content").width();
-
-		console.log('width '+columnWidth)
-
-		jQuery("iframe.youtubeVideo").width(columnWidth);
-		jQuery("iframe.youtubeVideo").height(columnWidth/aspectRatio);
-		*/
-	}
-
-
 	//Resize stuff proportionately
 	function resizeStuffOnResize(){
 	  waitForFinalEvent(function(){
-			resizeIframes();
 			centerMap();
 	  }, 500, "some unique string");
 	}

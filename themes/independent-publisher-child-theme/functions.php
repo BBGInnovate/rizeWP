@@ -306,6 +306,32 @@ function my_custom_sizes( $sizes ) {
 		 
 	add_action( 'admin_init', 'oddi_settings_api_init' );
 
+
+
+	// customize the youtube emebeds to always be responsive
+	function custom_youtube_settings($code){
+		if(strpos($code, 'youtu.be') !== false || strpos($code, 'youtube.com') !== false){
+			//$return = preg_replace("@src=(['\"])?([^'\">\s]*)@", "src=$1$2&showinfo=0&rel=0&autohide=1", $code);
+			
+			//remove the width/height attributes
+			$return = preg_replace(
+				array('/width="\d+"/i', '/height="\d+"/i'),
+   				array('',''),
+   			$code);
+
+			//wrap in a responsive div
+			$return="<div class='embed-container'>" . $return . "</div>";
+		} else {
+			$return = $code;
+		}
+		return $return;
+	}
+
+	add_filter('embed_handler_html', 'custom_youtube_settings');
+	add_filter('embed_oembed_html', 'custom_youtube_settings');
+
+
+
 	/***** ODDI CUSTOM - HOOK INTO CATEGORY MANAGEMENT FORM TO ALLOW USERS TO SPECIFY THAT A CATEGORY IS FEATURED */
 	//taken from http://php.quicoto.com/add-metadata-categories-wordpress/
 
