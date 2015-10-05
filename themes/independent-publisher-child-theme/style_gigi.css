@@ -124,14 +124,27 @@
 	text-decoration: underline;
 }
 
-/*.paging-navigation button .meta-nav {
-	visibility: hidden;
-}*/
+#categoryPage h4.page-title.category, #inFocus h1.page-title {
+    margin: .75em 0 .15em;
+    border-bottom: solid 1px #ffa500;
+}
+
+#categoryPage .summary, #inFocus p.intro {
+    font-style: italic;
+    font-size: .85em;
+    color: #999;
+    margin-top: 0px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
 
 @media (min-width: 700px) {
 	.post-excerpts.paged .first-post h1.entry-title {
 	    font-size: 1.6em;
 	}
+
+	#categoryPage .summary, #inFocus p.intro {
+		font-size: .95em;
 }
 
 

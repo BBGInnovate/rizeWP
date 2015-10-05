@@ -12,6 +12,7 @@ plugins/ssl-insecure-content-fixer
 plugins/taxonomy-terms-order
 plugins/velvet-blues-update-urls
 plugins/verve-ssl
+plugins/
 upgrade
 uploads
 debug.log
