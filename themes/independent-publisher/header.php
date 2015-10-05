@@ -60,9 +60,8 @@ $ogDescription = str_replace("[&hellip;]", "...", $ogDescription);
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 	<![endif]-->
 
-	<meta name="apple-mobile-web-app-title" content="AfricaRizing">
-	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="/wp-content/uploads/2015/10/retina_icon.png">
-
+	<meta name="apple-mobile-web-app-title" content="AfricaRizing" />
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="/wp-content/uploads/2015/10/retina_icon.png" />
 
 	<!-- for Google -->
 	<meta name="description" content="<?php echo $ogDescription; ?>"/>
