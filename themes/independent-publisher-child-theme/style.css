@@ -592,6 +592,23 @@ and Blueprint http://www.blueprintcss.org/
     	vertical-align: top;
     	color: #55acee;/*twitter*/
     }
+	@media (min-width: 500px){
+		/* Adding styling for :before label of "SHARE" */
+		.single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow #socialPost ul {
+			color:#999;
+			font-family: Arial, sans-serif;
+			font-weight: bold;
+			font-size:12px;
+			top: 5px;
+		}
+    	.single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow #socialPost ul:before{
+			content: 'SHARE';
+		}
+		.single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow #socialPost ul li{
+			margin-top: -15px;
+		}
+    }
+
 	@media (min-width: 700px){
 		.single.post-cover-overlay-post-title #socialPost ul {
 			opacity: 1;
@@ -613,6 +630,7 @@ and Blueprint http://www.blueprintcss.org/
 		}
 
 		/* Adding styling for :before label of "SHARE" */
+		/*
 		.single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow #socialPost ul {
 			color:#999;
 			font-family: Arial, sans-serif;
@@ -626,6 +644,7 @@ and Blueprint http://www.blueprintcss.org/
 		.single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow #socialPost ul li{
 			margin-top: -15px;
 		}
+		*/
 
 		.single.post-cover-overlay-post-title #socialPost ul li{
 			display: block; 
