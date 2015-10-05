@@ -43,9 +43,10 @@ $ogUrl = get_permalink();
 $ogTitle = iconv('UTF-8', 'ASCII//TRANSLIT', $ogTitle);  
 
 /* remove html tags, smart quotes and trailing ellipses from description */
-$ogDescription=wp_strip_all_tags($ogDescription); 
+$ogDescription = wp_strip_all_tags($ogDescription); 
 $ogDescription = iconv('UTF-8', 'ASCII//TRANSLIT', $ogDescription); 
 $ogDescription = str_replace("[&hellip;]", "...", $ogDescription); 
+$ogDescription = str_replace('"','&qout;')
 
 
 ?><!DOCTYPE html>
