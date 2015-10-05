@@ -307,18 +307,18 @@ and Blueprint http://www.blueprintcss.org/
 
 	/* Hightlight the footer nav for the current page */
 	#frontPage #footerNav ul li.home{
-		background: url(../../images/menu_icons_unselected.png) no-repeat center 0px / 35px 200px;
+		background: url(../../images/menu_icons_selected.png) no-repeat center 0px / 35px 200px;
 	}
 
 	#inFocus #footerNav ul li.focus{
-		background: url(../../images/menu_icons_unselected.png) no-repeat center -50px / 35px 200px;
+		background: url(../../images/menu_icons_selected.png) no-repeat center -50px / 35px 200px;
 	}
 
 	#pageMission #footerNav ul li.mission{
-		background: url(../../images/menu_icons_unselected.png) no-repeat center -100px / 35px 200px;
+		background: url(../../images/menu_icons_selected.png) no-repeat center -100px / 35px 200px;
 	}
 	#footerNav ul li.trending{
-		background: url(../../images/menu_icons_unselected.png) no-repeat center -150px / 35px 200px;
+		background: url(../../images/menu_icons_selected.png) no-repeat center -150px / 35px 200px;
 	}
 
 
