@@ -1,8 +1,6 @@
 /* STYLE_GIGI.css - temporary styles file for collaboration */
 
-
-
-/* Styles for the "Featured in this story" section */
+/* Article pages "Featured in this story" section */
 #featured-section {
 	margin-top: 3em;
 	margin-bottom: 2em;
@@ -63,14 +61,16 @@
 	font-size: 1.1em;
 	text-transform: uppercase;
 	font-weight: 600;
+	letter-spacing: 0;
 }
 
 #featured-section p.featured-also {
-	font-family: Georgia, "Times New Roman", Times, serif;
+	/*font-family: Georgia, "Times New Roman", Times, serif;*/
 	font-size: 1em;
 	margin: 0;
 }
 
+/* Removing styles from sticky posts */
 .site-main article.sticky {
 	margin-bottom: 0;
 	padding-right: 0;
@@ -80,11 +80,13 @@
 	border-radius: 0;
 }
 
+/* Archive pages (page 2+ of pagination) */
 .post-excerpts.paged .first-post h1.entry-title {
     font-size: 1.3em;
     font-weight: 600;
 }
 
+/* Pagination buttons (older/newer posts) */
 .paging-navigation button:active, .paging-navigation button:focus {
 	border: none;
 	box-shadow: none;
@@ -124,6 +126,7 @@
 	text-decoration: underline;
 }
 
+/* Category pages */
 #categoryPage h4.page-title.category, #inFocus h1.page-title {
     margin: .75em 0 .15em;
     border-bottom: solid 1px #ffa500;
@@ -138,6 +141,38 @@
     margin-bottom: 30px;
 }
 
+/* Our Mission page: author bios */
+#staff .member .photo {
+	border-radius: 50%
+}
+
+#staff .member .photo img.square {
+    max-height: 150px;
+}
+
+#staff .member .profile p.role {
+    font-size: smaller;
+    line-height: 1.2em;
+    margin-top: .25em;
+}
+
+#staff .member .profile p.biography {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-style: italic;
+    font-size: .75em;
+    line-height: 1.5em;
+    color: 929292;
+}
+
+@media (min-width: 500px) {
+	#staff .member .profile p.biography {
+		font-size: .8em;
+    	line-height: 1.5em;
+    }
+}
+
 @media (min-width: 700px) {
 	.post-excerpts.paged .first-post h1.entry-title {
 	    font-size: 1.6em;
@@ -145,6 +180,7 @@
 
 	#categoryPage .summary, #inFocus p.intro {
 		font-size: .95em;
+	}
 }
 
 

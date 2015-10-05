@@ -12,7 +12,7 @@ if ( have_posts() ) {
 	the_post(); 
 
 
-	$metaAuthor= get_the_author() . ": Africa Rizing Bio"; 
+	$metaAuthor= get_the_author(); 
 	$ogTitle=get_the_title();
 
 	$metaKeywords= strip_tags(get_the_tag_list('',', ',''));
