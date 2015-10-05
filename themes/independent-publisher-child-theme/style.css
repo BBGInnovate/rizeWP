@@ -630,21 +630,12 @@ and Blueprint http://www.blueprintcss.org/
 		}
 
 		/* Adding styling for :before label of "SHARE" */
-		/*
 		.single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow #socialPost ul {
-			color:#999;
-			font-family: Arial, sans-serif;
-			font-weight: bold;
-			font-size:12px;
-			top: 5px;
-		}
-		.single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow #socialPost ul:before{
-			content: 'SHARE';
+			top: 10px;
 		}
 		.single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow #socialPost ul li{
 			margin-top: -15px;
 		}
-		*/
 
 		.single.post-cover-overlay-post-title #socialPost ul li{
 			display: block; 
