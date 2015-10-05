@@ -23,6 +23,11 @@
 
 <?php wp_footer(); ?>
 <?php 
+	
+	/* Since the in-focus and mission pages are already part of the footer nav, we exclude them.
+	   Simply add more entries to the list as needed */
+	
+	$excludeList=["/in-focus/","/about/"];
     $menu_name = 'primary';
     if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_name ] ) ) {
 		$menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
@@ -31,7 +36,15 @@
 		foreach ( (array) $menu_items as $key => $menu_item ) {
 		    $title = $menu_item->title;
 		    $url = $menu_item->url;
-		    $menu_list .= '<li><a href="' . $url . '">' . $title . '</a></li>';
+		    $excludeThisLink=false;
+		    foreach ($excludeList as $urlToExclude) {
+		    	if (strpos($url, $urlToExclude)) {
+		    		$excludeThisLink=true;
+		    	}
+		    }
+		    if ( ! $excludeThisLink) {
+		    	$menu_list .= '<li><a href="' . $url . '">' . $title . '</a></li>';	
+		    }
 		}
 		$menu_list .= '</ul>';
     } else {
