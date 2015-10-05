@@ -60,6 +60,10 @@ $ogDescription = str_replace("[&hellip;]", "...", $ogDescription);
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 	<![endif]-->
 
+	<meta name="apple-mobile-web-app-title" content="AfricaRizing">
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="/wp-content/uploads/2015/10/retina_icon.png">
+
+
 	<!-- for Google -->
 	<meta name="description" content="<?php echo $ogDescription; ?>"/>
 	<meta name="keywords" content="<?php echo $metaKeywords; ?>" />
@@ -145,19 +149,19 @@ $ogDescription = str_replace("[&hellip;]", "...", $ogDescription);
 		</div>
 		<div id="categoryMenu">
 			<ul id='dropdown'>
-			 <?php 
-			  $categories = get_categories(); 
-			  foreach ($categories as $category) {
+				<a href='https://facebook.com/africarizing' class='social facebook'><li>Facebook</li></a>
+				<a href='https://twitter.com/africarizing' class='social twitter'><li>Twitter</li></a>
+				<?php 
+				$categories = get_categories(); 
+				foreach ($categories as $category) {
 				echo "<a href='". get_category_link( $category->term_id ) . "'><li>".$category->category_nicename."</li></a>";
-			  	/*$option = '<option value="/category/'.$category->category_nicename.'">';
+					/*$option = '<option value="/category/'.$category->category_nicename.'">';
 				$option .= $category->cat_name;
 				$option .= ' ('.$category->category_count.')';
 				$option .= '</option>';
 				echo $option;*/
-			  }
-			 ?>
-			 <a href='http://facebook.com' class='social'><li>Facebook</li></a>
-			 <a href='http://twitter.com' class='social'><li>Twitter</li></a>
+				}
+				?>
 			</ul>
 		</div><!-- categoryMenu -->
 
