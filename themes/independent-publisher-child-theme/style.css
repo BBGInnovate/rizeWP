@@ -317,7 +317,7 @@ and Blueprint http://www.blueprintcss.org/
 	#pageMission #footerNav ul li.mission{
 		background: url(../../images/menu_icons_selected.png) no-repeat center -100px / 35px 200px;
 	}
-	#footerNav ul li.trending{
+	#footerNav ul li.trending.menuOpen{
 		background: url(../../images/menu_icons_selected.png) no-repeat center -150px / 35px 200px;
 	}
 
