@@ -81,6 +81,18 @@ and Blueprint http://www.blueprintcss.org/
 		clear:both;
 	}
 
+	/* Removing styles from sticky posts */
+	.site-main article.sticky {
+		margin-bottom: 0;
+		padding-right: 0;
+		padding-right: 0;
+		padding-left: 0;
+		background: #FFF;
+		border-radius: 0;
+	}
+
+
+
 	/*links inside of posts are green */
 	.single p a{color: #57ad68;}
 
@@ -256,6 +268,55 @@ and Blueprint http://www.blueprintcss.org/
 	}
 	/* ------- Category Menu */
 
+
+
+
+	/* Archive pages (page 2+ of pagination) ------- */
+	.post-excerpts.paged .first-post h1.entry-title {
+		font-size: 1.3em;
+		font-weight: 600;
+	}
+
+	/* Pagination buttons (older/newer posts) */
+	.paging-navigation button:active, .paging-navigation button:focus {
+		border: none;
+		box-shadow: none;
+	}
+
+	.paging-navigation .nav-previous button {
+		background: url("/wp-content/uploads/2015/10/arrows_over.png") no-repeat 2% -75% / 33px;
+		padding-left: 40px;
+		color: #FFA500;
+		font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
+		font-size: 1em;
+		font-weight: bold;
+		text-transform: lowercase;
+		line-height: 2em;
+	}
+
+	.paging-navigation .nav-previous button:hover {
+		background: url("/wp-content/uploads/2015/10/arrows.png") no-repeat 2% -75% / 33px;
+		color: #BBBBBB;
+		text-decoration: underline;
+	}
+
+	.paging-navigation .nav-next button {
+		background: url("/wp-content/uploads/2015/10/arrows_over.png") no-repeat 98% 150% / 33px;
+		padding-right: 40px;
+		color: #FFA500;
+		font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
+		font-size: 1em;
+		font-weight: bold;
+		text-transform: lowercase;
+		line-height: 2em;
+	}
+
+	.paging-navigation .nav-next button:hover {
+		background: url("/wp-content/uploads/2015/10/arrows.png") no-repeat 98% 150% / 33px;
+		color: #BBBBBB;
+		text-decoration: underline;
+	}
+	/* ------- Pagination */
 
 
 
@@ -826,14 +887,33 @@ and Blueprint http://www.blueprintcss.org/
 
 	#staff.section{width: 100%; margin: 0; padding: 35px 0 0 0;}
 	#staff .member{width: 100%; display: block; margin: 0; padding: 10px 0; border-top: solid 1px #CCC; clear:both;}
-	#staff .member .photo{width: 36%; margin: 0 4% 10px 0; float:left; /*border-radius: 10px*/}
+	#staff .member .photo{width: 36%; margin: 0 4% 10px 0; float:left; border-radius: 50%; /*border-radius: 10px*/}
 
 	#staff .member .photo img.square{width: 100%; padding: 0; height: auto;}
 	#staff .member .photo img.rectangle{display: none; width: 100%; padding: 0; height: auto;}
 	#staff .member .profile{padding:0; float: right; width: 60%;}
 	#staff .member .profile p{font-family: "Myriad Pro", Helvetica, Arial, sans-serif; margin:0;}
 	#staff .member .profile h4{font-family: "Myriad Pro", Helvetica, Arial, sans-serif; font-size: 20px; margin: 0; clear: none;}
-	#staff .member .profile p.biography{margin-top: 10px; font-size: .8em; line-height: 1.4em; margin-bottom: 10px; }
+	#staff .member .profile p.role {
+		font-size: smaller;
+		line-height: 1.2em;
+		margin-top: .25em;
+	}
+	#staff .member .profile p.biography{
+		margin-top: 10px; 
+		margin-bottom: 10px;
+		font-family: Georgia, "Times New Roman", Times, serif;
+		font-size: .75em; 
+		font-style: italic;
+		line-height: 1.5em; 
+		color: 929292;
+	}
+	@media (min-width: 500px) {
+		#staff .member .profile p.biography {
+			font-size: .8em;
+			line-height: 1.5em;
+		}
+	}
 
 	@media only screen and (min-width: 700px) {
 		#staff.section{width: 100%; margin: 0; padding: 35px 0 0 0;}
@@ -850,8 +930,6 @@ and Blueprint http://www.blueprintcss.org/
 
 
 /* in focus styles ------------- */
-
-
 	#categoryPage h4.page-title.category, #inFocus h1.page-title {
 		color: #FFA500;
 		color: #333;
@@ -921,6 +999,81 @@ and Blueprint http://www.blueprintcss.org/
 
 
 
+/* Article pages "Featured in this story" section ------------- */
+#featured-section {
+	margin-top: 3em;
+	margin-bottom: 2em;
+	border-top: 1px dashed #FFA500;
+	font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
+	display: block;
+	position: relative;
+}
+
+#featured-section h3.featured-title {
+	color: #FFA500;
+	font-size: 1.2em;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: .02em;
+	margin-top: 1em;
+	margin-bottom: 1.5em;
+}
+
+#featured-section .featured-card {
+	width: 100%;
+	min-height: 100px;
+	margin-bottom: 3em;
+}
+
+#featured-section .featured-card img {
+	float: left;
+	max-width: 100px;
+	border: solid 1px #ccc;
+}
+
+#featured-section .featured-card .featured-profile {
+	margin-left: 120px;
+	float: none;
+}
+
+ .featured-profile p.featured-name {
+	font-size: 1.2em;
+	font-weight: 600;
+	margin-bottom: 0;
+	float: none;
+	clear: none;
+	margin-left: 0;
+}
+
+.featured-profile p.featured-desc {
+	font-size: 1em;
+	color: #929292;
+	margin-bottom: 0;
+}
+
+.featured-profile p.featured-links {
+	font-size: 1em;
+	color: #57ad68;
+}
+
+#featured-section h6 {
+	font-size: 1.1em;
+	text-transform: uppercase;
+	font-weight: 600;
+	letter-spacing: 0;
+}
+
+#featured-section p.featured-also {
+	/*font-family: Georgia, "Times New Roman", Times, serif;*/
+	font-size: 1em;
+	margin: 0;
+}
+/* ------------- "Featured in this story" section */
+
+
+
+
+
 /* Category page ---------------- */
 
 #categoryPage h4.page-title.category{
@@ -959,99 +1112,4 @@ button, html input[type="button"], input[type="reset"], input[type="submit"], bu
 button, html input[type="button"], input[type="reset"], input[type="submit"], button:hover, html input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover { background: -ms-linear-gradient(top, #57ad68 60%, #57ad68 100%); /* IE10+ */ }
 button, html input[type="button"], input[type="reset"], input[type="submit"], button:hover, html input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover { background: linear-gradient(top, #57ad68 60%, #57ad68 100%); /* W3C */ }
 
-
-
-/* page by category post */
-
-/*
-#page .pagePostByCategory article {padding-bottom:0;}
-.categoryContainer{margin-bottom: 50px;}
-
-.pagePostByCategory .category a{
-	font-weight: normal; 
-	letter-spacing: 1px; 
-	text-transform: uppercase;
-}
-
-
-.pagePostByCategory #content article:first-of-type h1.entry-title {font-size: 2.8em; line-height: .6em;}
-
-.pagePostByCategory h1.entry-title {line-height: .7em;}
-.pagePostByCategory h1.entry-title a {font-size: .7em;}
-
-.pagePostByCategory h4.category a{color: #FFF; font-weight: normal; letter-spacing: 1px; font-size: .7em; background-color: orange; padding:6px 12px 3px 20px; margin: -20px;}
-.pagePostByCategory .category a:hover{background-color: #333;}
-
-.pagePostByCategory ul.fullWidth{
-	margin-left:-20px; 
-	margin-right:-20px;
-}
-.pagePostByCategory ul.fullWidth li{
-	list-style-type: none;
-	border-top: 1px solid #CCC;
-	margin:0;
-	padding:0;
-}
-.pagePostByCategory ul.fullWidth li a{
-	display: inline-block;
-	padding: 5px 20px;
-	margin:0;
-	width:90%;
-}
-.pagePostByCategory ul.fullWidth li:last-of-type{
-	border-bottom: 1px solid #CCC;
-}
-
-.pagePostByCategory .blog article{
-	border-bottom: none;
-}
-
-.pagePostByCategory ul.fullWidth li a{
-	font-family: Arial, sans-serif;
-	color: orange;
-}
-.pagePostByCategory ul.fullWidth li a:hover{
-	color: #F15A29;
-}
-
-.pagePostByCategory .category a{
-	color: #999; 
-	font-size: .8em; 
-}
-
-.pagePostByCategory .entry-content a:hover{text-decoration: none !important;}
-
-
-@media screen and ( min-width: 500px ) {
-	.pagePostByCategory h4.category a{color: #999; background-color: transparent; padding:0; margin: 0;}
-	.pagePostByCategory .category a:hover{background-color: transparent;}
-
-	.pagePostByCategory h1.entry-title {line-height: .8em;}
-	.pagePostByCategory h1.entry-title a {font-size: .8em;}
-	.pagePostByCategory h1.entry-title a:hover, h1.site-title a:hover {
-		color: #333;
-	}
-
-
-	.pagePostByCategory ul.fullWidth{
-		margin-left: 0; 
-		margin-right: 0;
-	}
-	.pagePostByCategory ul.fullWidth {
-		margin-left:20px;
-	}
-	.pagePostByCategory ul.fullWidth li{
-		list-style-type: disc;
-		border-top: none;
-		margin:0;
-		padding:0;
-	}
-	.pagePostByCategory ul.fullWidth li:last-of-type{
-		border-bottom: none;
-	}
-	.pagePostByCategory ul.fullWidth li a{
-		display: block;
-	}
-}
-*/
-
+ul.taglist {text-align: center;}

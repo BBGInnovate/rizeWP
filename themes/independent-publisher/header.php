@@ -61,7 +61,7 @@ $ogDescription = str_replace('"','&qout;',$ogDescription);
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 	<![endif]-->
 
-	<meta name="apple-mobile-web-app-title" content="AfricaRizing" />
+	<meta name="apple-mobile-web-app-title" content="Africa Rizing" />
 	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="/wp-content/images/retina-icon.png" />
 
 	<!-- for Google -->
