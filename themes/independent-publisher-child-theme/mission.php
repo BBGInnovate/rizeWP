@@ -52,19 +52,6 @@ Being active in the communities we cover is at the core of Africa Rizing and our
 </div>
 
 <div class='member'>
-	<div class='photo' style='background:#FFF url(../../wp-content/uploads/2015/08/mugshot_victoria_okoye.jpg) center center; background-size: cover;'>
-		<a href='/index.php/author/vokoye/'>
-		<img src='../../wp-content/uploads/2015/08/transparentSquare.png' class='square'/>
-		</a>
-	</div>
-	<div class='profile'>
-		<h4>Victoria Okoye</h4>
-		<p class='role'>Journalist, <a href='http://twitter.com/Victoria_Okoye'>@Victoria_Okoye</a></p>
-		<p class='biography'>Dreamer, writer, urban planner, @WIEGOGlobal urban advocate. Tweeting #urban development, #design, #publicspaces, #streetculture, etc. Carl Jung fan.</p>
-	</div>
-</div>
-
-<div class='member'>
 	<div class='photo' style='background:#FFF url(../../wp-content/uploads/2015/08/mugshot_melb4freepress.jpg) center center; background-size: cover;'>
 		<a href='/index.php/author/mbailey/'>
 		<img src='../../wp-content/uploads/2015/08/transparentSquare.png' class='square'/>
@@ -77,16 +64,30 @@ Being active in the communities we cover is at the core of Africa Rizing and our
 	</div>
 </div>
 
+
 <div class='member'>
-	<div class='photo' style='background:#FFF url(../../wp-content/uploads/2015/08/mugshot_coraliesl.jpg) center center; background-size: cover;'>
-		<a href='/index.php/author/csaintlouis/'>
+	<div class='photo' style='background:#FFF url(../../wp-content/uploads/2015/10/selasekove.jpg) center center; background-size: cover;'>
+		<a href='/index.php/author/skove/'>
 		<img src='../../wp-content/uploads/2015/08/transparentSquare.png' class='square'/>
 		</a>
 	</div>
 	<div class='profile'>
-		<h4>Coralie Saint-Louis</h4>
-		<p class='role'>Social media editor, <a href='http://twitter.com/CoralieSL'>@CoralieSL</a></p>
-		<p class='biography'>I don&#39;t know everything and I&#39;m ok with that. Live &amp; Learn. #ShamelesslyHaitian #HowardUniversityAlumna</p>
+		<h4>Selase Kove-Seyram</h4>
+		<p class='role'>Journalist, <a href='http://twitter.com/SelaseKove'>@SelaseKove</a></p>
+		<p class='biography'>Multimedia Producer / Freelance Journalist • @columbiajourn alumnus • I tell stories about Africa and my journeys across the world • New York • Accra</p>
+	</div>
+</div>
+
+<div class='member'>
+	<div class='photo' style='background:#FFF url(../../wp-content/uploads/2015/08/mugshot_victoria_okoye.jpg) center center; background-size: cover;'>
+		<a href='/index.php/author/vokoye/'>
+		<img src='../../wp-content/uploads/2015/08/transparentSquare.png' class='square'/>
+		</a>
+	</div>
+	<div class='profile'>
+		<h4>Victoria Okoye</h4>
+		<p class='role'>Journalist, <a href='http://twitter.com/Victoria_Okoye'>@Victoria_Okoye</a></p>
+		<p class='biography'>Dreamer, writer, urban planner, @WIEGOGlobal urban advocate. Tweeting #urban development, #design, #publicspaces, #streetculture, etc. Carl Jung fan.</p>
 	</div>
 </div>
 
@@ -104,15 +105,15 @@ Being active in the communities we cover is at the core of Africa Rizing and our
 </div>
 
 <div class='member'>
-	<div class='photo' style='background:#FFF url(../../wp-content/uploads/2015/10/selasekove.jpg) center center; background-size: cover;'>
-		<a href='/index.php/author/skove/'>
+	<div class='photo' style='background:#FFF url(../../wp-content/uploads/2015/08/mugshot_coraliesl.jpg) center center; background-size: cover;'>
+		<a href='/index.php/author/csaintlouis/'>
 		<img src='../../wp-content/uploads/2015/08/transparentSquare.png' class='square'/>
 		</a>
 	</div>
 	<div class='profile'>
-		<h4>Selase Kove-Seyram</h4>
-		<p class='role'>Journalist, <a href='http://twitter.com/SelaseKove'>@SelaseKove</a></p>
-		<p class='biography'>Multimedia Producer / Freelance Journalist • @columbiajourn alumnus • I tell stories about Africa and my journeys across the world • New York • Accra</p>
+		<h4>Coralie Saint-Louis</h4>
+		<p class='role'>Social media editor, <a href='http://twitter.com/CoralieSL'>@CoralieSL</a></p>
+		<p class='biography'>I don&#39;t know everything and I&#39;m ok with that. Live &amp; Learn. #ShamelesslyHaitian #HowardUniversityAlumna</p>
 	</div>
 </div>
 
