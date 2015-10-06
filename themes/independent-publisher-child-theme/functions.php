@@ -155,6 +155,7 @@ function my_custom_sizes( $sizes ) {
 						$twitterText= "";
 						$twitterText .= get_the_title();
 						$twitterHandle = get_the_author_meta( 'twitterHandle' );
+						$twitterHandle=str_replace("@", "", $twitterHandle);
 						if ( $twitterHandle && $twitterHandle != '' ) {
 							$twitterText .= " by @" . $twitterHandle; 
 						} else {
