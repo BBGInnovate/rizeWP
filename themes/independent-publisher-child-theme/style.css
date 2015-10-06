@@ -45,7 +45,7 @@ and Blueprint http://www.blueprintcss.org/
 		opacity: 1;
 	}
 
-	.site-description, #masthead .site-navigation{
+	.site-description, #masthead .site-navigation, #logoOnPostPages .site-description{
 		display: none;
 	}
 
@@ -60,19 +60,31 @@ and Blueprint http://www.blueprintcss.org/
 	.summary{font-style: italic;}
 
 	#page {margin-top:25px;}
-	#masthead .site-logo {
+
+	#logoOnPostPages{
+		display: block;
+		width: 100%;
+		max-width: 700px;
+		margin:0 auto;
+	}
+	#logoOnPostPages h1.site-title, #logoOnPostPages a.site-logo{
+		display: inline-block;
+		float:none;
+	}
+	#logoOnPostPages h1.site-title{
+		margin:0;
+		vertical-align: top;
 	}
 
-	#masthead .site-logo{
+	#masthead .site-logo, #logoOnPostPages .site-logo{
 		display: none;
-		float:left;
 		margin-right: 3px;
 		height: 55px;
 	}
-	#masthead .site-logo img, .single-column-layout #masthead .site-logo img {
+	#masthead .site-logo img, #logoOnPostPages .site-logo img, .single-column-layout #masthead .site-logo img {
 	    max-width: 40px;
 	}
-	#masthead .site-title, .single-column-layout #masthead .site-title{
+	#masthead .site-title, #logoOnPostPages .site-title, .single-column-layout #masthead .site-title{
 		padding-top:20px;
 		font-size: 30px;
 	}
@@ -97,12 +109,15 @@ and Blueprint http://www.blueprintcss.org/
 		content: '\f463'; /* \f410 for email icon */
 		color: #BBC7D3;
 	}
+	#menu-social li a[href*="tinyletter.com"]:hover::before {
+		transition: color ease 0.3s;
+		color: #4A4A4E;
+	}
 
 
 
 	/*links inside of posts are green */
 	.single p a{color: #57ad68;}
-
 
 	footer#colophon{
 		margin-top: 20px;
@@ -111,18 +126,18 @@ and Blueprint http://www.blueprintcss.org/
 
 
 	@media only screen and (max-width: 400px){
-		body #masthead .site-title, .single-column-layout #masthead .site-title{
+		body #masthead .site-title, body #logoOnPostPages .site-title, .single-column-layout #masthead .site-title{
 			padding:10px 0 0 0;
 		}
 	}
 
 
-	body #masthead .site-title, .single-column-layout #masthead .site-title{
+	body #masthead .site-title, body #logoOnPostPages .site-title, .single-column-layout #masthead .site-title{
 		font-size: 24px;
 	}
 
 	@media only screen and (min-width: 320px){
-		#masthead .site-logo{
+		#masthead .site-logo, #logoOnPostPages .site-logo{
 			display: block;
 		}
 	}
@@ -133,26 +148,26 @@ and Blueprint http://www.blueprintcss.org/
 
 
 	@media only screen and (min-width: 400px){
-		body #masthead .site-title, .single-column-layout #masthead .site-title{
+		body #masthead .site-title, body #logoOnPostPages .site-title, .single-column-layout #masthead .site-title{
 			font-size: 30px;
 			padding-top: 10px;
 		}
-		#masthead .site-logo {
+		#masthead .site-logo, #logoOnPostPages .site-logo {
 			height: 60px;
 		}
-		#masthead .site-logo img{
+		#masthead .site-logo img, #logoOnPostPages .site-logo img{
 			max-width: 60px;
 		}
 		#menu-social ul{margin-top: 5px;}
 	}
 
 	@media only screen and (min-width: 500px){
-		body #masthead .site-title, .single-column-layout #masthead .site-title{
+		body #masthead .site-title, body #logoOnPostPages .site-title, .single-column-layout #masthead .site-title{
 			font-size: 40px;
 			line-height: 36px;
 			padding-top:15px;
 		}
-		#masthead .site-logo {
+		#masthead .site-logo, #logoOnPostPages .site-logo {
 			height: 70px;
 		}
 		.site-logo img{
@@ -409,6 +424,7 @@ and Blueprint http://www.blueprintcss.org/
 /* post specific styles ----------- */
 
 	.entry-title-meta .sep{color: #CCC;}
+	ul.taglist {text-align: center;}
 
 	/* Cutline styles */
 	.wp-caption-text {
@@ -651,6 +667,7 @@ and Blueprint http://www.blueprintcss.org/
     	vertical-align: top;
     	color: #55acee;/*twitter*/
     }
+
 	@media (min-width: 500px){
 		/* Adding styling for :before label of "SHARE" */
 		.single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow #socialPost ul {
@@ -1109,5 +1126,3 @@ button, html input[type="button"], input[type="reset"], input[type="submit"], bu
 button, html input[type="button"], input[type="reset"], input[type="submit"], button:hover, html input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover { background: -o-linear-gradient(top, #57ad68 60%, #57ad68 100%); /* Opera 11.10+ */ }
 button, html input[type="button"], input[type="reset"], input[type="submit"], button:hover, html input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover { background: -ms-linear-gradient(top, #57ad68 60%, #57ad68 100%); /* IE10+ */ }
 button, html input[type="button"], input[type="reset"], input[type="submit"], button:hover, html input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover { background: linear-gradient(top, #57ad68 60%, #57ad68 100%); /* W3C */ }
-
-ul.taglist {text-align: center;}

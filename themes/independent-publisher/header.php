@@ -94,8 +94,19 @@ $ogDescription = str_replace('"','&qout;',$ogDescription);
 
 <body id="<?php echo $pageBodyID; ?>" <?php body_class(); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
 
+<?php // Adding the logo/branding to single post pages. ?>
+<?php if ( independent_publisher_is_multi_author_mode() && is_single() ) : ?>
+	<div id="logoOnPostPages">
+		<?php independent_publisher_site_info(); ?>
+	</div>
+<?php endif; ?>
+
+
 <?php // Displays full-width featured image on Single Posts if applicable ?>
 <?php independent_publisher_full_width_featured_image(); ?>
+
+<!--
+<?php // Removing this because we're going to add full branding above the featured image on single post pages. ?>
 
 <?php // Makes the Header Image a small icon floating in the top left corner when Multi Author Mode is enabled ?>
 <?php if ( independent_publisher_is_multi_author_mode() && is_single() ) : ?>
@@ -107,6 +118,7 @@ $ogDescription = str_replace('"','&qout;',$ogDescription);
 		<?php endif; ?>
 	</div>
 <?php endif; ?>
+-->
 
 <div id="page" class="hfeed site">
 	<header id="masthead" class="site-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
