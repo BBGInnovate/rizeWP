@@ -68,12 +68,12 @@ and Blueprint http://www.blueprintcss.org/
 		margin:5px auto 0 auto;
 		line-height: 0;
 	}
-	#logoOnPostPages h1.site-title, #logoOnPostPages a.site-logo{
+	#logoOnPostPages h1.site-title{
 		display: inline-block;
 		float:none;
 	}
 	#logoOnPostPages h1.site-title{
-		margin:0;
+		margin:0 0 0 20px;
 		vertical-align: top;
 	}
 
@@ -141,8 +141,17 @@ and Blueprint http://www.blueprintcss.org/
 	}
 
 	@media only screen and (min-width: 320px){
-		#masthead .site-logo, #logoOnPostPages .site-logo{
+		#masthead .site-logo{
 			display: block;
+		}
+		#logoOnPostPages a.site-logo{
+			display: inline-block;
+			float:none;
+			margin:5px 0 0 20px;
+		}
+		#logoOnPostPages h1.site-title{
+			margin: 0 0 0 -1px;
+			padding-top:14px;
 		}
 	}
 	@media only screen and (min-width: 350px){
@@ -152,9 +161,13 @@ and Blueprint http://www.blueprintcss.org/
 
 
 	@media only screen and (min-width: 400px){
-		body #masthead .site-title, body #logoOnPostPages .site-title, .single-column-layout #masthead .site-title{
+		body #masthead .site-title, .single-column-layout #masthead .site-title{
 			font-size: 30px;
 			padding-top: 10px;
+		}
+		body #logoOnPostPages .site-title{
+			font-size: 30px;
+			padding-top: 15px;
 		}
 		#masthead .site-logo, #logoOnPostPages .site-logo {
 			height: 60px;
@@ -164,12 +177,17 @@ and Blueprint http://www.blueprintcss.org/
 		}
 		#menu-social ul{margin-top: 5px;}
 	}
+	@media only screen and (min-width: 500px){
 
+	}
 	@media only screen and (min-width: 500px){
 		body #masthead .site-title, body #logoOnPostPages .site-title, .single-column-layout #masthead .site-title{
 			font-size: 40px;
 			line-height: 36px;
 			padding-top:15px;
+		}
+		#logoOnPostPages a.site-logo{
+			margin-left:40px;
 		}
 		#masthead .site-logo, #logoOnPostPages .site-logo {
 			height: 70px;
