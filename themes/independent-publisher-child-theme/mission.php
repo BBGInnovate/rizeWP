@@ -104,14 +104,14 @@ Being active in the communities we cover is at the core of Africa Rizing and our
 </div>
 
 <div class='member'>
-	<div class='photo' style='background:#FFF url(../../wp-content/uploads/2015/09/selasekove.jpg) center center; background-size: cover;'>
+	<div class='photo' style='background:#FFF url(../../wp-content/uploads/2015/10/selasekove.jpg) center center; background-size: cover;'>
 		<a href='/index.php/author/skove/'>
 		<img src='../../wp-content/uploads/2015/08/transparentSquare.png' class='square'/>
 		</a>
 	</div>
 	<div class='profile'>
 		<h4>Selase Kove-Seyram</h4>
-		<p class='role'>Journalist, <a href='http://twitter.com/eonwona'>@SelaseKove</a></p>
+		<p class='role'>Journalist, <a href='http://twitter.com/SelaseKove'>@SelaseKove</a></p>
 		<p class='biography'>Multimedia Producer / Freelance Journalist • @columbiajourn alumnus • I tell stories about Africa and my journeys across the world • New York • Accra</p>
 	</div>
 </div>
