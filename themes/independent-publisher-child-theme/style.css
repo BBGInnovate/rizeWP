@@ -50,9 +50,15 @@ and Blueprint http://www.blueprintcss.org/
 	}
 
 	/*social main */
-	#menu-social {display: none;}
+	#menu-social, #postDetail div#menu-social {
+		display: none;
+	}
 	#menu-social{float:right; clear: none;}
 	#menu-social ul{margin-top: 2px;margin-bottom: 0px}
+
+
+
+
 
 	#page.site{
 		margin-top: 10px;
@@ -64,7 +70,7 @@ and Blueprint http://www.blueprintcss.org/
 	#logoOnPostPages{
 		display: block;
 		width: 100%;
-		max-width: 700px;
+		max-width: 780px;
 		margin:5px auto 0 auto;
 		line-height: 0;
 	}
@@ -490,6 +496,7 @@ and Blueprint http://www.blueprintcss.org/
 	}
 
 	@media only screen and (min-width: 1201px) {
+		/*
 		#creativeCommons{
 			position: absolute;
 			top: 1500px;
@@ -502,6 +509,7 @@ and Blueprint http://www.blueprintcss.org/
 			width: 170px;
 			left: -230px;
 		}
+		*/
 	}
 
 	.single article.post, .single footer.entry-meta{
@@ -689,6 +697,16 @@ and Blueprint http://www.blueprintcss.org/
     	vertical-align: top;
     	color: #55acee;/*twitter*/
     }
+
+	/* Share icons: add "share" on articles with headlines over images */
+	.single.post-cover-overlay-post-title #socialPost ul:before {
+		content: "SHARE";
+		color: #999;
+		font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
+		font-size: 12px;
+		font-weight: bold;
+	}
+
 
 	@media (min-width: 500px){
 		/* Adding styling for :before label of "SHARE" */
@@ -967,7 +985,7 @@ and Blueprint http://www.blueprintcss.org/
 
 
 /* in focus styles ------------- */
-	#categoryPage h4.page-title.category, #inFocus h1.page-title {
+	#categoryPage h4.page-title.category, #inFocus h1.page-title, #tagPage h4.page-title {
 		color: #FFA500;
 		color: #333;
 		margin:10px 0 5px 0;
@@ -1018,8 +1036,22 @@ and Blueprint http://www.blueprintcss.org/
 		border-top: none;
 	}
 
+	#categoryPage h4.page-title.category, #inFocus h1.page-title, #tagPage h4.page-title {
+		margin: .75em 0 .15em;
+		border-bottom: solid 1px #ffa500;
+	}
+
+	#categoryPage .summary, #inFocus p.intro {
+		font-style: italic;
+		font-size: .85em;
+		color: #999;
+		margin-top: 0px;
+		line-height: 1.5;
+		margin-bottom: 30px;
+	}
+
 	@media only screen and (min-width: 700px) {
-		#categoryPage h4.page-title.category, #inFocus h1.page-title {
+		#categoryPage h4.page-title.category, #inFocus h1.page-title, #tagPage h4.page-title {
 			font-size: 2.5em;
 		}
 		#inFocus.page h1.entry-title{
