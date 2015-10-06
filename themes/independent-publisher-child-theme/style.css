@@ -92,6 +92,13 @@ and Blueprint http://www.blueprintcss.org/
 	}
 
 
+	/*Add newsletter icon to social */
+	#menu-social li a[href*="tinyletter.com"]::before {
+		content: '\f463'; /* \f410 for email icon */
+		color: #BBC7D3;
+	}
+
+
 
 	/*links inside of posts are green */
 	.single p a{color: #57ad68;}
@@ -222,14 +229,14 @@ and Blueprint http://www.blueprintcss.org/
 	#trendingMenu ul a li:hover{
 		background-color: #EEE;
 	}
-
+/*
 	#trendingMenu ul a.facebook li::before{
 		font-family: 'Genericons';
 		font-size: 18px;
 		margin-right: 5px;
 	    content: '\f203';
     	vertical-align: top;
-    	color: #3b5998;/*facebook*/
+    	color: #3b5998;/
     }
 	#trendingMenu ul a.twitter li::before{
 		font-family: 'Genericons';
@@ -237,9 +244,9 @@ and Blueprint http://www.blueprintcss.org/
 		margin-right: 5px;
 	    content: '\f202';
     	vertical-align: top;
-    	color: #55acee;/*twitter*/
+    	color: #55acee;
     }
-
+*/
 
 	@media (min-width: 400px) {
 
@@ -252,15 +259,6 @@ and Blueprint http://www.blueprintcss.org/
 			padding: 5px 40px;
 		}
 	}
-	@media (min-width: 700px) {
-		/*
-		#trendingMenu ul  {
-			margin: 0 auto;
-			width: 700px;
-		}
-		*/
-	}
-
 	@media (min-width: 1200px){
 		#trendingMenu ul  {
 			display: none !important;
