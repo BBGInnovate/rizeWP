@@ -44,10 +44,11 @@ and Blueprint http://www.blueprintcss.org/
 		opacity: 1;
 	}
 
-	.site-description{
+	.site-description, .site-published-date{
 		font-style: normal;
 		font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
 	}
+	
 	.site-description, #masthead .site-navigation, #logoOnPostPages .site-description{
 		display: none;
 	}
@@ -356,6 +357,10 @@ and Blueprint http://www.blueprintcss.org/
 		background: url("/wp-content/uploads/2015/10/arrows.png") no-repeat 98% 150% / 33px;
 		color: #BBBBBB;
 		text-decoration: underline;
+	}
+
+	#nav-below {
+		padding-bottom: 0;
 	}
 	/* ------- Pagination */
 
