@@ -7,4 +7,51 @@
 	#categoryPage .summary, #inFocus p.intro {
 		font-size: .95em;
 	}
+
+	.single.post-cover-overlay-post-title #socialPost ul {
+	    top: 170px;
+	    /*padding: 5px 15px 8px 10px;*/
+	    text-shadow: 2px 2px 2px #333;
+	}
+
+	.single.post-cover-overlay-post-title #socialPost ul:before {
+		color: #ccc;
+	}
+
+	.single.post-cover-overlay-post-title #socialPost ul li {
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0 0 10px 10px;
+	}
+
+	#socialPost ul li.facebook a:after, #socialPost ul li.twitter a:after {
+		color: #B2B2B2;
+	}
+}
+
+@media (min-width: 1024px) {
+	.single.post-cover-overlay-post-title #socialPost ul {
+	    top: 320px;
+    	right: -100px;
+    	text-shadow: none;
+	}
+	.single.post-cover-overlay-post-title #socialPost ul:before {
+		color: #999;
+	}
+	.single.post-cover-overlay-post-title #socialPost ul li {
+	    display: block;
+    	margin: 0 0 10px 0;
+	}
+	#socialPost ul li.facebook a:after {
+		color: #3b5998;
+	}
+	#socialPost ul li.twitter a:after {
+		color: #55acee;
+	}
+}
+
+@media (min-width: 1200px) {
+	.single.post-cover-overlay-post-title #socialPost ul {
+	    top: 360px;
+	}
 }
