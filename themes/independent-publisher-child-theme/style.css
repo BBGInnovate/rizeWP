@@ -1066,10 +1066,13 @@ and Blueprint http://www.blueprintcss.org/
 #featured-section {
 	margin-top: 3em;
 	margin-bottom: 2em;
-	border-top: 1px dashed #FFA500;
+	/*border-top: 1px dashed #FFA500;*/
 	font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
 	display: block;
 	position: relative;
+	padding: 5px 20px;
+	background-color: #EEE;
+	border-radius: 5px;
 }
 
 #featured-section h3.featured-title {
