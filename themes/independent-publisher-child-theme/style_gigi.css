@@ -10,8 +10,14 @@
 
 	.single.post-cover-overlay-post-title #socialPost ul {
 	    top: 170px;
-	    /*padding: 5px 15px 8px 10px;*/
 	    text-shadow: 2px 2px 2px #333;
+	    opacity: 1;
+    	position: relative;
+    	right: 0;
+    	padding: 5px 15px 8px 10px;
+    	background: none;
+    	border: none;
+    	box-shadow: none;
 	}
 
 	.single.post-cover-overlay-post-title #socialPost ul:before {
