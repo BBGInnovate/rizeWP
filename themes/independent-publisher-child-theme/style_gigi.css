@@ -9,30 +9,55 @@
 	}
 
 	.single.post-cover-overlay-post-title #socialPost ul {
-	    top: 170px;
-	    text-shadow: 2px 2px 2px #333;
+	    top: 175px;
+	    /* text-shadow: 2px 2px 2px #333; */
 	    opacity: 1;
-    	position: relative;
-    	right: 0;
-    	padding: 5px 15px 8px 10px;
-    	background: none;
-    	border: none;
-    	box-shadow: none;
+	    position: relative;
+	    right: 0;
+	    padding: 5px 15px 8px 10px;
+	    background: none;
+	    border: none;
+	    box-shadow: none;
 	}
 
-	.single.post-cover-overlay-post-title #socialPost ul:before {
+	/*.single.post-cover-overlay-post-title #socialPost ul:before {
 		color: #ccc;
+	}*/
+
+	.single.post-cover-overlay-post-title #socialPost ul li a#facebook {
+	    display: block;
+	    width: 25px;
+	    height: 25px;
+	    padding: 0;
+	    border-radius: 15%;
+	    background-color: #ffffff;
+	    position: absolute;
 	}
 
-	.single.post-cover-overlay-post-title #socialPost ul li {
-		display: inline-block;
-		vertical-align: middle;
-		margin: 0 0 10px 10px;
+	.single.post-cover-overlay-post-title #socialPost ul li a#facebook:after {
+	    position: absolute;
+	    top: -35%;
+	    left: -13%;
 	}
 
-	#socialPost ul li.facebook a:after, #socialPost ul li.twitter a:after {
-		color: #B2B2B2;
+	.single.post-cover-overlay-post-title #socialPost ul li a#twitter {
+	    display: block;
+	    width: 25px;
+	    height: 25px;
+	    padding: 0;
+	    border-radius: 15%;
+	    background-color: #55acee;
+	    position: absolute;
 	}
+
+	.single.post-cover-overlay-post-title #socialPost ul li a#twitter:after {
+	    position: absolute;
+	    top: -10%;
+	    left: 8%;
+	    font-size: 20px;
+	    color: #fff;
+	}
+
 }
 
 @media (min-width: 1024px) {
