@@ -226,9 +226,12 @@ function tevkori_get_srcset_array( $id, $size = 'thumbnail' ) {
 		// Calculate the new image ratio.
 		$img_ratio_compare = $img['height'] / $img['width'];
 
-		// If the new ratio differs by less than 0.01, use it.
-		if ( abs( $img_ratio - $img_ratio_compare ) < 0.01 ) {
-			$arr[ $img['width'] ] = $img_base_url . $img['file'] . ' ' . $img['width'] .'w';
+		/** ODDI CUSTOM: we don't want anything > 1200px getting included in our srcset attribute **/
+		if ($img['width'] < 1200) {
+			// If the new ratio differs by less than 0.01, use it.
+			if ( abs( $img_ratio - $img_ratio_compare ) < 0.01 ) {
+				$arr[ $img['width'] ] = $img_base_url . $img['file'] . ' ' . $img['width'] .'w';
+			}
 		}
 	}
 
@@ -327,6 +330,7 @@ function tevkori_extend_image_tag( $html, $id, $caption, $title, $align, $url, $
 			if ( strpos( $tempSource, '300w' ) ) {
 				$newImgSrc=str_replace(' 300w','',$tempSource);
 			}
+			
 		}
 		if ($newImgSrc != "") {
 			$html = preg_replace( '/(src\s*=\s*"(.+?)")/', 'src="' . $newImgSrc . '"', $html );	

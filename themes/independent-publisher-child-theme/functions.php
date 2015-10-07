@@ -79,6 +79,7 @@ function array_swap($key1, $key2, $array) {
 }
 
 add_image_size( 'mugshot', 200, 200 ); // 220 pixels wide by 180 pixels tall, soft proportional crop mode
+add_image_size( 'largest', 1200, 9999 ); // new size at our max breaking point
 add_filter( 'image_size_names_choose', 'my_custom_sizes' );
 
 function my_custom_sizes( $sizes ) {
@@ -114,8 +115,17 @@ function my_custom_sizes( $sizes ) {
 						echo "<style>\n";
 						$counter=0;
 						$prevWidth=0;
+
+						// Let's prevent any images with width > 1200px from being an output as part of responsive post cover
 						foreach( $tempSources as $key => $tempSource ) {
-							//we're workign with an array of sourceset entries ... gotta get rid of the width part
+							if ($key > 1200) {
+								unset($tempSources[$key]);
+							}
+						}
+
+						foreach( $tempSources as $key => $tempSource ) {
+							
+							//we're working with an array of sourceset entries ... gotta get rid of the width part
 							$counter++;
 							
 							$tempSource = preg_replace( '/(.*)\s(.*)/', '$1', $tempSource );	
@@ -309,7 +319,8 @@ function my_custom_sizes( $sizes ) {
 
 
 
-	// customize the youtube emebeds to always be responsive
+	// ODDI CUSTOM: customize the youtube emebeds to always be responsive
+	//see http://tutorialshares.com/youtube-oembed-urls-remove-showinfo/
 	function custom_youtube_settings($code){
 		if(strpos($code, 'youtu.be') !== false || strpos($code, 'youtube.com') !== false){
 			//$return = preg_replace("@src=(['\"])?([^'\">\s]*)@", "src=$1$2&showinfo=0&rel=0&autohide=1", $code);
@@ -330,6 +341,10 @@ function my_custom_sizes( $sizes ) {
 
 	add_filter('embed_handler_html', 'custom_youtube_settings');
 	add_filter('embed_oembed_html', 'custom_youtube_settings');
+
+	/**** ODDI CUSTOM: restrict jpg quality ****/
+	// see http://premium.wpmudev.org/blog/fix-jpeg-compression/
+	//add_filter( 'jpeg_quality', create_function( '', 'return 40;' ) );
 
 
 
