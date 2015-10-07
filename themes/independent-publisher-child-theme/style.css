@@ -1070,7 +1070,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
 	display: block;
 	position: relative;
-	padding: 5px 20px 15px 20px;
+	padding: 10px 25px 20px 25px;
 	background-color: #EEE;
 	border-radius: 5px;
 }
@@ -1082,13 +1082,13 @@ and Blueprint http://www.blueprintcss.org/
 	text-transform: uppercase;
 	letter-spacing: .02em;
 	margin-top: 1em;
-	margin-bottom: 1.5em;
+	/*margin-bottom: 1.5em;*/
 }
 
 #featured-section .featured-card {
 	width: 100%;
 	min-height: 100px;
-	margin-bottom: 3em;
+	margin-bottom: 2em;
 }
 
 #featured-section .featured-card img {
@@ -1113,7 +1113,8 @@ and Blueprint http://www.blueprintcss.org/
 
 .featured-profile p.featured-desc {
 	font-size: 1em;
-	color: #929292;
+	/*color: #929292;*/
+	color: #333;
 	margin-bottom: 0;
 }
 
