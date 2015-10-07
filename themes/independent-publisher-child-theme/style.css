@@ -48,7 +48,6 @@ and Blueprint http://www.blueprintcss.org/
 		font-style: normal;
 		font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
 	}
-	
 	.site-description, #masthead .site-navigation, #logoOnPostPages .site-description{
 		display: none;
 	}
@@ -993,7 +992,6 @@ and Blueprint http://www.blueprintcss.org/
 
 /* in focus styles ------------- */
 	#categoryPage h4.page-title.category, #inFocus h1.page-title, #tagPage h4.page-title {
-		color: #FFA500;
 		color: #333;
 		margin:10px 0 5px 0;
 		font-size: 1.5em;
@@ -1045,7 +1043,10 @@ and Blueprint http://www.blueprintcss.org/
 	}
 
 	#categoryPage h4.page-title.category, #inFocus h1.page-title, #tagPage h4.page-title {
-		margin: .75em 0 .15em;
+		color: #333;
+		font-size: 1.5em;
+		margin:10px 0 5px 0;
+		padding-bottom:5px;
 		border-bottom: solid 1px #ffa500;
 	}
 
@@ -1149,16 +1150,6 @@ and Blueprint http://www.blueprintcss.org/
 /* ------------- "Featured in this story" section */
 
 
-
-
-
-/* Category page ---------------- */
-
-#categoryPage h4.page-title.category{
-	margin: 0;
-}
-
-/* ------------- Category page */
 
 
 
