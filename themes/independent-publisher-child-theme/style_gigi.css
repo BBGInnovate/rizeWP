@@ -9,7 +9,13 @@
 	}
 
 	/* Styles for social icons beneath featured image */
-	.single.post-cover-overlay-post-title #socialPost ul, .single.post-cover-overlay-post-title .post-cover-title-wrapper.postCoverTitleAlwaysBelow #socialPost ul {
+	.single.post-cover-overlay-post-title .post-cover-title-wrapper .post-cover-title-wrapper.postCoverTitleAlwaysBelow #socialPost {
+	    position: relative;
+	    top: 0;
+	    right: 0;
+	}
+
+	.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul, .single.post-cover-overlay-post-title .post-cover-title-wrapper.postCoverTitleAlwaysBelow #socialPost ul {
  	    top: 10px;
 	    opacity: 1;
     	position: relative;
@@ -22,18 +28,28 @@
 
 	.single.post-cover-overlay-post-title #socialPost ul li {
 		display: inline-block;
-		vertical-align: middle;
 		margin: 0 0 10px 10px;
+	}
+
+	.single.post-cover-overlay-post-title .post-cover-title-wrapper.postCoverTitleAlwaysBelow #socialPost ul {
+	    top: 10px;
 	}
 	
 
 	/* Styles for social icons overlaid on featured image */
-	.single.post-cover-overlay-post-title .post-cover-title-wrapper.postCoverTitleAlwaysBelow #socialPost ul {
+	.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost {
+	    position: relative;
+	    bottom: 0;
+	    left: 0;
+	}
+
+	.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul {
 	    top: 175px;
 	}
 
-	.single.post-cover-overlay-post-title #socialPost.post-cover-title-wrapper #socialPost ul:before {
+	.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul:before {
 		color: #ccc;
+		vertical-align: text-top;
 	}
 
 	.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul li a#facebook {
@@ -74,34 +90,53 @@
 }
 
 @media (min-width: 1024px) {
-	div#socialPost {
-	    position: absolute;
-	    top: -35px;
-	    right: 20%;
+	/* Headline beneath image */
+	.single.post-cover-overlay-post-title .post-cover-title-wrapper.postCoverTitleAlwaysBelow #socialPost ul {
+	    top: 45px;
 	}
 
-	.single.post-cover-overlay-post-title #socialPost ul {
-	    top: 320px;
-    	right: -100px;
-    	text-shadow: none;
-	}
-	.single.post-cover-overlay-post-title #socialPost ul:before {
-		color: #999;
-	}
-	.single.post-cover-overlay-post-title #socialPost ul li {
+	.single.post-cover-overlay-post-title  .post-cover-title-wrapper.postCoverTitleAlwaysBelow #socialPost ul li {
 	    display: block;
     	margin: 0 0 10px 0;
 	}
-	#socialPost ul li.facebook a:after {
-		color: #3b5998;
+
+	/* Headline overlaid on image */
+	.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost {
+	    position: absolute;
+	    bottom: -135px;
+	    right: 10%;
 	}
-	#socialPost ul li.twitter a:after {
-		color: #55acee;
+
+	.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul {
+	    top: -5px;	
+	}
+
+	.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul:before {
+		color: #999;
+	}
+
+	.single.post-cover-overlay-post-title #socialPost ul li {
+	    display: block;
+    	margin: 0 0 10px;
+	}
+
+	.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul li a#facebook:after {
+	    left: 3px;
+	}
+
+	.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul li a#twitter {
+		left: 13px;
+	}
+
+@media (min-width: 1200px) {
+	.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul {
+	    top: 35px;
+	    left: -8%;
 	}
 }
 
-@media (min-width: 1200px) {
-	.single.post-cover-overlay-post-title #socialPost ul {
-	    top: 360px;
+@media (min-width: 1500px) {
+	.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul {
+	    left: -10%;
 	}
 }
