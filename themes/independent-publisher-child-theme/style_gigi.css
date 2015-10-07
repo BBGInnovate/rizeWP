@@ -74,6 +74,12 @@
 }
 
 @media (min-width: 1024px) {
+	div#socialPost {
+	    position: absolute;
+	    top: -35px;
+	    right: 20%;
+	}
+
 	.single.post-cover-overlay-post-title #socialPost ul {
 	    top: 320px;
     	right: -100px;
