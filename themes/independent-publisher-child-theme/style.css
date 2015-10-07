@@ -1065,12 +1065,12 @@ and Blueprint http://www.blueprintcss.org/
 /* Article pages "Featured in this story" section ------------- */
 #featured-section {
 	margin-top: 3em;
-	margin-bottom: 2em;
+	/*margin-bottom: 2em;*/
 	/*border-top: 1px dashed #FFA500;*/
 	font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
 	display: block;
 	position: relative;
-	padding: 5px 20px;
+	padding: 5px 20px 15px 20px;
 	background-color: #EEE;
 	border-radius: 5px;
 }
