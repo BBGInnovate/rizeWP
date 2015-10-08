@@ -844,7 +844,17 @@ if ( ! function_exists( 'independent_publisher_first_sentence_excerpt' ) ):
 			$excerpt_length = 150; // Something long enough that we're likely to get a full sentence.
 			$excerpt_more   = ''; // Not used, but included here for clarity
 
-			$text = substr($text,0, strpos($text, "</p>")+4);
+			$startIndex=0;
+
+			$firstP_openPosition = strpos( $text, "<p" );
+			if ( $firstP_openPosition !== false ) {
+				$firstP_closePosition = strpos( $text, ">", $firstP_openPosition );
+				if ( $firstP_closePosition !== false ) {
+					$startIndex = $firstP_closePosition +1;
+				}
+			}
+
+			$text = substr($text, $startIndex, strpos($text, "</p>")+4);
 			$text='<p>' . strip_tags($text) . '</p>';
 			/*** ODDI CUSTOM - REMOVE ONE SENTENCE LOGIC
 			$text           = wp_trim_words( $text, $excerpt_length, $excerpt_more ); // See wp_trim_words() in wp-includes/formatting.php
