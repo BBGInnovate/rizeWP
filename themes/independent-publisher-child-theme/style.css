@@ -629,6 +629,12 @@ and Blueprint http://www.blueprintcss.org/
 		max-width: 150px;
 	}
 
+	#authorPage.author div.author-bio {
+		border-bottom: 1px dashed #CCC;
+	    padding-bottom: 20px;
+	    margin-bottom: 40px;
+	}
+
 	.archive.author .archive-title{max-width: 100%; margin:0;}
 	.author h1.archive-title{text-align: center; width: 100%; /*text-align:left;*/}
 	.author .author-avatar{text-align: center; margin-top: 10px;/*text-align:left;*/}
