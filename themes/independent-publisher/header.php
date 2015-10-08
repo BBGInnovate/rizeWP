@@ -89,10 +89,22 @@ $ogDescription = str_replace('"','&qout;',$ogDescription);
 
 	<?php 
 		wp_head();
+		
+		/* ODDI CUSTOM: add an extra class to the body if it's a post detail page without a thunbnail image.  
+			This is a bit of a hack to get around formatting issues with the category/title/author info area
+			on pages where we don't have a thumbnail */
+		$extraBodyClass="";
+		if ( have_posts() ) {
+			the_post(); 
+			if (is_single() && !(independent_publisher_has_full_width_featured_image() && has_post_thumbnail())   ) {
+				$extraBodyClass="post-cover-overlay-post-title";
+			}
+			rewind_posts();
+		}
 	?>
 </head>
 
-<body id="<?php echo $pageBodyID; ?>" <?php body_class(); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<body id="<?php echo $pageBodyID; ?>" <?php body_class($extraBodyClass); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
 
 <?php // Adding the logo/branding to single post pages. ?>
 <?php if ( independent_publisher_is_multi_author_mode() && is_single() ) : ?>
@@ -103,7 +115,7 @@ $ogDescription = str_replace('"','&qout;',$ogDescription);
 
 
 <?php // Displays full-width featured image on Single Posts if applicable ?>
-<?php independent_publisher_full_width_featured_image(); ?>
+<?php if (is_single()) { independent_publisher_full_width_featured_image(); }; ?>
 
 <div id="page" class="hfeed site">
 	<header id="masthead" class="site-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">

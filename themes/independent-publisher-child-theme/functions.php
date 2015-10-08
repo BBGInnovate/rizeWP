@@ -100,57 +100,64 @@ function my_custom_sizes( $sizes ) {
 	 * or if Auto-Set Featured Image as Post Cover option is enabled
 	 */
 	function independent_publisher_full_width_featured_image() {
-		if ( independent_publisher_has_full_width_featured_image() ) {
+		if ( true ||  independent_publisher_has_full_width_featured_image() ) {
 			while ( have_posts() ) : the_post();
-				if ( has_post_thumbnail() ) :
-					if ( independent_publisher_post_has_post_cover_title() ):
+				if ( true || has_post_thumbnail() ) :
+					if ( true ||  independent_publisher_post_has_post_cover_title() ):
 						
 						//tevkori_get_srcset_array( $id, $size = 'thumbnail' ) {
 						//global $wpdb;
-						
-						$tempSources = tevkori_get_srcset_array( get_post_thumbnail_id(), 'full');
-						//sources aren't automatically in numeric order.  ksort does the trick.
-						ksort($tempSources);
+						$postCoverTitleWrapperExtraClass="postCoverTitleAlwaysBelow";
+						$showPostCover=false;
+						echo "<style>\n.noPostCover {display:none; }\n";
+						if (independent_publisher_has_full_width_featured_image()  && has_post_thumbnail()) {
+							$showPostCover=true;
 
-						echo "<style>\n";
-						$counter=0;
-						$prevWidth=0;
+							$tempSources = tevkori_get_srcset_array( get_post_thumbnail_id(), 'full');
+							//sources aren't automatically in numeric order.  ksort does the trick.
+							ksort($tempSources);
 
-						// Let's prevent any images with width > 1200px from being an output as part of responsive post cover
-						foreach( $tempSources as $key => $tempSource ) {
-							if ($key > 1200) {
-								unset($tempSources[$key]);
-							}
-						}
-
-						foreach( $tempSources as $key => $tempSource ) {
 							
-							//we're working with an array of sourceset entries ... gotta get rid of the width part
-							$counter++;
-							
-							$tempSource = preg_replace( '/(.*)\s(.*)/', '$1', $tempSource );	
-							if ($counter == 1) {
-								echo "\t.postCoverResponsive { background-image: url($tempSource) !important; }\n";
-							} elseif ($counter < count($tempSources)) {
-								echo "\t@media (min-width: " . ($prevWidth+1) . "px) and (max-width: " . $key . "px) {\n";
-								echo "\t\t.postCoverResponsive { background-image: url($tempSource) !important; }\n";
-								echo "\t}\n";
-							} else {
-								echo "\t@media (min-width: " . ($prevWidth+1) . "px) {\n";
-								echo "\t\t.postCoverResponsive { background-image: url($tempSource) !important; }\n";
-								echo "\t}\n";
+							$counter=0;
+							$prevWidth=0;
+
+							// Let's prevent any images with width > 1200px from being an output as part of responsive post cover
+							foreach( $tempSources as $key => $tempSource ) {
+								if ($key > 1200) {
+									unset($tempSources[$key]);
+								}
 							}
-							$prevWidth=$key;
+
+							foreach( $tempSources as $key => $tempSource ) {
+								
+								//we're working with an array of sourceset entries ... gotta get rid of the width part
+								$counter++;
+								
+								$tempSource = preg_replace( '/(.*)\s(.*)/', '$1', $tempSource );	
+								if ($counter == 1) {
+									echo "\t.postCoverResponsive { background-image: url($tempSource) !important; }\n";
+								} elseif ($counter < count($tempSources)) {
+									echo "\t@media (min-width: " . ($prevWidth+1) . "px) and (max-width: " . $key . "px) {\n";
+									echo "\t\t.postCoverResponsive { background-image: url($tempSource) !important; }\n";
+									echo "\t}\n";
+								} else {
+									echo "\t@media (min-width: " . ($prevWidth+1) . "px) {\n";
+									echo "\t\t.postCoverResponsive { background-image: url($tempSource) !important; }\n";
+									echo "\t}\n";
+								}
+								$prevWidth=$key;
+							}
+							
+
+
+							$featured_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), apply_filters( 'independent_publisher_full_width_featured_image_size', 'independent_publisher_post_thumbnail' ));
+							$featured_image_url = $featured_image_url[0];
+							$post_has_cover_title_rize 	= get_post_meta( get_the_ID(), 'post_cover_overlay_post_title_rize', true);
+							if ( ( $post_has_cover_title_rize === '1' || $post_has_cover_title_rize === 'true' ) ) {
+								$postCoverTitleWrapperExtraClass="";
+							}
 						}
 						echo "</style>\n";
-
-						$featured_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), apply_filters( 'independent_publisher_full_width_featured_image_size', 'independent_publisher_post_thumbnail' ));
-						$featured_image_url = $featured_image_url[0];
-						$postCoverTitleWrapperExtraClass="postCoverTitleAlwaysBelow";
-						$post_has_cover_title_rize 	= get_post_meta( get_the_ID(), 'post_cover_overlay_post_title_rize', true);
-						if ( ( $post_has_cover_title_rize === '1' || $post_has_cover_title_rize === 'true' ) ) {
-							$postCoverTitleWrapperExtraClass="";
-						}
 
 						/*** PREPARE TWITTER AND FB SHARE URLS ****/
 						$shareLink=get_permalink();
@@ -184,7 +191,9 @@ function my_custom_sizes( $sizes ) {
 
 					?>
 						<div class="post-cover-title-wrapper <?php echo $postCoverTitleWrapperExtraClass; ?>">
+							<?php if ($showPostCover) : ?>
 							<div class="post-cover-title-image postCoverResponsive" ></div>
+							<?php endif; ?>
 								<div class="post-cover-title-head">
 									<header class="post-cover-title">
 										<?php if ( independent_publisher_categorized_blog() ) { ?>
