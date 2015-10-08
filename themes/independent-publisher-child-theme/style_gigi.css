@@ -1,16 +1,12 @@
 /* STYLE_GIGI.css - temporary styles file for collaboration */
 span.attribution {
-    white-space: pre;
+    display: block;
     font-style: normal;
     font-weight: 600;
-    text-align: right;
     font-size: .85em;
     font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
 }
 
-span.attribution:before {
-    content: '\A';
-}
 
 
 
