@@ -12,6 +12,10 @@ span.attribution {
 
 .single.post-cover-overlay-post-title #socialPost {
     display: none;
+    pointer-events: none;
+}
+.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul li a{
+    pointer-events: auto;
 }
 
 @media (min-width: 300px) {
