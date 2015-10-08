@@ -711,13 +711,17 @@ and Blueprint http://www.blueprintcss.org/
 
 	/* Share icons: add "share" on articles with headlines over images */
 	.single.post-cover-overlay-post-title #socialPost ul:before {
-		content: "SHARE";
-		color: #999;
-		font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
 		font-size: 12px;
-		font-weight: bold;
 	}
+	@media (min-width: 350px){
+		.single.post-cover-overlay-post-title #socialPost ul:before {
+			content: "SHARE";
+			color: #999;
+			font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
+			font-weight: bold;
+		}
 
+	}
 
 	@media (min-width: 500px){
 		/* Adding styling for :before label of "SHARE" */

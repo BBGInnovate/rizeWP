@@ -1,12 +1,9 @@
 /* STYLE_GIGI.css - temporary styles file for collaboration */
-
-@media (max-width: 350px) {
-    .single.post-cover-overlay-post-title #socialPost {
-        display: none;
-    }
+.single.post-cover-overlay-post-title #socialPost {
+    display: none;
 }
 
-@media (min-width: 350px) {
+@media (min-width: 300px) {
     .single.post-cover-overlay-post-title #socialPost {
         display: block;
     }
@@ -14,7 +11,7 @@
 	    position: relative;
 	    display: block;
 	    float: right;
-	    margin: 0 30px 0;
+	    margin: 0 30px 0 0;
 	}
 	.single.post-cover-overlay-post-title #socialPost ul:before, .single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow #socialPost ul:before {
 	    vertical-align: top;
@@ -73,7 +70,7 @@
         top: 10px;
         opacity: 1;
         position: relative;
-        right: 0;
+        right: -25px;
         padding: 5px 15px 8px 10px;
         background: none;
         border-radius: 0;
@@ -94,7 +91,7 @@
     .single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost {
         position: absolute;
         bottom: 80px;
-        right: 6%;
+        /*right: 6%;*/
         width: 100%;
         max-width: 700px;
     }
@@ -152,7 +149,7 @@
     .single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost {
         bottom: -10px;
         max-width: 800px;
-        right: 10%;
+        /*right: 10%;*/
     }
     .single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul {
         top: -5px;
