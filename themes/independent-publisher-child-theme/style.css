@@ -909,6 +909,9 @@ and Blueprint http://www.blueprintcss.org/
 		float: left; 
 		margin-right: 20px;
 	}
+	p.wp-caption.wp-caption-text.halfColumn{
+		margin-top:0;
+	}
 
 	@media only screen and (min-width: 700px) {
 		.entry-content img.size-medium{
@@ -920,7 +923,7 @@ and Blueprint http://www.blueprintcss.org/
 		p.wp-caption.wp-caption-text.halfColumn{
 			width: 50% !important; 
 			float: right; 
-			margin: 5px 20px;
+			margin: 5px 0 5px 20px;
 		}
 	}
 
