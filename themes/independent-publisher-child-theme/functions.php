@@ -81,6 +81,7 @@ function array_swap($key1, $key2, $array) {
 
 add_image_size( 'mugshot', 200, 200 ); // 220 pixels wide by 180 pixels tall, soft proportional crop mode
 add_image_size( 'largest', 1200, 9999 ); // new size at our max breaking point
+add_image_size( 'gigantic', 1900, 9999 ); // for some huge monitors
 add_filter( 'image_size_names_choose', 'my_custom_sizes' );
 
 function my_custom_sizes( $sizes ) {
@@ -124,7 +125,7 @@ function my_custom_sizes( $sizes ) {
 
 							// Let's prevent any images with width > 1200px from being an output as part of responsive post cover
 							foreach( $tempSources as $key => $tempSource ) {
-								if ($key > 1200) {
+								if ($key > 1900) {
 									unset($tempSources[$key]);
 								}
 							}
