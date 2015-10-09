@@ -354,7 +354,7 @@ function my_custom_sizes( $sizes ) {
 
 	/**** ODDI CUSTOM: restrict jpg quality ****/
 	// see http://premium.wpmudev.org/blog/fix-jpeg-compression/
-	add_filter( 'jpeg_quality', create_function( '', 'return 40;' ) );
+	add_filter( 'jpeg_quality', create_function( '', 'return 60;' ) );
 
 
 
