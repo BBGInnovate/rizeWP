@@ -10,7 +10,11 @@ span.attribution {
 	margin-top: .5em;
 }
 
-
+/*.wp-caption .alignright */.entry-content img.size-medium {
+    width: 100% !important;
+    margin: 0;
+    float: none;
+}
 
 
 .single.post-cover-overlay-post-title #socialPost {

@@ -129,7 +129,7 @@ get_header(); ?>
 
 <style>	
 #map-rize{width:100%; height: 300px; margin-top: 25px;} h1.entry-title{display:none !important;}
-#missionBackground{width: 100%; height: 300px; background:url(https://africa2.rizing.org/wp-content/uploads/2015/08/background.jpg) center center/cover;}
+#missionBackground{width: 100%; height: 300px; background:url(<?php echo site_url() . '/wp-content/uploads/2015/08/background.jpg'; ?>) center center/cover;}
 @media only screen and (min-width: 700px) {
 #missionBackground{height: 400px;}
 }
