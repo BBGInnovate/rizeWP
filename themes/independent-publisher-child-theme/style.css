@@ -914,6 +914,12 @@ and Blueprint http://www.blueprintcss.org/
 		.entry-content img.size-medium{
 			width: 50% !important; 
 			float: right; 
+			margin: 5px 0 5px 20px;
+		}
+
+		p.wp-caption.wp-caption-text.halfColumn{
+			width: 50% !important; 
+			float: right; 
 			margin: 5px 20px;
 		}
 	}
