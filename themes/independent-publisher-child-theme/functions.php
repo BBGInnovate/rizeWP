@@ -60,7 +60,8 @@ function independent_publisher_footer_credits() {
 	/*$creativecommons = '<div id="creativecommons"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><br />This work by <a xmlns:cc="http://creativecommons.org/ns#" href="http://africa.rizing.org" property="cc:attributionName" rel="cc:attributionURL">Africa Rizing</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</div>';*/
 	$creativecommons = '';
 
-	$my_custom_footer = '<div id="attribution">Project Rize is a new digital media startup developed by <a href="http://bbg.gov/" target="_blank">US International Media</a> in partnership with <a href="http://voanews.com/" target="_blank">VOA News</a> to promote open discourse, democratic ideals and sustainable, civil societies throughout the world.</div>'.$creativecommons;
+	//$my_custom_footer = '<div id="attribution">Project Rize is a new digital media startup developed by <a href="http://bbg.gov/" target="_blank">US International Media</a> in partnership with <a href="http://voanews.com/" target="_blank">VOA News</a> to promote open discourse, democratic ideals and sustainable, civil societies throughout the world.</div>'.$creativecommons;
+	$my_custom_footer = '<div id="attribution">Africa Rizing is the first publication from Project Rize, a new initiative from the <a href="http://bbg.gov/" target="_blank">BBG</a> to promote open discourse, democratic ideals and sustainable, civil societies throughout the world.<br/><a href="https://africa.rizing.org/privacy">Privacy Policy</a> & <a href="https://africa.rizing.org/terms">Terms</a> </div>'.$creativecommons;
 	return $my_custom_footer;
 }
 

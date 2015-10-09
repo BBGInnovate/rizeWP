@@ -25,19 +25,15 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="content" class="site-content pagePostByCategory" role="main">
 
-<p>At Africa Rizing, our mission is to connect the next generation of global influencers from across the Continent, throughout the diaspora and around the world. Together we will discover new voices and amplify new ideas that result in lasting change.</p>
-
-<div class='embed-container'>
-<iframe width="100%" src="https://www.youtube.com/embed/Qn6FRPWzW-0" frameborder="0" allowfullscreen></iframe>
-</div>
+<p>Africa Rizing is a new, digital media startup from the BBG connecting the next generation of global influencers from across the African continent and around the world to engage in, ‘a smarter conversation’.</p>
 
 <h3>Connect with us</h3>
-Africa Rizing brings you new forms of digital storytelling across social media networks. By connecting you to our team of digital journalists, designers and developers, our goal is to include the audience in our collaborative, iterative approach to telling the stories that matter to you.
+<p>Our mission is to develop a global community that promotes new voices, amplifies new ideas, and brings young changemakers together to create innovative solutions to today’s challenges.</p>
 
 <div id='map-rize' class='map'> </div>
 
 <h3>The team</h3>
-Being active in the communities we cover is at the core of Africa Rizing and our journalists reflect our audience. From Dakar, to Abidjan, Accra and Lagos, our team is dedicated to discovering and amplifying the individuals representing the new Africa.
+<p>From Accra, to Dakar, Abidjan and Lagos, our team is committed to discovering and amplifying the people, organizations and events representing the new Africa. By connecting you to our team of digital journalists, designers and developers, our goal is to include the communities we cover in a collaborative, iterative approach to telling the stories that matter to you.</p>
 
 <div id='staff' class='section'>
 <div class='member'>
