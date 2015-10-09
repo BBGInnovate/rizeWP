@@ -14,7 +14,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="content" class="site-content" role="main">
 			<h1 class="page-title">In Focus</h1>
-			<p class="intro">Here are the stories we're focused on covering right now.</p>
+			<p class="intro">Our daily digest of links, trends, hashtags and the stories that matter most</p>
 			<?php
 
 				$qParams=array( 
