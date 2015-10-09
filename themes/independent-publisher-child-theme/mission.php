@@ -28,7 +28,7 @@ get_header(); ?>
 <p>Africa Rizing is a new, digital media startup from the BBG connecting the next generation of global influencers from across the African continent and around the world to engage in, ‘a smarter conversation’.</p>
 
 <h3>Connect with us</h3>
-<p>Our mission is to develop a community that promotes new voices, amplifies new ideas, and brings young changemakers together to create innovative solutions to today’s challenges.</p>
+<p>Our mission is to develop a global community that promotes new voices, amplifies new ideas, and brings young changemakers together to create innovative solutions to today’s challenges.</p>
 
 <div id='map-rize' class='map'> </div>
 
