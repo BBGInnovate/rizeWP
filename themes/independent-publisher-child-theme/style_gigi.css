@@ -10,7 +10,7 @@ span.attribution {
 	margin-top: .5em;
 }
 
-/*.wp-caption .alignright */.entry-content img.size-medium {
+.entry-content img.size-medium {
     width: 100% !important;
     margin: 0;
     float: none;
@@ -75,7 +75,7 @@ span.attribution {
 	}
 }
 
-@media (min-width:  500px){
+@media (min-width: 500px){
 	.entry-content .subtitle{
 		margin-top:10px;
 	}
@@ -170,6 +170,10 @@ span.attribution {
 	}
 
 	/* Headline beneath image */
+	.single.post-cover-overlay-post-title .post-cover-title-wrapper.postCoverTitleAlwaysBelow #socialPost {
+		top: 140px;
+	}
+
 	.single.post-cover-overlay-post-title .post-cover-title-wrapper.postCoverTitleAlwaysBelow #socialPost ul {
 		top: 45px;
 	}
