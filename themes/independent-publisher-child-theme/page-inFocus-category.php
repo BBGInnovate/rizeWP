@@ -14,7 +14,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="content" class="site-content" role="main">
 			<h1 class="page-title">In Focus</h1>
-			<p class="intro">Take a mid-day break and find out what’s trending, what to watch out for and what you should know to have a ‘smarter conversation’.</p>
+			<p class="intro">Our daily digest of the links, trends, hashtags and stories that matter most</p>
 			<?php
 
 				$cat_id=get_cat_id('In Focus');
