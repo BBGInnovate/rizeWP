@@ -10,7 +10,7 @@
 
 
 /* ODDI CUSTOM: several variables can be passed into the header */ 
-global $ogImage, $ogTitle, $ogDescription;
+global $ogImage, $ogTitle, $ogDescription, $ogUrl;
 global $pageBodyID, $metaAuthor, $metaKeywords;
 
 if (! isset( $pageBodyID ) ) {
@@ -37,7 +37,12 @@ if (! isset( $metaKeywords ) ) {
 	$metaKeywords=DEFAULT_KEYWORDS;
 }
 
-$ogUrl = get_permalink();
+if (! isset( $ogUrl ) ) {
+	//only place we override this is on our trending page where it's the permalink to the post instead of the page itself
+	$ogUrl = get_permalink();
+}
+
+
 
 /* remove smart quotes from title */
 $ogTitle = iconv('UTF-8', 'ASCII//TRANSLIT', $ogTitle);  
@@ -98,6 +103,8 @@ $ogDescription = str_replace('"','&qout;',$ogDescription);
 			the_post(); 
 			if (is_single() && !(independent_publisher_has_full_width_featured_image() && has_post_thumbnail())   ) {
 				$extraBodyClass="post-cover-overlay-post-title";
+			} elseif ($pageBodyID=="inFocus") {
+				$extraBodyClass= ["single","post-cover-overlay-post-title"];
 			}
 			rewind_posts();
 		}
@@ -115,7 +122,7 @@ $ogDescription = str_replace('"','&qout;',$ogDescription);
 
 
 <?php // Displays full-width featured image on Single Posts if applicable ?>
-<?php if (is_single()) { independent_publisher_full_width_featured_image(); }; ?>
+<?php if (is_single() || $pageBodyID=="inFocus") { independent_publisher_full_width_featured_image(); }; ?>
 
 <div id="page" class="hfeed site">
 	<header id="masthead" class="site-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">

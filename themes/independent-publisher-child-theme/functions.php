@@ -111,7 +111,7 @@ function my_custom_sizes( $sizes ) {
 						//global $wpdb;
 						$postCoverTitleWrapperExtraClass="postCoverTitleAlwaysBelow";
 						$showPostCover=false;
-						echo "<style>\n.noPostCover {display:none; }\n";
+						echo "<style>\n";
 						if (independent_publisher_has_full_width_featured_image()  && has_post_thumbnail()) {
 							$showPostCover=true;
 
@@ -163,6 +163,12 @@ function my_custom_sizes( $sizes ) {
 
 						/*** PREPARE TWITTER AND FB SHARE URLS ****/
 						$shareLink=get_permalink();
+						global $pageBodyID;
+						if ($pageBodyID=="inFocus") {
+							global $inFocusPostPermalink;
+							$shareLink=$inFocusPostPermalink;
+							echo "the share link is " . $inFocusPostPermalink;
+						}
 						
 						/* remove html tags, smart quotes and trailing ellipses from description */
 						$ogDescription=independent_publisher_first_sentence_excerpt();
@@ -183,13 +189,13 @@ function my_custom_sizes( $sizes ) {
 								$twitterText .= " by " . $authorDisplayName;
 							}
 						}
-						$twitterText .= " " . (get_permalink());
+						$twitterText .= " " . $shareLink;
 						$hashtags="";
 						//$hashtags="testhashtag1,testhashtag2";
 
 						///$twitterURL="//twitter.com/intent/tweet?url=" . urlencode(get_permalink()) . "&text=" . urlencode($ogDescription) . "&hashtags=" . urlencode($hashtags);
 						$twitterURL="//twitter.com/intent/tweet?text=" . urlencode($twitterText);
-						$fbUrl="//www.facebook.com/sharer/sharer.php?u=" . urlencode(get_permalink());
+						$fbUrl="//www.facebook.com/sharer/sharer.php?u=" . urlencode($shareLink);
 
 					?>
 						<div class="post-cover-title-wrapper <?php echo $postCoverTitleWrapperExtraClass; ?>">
