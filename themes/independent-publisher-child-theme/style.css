@@ -233,7 +233,7 @@ and Blueprint http://www.blueprintcss.org/
 
 
 	/* CategoryMenu ------- */
-	#trendingMenu {
+	#focusMenu {
 		margin: 0;
 		display: block;
 		position: fixed;
@@ -241,19 +241,19 @@ and Blueprint http://www.blueprintcss.org/
 		width: 100%;
 		background-color: #FFF;
 	}
-	#trendingMenu ul  {
+	#focusMenu ul  {
 		margin: 0;
 		display: none;
 		clear: both;
 		margin: 0 -20px 20px -20px;
 	}
-	#trendingMenu ul#dropdown{
+	#focusMenu ul#dropdown{
 		/*display: none;*/
 		box-shadow: 0 0 10px #999;
 		margin-bottom: 20px
 	}
 
-	#trendingMenu ul li{
+	#focusMenu ul li{
 		list-style-type: none;
 		margin: 0;
 		padding: 5px 20px;
@@ -261,49 +261,31 @@ and Blueprint http://www.blueprintcss.org/
 		font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
 		text-align: center;
 	}
-	#trendingMenu ul a:last-of-type li{
+	#focusMenu ul a:last-of-type li{
 		border-bottom: 1px solid #CCC;
 	}
 
-	#trendingMenu ul a.social:hover{
+	#focusMenu ul a.social:hover{
 		text-decoration: none;
 	}
 
-	#trendingMenu ul a li:hover{
+	#focusMenu ul a li:hover{
 		background-color: #EEE;
 	}
-/*
-	#trendingMenu ul a.facebook li::before{
-		font-family: 'Genericons';
-		font-size: 18px;
-		margin-right: 5px;
-	    content: '\f203';
-    	vertical-align: top;
-    	color: #3b5998;/
-    }
-	#trendingMenu ul a.twitter li::before{
-		font-family: 'Genericons';
-		font-size: 18px;
-		margin-right: 5px;
-	    content: '\f202';
-    	vertical-align: top;
-    	color: #55acee;
-    }
-*/
 
 	@media (min-width: 400px) {
 
 	}
 	@media (min-width: 500px) {
-		#trendingMenu ul  {
+		#focusMenu ul  {
 			margin: 0 -40px;
 		}
-		#trendingMenu ul li{
+		#focusMenu ul li{
 			padding: 5px 40px;
 		}
 	}
 	@media (min-width: 1200px){
-		#trendingMenu ul  {
+		#focusMenu ul  {
 			display: none !important;
 		}
 	}

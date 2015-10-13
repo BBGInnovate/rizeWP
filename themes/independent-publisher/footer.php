@@ -32,7 +32,7 @@
     if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_name ] ) ) {
 		$menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
 		$menu_items = wp_get_nav_menu_items($menu->term_id);
-		$menu_list = '<div id="trendingMenu"><ul id="dropdown">';
+		$menu_list = '<div id="focusMenu"><ul id="dropdown">';
 		foreach ( (array) $menu_items as $key => $menu_item ) {
 		    $title = $menu_item->title;
 		    $url = $menu_item->url;
@@ -56,8 +56,8 @@
 	<div class='maxWidth1200'>
 		<ul>
 			<li class='home'><a href='/'>home</a></li>
-			<li class='focus'><a href='/index.php/in-focus/'>in focus</a></li>
-			<li class='trending'><a>trending</a></li>
+			<li class='trending'><a href='/index.php/trending/'>in focus</a></li>
+			<li class='focus'><a>focus</a></li>
 			<li class='mission'><a href='/index.php/about/'>mission</a></li>
 		</ul>
 	</div>

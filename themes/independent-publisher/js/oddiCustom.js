@@ -54,8 +54,8 @@ jQuery(document).ready(function() {
 	}
 
 	//Dropdown navigation
-	jQuery("#footerNav .trending" ).click(function() {
-		jQuery( "#trendingMenu #dropdown" ).slideToggle("drop");
-		jQuery( "#footerNav .trending" ).toggleClass( "menuOpen" )
+	jQuery("#footerNav .focus" ).click(function() {
+		jQuery( "#focusMenu #dropdown" ).slideToggle("drop");
+		jQuery( "#footerNav .focus" ).toggleClass( "menuOpen" )
 	});
 });
