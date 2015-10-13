@@ -167,7 +167,6 @@ function my_custom_sizes( $sizes ) {
 						if ($pageBodyID=="inFocus") {
 							global $inFocusPostPermalink;
 							$shareLink=$inFocusPostPermalink;
-							echo "the share link is " . $inFocusPostPermalink;
 						}
 						
 						/* remove html tags, smart quotes and trailing ellipses from description */
