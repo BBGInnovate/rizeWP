@@ -204,9 +204,12 @@ function my_custom_sizes( $sizes ) {
 								<div class="post-cover-title-head">
 									<header class="post-cover-title">
 										<?php if ( independent_publisher_categorized_blog() ) { ?>
-										<h5 class='entry-category'>
-											<?php echo independent_publisher_post_categories( '', true ); ?>
-										</h5>
+										
+										<?php if ($pageBodyID != "inFocus") : ?>
+											<h5 class='entry-category'>
+												<?php echo independent_publisher_post_categories( '', true ); ?>
+											</h5>
+										<?php endif; ?>
 
 										<div id='socialPost'>
 											<ul>
@@ -216,16 +219,20 @@ function my_custom_sizes( $sizes ) {
 										</div>
 
 										<?php } ?>
-										<h1 class="entry-title" itemprop="name">
-											<?php echo get_the_title(); ?>
-										</h1>
+
+										<?php if ($pageBodyID != "inFocus") : ?>
+											<h1 class="entry-title" itemprop="name">
+												<?php echo get_the_title(); ?>
+											</h1>
+										<?php endif; ?>
+										
 										<?php $subtitle = get_post_meta(get_the_id(), 'independent_publisher_post_cover_subtitle', true); ?>
 										<?php if ( $subtitle ): ?>
 											<h2 class="entry-subtitle">
 												<?php echo $subtitle;?>
 											</h2>
 										<?php endif; ?>
-										<?php if ( ! is_page() ) : ?>
+										<?php if ( $pageBodyID != "inFocus" && ! is_page() ) : ?>
 											<h3 class="entry-title-meta">
 												<span class="entry-title-meta-author">
 													<a class="author-avatar" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">

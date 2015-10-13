@@ -474,7 +474,10 @@ if ( ! function_exists( 'independent_publisher_posted_author_bottom_card' ) ) :
 	function independent_publisher_posted_author_bottom_card() {
 
 		do_action( 'independent_publisher_before_post_author_bottom_card' );
+		global $pageBodyID;
+		if ($pageBodyID != "inFocus") :
 		?>
+
 		<div class="post-author-bottom">
 			<div class="post-author-card">
 				<a class="site-logo" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
@@ -524,6 +527,7 @@ if ( ! function_exists( 'independent_publisher_posted_author_bottom_card' ) ) :
 		</div>
 		<!-- .post-author-bottom -->
 		<?php
+		endif;
 		do_action( 'independent_publisher_after_post_author_bottom_card' );
 	}
 endif;
