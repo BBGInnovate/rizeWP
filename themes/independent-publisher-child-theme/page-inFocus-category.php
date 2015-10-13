@@ -13,11 +13,11 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="content" class="site-content" role="main">
-			<h1 class="page-title">In Focus</h1>
+			<h1 class="page-title">Trending</h1>
 			<p class="intro">Our daily digest of the links, trends, hashtags and stories that matter most</p>
 			<?php
 
-				$cat_id=get_cat_id('In Focus');
+				$cat_id=get_cat_id('Trending');
 				if ($cat_id ==0) {
 					//echo "there is no in focus category ... please create one locally"; 
 				} else {

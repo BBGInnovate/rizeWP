@@ -284,7 +284,7 @@ function my_custom_sizes( $sizes ) {
 		
 		/* don't show in focus posts on homepage */
 		if ($query -> is_home()) {
-			$inFocus_cat_id=get_cat_id('In Focus');
+			$inFocus_cat_id=get_cat_id('Trending');
 			$tax_query = array(
 			    array(
 			        'taxonomy' => 'category',
