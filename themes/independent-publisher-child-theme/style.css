@@ -1179,3 +1179,12 @@ button, html input[type="button"], input[type="reset"], input[type="submit"], bu
 button, html input[type="button"], input[type="reset"], input[type="submit"], button:hover, html input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover { background: -o-linear-gradient(top, #57ad68 60%, #57ad68 100%); /* Opera 11.10+ */ }
 button, html input[type="button"], input[type="reset"], input[type="submit"], button:hover, html input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover { background: -ms-linear-gradient(top, #57ad68 60%, #57ad68 100%); /* IE10+ */ }
 button, html input[type="button"], input[type="reset"], input[type="submit"], button:hover, html input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover { background: linear-gradient(top, #57ad68 60%, #57ad68 100%); /* W3C */ }
+
+strong{
+	font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
+	font-weight: bold;
+}
+p a{
+	font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
+	font-weight: bold;
+}
