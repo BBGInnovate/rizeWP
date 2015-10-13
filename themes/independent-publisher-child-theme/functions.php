@@ -282,6 +282,21 @@ function my_custom_sizes( $sizes ) {
 	add_action('pre_get_posts', 'myprefix_query_offset', 1 ); 
 	function myprefix_query_offset(&$query) {	
 		
+		/* don't show in focus posts on homepage */
+		if ($query -> is_home()) {
+			$inFocus_cat_id=get_cat_id('In Focus');
+			$tax_query = array(
+			    array(
+			        'taxonomy' => 'category',
+			        'field' => 'term_id',
+			        'terms' => $inFocus_cat_id,
+			        'operator' => 'NOT IN',
+			    )
+			);
+			$query->set( 'tax_query', $tax_query );
+		}
+		
+
 		if ( ! ($query->is_home() &&  $query->is_main_query()) ) {
 		    return;
 		}
@@ -300,6 +315,7 @@ function my_custom_sizes( $sizes ) {
 			$page_offset = $offset + ( (get_query_var('paged')-1) * $ppp );
 
 			$query->set('offset', $page_offset);
+
 		} else {
 			//we handle the custom logic for the first page in index.php - so nothing to do in this clause
 		}
