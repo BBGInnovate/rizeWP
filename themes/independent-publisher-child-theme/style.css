@@ -398,14 +398,14 @@ and Blueprint http://www.blueprintcss.org/
 		background: url(../../images/menu_icons_selected.png) no-repeat center 0px / 35px 200px;
 	}
 
-	#inFocus #footerNav ul li.focus{
+	#footerNav ul li.focus.menuOpen{
 		background: url(../../images/menu_icons_selected.png) no-repeat center -50px / 35px 200px;
 	}
 
 	#pageMission #footerNav ul li.mission{
 		background: url(../../images/menu_icons_selected.png) no-repeat center -100px / 35px 200px;
 	}
-	#footerNav ul li.trending.menuOpen{
+	#trending #footerNav ul li.trending{
 		background: url(../../images/menu_icons_selected.png) no-repeat center -150px / 35px 200px;
 	}
 
@@ -613,18 +613,34 @@ and Blueprint http://www.blueprintcss.org/
 		max-width: 150px;
 	}
 
-	#authorPage.author div.author-bio {
+	#authorPage.author div.author-bio{
 		border-bottom: 1px dashed #CCC;
 	    padding-bottom: 20px;
 	    margin-bottom: 40px;
 	}
 
-	.archive.author .archive-title{max-width: 100%; margin:0;}
-	.author h1.archive-title{text-align: center; width: 100%; /*text-align:left;*/}
-	.author .author-avatar{text-align: center; margin-top: 10px;/*text-align:left;*/}
-	.author .author-avatar img{margin-top: 0; float: none;/* margin-top: -85; float: left;*/}
+	#categoryPage div.archive-bio{
+		border-bottom: 1px dashed #CCC;
+	    padding-bottom: 20px;
+	    margin-bottom: 30px;
+	}
 
-	.author .author-description{
+	#categoryPage .archive-avatar{
+		width: 70px;
+		height:70px;
+		border-radius: 50%;
+		background-color: orange;
+		margin:0 auto;
+	}
+	/*		background: url(../../images/menu_icons_selected.png) no-repeat center -150px / 35px 200px; */
+
+
+	.archive.author .archive-title{max-width: 100%; margin:0;}
+	.author h1.archive-title, .category h1.archive-title{text-align: center; width: 100%; /*text-align:left;*/}
+	.author .author-avatar, #categoryPage .archive-avatar{text-align: center; margin-top: 10px;/*text-align:left;*/}
+	.author .author-avatar img, #categoryPage .archive-avatar img{margin-top: 0; float: none;/* margin-top: -85; float: left;*/}
+
+	.author .author-description, .category .category-description{
 		margin:0;
 		text-align: center;
 		color: #999;
@@ -633,19 +649,25 @@ and Blueprint http://www.blueprintcss.org/
 	}
 
 	@media (min-width: 500px){
-		.author .author-avatar{text-align: left; margin-top: 10px;}
-		.author .author-avatar img{margin-top: 0; float: left;}
+		#categoryPage .archive-avatar{
+			width: 150px;
+			height:150px;
+		}
 
-		.archive.author .archive-title{max-width: 80%; margin:0; padding: 0 0 0 170px;}
-		.author h1.archive-title{text-align: left; width: auto; clear:none; font-size: 2.5em;}
+		.author .author-avatar, #categoryPage .archive-avatar{text-align: left; margin-top: 10px; float:left;}
+		.author .author-avatar img, #categoryPage .archive-avatar img{margin-top: 0; float: left;}
 
-		.author .author-description{
+		.archive.author .archive-title, #categoryPage .archive-bio h1.archive-title{max-width: 80%; margin:0; padding: 0 0 0 170px;}
+		.author h1.archive-title, #categoryPage h1.archive-title{text-align: left; width: auto; clear:none; font-size: 2.5em;}
+
+		.author .author-description, #categoryPage .category-description{
 			padding:0 0 0 170px;
 			text-align: left;
 		}
 	}
 	@media (min-width: 700px){
-		.author h1.archive-title{font-size: 3.5em;}
+
+		.author h1.archive-title, #categoryPage h1.archive-title{font-size: 3.5em;}
 	}
 
 
