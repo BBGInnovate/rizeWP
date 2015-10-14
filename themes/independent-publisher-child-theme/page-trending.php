@@ -1,11 +1,10 @@
 <?php
-
 /**
- template name: Trending
- * The template for displaying our "in focus" view.
- * In this version we just show the most recent 'in focus' post
+ * The Template for displaying all single posts.
+ *
  * @package Independent Publisher
- * @since   Independent Publisher 1.0
+ * @since   Independent Publisher 1.0 
+ 
  */
 
 $pageBodyID = "trending";
@@ -22,58 +21,56 @@ $qParams=array(
 //echo "catid " . $cat_id . "<BR>";
 query_posts($qParams);
 
-if (have_posts()) : while (have_posts()) : 
+/* we go through the loop once and reset it in order to get some vars for our og tags */
+if ( have_posts() ) {
 	the_post(); 
-	$trendingPostPermalink=post_permalink(get_the_id());
-	$ogUrl=$trendingPostPermalink;
-endwhile; endif; 
-rewind_posts();
-/***** DONE GETTING SPECIAL PERMALINK ******/
 
-get_header(); ?> 
-	<!-- temporary fix -->
-	<div id="logoOnPostPages">
-		<a class="site-logo" href="https://africa.rizing.org/" title="Africa Rizing" rel="home">
-			<img class="no-grav" src="https://africa.rizing.org/wp-content/uploads/2015/10/cropped-Rize-socialprofiles_500.png" height="501" width="501" alt="Africa Rizing">
-		</a>
-		<h1 class="site-title">
-			<a href="https://africa.rizing.org/" title="Africa Rizing" rel="home">Africa <span class="orangeHighlight">Rizing</span></a>
-		</h1>
-		<h2 class="site-description">Connecting the next generation of global influencers from across the Continent, and around the world to engage in, ‘a smarter conversation’</h2>
-	</div>
-	<style type="text/css">
-		#logoOnPostPages a.site-logo {
-	    	margin-left: 0px;
-		}
-		@media only screen and (min-width: 1200px) {
-			#logoOnPostPages{display: none;}
-		}
-	</style>
-	<!-- end temporary fix -->
 
+	$metaAuthor= get_the_author(); 
+	$ogTitle=get_the_title();
+
+	$metaKeywords= strip_tags(get_the_tag_list('',', ',''));
+
+	//$ogImage=get_the_post_thumbnail($post->ID, 'thumbnail');
+	$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'Full' ); 
+	$ogImage = $thumb['0']; 
+	$ogDescription=independent_publisher_first_sentence_excerpt(); //get_the_excerpt()
+
+	rewind_posts();
+}
+
+/**** somehow classes were being to the body that we don't want ... specifically archive and category ***/
+/* see http://wordpress.stackexchange.com/questions/15850/remove-classes-from-body-class */
+function wpse15850_body_class( $wp_classes, $extra_classes ) {
 	
+	$blacklist = array( 'archive', 'category', 'category-trending' );
+	$wp_classes = array_diff( $wp_classes, $blacklist );
+
+	// Add the extra classes back untouched
+	return array_merge( $wp_classes, (array) $extra_classes );
+}
+add_filter( 'body_class', 'wpse15850_body_class', 10, 2 );
+
+
+get_header(); ?>
+
 	<div id="primary" class="content-area">
 		<main id="content" class="site-content" role="main">
-			<h1 class="page-title">Trending</h1>
-			<?php
 
-				
-				if ($trendingCatID ==0) {
-					//echo "there is no in focus category ... please create one locally"; 
-				} else {
-					$catDesc=strip_tags(category_description($trendingCatID));
-					if ($catDesc != "") {
-						echo "<p class='intro'>$catDesc</p>";	
-					}
-					//echo "catid " . $cat_id . "<BR>";
-					query_posts($qParams);
+			<?php while ( have_posts() ) : the_post(); ?>
 
-					if (have_posts()) : while (have_posts()) : 
-						the_post(); 
-						get_template_part( 'content', 'single' );	
-					endwhile; endif; // done our wordpress loop. Will start again for each category 
+				<?php get_template_part( 'content', 'single' ); ?>
+
+				<?php
+				// If comments are open or we have at least one comment, load up the comment template
+				if ( comments_open() || '0' != get_comments_number() && ! independent_publisher_hide_comments() ) {
+					comments_template( '', true );
 				}
-			?>
+				?>
+<!--
+			-->
+
+			<?php endwhile; // end of the loop. ?>
 
 		</main>
 		<!-- #content .site-content -->

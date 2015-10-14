@@ -53,7 +53,7 @@ and Blueprint http://www.blueprintcss.org/
 	}
 
 	/*social main */
-	#menu-social, #postDetail div#menu-social {
+	#menu-social, #postDetail div#menu-social, #trending div#menu-social {
 		display: none;
 	}
 	#menu-social{float:right; clear: none;}
@@ -454,7 +454,9 @@ and Blueprint http://www.blueprintcss.org/
 		margin:0;
 	}
 
-	#postDetail .entry-content ul li, .entry-content ol li{
+	#postDetail .entry-content ul li, .entry-content ol li,
+	#trending .entry-content ul li, .entry-content ol li,
+	{
 		margin-bottom: 10px;
 	}
 

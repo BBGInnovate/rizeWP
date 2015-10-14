@@ -15,7 +15,7 @@ if ( ! function_exists( 'independent_publisher_content_nav' ) ) :
 	 * @since Independent Publisher 1.0
 	 */
 	function independent_publisher_content_nav( $nav_id ) {
-		global $wp_query, $post;
+		global $wp_query, $post, $pageBodyID;
 
 		$customMaxPages = 1 + ceil(($wp_query->found_posts - get_option( 'homepage_post_count' ))/(get_option('posts_per_page'))); 
 		
@@ -25,7 +25,7 @@ if ( ! function_exists( 'independent_publisher_content_nav' ) ) :
 		echo "<!-- customMax is " . $customMaxPages . "-->";
 
 		// Don't print empty markup on single pages if there's nowhere to navigate.
-		if ( is_single() ) {
+		if ( is_single() || ($pageBodyID=='trending') ) {
 			$previous = ( is_attachment() ) ? get_post( $post->post_parent ) : get_adjacent_post( false, '', true );
 			$next     = get_adjacent_post( false, '', false );
 
@@ -40,14 +40,14 @@ if ( ! function_exists( 'independent_publisher_content_nav' ) ) :
 		}
 
 		$nav_class = 'site-navigation paging-navigation';
-		if ( is_single() )
+		if ( is_single() || ($pageBodyID=='trending') )
 			$nav_class = 'site-navigation post-navigation';
 
 		?>
 		<nav role="navigation" id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?>">
 			<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'independent-publisher' ); ?></h1>
 
-			<?php if ( is_single() ) : // navigation links for single posts ?>
+			<?php if ( is_single() || ($pageBodyID=='trending') ) : // navigation links for single posts ?>
 
 				<?php previous_post_link( '<div class="nav-previous"><button>%link</button></div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'independent-publisher' ) . '</span> %title' ); ?>
 				<?php next_post_link( '<div class="nav-next"><button>%link</button></div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'independent-publisher' ) . '</span>' ); ?>
@@ -475,7 +475,7 @@ if ( ! function_exists( 'independent_publisher_posted_author_bottom_card' ) ) :
 
 		do_action( 'independent_publisher_before_post_author_bottom_card' );
 		global $pageBodyID;
-		if ($pageBodyID != "trending") :
+		if (true || $pageBodyID != "trending") :
 		?>
 
 		<div class="post-author-bottom">
