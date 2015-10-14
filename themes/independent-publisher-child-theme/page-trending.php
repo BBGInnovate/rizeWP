@@ -37,6 +37,9 @@ if ( have_posts() ) {
 	$ogImage = $thumb['0']; 
 	$ogDescription=independent_publisher_first_sentence_excerpt(); //get_the_excerpt()
 
+	$trendingPostPermalink=post_permalink(get_the_id());
+	$ogUrl=$trendingPostPermalink;
+
 	rewind_posts();
 }
 
