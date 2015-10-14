@@ -31,7 +31,27 @@ rewind_posts();
 /***** DONE GETTING SPECIAL PERMALINK ******/
 
 get_header(); ?> 
+	<!-- temporary fix -->
+	<div id="logoOnPostPages">
+		<a class="site-logo" href="https://africa.rizing.org/" title="Africa Rizing" rel="home">
+			<img class="no-grav" src="https://africa.rizing.org/wp-content/uploads/2015/10/cropped-Rize-socialprofiles_500.png" height="501" width="501" alt="Africa Rizing">
+		</a>
+		<h1 class="site-title">
+			<a href="https://africa.rizing.org/" title="Africa Rizing" rel="home">Africa <span class="orangeHighlight">Rizing</span></a>
+		</h1>
+		<h2 class="site-description">Connecting the next generation of global influencers from across the Continent, and around the world to engage in, ‘a smarter conversation’</h2>
+	</div>
+	<style type="text/css">
+		#logoOnPostPages a.site-logo {
+	    	margin-left: 0px;
+		}
+		@media only screen and (min-width: 1200px) {
+			#logoOnPostPages{display: none;}
+		}
+	</style>
+	<!-- end temporary fix -->
 
+	
 	<div id="primary" class="content-area">
 		<main id="content" class="site-content" role="main">
 			<h1 class="page-title">Trending</h1>
