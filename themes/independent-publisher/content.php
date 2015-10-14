@@ -2,6 +2,7 @@
 	/**
 	 * @package Independent Publisher
 	 * @since   Independent Publisher 1.0
+	 * NOTE: we have some logic in here for one of the deprecated "In Focus" post templates
 	 */
 
 	global $pageBodyID; 

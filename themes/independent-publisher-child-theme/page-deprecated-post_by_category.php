@@ -1,7 +1,7 @@
 <?php
 
 /**
- template name: One post per Featured Category
+ template name: (Deprecated) One post per Featured Category
  * The template for displaying all pages.
  *
  * This is the template that displays all pages by default.

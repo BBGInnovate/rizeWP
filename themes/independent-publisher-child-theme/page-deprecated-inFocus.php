@@ -1,7 +1,7 @@
 <?php
 
 /**
- template name: In Focus
+ template name: (Deprecated) In Focus
  * The template for displaying our "in focus" view.
  * Display all featured posts.  Cut them off @ 6.  Allow one sticky post
  * @package Independent Publisher
