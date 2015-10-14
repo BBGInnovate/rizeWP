@@ -164,9 +164,9 @@ function my_custom_sizes( $sizes ) {
 						/*** PREPARE TWITTER AND FB SHARE URLS ****/
 						$shareLink=get_permalink();
 						global $pageBodyID;
-						if ($pageBodyID=="inFocus") {
-							global $inFocusPostPermalink;
-							$shareLink=$inFocusPostPermalink;
+						if ($pageBodyID=="trending") {
+							global $trendingPostPermalink;
+							$shareLink=$trendingPostPermalink;
 						}
 						
 						/* remove html tags, smart quotes and trailing ellipses from description */
@@ -205,7 +205,7 @@ function my_custom_sizes( $sizes ) {
 									<header class="post-cover-title">
 										<?php if ( independent_publisher_categorized_blog() ) { ?>
 										
-										<?php if ($pageBodyID != "inFocus") : ?>
+										<?php if ($pageBodyID != "trending") : ?>
 											<h5 class='entry-category'>
 												<?php echo independent_publisher_post_categories( '', true ); ?>
 											</h5>
@@ -220,7 +220,7 @@ function my_custom_sizes( $sizes ) {
 
 										<?php } ?>
 
-										<?php if ($pageBodyID != "inFocus") : ?>
+										<?php if ($pageBodyID != "trending") : ?>
 											<h1 class="entry-title" itemprop="name">
 												<?php echo get_the_title(); ?>
 											</h1>
@@ -232,7 +232,7 @@ function my_custom_sizes( $sizes ) {
 												<?php echo $subtitle;?>
 											</h2>
 										<?php endif; ?>
-										<?php if ( $pageBodyID != "inFocus" && ! is_page() ) : ?>
+										<?php if ( $pageBodyID != "trending" && ! is_page() ) : ?>
 											<h3 class="entry-title-meta">
 												<span class="entry-title-meta-author">
 													<a class="author-avatar" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
@@ -296,12 +296,12 @@ function my_custom_sizes( $sizes ) {
 		
 		/* don't show in focus posts on homepage */
 		if ($query -> is_home()) {
-			$inFocus_cat_id=get_cat_id('Trending');
+			$trending_cat_id=get_cat_id('Trending');
 			$tax_query = array(
 			    array(
 			        'taxonomy' => 'category',
 			        'field' => 'term_id',
-			        'terms' => $inFocus_cat_id,
+			        'terms' => $trending_cat_id,
 			        'operator' => 'NOT IN',
 			    )
 			);

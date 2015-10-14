@@ -103,7 +103,7 @@ $ogDescription = str_replace('"','&qout;',$ogDescription);
 			the_post(); 
 			if (is_single() && !(independent_publisher_has_full_width_featured_image() && has_post_thumbnail())   ) {
 				$extraBodyClass="post-cover-overlay-post-title";
-			} elseif ($pageBodyID=="inFocus") {
+			} elseif ($pageBodyID=="trending") {
 				$extraBodyClass= ["single","post-cover-overlay-post-title"];
 			}
 			rewind_posts();
@@ -122,7 +122,7 @@ $ogDescription = str_replace('"','&qout;',$ogDescription);
 
 
 <?php // Displays full-width featured image on Single Posts if applicable ?>
-<?php if (is_single() || $pageBodyID=="inFocus") { independent_publisher_full_width_featured_image(); }; ?>
+<?php if (is_single() || $pageBodyID=="trending") { independent_publisher_full_width_featured_image(); }; ?>
 
 <div id="page" class="hfeed site">
 	<header id="masthead" class="site-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">

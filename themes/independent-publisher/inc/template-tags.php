@@ -475,7 +475,7 @@ if ( ! function_exists( 'independent_publisher_posted_author_bottom_card' ) ) :
 
 		do_action( 'independent_publisher_before_post_author_bottom_card' );
 		global $pageBodyID;
-		if ($pageBodyID != "inFocus") :
+		if ($pageBodyID != "trending") :
 		?>
 
 		<div class="post-author-bottom">

@@ -8,7 +8,7 @@
  * @since   Independent Publisher 1.0
  */
 
-$pageBodyID = "inFocus";
+$pageBodyID = "trending";
 $trendingCatID=get_cat_id('Trending');
 
 /**** GET A SPECIAL PERMALINK FOR THE TWITTER AND FB SHARE BUTTONS *****/
@@ -24,8 +24,8 @@ query_posts($qParams);
 
 if (have_posts()) : while (have_posts()) : 
 	the_post(); 
-	$inFocusPostPermalink=post_permalink(get_the_id());
-	$ogUrl=$inFocusPostPermalink;
+	$trendingPostPermalink=post_permalink(get_the_id());
+	$ogUrl=$trendingPostPermalink;
 endwhile; endif; 
 rewind_posts();
 /***** DONE GETTING SPECIAL PERMALINK ******/
