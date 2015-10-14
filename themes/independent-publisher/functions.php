@@ -859,8 +859,9 @@ if ( ! function_exists( 'independent_publisher_first_sentence_excerpt' ) ):
 					$startIndex = $firstP_closePosition +1;
 				}
 			}
-
-			$text = substr($text, $startIndex, strpos($text, "</p>")+4);
+			$endIndex=strpos($text, "</p>")+4;
+			$strLength=$endIndex-$startIndex;
+			$text = substr($text, $startIndex, $strLength);
 			$text='<p>' . strip_tags($text) . '</p>';
 			/*** ODDI CUSTOM - REMOVE ONE SENTENCE LOGIC
 			$text           = wp_trim_words( $text, $excerpt_length, $excerpt_more ); // See wp_trim_words() in wp-includes/formatting.php
