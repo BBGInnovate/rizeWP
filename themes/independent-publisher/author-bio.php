@@ -33,6 +33,7 @@
 				<?php the_author_meta( 'description' ); ?>
 			<?php endif; ?>
 		</p>
+		<div class='clearAll'></div>
 	</div>
 	<!-- .author-description -->
 </div> <!-- .author-bio -->
