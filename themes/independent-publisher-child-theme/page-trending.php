@@ -1,7 +1,7 @@
 <?php
 
 /**
- template name: In Focus (Category Version)
+ template name: Trending
  * The template for displaying our "in focus" view.
  * In this version we just show the most recent 'in focus' post
  * @package Independent Publisher
