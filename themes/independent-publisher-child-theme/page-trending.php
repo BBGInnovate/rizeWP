@@ -4,7 +4,8 @@
  *
  * @package Independent Publisher
  * @since   Independent Publisher 1.0 
- 
+  template name: Trending
+
  */
 
 $pageBodyID = "trending";
