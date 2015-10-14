@@ -23,13 +23,24 @@ get_header(); ?>
 		<main id="content" class="site-content" role="main">
 
 			<?php if ( have_posts() ) : ?>
+					<div class="archive-bio">
+						<?php
+						if ( is_category() ) {
+							printf( '%s', '<div class="archive-avatar"></div>' );
+
+						}
+
+						?>
+
+
+	
 
 				<!--<header class="page-header">-->
 
-					<h4 class="page-title category">
+					<h1 class="archive-title">
 						<?php
 						if ( is_category() ) {
-							printf( '%s', '<span>' . single_cat_title( '', false ) . '</span>' );
+							printf( '%s', '<span class="vcard">' . single_cat_title( '', false ) . '</span>' );
 
 						} elseif ( is_tag() ) {
 							printf( '%s', '<span>' . single_tag_title( '', false ) . '</span>' );
@@ -79,7 +90,7 @@ get_header(); ?>
 
 						}
 						?>
-					</h4>
+					</h1>
 					<?php
 					if ( is_category() ) {
 						// Show an optional category description
@@ -88,10 +99,8 @@ get_header(); ?>
 						// Get some stats about this taxonomy to include in the description
 						$taxonomy_stats = apply_filters( 'independent_publisher_taxonomy_category_stats', independent_publisher_taxonomy_archive_stats( 'category' ) );
 
-						if ( ! empty( $category_description ) ) { // show the description + the taxonomy stats
-							echo apply_filters( 'category_archive_meta', '<div class="taxonomy-description summary">' . $category_description  . '</div>' );
-						} else { // there was description set, so let's just show some stats
-							/* echo apply_filters( 'category_archive_meta', '<div class="taxonomy-description">' . $taxonomy_stats . '</div>' );*/
+						if ( ! empty( $category_description ) ) { // show the description 
+							echo apply_filters( 'category_archive_meta', '<div class="category-description">' . $category_description  . '</div>' );
 						}
 
 					} elseif ( is_tag() ) {
@@ -110,6 +119,8 @@ get_header(); ?>
 						echo independent_publisher_date_archive_description();
 					}
 					?>
+				<div class='clearAll'></div>
+				</div>
 					<?php 
 						
 						//independent_publisher_content_nav( 'nav-above' ); 

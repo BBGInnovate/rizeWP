@@ -626,13 +626,19 @@ and Blueprint http://www.blueprintcss.org/
 	}
 
 	#categoryPage .archive-avatar{
+		display: none;
 		width: 70px;
 		height:70px;
 		border-radius: 50%;
 		background-color: orange;
 		margin:0 auto;
 	}
-	/*		background: url(../../images/menu_icons_selected.png) no-repeat center -150px / 35px 200px; */
+
+	/* Add background images for categories with icons. */
+	#categoryPage.category-trending .archive-avatar{
+		display: block;
+		background: url(../../images/trending.png) no-repeat center / cover;
+	}
 
 
 	.archive.author .archive-title{max-width: 100%; margin:0;}
@@ -657,10 +663,24 @@ and Blueprint http://www.blueprintcss.org/
 		.author .author-avatar, #categoryPage .archive-avatar{text-align: left; margin-top: 10px; float:left;}
 		.author .author-avatar img, #categoryPage .archive-avatar img{margin-top: 0; float: left;}
 
-		.archive.author .archive-title, #categoryPage .archive-bio h1.archive-title{max-width: 80%; margin:0; padding: 0 0 0 170px;}
-		.author h1.archive-title, #categoryPage h1.archive-title{text-align: left; width: auto; clear:none; font-size: 2.5em;}
+		.author h1.archive-title, #categoryPage.category-trending h1.archive-title{text-align: left; width: auto; clear:none; font-size: 2.5em;}
 
-		.author .author-description, #categoryPage .category-description{
+
+		#categoryPage .archive-bio h1.archive-title{
+			margin:0; 
+			text-align: left;
+		}
+		#categoryPage .category-description{
+			text-align: left;
+		}
+
+		/* Add categories with icons to these two rules. */
+		.archive.author .archive-title, 
+		#categoryPage.category-trending .archive-bio h1.archive-title{
+			padding: 0 0 0 170px;
+		}
+		.author .author-description, 
+		#categoryPage.category-trending .category-description{
 			padding:0 0 0 170px;
 			text-align: left;
 		}
