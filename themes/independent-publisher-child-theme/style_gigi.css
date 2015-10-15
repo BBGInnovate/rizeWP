@@ -11,7 +11,7 @@ span.attribution {
 }
 
 .entry-content img.size-medium {
-    width: 100% !important;
+    width: 50% !important;
     margin: 0;
     float: none;
 }
