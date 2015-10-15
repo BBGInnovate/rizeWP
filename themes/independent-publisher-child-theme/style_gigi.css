@@ -11,9 +11,10 @@ span.attribution {
 }
 
 .entry-content img.size-medium {
-    width: 50% !important;
+    width: 45% !important;
     margin: 0;
-    float: none;
+    float: left;
+    padding: 1%; 
 }
 
 
