@@ -17,6 +17,19 @@ span.attribution {
     padding: 1%; 
 }
 
+.entry-content div.wp-caption img.size-medium {
+    width: 100% !important;
+}
+
+img.size-medium  + .wp-caption-text {
+    clear: both;
+    width: 50%;
+}
+
+div.wp-caption + p {
+    clear: both;
+}
+
 
 .single.post-cover-overlay-post-title #socialPost {
 	display: none;
