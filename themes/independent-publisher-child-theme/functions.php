@@ -297,11 +297,12 @@ function my_custom_sizes( $sizes ) {
 		/* don't show in focus posts on homepage */
 		if ($query -> is_home()) {
 			$trending_cat_id=get_cat_id('Trending');
+			$guidebook_cat_id=get_cat_id('Guidebook');
 			$tax_query = array(
 			    array(
 			        'taxonomy' => 'category',
 			        'field' => 'term_id',
-			        'terms' => $trending_cat_id,
+			        'terms' => [$trending_cat_id,$guidebook_cat_id],
 			        'operator' => 'NOT IN',
 			    )
 			);
