@@ -471,6 +471,15 @@ function my_custom_sizes( $sizes ) {
 
 		$class = trim( 'wp-caption ' . $atts['align'] . ' ' . $atts['class'] );
 
+		/* ODDI CUSTOM: for certain sizes, when the image has a caption, we need the container div with wp-caption to also have the image size class */
+		$classesToCheck=["size-medium","size-mugshot"];
+		$classesToCopyToCaptionDiv="";
+		foreach ($classesToCheck as $aClass) {
+			if (strpos($content, $aClass)) {
+				$class .= ' ' . $aClass;
+			}
+		}
+
 		if ( current_theme_supports( 'html5', 'caption' ) ) {
 			return '<figure ' . $atts['id'] . 'style="width: ' . (int) $atts['width'] . 'px;" class="' . esc_attr( $class ) . '">'
 			. do_shortcode( $content ) . '<figcaption class="wp-caption-text">' . $atts['caption'] . '</figcaption></figure>';
