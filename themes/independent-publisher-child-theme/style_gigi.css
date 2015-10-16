@@ -53,7 +53,7 @@ div.wp-caption + p {
 	pointer-events: auto;
 }
 
-@media (min-width: 350px) {
+@media (min-width: 365px) {
 	.single.post-cover-overlay-post-title #socialPost {
 		display: block;
 	}
@@ -64,6 +64,7 @@ div.wp-caption + p {
 		margin: 0 30px 0 0;
 	}
 	.single.post-cover-overlay-post-title #socialPost ul:before, .single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow #socialPost ul:before {
+		display: none;
 		vertical-align: top;
 	}
 	.single.post-cover-overlay-post-title #socialPost ul li, .single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow #socialPost ul li {
@@ -100,6 +101,12 @@ div.wp-caption + p {
 		left: 17%;
 		font-size: 20px;
 		color: #fff;
+	}
+}
+
+@media (min-width: 450px) {
+	.single.post-cover-overlay-post-title #socialPost ul:before, .single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow #socialPost ul:before {
+		display: inline;
 	}
 }
 
