@@ -39,7 +39,7 @@ div.wp-caption + p {
 	pointer-events: auto;
 }
 
-@media (min-width: 300px) {
+@media (min-width: 350px) {
 	.single.post-cover-overlay-post-title #socialPost {
 		display: block;
 	}

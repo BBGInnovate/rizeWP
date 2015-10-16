@@ -739,7 +739,7 @@ and Blueprint http://www.blueprintcss.org/
 	.single.post-cover-overlay-post-title #socialPost ul:before {
 		font-size: 12px;
 	}
-	@media (min-width: 350px){
+	@media (min-width: 400px){
 		.single.post-cover-overlay-post-title #socialPost ul:before {
 			content: "SHARE";
 			color: #999;
