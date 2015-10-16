@@ -926,7 +926,7 @@ and Blueprint http://www.blueprintcss.org/
 
 
 /* experimenting with styles for images sizes  -----------*/
-	.entry-content img.size-medium{
+	.entry-content div.size-medium{
 		width: 100% !important;
 	}
 	.entry-content img.size-mugshot{
@@ -939,19 +939,39 @@ and Blueprint http://www.blueprintcss.org/
 		margin-top:0;
 	}
 
-	@media only screen and (min-width: 700px) {
+	@media only screen and (min-width: 500px) {
 		.entry-content img.size-medium{
 			width: 50% !important; 
-			float: right; 
+			float: left; 
 			margin: 5px 0 5px 20px;
 		}
 
 		p.wp-caption.wp-caption-text.halfColumn{
 			width: 50% !important; 
-			float: right; 
+			float: left; 
 			margin: 5px 0 5px 20px;
 		}
 	}
+
+
+	@media only screen and (min-width: 500px) {
+		.entry-content div.size-medium{
+			width: 46% !important;
+		}
+
+		.entry-content img.size-medium{
+			width: 50% !important; 
+			float: left; 
+			margin: 5px 0 5px 20px;
+		}
+
+		p.wp-caption.wp-caption-text.halfColumn{
+			width: 50% !important; 
+			float: left; 
+			margin: 5px 0 5px 20px;
+		}
+	}
+
 
 	/* Remove theme CSS styling that is causing skin tones to be darker on featured images */
 	.single.post-cover-overlay-post-title .post-cover-title-wrapper, .page.post-cover-overlay-post-title .post-cover-title-wrapper{background: transparent;}
@@ -1232,3 +1252,7 @@ p a{
 	font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
 	font-weight: 600;
 }
+
+
+
+
