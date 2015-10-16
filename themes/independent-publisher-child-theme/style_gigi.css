@@ -9,7 +9,12 @@ span.attribution {
 .attribution{
 	margin-top: .5em;
 }
+.entry-content div.wp-caption img.size-medium {
+    width: 100% !important;
+    margin:0;
+}
 
+/*
 .entry-content img.size-medium {
     width: 45% !important;
     margin: 0;
@@ -17,19 +22,28 @@ span.attribution {
     padding: 1%; 
 }
 
-.entry-content div.wp-caption img.size-medium {
-    width: 100% !important;
-}
+*/
 
+div.wp-caption + div.wp-caption{
+    margin-right:0;
+}
+/*
 img.size-medium  + .wp-caption-text {
     clear: both;
     width: 50%;
 }
+*/
 
-div.wp-caption + p {
+div.size-medium + div.size-medium + p {
     clear: both;
 }
 
+div.size-medium + blockquote {
+    clear: both;
+}
+div.wp-caption + p {
+    /*clear: both;*/
+}
 
 .single.post-cover-overlay-post-title #socialPost {
 	display: none;
