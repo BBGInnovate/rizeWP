@@ -97,7 +97,36 @@ function my_custom_sizes( $sizes ) {
 	return $reorderedSizes;
 }
 
-/**
+if ( ! function_exists( 'independent_publisher_post_categories' ) ) :
+	/**
+	 * Returns categories for current post with separator.
+	 * Optionally returns only a single category.
+	 * Separates main categories from child/grandchild categories //GIGI
+	 *
+	 * @since Independent Publisher 1.0
+	 */
+	function independent_publisher_post_categories( $separator = ',', $single = false ) {
+		$categories = get_the_category();
+		$output     = '';
+		if ( $categories ) {
+			foreach ( $categories as $category ) {
+				if ($category->category_parent == 0) { //Check if category has a parent, if not display as follows
+					$output .= '<h5 class="entry-category"><a href="' . get_category_link( $category->term_id ) . '" title="' . esc_attr( sprintf( __( "View all posts in %s", 'independent-publisher' ), $category->name ) ) . '">' . $category->cat_name . '</a></h5>' . $separator;
+					if ( $single )
+					break;
+				}
+				else if ($category->category_parent != 0) { //If the category is a subcategory display as follows
+    				$output .= '<div id="series-banner"><h6 class="series-name"><a href="' . get_category_link( $category->term_id ) . '" title="' . esc_attr( sprintf( __( "View all posts in %s", 'independent-publisher' ), $category->name ) ) . '">' . $category->cat_name . '</a></h6></div>' . $separator;
+				}
+			}
+		}
+
+		return $output;
+	}
+endif;
+
+
+	/**
 	 * Show Full Width Featured Image on single pages if post has full width featured image selected
 	 * or if Auto-Set Featured Image as Post Cover option is enabled
 	 */
@@ -206,9 +235,7 @@ function my_custom_sizes( $sizes ) {
 										<?php if ( independent_publisher_categorized_blog() ) { ?>
 										
 										<?php if (true || $pageBodyID != "trending") : ?>
-											<h5 class='entry-category'>
-												<?php echo independent_publisher_post_categories( '', true ); ?>
-											</h5>
+											<?php echo independent_publisher_post_categories( '', false ); ?>
 										<?php endif; ?>
 
 										<div id='socialPost'>

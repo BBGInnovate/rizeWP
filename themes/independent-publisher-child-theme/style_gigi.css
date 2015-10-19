@@ -1,4 +1,68 @@
 /* STYLE_GIGI.css - temporary styles file for collaboration */
+
+/* Child categories for special reports */
+/* OPTION A: regular banner */
+#series-banner {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    padding: .5em 1.25em;
+    background-color: rgba(87, 173, 104, 0.7);
+}
+
+h6.series-name {
+    position: relative;
+    max-width: 300px;
+    top: 0;
+    left: 0;
+    margin: 0;
+    font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
+    font-size: .7em;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: .03em;
+    text-align: center;
+}
+
+h6.series-name a {
+	color: #fff;
+}
+
+/* OPTION B: corner banner */
+/*#series-banner {
+    position: relative;
+}
+#series-banner:before {
+    content:'';
+    border-top: 100px solid rgba(87, 173, 104, 0.5);
+    border-right: 100px solid transparent;
+    position: absolute;
+    top: -290px;
+    left: -20px;
+}
+.series-name {
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg) translateZ(0px);
+    transform: rotate(-45deg) translateZ(0px);
+    position: absolute;
+    width: 50px;
+    top: -285px;
+    left: -10px;
+    font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
+    font-size: .5em;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: .02em;
+    text-align: center;
+}
+
+.series-name a {
+	color: #fff;
+}*/
+
+/* Blockquote attributions */
 span.attribution {
 	display: block;
 	font-style: normal;
@@ -9,30 +73,17 @@ span.attribution {
 .attribution{
 	margin-top: .5em;
 }
+
+
+/* Medium-sized images */
 .entry-content div.wp-caption img.size-medium {
     width: 100% !important;
     margin:0;
 }
 
-/*
-.entry-content img.size-medium {
-    width: 45% !important;
-    margin: 0;
-    float: left;
-    padding: 1%; 
-}
-
-*/
-
 div.wp-caption + div.wp-caption{
     margin-right:0;
 }
-/*
-img.size-medium  + .wp-caption-text {
-    clear: both;
-    width: 50%;
-}
-*/
 
 div.size-medium + div.size-medium + p {
     clear: both;
@@ -41,10 +92,9 @@ div.size-medium + div.size-medium + p {
 div.size-medium + blockquote {
     clear: both;
 }
-div.wp-caption + p {
-    /*clear: both;*/
-}
 
+
+/* Post-level share icons */
 .single.post-cover-overlay-post-title #socialPost {
 	display: none;
 	pointer-events: none;
@@ -154,12 +204,10 @@ div.wp-caption + p {
 	.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost {
 		position: absolute;
 		bottom: 80px;
-		/*right: 6%;*/
 		width: 100%;
 		max-width: 700px;
 	}
 	.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul {
-		/*top: 175px;*/
 		position: absolute;
 	}
 	.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul:before {
@@ -220,7 +268,6 @@ div.wp-caption + p {
 	.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost {
 		bottom: -10px;
 		max-width: 800px;
-		/*right: 10%;*/
 	}
 	.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul {
 		top: -5px;
@@ -240,12 +287,5 @@ div.wp-caption + p {
 	}
 	.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul {
 		top: 35px;
-		/*left: -8%;*/
-	}
-}
-
-@media (min-width: 1500px) {
-	.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul {
-		/*left: -10%;*/
 	}
 }
