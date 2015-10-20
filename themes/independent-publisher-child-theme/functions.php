@@ -192,9 +192,16 @@ endif;
 
 						$featuredImageCaption="";
 						$featured_image_data = get_post(get_post_thumbnail_id());
+
+						/* var_dump($featured_image_data); */
 						if ($featured_image_data) {
-							$featuredImageCaption=$featured_image_data->post_excerpt;	
+							$featuredImageCaption=$featured_image_data->post_excerpt;
+							if ($featuredImageCaption!=""){
+								$featuredImageCaption="<p id='featuredCutline'>".$featuredImageCaption."</p>";
+							}
 						}
+
+
 
 						/*** PREPARE TWITTER AND FB SHARE URLS ****/
 						$shareLink=get_permalink();
@@ -240,6 +247,11 @@ endif;
 									<header class="post-cover-title">
 										<?php if ( independent_publisher_categorized_blog() ) { ?>
 										
+										<?php
+											echo $featuredImageCaption; 
+
+										?>
+		
 										<?php if (true || $pageBodyID != "trending") : ?>
 											<?php echo independent_publisher_post_categories( '', false ); ?>
 										<?php endif; ?>
@@ -296,6 +308,7 @@ endif;
 						the_post_thumbnail( apply_filters( 'independent_publisher_full_width_featured_image_size', 'independent_publisher_post_thumbnail' ), array( 'class' => 'full-width-featured-image' ) );
 					endif;
 				endif;
+
 			endwhile; // end of the loop.
 		}
 	}

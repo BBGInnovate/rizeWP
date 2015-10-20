@@ -978,14 +978,52 @@ and Blueprint http://www.blueprintcss.org/
 	.single.post-cover-overlay-post-title .post-cover-title-image, .page.post-cover-overlay-post-title .post-cover-title-image {opacity: 1; }
 
 	.postCoverResponsive { height:150px !important; }
+	#featuredCutline{
+		font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
+		font-size: 80%;
+		line-height: 120%;
+		font-weight: 600;
+		display: none;
+	}
+	.postCoverTitleAlwaysBelow #featuredCutline{
+		width: 700px;
+		margin-top: 0px;
+		color: #999;
+		font-weight: 300;
+		display: block;
+	}
 	@media (min-width: 300px) {
 		.postCoverResponsive { height:250px !important; }
 	}
 	@media (min-width: 700px) {
 		.postCoverResponsive { height:400px !important; }
+
 	}
 	@media (min-width: 1024px) {
 		.postCoverResponsive { height:500px !important; }
+		.postCoverTitleAlwaysBelow #featuredCutline{
+			position: absolute;
+			margin:0;
+			top: 0px;
+			right:20px;
+			width: 150px;
+		}
+		#featuredCutline:before{
+			content:"ABOVE: ";
+		}
+		div:not(.postCoverTitleAlwaysBelow) .post-cover-title-head header.post-cover-title p#featuredCutline{
+			color:#999;
+			font-weight: 300;
+			width: 12%;
+			position: absolute;
+			right: 20px;
+			top: 330px;
+			margin:0;
+			padding:0px;
+			/*
+			background-color: rgba(20, 20, 20, .5);*/
+			display: block;
+		}
 	}
 	@media (min-width: 2048px) {
 		.postCoverResponsive { height:1000px !important; }
