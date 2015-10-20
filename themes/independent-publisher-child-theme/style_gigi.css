@@ -1,14 +1,44 @@
 /* STYLE_GIGI.css - temporary styles file for collaboration */
 
-/* Child categories for special reports */
-/* OPTION A: regular banner */
+li {
+    margin-bottom: .75em;
+}
+
+/* Special reports banner */
 #series-banner {
     position: absolute;
-    top: -40px;
+    top: -150px;
     left: 0;
     padding: .5em 1.25em;
     background-color: rgba(87, 173, 104, 0.7);
 }
+
+@media (min-width: 300px) {
+	#series-banner {
+    	top: -250px;
+    }
+}
+
+@media (min-width: 700px) {
+	#series-banner {
+    	position: absolute; /* This may need to be changed or the top needs to be done as a % */
+    	top: -68px;
+    }
+}
+
+/* Add an arrow to the right of the banner? */
+/*#series-banner:after {
+	position: absolute;
+	left: 100%;
+	top: 0;
+	content: " ";
+	height: 0;
+	width: 0;
+	pointer-events: none;
+  	border: solid transparent;
+	border-left-color: rgba(87, 173, 104, 0.7);
+	border-width: .86em;
+}*/
 
 h6.series-name {
     position: relative;
@@ -24,43 +54,21 @@ h6.series-name {
     text-align: center;
 }
 
+/* Add a shape before the text to id each of the reports? */
+/*h6.series-name:before {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 1em;
+  height: 1em;
+  float: left;
+  content: '';
+  margin-right: .5em; 
+}*/
+
 h6.series-name a {
 	color: #fff;
 }
 
-/* OPTION B: corner banner */
-/*#series-banner {
-    position: relative;
-}
-#series-banner:before {
-    content:'';
-    border-top: 100px solid rgba(87, 173, 104, 0.5);
-    border-right: 100px solid transparent;
-    position: absolute;
-    top: -290px;
-    left: -20px;
-}
-.series-name {
-    -moz-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg) translateZ(0px);
-    transform: rotate(-45deg) translateZ(0px);
-    position: absolute;
-    width: 50px;
-    top: -285px;
-    left: -10px;
-    font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
-    font-size: .5em;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: .02em;
-    text-align: center;
-}
-
-.series-name a {
-	color: #fff;
-}*/
 
 /* Blockquote attributions */
 span.attribution {
