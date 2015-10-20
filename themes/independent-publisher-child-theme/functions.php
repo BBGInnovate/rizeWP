@@ -190,6 +190,12 @@ endif;
 						}
 						echo "</style>\n";
 
+						$featuredImageCaption="";
+						$featured_image_data = get_post(get_post_thumbnail_id());
+						if ($featured_image_data) {
+							$featuredImageCaption=$featured_image_data->post_excerpt;	
+						}
+
 						/*** PREPARE TWITTER AND FB SHARE URLS ****/
 						$shareLink=get_permalink();
 						global $pageBodyID;
