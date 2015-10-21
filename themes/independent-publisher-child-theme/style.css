@@ -985,18 +985,26 @@ and Blueprint http://www.blueprintcss.org/
 		font-weight: 600;
 		display: none;
 	}
-	.postCoverTitleAlwaysBelow #featuredCutline{
-		width: 700px;
+	/*.postCoverTitleAlwaysBelow*/ 
+	#featuredCutline{
+		max-width: 700px;
 		margin-top: 0px;
 		color: #999;
 		font-weight: 300;
 		display: block;
+	}
+	@media (min-width: 500px) {
 	}
 	@media (min-width: 300px) {
 		.postCoverResponsive { height:250px !important; }
 	}
 	@media (min-width: 700px) {
 		.postCoverResponsive { height:400px !important; }
+		div:not(.postCoverTitleAlwaysBelow) .post-cover-title-head header.post-cover-title p#featuredCutline{
+			color:#900;
+			position: absolute;
+			bottom:-30px;
+		}
 
 	}
 	@media (min-width: 1024px) {
