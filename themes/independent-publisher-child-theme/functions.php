@@ -190,14 +190,17 @@ endif;
 						}
 						echo "</style>\n";
 
+						$featuredImageCaptionRaw="";
 						$featuredImageCaption="";
+						$featuredImageAltCaption="";
 						$featured_image_data = get_post(get_post_thumbnail_id());
 
 						/* var_dump($featured_image_data); */
 						if ($featured_image_data) {
-							$featuredImageCaption=$featured_image_data->post_excerpt;
-							if ($featuredImageCaption!=""){
-								$featuredImageCaption="<p id='featuredCutline'>".$featuredImageCaption."</p>";
+							$featuredImageCaptionRaw=$featured_image_data->post_excerpt;
+							if ($featuredImageCaptionRaw!=""){
+								$featuredImageCaption="<p id='featuredCutline' class='wp-caption-text'>".$featuredImageCaptionRaw."</p>";
+								$featuredImageAltCaption="<p id='featuredAltCutline' class='wp-caption-text'>".$featuredImageCaptionRaw."</p>";
 							}
 						}
 
@@ -248,8 +251,7 @@ endif;
 										<?php if ( independent_publisher_categorized_blog() ) { ?>
 										
 										<?php
-											echo $featuredImageCaption; 
-
+											echo $featuredImageCaption;
 										?>
 		
 										<?php if (true || $pageBodyID != "trending") : ?>
@@ -302,7 +304,14 @@ endif;
 										<?php endif; ?>
 									</header>
 								</div>
+
 							</div>
+							<?php
+								/*Add second caption below the header div for tablet 500 - 1200px widths  views*/
+								if ($postCoverTitleWrapperExtraClass!="postCoverTitleAlwaysBelow"){
+									echo $featuredImageAltCaption; 
+								}
+							?>
 					<?php
 					else:
 						the_post_thumbnail( apply_filters( 'independent_publisher_full_width_featured_image_size', 'independent_publisher_post_thumbnail' ), array( 'class' => 'full-width-featured-image' ) );
