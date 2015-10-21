@@ -993,6 +993,7 @@ and Blueprint http://www.blueprintcss.org/
 		font-weight: 300;
 		display: block;
 	}
+	p#featuredAltCutline { display:none; }
 	@media (min-width: 500px) {
 	}
 	@media (min-width: 300px) {
@@ -1000,12 +1001,11 @@ and Blueprint http://www.blueprintcss.org/
 	}
 	@media (min-width: 700px) {
 		.postCoverResponsive { height:400px !important; }
-		div:not(.postCoverTitleAlwaysBelow) .post-cover-title-head header.post-cover-title p#featuredCutline{
-			color:#900;
-			position: absolute;
-			bottom:-30px;
+		p#featuredAltCutline { 
+			display:block;
+			max-width: 700px;
+			margin: 5px auto 40px auto;
 		}
-
 	}
 	@media (min-width: 1024px) {
 		.postCoverResponsive { height:500px !important; }
@@ -1019,6 +1019,7 @@ and Blueprint http://www.blueprintcss.org/
 		#featuredCutline:before{
 			content:"ABOVE: ";
 		}
+		p#featuredAltCutline { display:none; }
 		div:not(.postCoverTitleAlwaysBelow) .post-cover-title-head header.post-cover-title p#featuredCutline{
 			color:#999;
 			font-weight: 300;
