@@ -958,11 +958,17 @@ and Blueprint http://www.blueprintcss.org/
 	@media only screen and (min-width: 500px) {
 		.entry-content div.size-medium{
 			width: 46% !important;
+			float: left; 
+			margin: 10px 20px 10px 0;
+		}
+		.entry-content div.size-medium.alignright{
+			width: 46% !important;
+			float: right; 
+			margin: 10px 0px 10px 20px;
 		}
 
 		.entry-content img.size-medium{
 			width: 50% !important; 
-			float: left; 
 			margin: 5px 0 5px 20px;
 		}
 
@@ -1508,7 +1514,7 @@ div.size-medium + blockquote {
 	}
 
 	.single.post-cover-overlay-post-title .post-cover-title-wrapper.postCoverTitleAlwaysBelow #socialPost ul {
-		top: 45px;
+		top: 75px;
 	}
 	.single.post-cover-overlay-post-title .post-cover-title-wrapper.postCoverTitleAlwaysBelow #socialPost ul li {
 		display: block;
