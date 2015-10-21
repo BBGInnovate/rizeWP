@@ -445,7 +445,8 @@ and Blueprint http://www.blueprintcss.org/
 		text-align: left;
 		font-size: 80%;
 		font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
-		font-weight: bold;
+		font-weight: normal;
+		color:#999;
 	}
 	.wp-caption {
 		border: none;
@@ -549,15 +550,15 @@ and Blueprint http://www.blueprintcss.org/
 		color: #57ad68;
 	}
 	.single.post-cover-overlay-post-title .post-cover-title-head .post-cover-title, .page.post-cover-overlay-post-title .post-cover-title-head .post-cover-title{
-		padding:20px;
+		padding:5px 20px 20px 20px;
 	}
 
 	@media (min-width: 500px){
 		.single.post-cover-overlay-post-title .post-cover-title-head .post-cover-title, .page.post-cover-overlay-post-title .post-cover-title-head .post-cover-title{
-			padding: 40px;
+			padding: 10px 40px 20px 40px;
 		}
 		.single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow .post-cover-title-head .post-cover-title{
-			padding: 0 40px;
+			padding: 10px 40px 0 40px;
 		}
 
 	}
@@ -988,10 +989,10 @@ and Blueprint http://www.blueprintcss.org/
 	/*.postCoverTitleAlwaysBelow*/ 
 	#featuredCutline{
 		max-width: 700px;
-		margin-top: 0px;
 		color: #999;
 		font-weight: 300;
 		display: block;
+		margin-bottom: 40px;
 	}
 	p#featuredAltCutline { display:none; }
 	@media (min-width: 500px) {
@@ -1001,10 +1002,13 @@ and Blueprint http://www.blueprintcss.org/
 	}
 	@media (min-width: 700px) {
 		.postCoverResponsive { height:400px !important; }
+		div:not(.postCoverTitleAlwaysBelow) .post-cover-title-head header.post-cover-title p#featuredCutline{
+			display: none;
+		}
 		p#featuredAltCutline { 
 			display:block;
 			max-width: 700px;
-			margin: 5px auto 40px auto;
+			margin: 10px auto 40px auto;
 		}
 	}
 	@media (min-width: 1024px) {
@@ -1012,7 +1016,7 @@ and Blueprint http://www.blueprintcss.org/
 		.postCoverTitleAlwaysBelow #featuredCutline{
 			position: absolute;
 			margin:0;
-			top: 0px;
+			top: 30px;
 			right:20px;
 			width: 150px;
 		}
@@ -1026,7 +1030,7 @@ and Blueprint http://www.blueprintcss.org/
 			width: 12%;
 			position: absolute;
 			right: 20px;
-			top: 330px;
+			top: 290px;
 			margin:0;
 			padding:0px;
 			/*
@@ -1300,7 +1304,7 @@ p a{
 	font-weight: 600;
 }
 
-/* Gigi CSS i have to fix */
+/* Gigi CSS to merge*/
 
 /* Blockquote attributions */
 span.attribution {
@@ -1416,12 +1420,7 @@ div.size-medium + blockquote {
 	}
 	/* Styles for social icons beneath featured image */
 	.single.post-cover-overlay-post-title .post-cover-title-wrapper.postCoverTitleAlwaysBelow #socialPost {
-		top: -10px;
-		/*
-		float:right;
-		width: auto;
-		position: relative;
-		*/
+		top: 20px;
 	}
 	.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul,
 	.single.post-cover-overlay-post-title .post-cover-title-wrapper.postCoverTitleAlwaysBelow #socialPost ul {
@@ -1449,7 +1448,7 @@ div.size-medium + blockquote {
 	.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost {
 		position: absolute;
 		bottom: 80px;
-		width: 100%;
+		width: 95%;
 		max-width: 700px;
 
 	}
