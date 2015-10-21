@@ -105,7 +105,7 @@ if ( ! function_exists( 'independent_publisher_post_categories' ) ) :
 	 *
 	 * @since Independent Publisher 1.0
 	 */
-	function independent_publisher_post_categories( $separator = ',', $single = false ) {
+	function independent_publisher_post_categories( $separator = ',', $single = true ) {
 		$categories = get_the_category();
 		$output     = '';
 		if ( $categories ) {
@@ -122,6 +122,29 @@ if ( ! function_exists( 'independent_publisher_post_categories' ) ) :
 		}
 
 		return $output;
+	}
+endif;
+
+if ( ! function_exists( 'independent_publisher_series_category' ) ) :
+	/**
+	 * Returns categories for current post with separator.
+	 * Optionally returns only a single category.
+	 * Separates main categories from child/grandchild categories //GIGI
+	 *
+	 * @since Independent Publisher 1.0
+	 */
+	function independent_publisher_series_category( $separator = ',', $single = true ) {
+		$categories = get_the_category();
+		$series     = '';
+		if ( $categories ) {
+			foreach ( $categories as $category ) {
+				if ($category->category_parent != 0) { //If the category is a subcategory display as follows
+    				$series .= '<div id="series-banner"><h6 class="series-name"><a href="' . get_category_link( $category->term_id ) . '" title="' . esc_attr( sprintf( __( "View all posts in %s", 'independent-publisher' ), $category->name ) ) . '">' . $category->cat_name . '</a></h6></div>';
+				}
+			}
+		}
+
+		return $series;
 	}
 endif;
 
@@ -246,6 +269,10 @@ endif;
 							<?php if ($showPostCover) : ?>
 							<div class="post-cover-title-image postCoverResponsive" ></div>
 							<?php endif; ?>
+
+							<?php if ( independent_publisher_categorized_blog() ) {
+								echo independent_publisher_series_category( '', false ); 
+							} ?>
 								<div class="post-cover-title-head">
 									<header class="post-cover-title">
 										<?php if ( independent_publisher_categorized_blog() ) { ?>
