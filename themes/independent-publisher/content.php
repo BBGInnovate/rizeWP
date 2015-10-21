@@ -74,9 +74,7 @@
 			endif; 
 			if ( $pageBodyID != "categoryPage" && strlen(independent_publisher_post_categories())>0) :
 		?>
-				<h5 class='entry-category'>
-					<?php echo independent_publisher_post_categories( '', true ); ?>
-				</h5>
+				<?php echo independent_publisher_post_categories( '', true ); ?>
 		<?php 
 			endif;
 		?>
