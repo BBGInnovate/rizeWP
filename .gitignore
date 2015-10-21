@@ -17,3 +17,5 @@ upgrade
 uploads
 debug.log
 *.phpintel*
+fuego/config.php
+fuego/tmp/*
