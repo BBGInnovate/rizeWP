@@ -115,9 +115,9 @@ if ( ! function_exists( 'independent_publisher_post_categories' ) ) :
 					if ( $single )
 					break;
 				}
-				else if ($category->category_parent != 0) { //If the category is a subcategory display as follows
+				/*else if ($category->category_parent != 0) { //If the category is a subcategory display as follows
     				$output .= '<div id="series-banner"><h6 class="series-name"><a href="' . get_category_link( $category->term_id ) . '" title="' . esc_attr( sprintf( __( "View all posts in %s", 'independent-publisher' ), $category->name ) ) . '">' . $category->cat_name . '</a></h6></div>' . $separator;
-				}
+				}*/
 			}
 		}
 
