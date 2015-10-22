@@ -45,6 +45,7 @@ div.interview {
 }
 
 .interview-speaker {
+  font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
     font-weight: 600;
     text-transform: capitalize;
     letter-spacing: .02em;
@@ -52,6 +53,7 @@ div.interview {
 }
 
 .interview-q {
+  font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
   font-weight: 600;
   margin-top: 2.25em;
   margin-bottom: .5em;

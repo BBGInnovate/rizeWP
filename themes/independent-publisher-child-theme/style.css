@@ -1201,7 +1201,7 @@ and Blueprint http://www.blueprintcss.org/
 
 
 /* Article pages "Featured in this story" section ------------- */
-#featured-section {
+.featured-section {
 	margin-top: 3em;
 	font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
 	display: block;
@@ -1211,7 +1211,8 @@ and Blueprint http://www.blueprintcss.org/
 	border-radius: 5px;
 }
 
-#featured-section h3.featured-title {
+.featured-section h3 {
+	font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
 	color: #FFA500;
 	font-size: 1.2em;
 	font-weight: 600;
@@ -1220,24 +1221,30 @@ and Blueprint http://www.blueprintcss.org/
 	margin-top: 1em;
 }
 
-#featured-section .featured-card {
+.featured-section .featured-card {
 	width: 100%;
 	min-height: 100px;
 	margin-bottom: 2em;
 }
 
-#featured-section .featured-card img {
+.featured-section .featured-card img {
 	float: left;
 	margin-right:15px;
 	max-width: 100px;
 }
 
-#featured-section .featured-card .featured-profile {
+.featured-card .featured-profile, .featured-card .featured-profile p {
 	margin-left: 0;
 	float: none;
+	font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
+	font-size: 1em;
+	line-height: 1.5em;
+	color: #333;
+	margin-bottom: 0;
 }
 
- .featured-profile p.featured-name {
+p.featured-name {
+	font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
 	font-size: 1.2em;
 	font-weight: 600;
 	margin-bottom: 0;
@@ -1246,36 +1253,29 @@ and Blueprint http://www.blueprintcss.org/
 	margin-left: 0;
 }
 
-.featured-profile p.featured-desc {
-	font-size: 1em;
-	line-height: 1.5em;
-	color: #333;
-	margin-bottom: 0;
-}
-
-.featured-profile p.featured-links {
-	font-size: 1em;
-	line-height: 1.5em;
+.featured-links {
+	font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
 	color: #57ad68;
+	margin-top: .25em;
 }
 
-#featured-section h6 {
+.featured-section h6 {
 	font-size: 1.1em;
 	text-transform: uppercase;
 	font-weight: 600;
 	letter-spacing: 0;
 }
 
-#featured-section p.featured-also {
+.featured-section p.featured-also {
 	font-size: 1em;
 	margin: 0;
 }
 
 @media (min-width: 500px) {
-	#featured-section .featured-card img {
+	.featured-section .featured-card img {
 		margin-right:0;
 	}
-	#featured-section .featured-card .featured-profile {
+	.featured-section .featured-card .featured-profile {
 		margin-left: 120px;
 	}
 }

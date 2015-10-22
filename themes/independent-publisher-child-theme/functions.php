@@ -622,4 +622,97 @@ endif;
 
 	}
 
+// Callback function to insert 'styleselect' into the $buttons array
+function my_mce_buttons_2( $buttons ) {
+	array_unshift( $buttons, 'styleselect' );
+	return $buttons;
+}
+
+// Register our callback to the appropriate filter
+add_filter('mce_buttons_2', 'my_mce_buttons_2');
+
+// Callback function to filter the MCE settings
+function my_mce_before_init_insert_formats( $init_array ) {  
+	// Define the style_formats array
+	$style_formats = array(  
+		// Each array child is a format with it's own settings
+		array(  
+			'title' => '– Quote Attribution',  
+			'inline' => 'span',  
+			'classes' => 'attribution',
+		),  
+		array(  
+			'title' => 'Subtitles',  
+			'block' => 'h2',  
+			'classes' => 'subtitle',
+		),
+		array(  
+			'title' => '◾ Interview Block',  
+			'block' => 'div',  
+			'classes' => 'interview',
+			'wrapper' => true,
+		),
+		array(  
+			'title' => '    › Interview Question',  
+			'block' => 'p',  
+			'classes' => 'interview-q',
+		),
+		array(  
+			'title' => '    › (SPEAKER)',  
+			'inline' => 'span',  
+			'classes' => 'interview-speaker',
+		),
+		array(  
+			'title' => '▢ Featured… Block',  
+			'block' => 'div',  
+			'classes' => 'featured-section',
+			'wrapper' => true,
+		),
+		array(  
+			'title' => '　↳ Featured Card',  
+			'block' => 'div',  
+			'classes' => 'featured-card',
+			'wrapper' => true,
+		),
+		array(  
+			'title' => '　　⇉ Card Avatar',  
+			'selector' => 'img',  
+			'classes' => 'avatar avatar-100 wp-user-avatar wp-user-avatar-100 alignnone photo',
+			'attributes' => array(
+					'width' => '100',
+					'height' => '100',
+				),
+		),
+		array(  
+			'title' => '　　⇉ Card Profile',  
+			'block' => 'div',  
+			'classes' => 'featured-profile',
+			'wrapper' => true,
+		),
+		array(
+			'title' => '            » Profile Name',
+			'block' => 'p',
+			'classes' => 'featured-name',
+		),
+		array(
+			'title' => '              » Profile Links',
+			'block' => 'p',
+			'classes' => 'featured-links',
+		),
+
+	);  
+	// Insert the array, JSON ENCODED, into 'style_formats'
+	$init_array['style_formats'] = json_encode( $style_formats );  
 	
+	return $init_array;  
+  
+} 
+
+// Attach callback to 'tiny_mce_before_init' 
+add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' );
+
+// Add custom editor styles to TinyMCE
+function my_theme_add_editor_styles() {
+    add_editor_style( 'custom-editor-style.css' );
+}
+add_action( 'admin_init', 'my_theme_add_editor_styles' );
