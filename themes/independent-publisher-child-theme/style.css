@@ -1228,11 +1228,12 @@ and Blueprint http://www.blueprintcss.org/
 
 #featured-section .featured-card img {
 	float: left;
+	margin-right:15px;
 	max-width: 100px;
 }
 
 #featured-section .featured-card .featured-profile {
-	margin-left: 120px;
+	margin-left: 0;
 	float: none;
 }
 
@@ -1268,6 +1269,15 @@ and Blueprint http://www.blueprintcss.org/
 #featured-section p.featured-also {
 	font-size: 1em;
 	margin: 0;
+}
+
+@media (min-width: 500px) {
+	#featured-section .featured-card img {
+		margin-right:0;
+	}
+	#featured-section .featured-card .featured-profile {
+		margin-left: 120px;
+	}
 }
 /* ------------- "Featured in this story" section */
 
