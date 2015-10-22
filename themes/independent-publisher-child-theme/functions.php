@@ -216,14 +216,23 @@ endif;
 						$featuredImageCaptionRaw="";
 						$featuredImageCaption="";
 						$featuredImageAltCaption="";
+
+						$featuredImageCreditRaw="";
+						$featuredImageCredit="";
+						
+
 						$featured_image_data = get_post(get_post_thumbnail_id());
 
 						/* var_dump($featured_image_data); */
 						if ($featured_image_data) {
 							$featuredImageCaptionRaw=$featured_image_data->post_excerpt;
+							$featuredImageCreditRaw=$featured_image_data->post_content;
 							if ($featuredImageCaptionRaw!=""){
 								$featuredImageCaption="<p id='featuredCutline' class='wp-caption-text'>".$featuredImageCaptionRaw."</p>";
 								$featuredImageAltCaption="<p id='featuredAltCutline' class='wp-caption-text'>".$featuredImageCaptionRaw."</p>";
+							}
+							if ($featuredImageCreditRaw != "") {
+								$featuredImageCredit="<p id='featuredCredit' >".$featuredImageCreditRaw."</p>";
 							}
 						}
 
@@ -279,7 +288,9 @@ endif;
 										
 										<?php
 											echo $featuredImageCaption;
+											echo $featuredImageCredit;
 										?>
+
 		
 										<?php if (true || $pageBodyID != "trending") : ?>
 											<?php echo independent_publisher_post_categories( '', false ); ?>
