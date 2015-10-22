@@ -232,7 +232,7 @@ endif;
 								$featuredImageAltCaption="<p id='featuredAltCutline' class='wp-caption-text'>".$featuredImageCaptionRaw."</p>";
 							}
 							if ($featuredImageCreditRaw != "") {
-								$featuredImageCredit="<p id='featuredCredit' >".$featuredImageCreditRaw."</p>";
+							//	$featuredImageCredit="<p id='featuredCredit' >".$featuredImageCreditRaw."</p>";
 							}
 						}
 
