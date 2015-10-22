@@ -543,6 +543,21 @@ endif;
 	}
 	
 
+	/* ODDI CUSTOM: add a fake caption if one doesn't exist so that we always trigger the caption shortcode */
+	add_filter('image_add_caption_text', 'fakeCaption', 10, 2);
+	function fakeCaption($caption, $id) {
+		$newCaption='';
+		if ($caption == '') {
+			$rawCredit = get_post_meta($id, '_wp_attachment_source_name', true);
+			if ($rawCredit != '') {
+				$newCaption='DO_NOT_DELETE_CREDIT_WILL_SHOW_HERE';
+			}
+		} else {
+			$newCaption=$caption;
+		}
+		return $newCaption;
+	}
+
 	/* ODDI CUSTOM: we are using this filter: https://codex.wordpress.org/Plugin_API/Filter_Reference/img_caption_shortcode
 	and we took the original function definition from media.php as our starting point ****/
 	add_filter( 'img_caption_shortcode', 'my_img_caption_shortcode', 10, 3 );
@@ -586,9 +601,24 @@ endif;
 		if ( $caption_width )
 			$style = 'style="width: ' . (int) $caption_width . 'px" ';
 		*/	
+		
+		$idObj=explode("_",$attr['id']);
+		$idOnly=$idObj[1];
+
+		if ($atts['caption']=='DO_NOT_DELETE_CREDIT_WILL_SHOW_HERE') {
+			$atts['caption']='';
+		}
+		$rawCredit = get_post_meta($idOnly, '_wp_attachment_source_name', true);
+
+		$credit='';
+		if ($rawCredit != '') {
+			$credit="<span class='postDetailCredit'>$rawCredit</span>";
+		}
+		
+
 
 		return '<div ' . $atts['id'] . $style . 'class="' . esc_attr( $class ) . '">'
-		. do_shortcode( $content ) . '<p class="wp-caption-text">' . $atts['caption'] . '</p></div>';
+		. do_shortcode( $content ) . '<p class="wp-caption-text">' . $atts['caption'] . $credit . '</p></div>';
 
 	}
 
