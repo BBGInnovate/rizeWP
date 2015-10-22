@@ -15,7 +15,7 @@ class Getter {
 		return $this->_dbh;
 	}
 
-	public function getItems($quantity = 10, $hours = 24, $scoring = TRUE, $metadata = FALSE) {
+	public function getItems($quantity = 10, $hours = 24, $scoring = TRUE, $metadata = FALSE, $min_weighted_count = 24) {
 	
 		$now = time();
 		
@@ -24,13 +24,22 @@ class Getter {
 	
 		$date = date('Y-m-d H:i:s', $now);	
 	
+
+		/*
+		ODDI CUSTOM: we pass min weighted count in as a param
 		if ($scoring) {
 			$min_weighted_count = floor($hours/2.5+8);
 			$limit = 100;	
 		} else {
 			$min_weighted_count = 1;
 			$limit = $quantity;
+		}*/
+
+		$limit=$quantity;
+		if ($scoring === false) {
+			$min_weighted_count=1;
 		}
+
 	
 		try {
 			$dbh = $this->getDbh();
