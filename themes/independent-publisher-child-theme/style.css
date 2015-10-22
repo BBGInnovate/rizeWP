@@ -789,7 +789,7 @@ and Blueprint http://www.blueprintcss.org/
 
 		/* Adding styling for :before label of "SHARE" */
 		.single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow #socialPost ul {
-			top: 10px;
+			/*top: 10px;*/
 		}
 		.single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow #socialPost ul li{
 			margin-top: -15px;
@@ -804,7 +804,7 @@ and Blueprint http://www.blueprintcss.org/
 	}
 	@media (min-width: 1024px) {
 		.single.post-cover-overlay-post-title #socialPost ul {
-			top: 350px;
+			/*top: 350px;*/
 		}
 	}
 /* -----------post view */
@@ -1371,46 +1371,31 @@ div.size-medium + blockquote {
 		position: relative;
 		display: block;
 		float: right;
-		margin: 0 30px 0 0;
+		/* margin: 0 30px 0 0; */
 	}
 	.single.post-cover-overlay-post-title #socialPost ul:before, .single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow #socialPost ul:before {
 		display: none;
 		vertical-align: top;
 	}
 	.single.post-cover-overlay-post-title #socialPost ul li, .single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow #socialPost ul li {
-		margin: -8px 15px 0;
+		margin: -8px 0 0 35px;
 		vertical-align: text-top;
+	}
+	.single.post-cover-overlay-post-title #socialPost ul li:first-of-type, .single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow #socialPost ul li:first-of-type {
+		margin: -8px 0 0 10px;
 	}
 	.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul li a#facebook {
 		display: block;
-		width: 25px;
-		height: 25px;
+		position: absolute;
 		padding: 0;
-		border-radius: 15%;
-		background-color: #ffffff;
-		position: absolute;
-	}
-	.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul li a#facebook:after {
-		position: absolute;
-		top: -35%;
-		left: -13%;
+		width: 30px;
+		height: 30px;
 	}
 	.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul li a#twitter {
 		display: block;
 		width: 30px;
 		height: 30px;
 		padding: 0;
-		border-radius: 4px;
-		background-color: #55acee;
-		position: absolute;
-		margin-top: -2px;
-	}
-	.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul li a#twitter:after {
-		position: absolute;
-		top: 0;
-		left: 17%;
-		font-size: 20px;
-		color: #fff;
 	}
 }
 
@@ -1435,24 +1420,21 @@ div.size-medium + blockquote {
 		font-size: .95em;
 	}
 	/* Styles for social icons beneath featured image */
-	.single.post-cover-overlay-post-title .post-cover-title-wrapper.postCoverTitleAlwaysBelow #socialPost {
-		top: 20px;
-	}
 	.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul,
 	.single.post-cover-overlay-post-title .post-cover-title-wrapper.postCoverTitleAlwaysBelow #socialPost ul {
-		top: 10px;
 		opacity: 1;
 		position: relative;
-		right: -25px;
-		padding: 5px 15px 8px 10px;
 		background: none;
 		border-radius: 0;
 		box-shadow: none;
 	}
+	.single.post-cover-overlay-post-title #socialPost ul li:first-of-type{
+		margin: -10px 0 10px 10px;
+	}
 	.single.post-cover-overlay-post-title #socialPost ul li,
 	.single.post-cover-overlay-post-title .post-cover-title-wrapper.postCoverTitleAlwaysBelow #socialPost ul li {
 		display: inline-block;
-		margin: 0 0 10px 10px;
+		margin: -10px 0 10px 10px;
 	}
 	.single.post-cover-overlay-post-title .post-cover-title-wrapper.postCoverTitleAlwaysBelow #socialPost ul:before {
 		color: #999;
@@ -1461,12 +1443,11 @@ div.size-medium + blockquote {
 	.single.post-cover-overlay-post-title .post-cover-title-wrapper h5.entry-category {
 		clear: right;
 	}
-	.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost {
+	.single.post-cover-overlay-post-title .post-cover-title-wrapper:not(.postCoverTitleAlwaysBelow) #socialPost{
 		position: absolute;
-		bottom: 80px;
+		bottom: 300px;
 		width: 95%;
 		max-width: 700px;
-
 	}
 	.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul {
 		position: absolute;
@@ -1477,34 +1458,16 @@ div.size-medium + blockquote {
 	}
 	.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul li a#facebook {
 		display: block;
-		width: 25px;
-		height: 25px;
+		width: 30px;
+		height: 30px;
 		padding: 0;
-		border-radius: 15%;
-		background-color: #ffffff;
-		position: absolute;
-	}
-	.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul li a#facebook:after {
-		position: absolute;
-		top: -35%;
-		left: -13%;
 	}
 	.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul li a#twitter {
 		display: block;
 		width: 30px;
 		height: 30px;
 		padding: 0;
-		border-radius: 4px;
-		background-color: #55acee;
 		position: absolute;
-		margin-top: -2px;
-	}
-	.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul li a#twitter:after {
-		position: absolute;
-		top: 0;
-		left: 17%;
-		font-size: 20px;
-		color: #fff;
 	}
 }
 
@@ -1515,21 +1478,37 @@ div.size-medium + blockquote {
 
 	/* Headline beneath image */
 	.single.post-cover-overlay-post-title .post-cover-title-wrapper.postCoverTitleAlwaysBelow #socialPost {
-		top: 140px;
-		/*
-		width: 100%;
-		max-width: 700px;
 		position: absolute;
-		*/
+		bottom: 80px;
 	}
+
+	.single.post-cover-overlay-post-title .post-cover-title-wrapper.postCoverTitleAlwaysBelow #socialPost {
+		top: 160px;
+		width: 100%;
+		position: absolute;
+	}
+
+	.single.post-cover-overlay-post-title .post-cover-title-wrapper:not(.postCoverTitleAlwaysBelow) #socialPost{
+		position: absolute;
+		bottom: -10px;
+		width: 95%;
+		max-width: 790px;
+	}
+
 
 	.single.post-cover-overlay-post-title .post-cover-title-wrapper.postCoverTitleAlwaysBelow #socialPost ul {
 		top: 75px;
 	}
+	.single.post-cover-overlay-post-title #socialPost ul li:first-of-type, .single.post-cover-overlay-post-title .postCoverTitleAlwaysBelow #socialPost ul li:first-of-type {
+		margin: 0 0 10px 0;
+	}
+
 	.single.post-cover-overlay-post-title .post-cover-title-wrapper.postCoverTitleAlwaysBelow #socialPost ul li {
 		display: block;
 		margin: 0 0 10px 0;
 	}
+
+
 	/* Headline overlaid on image */
 	.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost {
 		bottom: -10px;
@@ -1545,15 +1524,23 @@ div.size-medium + blockquote {
 		display: block;
 		margin: 0 0 10px;
 	}
-	.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul li a#facebook:after {
-		left: 3px;
-	}
-	.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul li a#twitter {
-		left: 13px;
-	}
 	.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul {
 		top: 35px;
 	}
 }
 
 
+.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul li a#twitter{
+	background: url(../../images/social_icons.png) no-repeat center -30px / 30px 60px;
+	width: 30px;
+	height: 30px;
+}
+.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul li a#facebook{
+	background: url(../../images/social_icons.png) no-repeat center 0px / 30px 60px;
+	width: 30px;
+	height: 30px;
+}
+.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul li a#twitter:after,
+.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul li a#facebook:after{
+	content:"";
+}
