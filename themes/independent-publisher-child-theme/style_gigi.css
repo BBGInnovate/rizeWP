@@ -34,16 +34,27 @@ h6.series-name {
   }
 }
 
-/*h6.series-name:after {
-  content: ' series';
-  font-family: Georgia,"Times New Roman",Times,serif;
-  font-size: .5em;
-  font-style: italic;
-  font-weight: 400;
-  text-transform: lowercase;
-  color: white;
-}*/
-
 h6.series-name a {
   color: #fff;
 }
+
+
+div.interview {
+  font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+.interview-speaker {
+    font-weight: 600;
+    text-transform: capitalize;
+    letter-spacing: .02em;
+    color: #000;
+}
+
+.interview-q {
+  font-weight: 600;
+  margin-top: 2.25em;
+  margin-bottom: .5em;
+  color: #000;
+}
+
