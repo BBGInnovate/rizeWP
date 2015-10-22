@@ -226,13 +226,13 @@ endif;
 						/* var_dump($featured_image_data); */
 						if ($featured_image_data) {
 							$featuredImageCaptionRaw=$featured_image_data->post_excerpt;
-							$featuredImageCreditRaw=$featured_image_data->post_content;
+							$featuredImageCreditRaw= get_post_meta(get_post_thumbnail_id(), '_wp_attachment_source_name', true);
 							if ($featuredImageCaptionRaw!=""){
 								$featuredImageCaption="<p id='featuredCutline' class='wp-caption-text'>".$featuredImageCaptionRaw."</p>";
 								$featuredImageAltCaption="<p id='featuredAltCutline' class='wp-caption-text'>".$featuredImageCaptionRaw."</p>";
 							}
 							if ($featuredImageCreditRaw != "") {
-							//	$featuredImageCredit="<p id='featuredCredit' >".$featuredImageCreditRaw."</p>";
+								$featuredImageCredit="<p id='featuredCredit' >".$featuredImageCreditRaw."</p>";
 							}
 						}
 
