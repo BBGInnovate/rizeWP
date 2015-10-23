@@ -227,6 +227,7 @@ class Consumer {
 	
 
 	public function cleanUp() {	
+		/*
 		$expiration_days = \OpenFuego\EXPIRATION_DAYS;
 		$now = time();
 		$date = date('Y-m-d H:i:s', $now);
@@ -244,6 +245,7 @@ class Consumer {
 		$sth->bindParam('date', $date, \PDO::PARAM_INT);
 		$sth->bindParam('expiration_int', $expiration_days, \PDO::PARAM_INT);
 		$sth->execute();
+		*/
 	
 	  return TRUE;
 	}
