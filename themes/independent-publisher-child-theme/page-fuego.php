@@ -70,7 +70,9 @@ get_header(); ?>
 				<div class='entry-content'>
 				<?php 
 					if ($image != "") {
+					echo "<a href='$url'>"; 
 					echo "<div class='listThumbnail' style='background-image: url($image);'></div>";
+					echo "</a>"; 
 					}
 
 					//echo $desc; 
