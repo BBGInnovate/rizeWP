@@ -103,19 +103,19 @@ get_header(); ?>
 
 
 				<header class='entry=header'>
-					<h5 class='entry-category'><a href=''>Twitter</a></h5>
+					<h5 class='entry-category'><a href='' style='float:none;'>Twitter</a></h5>
 				</header>
 				<div class='entry-content'>
 					<a href='https://twitter.com/drawinghands'>
-						<div class='twitterUserPhoto' style='background:url(http://pbs.twimg.com/profile_images/649550853574144000/fgcPWqbU_normal.jpg) no-repeat center center /cover; width: 25px; height: 25px; display: inline-block;'></div>
-						<p style='display: inline-block;'>@drawinghands</p>
+						<div class='twitterUserPhoto' style='background:url(http://pbs.twimg.com/profile_images/649550853574144000/fgcPWqbU_normal.jpg) no-repeat center center /cover; width: 30px; height: 30px; border-radius: 15px; display: inline-block;'></div>
+						<p style='display: inline-block; vertical-align: 30%;'>@drawinghands</p>
 					</a>
 					<p>The text of the tweet.</p>
 					<div class='quotedTweet' style='padding:20px; border-radius: 5px; background-color: #CCC;width: 90%; margin: 10px 5%;'>
 						<a href='https://twitter.com/drawinghands'>
-							<div class='twitterUserPhoto' style='background:url(http://pbs.twimg.com/profile_images/649550853574144000/fgcPWqbU_normal.jpg) no-repeat center center /cover; width: 25px; height: 25px;'></div>
+							<div class='twitterUserPhoto' style='background:url(http://pbs.twimg.com/profile_images/649550853574144000/fgcPWqbU_normal.jpg) no-repeat center center /cover; width: 30px; height: 30px; border-radius: 15px; display: inline-block;'></div>
+							<p style='display: inline-block; vertical-align: 30%;'>Brian Williamson <span>| @quotedPerson</span></p>
 						</a>
-						<div>Brian Williamson <span>| <a href='https://twitter.com/drawinghands'>@quotedPerson</a></span></div>
 						<p>The quoted tweet the quick brown fox jumped over the lazy dog's back.</p>
 					</div>
 				</div>
