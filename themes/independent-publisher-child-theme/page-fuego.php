@@ -42,7 +42,9 @@ get_header(); ?>
 				}
 				if ( isset ($m['url'] ) ) {
 					if ($m['provider_name'] != 'Twitter'){
-						/* $url = $m['url']; */
+						$url = $m['url'];
+					} else {
+						$url = $item['tw_tweet_url'];
 					}
 				}
 				
