@@ -100,7 +100,7 @@ get_header(); ?>
 					<time class="entry-date" datetime="2015-10-14T16:56:08+00:00" itemprop="datePublished" pubdate="pubdate">date</time>
 				</footer>
 				<?php } else { ?>
-					<iframe src='<?php echo $iframe; ?>' />"
+					<iframe src='<?php echo $iframe; ?>' ></iframe>
 				<?php } ?>
 			</article>
 		<?php 
