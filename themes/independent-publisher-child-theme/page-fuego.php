@@ -104,7 +104,7 @@ get_header(); ?>
 				</footer>
 				<?php } else { 
 					echo "<iframe src='".$iframe."' />";
-				?>
+				} ?>
 			</article>
 		<?php 
 
