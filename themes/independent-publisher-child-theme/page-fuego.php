@@ -36,6 +36,7 @@ get_header(); ?>
 
 
 			$twitterImage = "";
+			$tweetUrl = "";
 
 			$quoteMakerName = "";
 			$quoteMakerHandle = "";
@@ -53,6 +54,8 @@ get_header(); ?>
 					$isTwitter = true;
 
 					$twitterImage=$item['tw_profile_image_url_bigger'];
+
+					$tweetUrl = $item[tw_tweet_url];
 
 					/*If it's a quoted tweet... */
 					/*
@@ -157,7 +160,7 @@ get_header(); ?>
 
 
 				<header class='entry-header'>
-					<h5 class='entry-category'><a href='' style='float:none;'>OVERHEARD ON TWITTER</a></h5>
+					<h5 class='entry-category'><a href='<?php echo $tweetUrl; ?>' style='float:none;'>OVERHEARD ON TWITTER</a></h5>
 				</header>
 				<div class='entry-content'>
 					<a href='https://twitter.com/<?php echo $author; ?>'>
@@ -169,7 +172,7 @@ get_header(); ?>
 					</div>
 					<div class='clearAll'></div>
 					<div class='quotedTweet' style='padding:20px; border-radius: 5px; background-color: #F1F1F1; width: 90%; margin: 10px 5%;'>
-						<a href='https://twitter.com/drawinghands'>
+						<a href='https://twitter.com/<?php echo $quoteMakerHandle; ?>'>
 							<div class='twitterUserPhoto' style='background:url(<?php echo $quoteMakerImage; ?>) no-repeat center center /cover; width: 70px; height: 70px; border-radius: 35px; display: inline-block;'></div>
 							<p style='display: inline-block; vertical-align: 30%;'><?php echo $quoteMakerName; ?> <span>| @<?php echo $quoteMakerHandle; ?></span></p>
 						</a>
