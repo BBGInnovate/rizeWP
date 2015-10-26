@@ -40,11 +40,13 @@ get_header(); ?>
 				if ( isset ( $m['title'] ) ) {
 					$title = $m['title'];	
 				}
+
+				/*If it's a quoted tweet, show the url for the tweet that's quoting it. */
 				if ( isset ($m['url'] ) ) {
-					if ($m['provider_name'] != 'Twitter'){
-						$url = $m['url'];
-					} else {
+					if ($m['provider_name'] == 'Twitter'){
 						$url = $item['tw_tweet_url'];
+					} else {
+						$url = $m['url'];
 					}
 				}
 				
