@@ -28,7 +28,7 @@ get_header(); ?>
 			$counter=$counter+1;
 			$title = $item['tw_text'];
 			$url = $item['url'];
-			$desc = $item['tw_text'];
+			$desc = '<p>'.$item['tw_text'].'</p>';
 			$author = $item['tw_screen_name'];
 			$image="";
 			$provider_name="Africa Rizing";
@@ -45,7 +45,7 @@ get_header(); ?>
 				}
 				
 				if ( isset ($m['description'] ) ) {
-					$desc = $m['description'];
+					$desc = '<p>'.$m['description'].'</p>';
 				}
 
 				if ( isset ($m['thumbnail_url'] ) ) {
@@ -74,6 +74,9 @@ get_header(); ?>
 					echo "<div class='listThumbnail' style='background-image: url($image);'></div>";
 					echo "</a>"; 
 					}
+					echo "<a href='$url'>"; 
+					echo $desc; 
+					echo "</a>"; 
 
 					//echo $desc; 
 
