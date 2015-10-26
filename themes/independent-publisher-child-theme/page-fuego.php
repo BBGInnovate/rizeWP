@@ -85,16 +85,13 @@ get_header(); ?>
 				<div class='entry-content'>
 				<?php 
 					if ($image != "") {
-					echo "<a href='$url'>"; 
-					echo "<div class='listThumbnail' style='background-image: url($image);'></div>";
-					echo "</a>"; 
+						echo "<a href='$url'>"; 
+						echo "<div class='listThumbnail' style='background-image: url($image);'></div>";
+						echo "</a>"; 
 					}
 					echo "<a href='$url'>"; 
 					echo $desc; 
 					echo "</a>"; 
-
-					//echo $desc; 
-
 				?>
 				</div>
 				<footer class="entry-meta" style='border-top:none;'>
@@ -102,9 +99,9 @@ get_header(); ?>
 					<span class="sep sep-byline"> | </span>
 					<time class="entry-date" datetime="2015-10-14T16:56:08+00:00" itemprop="datePublished" pubdate="pubdate">date</time>
 				</footer>
-				<?php } else { 
+				<?php } /*else { 
 					echo "<iframe src='".$iframe."' />";
-				} ?>
+				} */?>
 			</article>
 		<?php 
 
