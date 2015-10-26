@@ -100,7 +100,9 @@ get_header(); ?>
 					<time class="entry-date" datetime="2015-10-14T16:56:08+00:00" itemprop="datePublished" pubdate="pubdate">date</time>
 				</footer>
 				<?php } else { ?>
-					<iframe src='<?php echo $iframe; ?>' ></iframe>
+
+<iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" class="twitter-tweet twitter-tweet-rendered" style="position: static; visibility: visible; display: block; width: 100%; height: 202.766px; padding: 0px; border: none; max-width: 500px; min-width: 220px; margin-top: 10px; margin-bottom: 10px;" data-tweet-id="657211437249601536" title="Twitter Tweet"></iframe>
+
 				<?php } ?>
 			</article>
 		<?php 
