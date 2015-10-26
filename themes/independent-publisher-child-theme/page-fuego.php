@@ -34,6 +34,9 @@ get_header(); ?>
 			$provider_name = "Africa Rizing";
 			$provider_url = "https://africa.rizing.org";
 
+
+			$twitterImage = "";
+
 			$quoteMakerName = "";
 			$quoteMakerHandle = "";
 			$quotedMakerImage = "";
@@ -48,6 +51,9 @@ get_header(); ?>
 
 				if ($m['provider_name'] == 'Twitter'){
 					$isTwitter = true;
+
+					$twitterImage=$item['tw_profile_image_url_bigger'];
+
 					/*If it's a quoted tweet... */
 					/*
 					if ( isset ( $m['title'] ) ) {
@@ -154,14 +160,14 @@ get_header(); ?>
 				</header>
 				<div class='entry-content'>
 					<a href='https://twitter.com/<?php echo $author; ?>'>
-						<div class='twitterUserPhoto' style='background:url(http://pbs.twimg.com/profile_images/649550853574144000/fgcPWqbU_normal.jpg) no-repeat center center /cover; width: 30px; height: 30px; border-radius: 15px; display: inline-block;'></div>
+						<div class='twitterUserPhoto' style='background:url(<?php echo $twitterImage ?>) no-repeat center center /cover; width: 30px; height: 30px; border-radius: 15px; display: inline-block;'></div>
 						<p style='display: inline-block; vertical-align: 30%;'>@<?php echo $author; ?></p>
 					</a>
 					<p><?php echo $desc; ?></p>
 					<div class='quotedTweet' style='padding:20px; border-radius: 5px; background-color: #CCC;width: 90%; margin: 10px 5%;'>
 						<a href='https://twitter.com/drawinghands'>
 							<div class='twitterUserPhoto' style='background:url(<?php echo $quotedMakerImage; ?>) no-repeat center center /cover; width: 30px; height: 30px; border-radius: 15px; display: inline-block;'></div>
-							<p style='display: inline-block; vertical-align: 30%;'><?php echo $quotedMakerName; ?> <span>| @<?php echo $quotedMakerHandle; ?></span></p>
+							<p style='display: inline-block; vertical-align: 30%;'><?php echo $quoteMakerName; ?> <span>| @<?php echo $quotedMakerHandle; ?></span></p>
 						</a>
 						<p><?php echo $quotedTweed; ?></p>
 					</div>
