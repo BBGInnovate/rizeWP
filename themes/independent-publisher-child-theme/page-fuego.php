@@ -31,6 +31,7 @@ get_header(); ?>
 			$desc = $item['tw_text'];
 			$author = $item['tw_screen_name'];
 			$image="";
+			$category="fuego!";
 			/* often times some metadata values are set and others aren't, so we check each one.  The fuego backend process fills this section using an embed.ly api key */
 			if ( isset ($item['metadata']) ) {
 				$m = $item['metadata'];
@@ -49,12 +50,16 @@ get_header(); ?>
 				if ( isset ($m['thumbnail_url'] ) ) {
 					$image=$m['thumbnail_url'];
 				}
+
+				if ( isset ($m['provider_name'] ) ) {
+					$category=$m['provider_name'];
+				}
 			}
 
 		?>
 			<article>
 				<header class='entry=header'>
-					<h5 class='entry-category'><a>fuego</a></h5>
+					<h5 class='entry-category'><a><?php echo $category; ?></a></h5>
 					<h1 class='entry-title'><?php echo "<a href='$url'>$title</a>"; ?></h1>
 				</header>
 				<div class='entry-content'>
