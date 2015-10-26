@@ -102,7 +102,9 @@ get_header(); ?>
 					<span class="sep sep-byline"> | </span>
 					<time class="entry-date" datetime="2015-10-14T16:56:08+00:00" itemprop="datePublished" pubdate="pubdate">date</time>
 				</footer>
-				<?php } ?>
+				<?php } else { 
+					echo "<iframe src='".$iframe."' />";
+				?>
 			</article>
 		<?php 
 
