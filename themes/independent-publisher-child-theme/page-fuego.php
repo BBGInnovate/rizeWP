@@ -33,42 +33,51 @@ get_header(); ?>
 			$image="";
 			$provider_name="Africa Rizing";
 			$provider_url="https://africa.rizing.org";
+			$iframe="";
 			/* often times some metadata values are set and others aren't, so we check each one.  The fuego backend process fills this section using an embed.ly api key */
 			if ( isset ($item['metadata']) ) {
 				$m = $item['metadata'];
 
-				if ( isset ( $m['title'] ) ) {
-					$title = $m['title'];	
-				}
+				if ($m['provider_name'] == 'Twitter'){
+					$iframe = $item['tw_tweet_url'];
+				}else{
 
-				/*If it's a quoted tweet, show the url for the tweet that's quoting it. */
-				if ( isset ($m['url'] ) ) {
-					if ($m['provider_name'] == 'Twitter'){
-						$url = $item['tw_tweet_url'];
-					} else {
-						$url = $m['url'];
+					if ( isset ( $m['title'] ) ) {
+						$title = $m['title'];	
 					}
-				}
-				
-				if ( isset ($m['description'] ) ) {
-					$desc = '<p>'.$m['description'].'</p>';
-				}
 
-				if ( isset ($m['thumbnail_url'] ) ) {
-					$image=$m['thumbnail_url'];
-				}
+					/*If it's a quoted tweet, show the url for the tweet that's quoting it. */
+					if ( isset ($m['url'] ) ) {
+						/*
+						if ($m['provider_name'] == 'Twitter'){
+							$url = $item['tw_tweet_url'];
+						} else {
+						*/
+						$url = $m['url'];
+						/*}*/
+					}
+					
+					if ( isset ($m['description'] ) ) {
+						$desc = '<p>'.$m['description'].'</p>';
+					}
 
-				if ( isset ($m['provider_name'] ) ) {
-					$provider_name=$m['provider_name'];
-				}
+					if ( isset ($m['thumbnail_url'] ) ) {
+						$image=$m['thumbnail_url'];
+					}
 
-				if ( isset ($m['provider_url'] ) ) {
-					$provider_url=$m['provider_url'];
+					if ( isset ($m['provider_name'] ) ) {
+						$provider_name=$m['provider_name'];
+					}
+
+					if ( isset ($m['provider_url'] ) ) {
+						$provider_url=$m['provider_url'];
+					}
 				}
 			}
 
 		?>
 			<article>
+				<?php if ($iframe==""){ ?>
 				<header class='entry=header'>
 					<h5 class='entry-category'><a href='<?php echo $provider_url; ?>'><?php echo $provider_name; ?></a></h5>
 					<h1 class='entry-title'><?php echo "<a href='$url'>$title</a>"; ?></h1>
@@ -86,13 +95,17 @@ get_header(); ?>
 
 					//echo $desc; 
 
-					?>
+				?>
 				</div>
 				<footer class="entry-meta" style='border-top:none;'>
 					<span class="byline"><span class="author vcard">first shared by <a class="url fn n" href="http://wprize/wprize/author/jflowers45/" title="View all posts by jflowers45" rel="author"><?php echo "<a href='http://twitter.com/$author'>@$author</a>"; ?></span></span>						
 					<span class="sep sep-byline"> | </span>
 					<time class="entry-date" datetime="2015-10-14T16:56:08+00:00" itemprop="datePublished" pubdate="pubdate">date</time>
 				</footer>
+				<?php } else { ?>
+
+					echo "<iframe src='http://www.w3schools.com'>";
+				<?php }?>
 			</article>
 		<?php 
 
