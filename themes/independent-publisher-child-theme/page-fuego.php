@@ -163,9 +163,9 @@ get_header(); ?>
 					<a href='https://twitter.com/<?php echo $author; ?>'>
 						<div class='twitterUserPhoto' style='background:url(<?php echo $twitterImage ?>) no-repeat center center /cover; width: 70px; height: 70px; border-radius: 35px; float:left;'></div>
 					</a>
-					<div style='float: left; margin-left: 80px;'>
+					<div style='float: left; max-width:600px;'>
 						<p style='display: inline-block; vertical-align: 30%;'>@<?php echo $author; ?></p>
-						<p><?php echo $desc; ?></p>
+						<?php echo $desc; ?>
 					</div>
 					<div class='quotedTweet' style='padding:20px; border-radius: 5px; background-color: #F1F1F1; width: 90%; margin: 10px 5%;'>
 						<a href='https://twitter.com/drawinghands'>
