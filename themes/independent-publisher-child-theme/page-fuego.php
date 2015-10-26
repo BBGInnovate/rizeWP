@@ -33,28 +33,69 @@ get_header(); ?>
 			$image = "";
 			$provider_name = "Africa Rizing";
 			$provider_url = "https://africa.rizing.org";
-			$iframe = "";
+
+			$quoteMakerName = "";
+			$quoteMakerHandle = "";
+			$quotedMakerImage = "";
+			$quotedTweet = "";
+			$quotedTweetUrl = "";
 			/* often times some metadata values are set and others aren't, so we check each one.  The fuego backend process fills this section using an embed.ly api key */
 			if ( isset ($item['metadata']) ) {
 				$m = $item['metadata'];
 
 				if ($m['provider_name'] == 'Twitter'){
-					$iframe = $item['tw_tweet_url'];
-				}else{
+					/*If it's a quoted tweet... */
+					/*
+					if ( isset ( $m['title'] ) ) {
+						$quoteMakerName = $m['title'];	
+					}
 
+					if ( isset ( $m['author_name'] ) ) {
+						$quoteMakerHandle = $m['author_name'];	
+					}
+
+					if ( isset ($m['url'] ) ) {
+						$quotedTweetUrl = $m['url'];
+					}
+					
+					if ( isset ($m['description'] ) ) {
+						$quotedTweet = $m['description'];
+					}
+
+					if ( isset ($m['thumbnail_url'] ) ) {
+						$quotedMakerImage = $m['thumbnail_url'];
+					}
+					*/
+
+
+					/*person quoted*/
+					if ( isset ( $m['title'] ) ) {
+						$quoteMakerName = $m['title'];	
+					}
+
+					if ( isset ( $m['author_name'] ) ) {
+						$quoteMakerHandle = $m['author_name'];	
+					}
+
+					if ( isset ($m['url'] ) ) {
+						$quotedTweetUrl = $m['url'];
+					}
+					
+					if ( isset ($m['description'] ) ) {
+						$quotedTweet = $m['description'];
+					}
+
+					if ( isset ($m['thumbnail_url'] ) ) {
+						$quotedMakerImage = $m['thumbnail_url'];
+					}
+
+				}else{
 					if ( isset ( $m['title'] ) ) {
 						$title = $m['title'];	
 					}
 
-					/*If it's a quoted tweet, show the url for the tweet that's quoting it. */
 					if ( isset ($m['url'] ) ) {
-						/*
-						if ($m['provider_name'] == 'Twitter'){
-							$url = $item['tw_tweet_url'];
-						} else {
-						*/
 						$url = $m['url'];
-						/*}*/
 					}
 					
 					if ( isset ($m['description'] ) ) {
@@ -106,19 +147,24 @@ get_header(); ?>
 					<h5 class='entry-category'><a href='' style='float:none;'>Twitter</a></h5>
 				</header>
 				<div class='entry-content'>
-					<a href='https://twitter.com/drawinghands'>
+					<a href='https://twitter.com/<?php echo $author; ?>'>
 						<div class='twitterUserPhoto' style='background:url(http://pbs.twimg.com/profile_images/649550853574144000/fgcPWqbU_normal.jpg) no-repeat center center /cover; width: 30px; height: 30px; border-radius: 15px; display: inline-block;'></div>
-						<p style='display: inline-block; vertical-align: 30%;'>@drawinghands</p>
+						<p style='display: inline-block; vertical-align: 30%;'>@<?php echo $author; ?></p>
 					</a>
-					<p>The text of the tweet.</p>
+					<p><?php echo $desc; ?></p>
 					<div class='quotedTweet' style='padding:20px; border-radius: 5px; background-color: #CCC;width: 90%; margin: 10px 5%;'>
 						<a href='https://twitter.com/drawinghands'>
-							<div class='twitterUserPhoto' style='background:url(http://pbs.twimg.com/profile_images/649550853574144000/fgcPWqbU_normal.jpg) no-repeat center center /cover; width: 30px; height: 30px; border-radius: 15px; display: inline-block;'></div>
-							<p style='display: inline-block; vertical-align: 30%;'>Brian Williamson <span>| @quotedPerson</span></p>
+							<div class='twitterUserPhoto' style='background:url(<?php echo $quotedMakerImage; ?>) no-repeat center center /cover; width: 30px; height: 30px; border-radius: 15px; display: inline-block;'></div>
+							<p style='display: inline-block; vertical-align: 30%;'><?php echo $quotedMakerName; ?> <span>| @<?php echo $quotedMakerHandle; ?></span></p>
 						</a>
-						<p>The quoted tweet the quick brown fox jumped over the lazy dog's back.</p>
+						<p><?php echo $quotedTweed; ?></p>
 					</div>
 				</div>
+				<footer class="entry-meta" style='border-top:none;'>
+					<span class="byline"><span class="author vcard">first shared by <a class="url fn n" href="http://wprize/wprize/author/jflowers45/" title="View all posts by jflowers45" rel="author"><?php echo "<a href='http://twitter.com/$author'>@$author</a>"; ?></span></span>						
+					<span class="sep sep-byline"> | </span>
+					<time class="entry-date" datetime="2015-10-14T16:56:08+00:00" itemprop="datePublished" pubdate="pubdate">date</time>
+				</footer>
 				<?php } ?>
 			</article>
 		<?php 
