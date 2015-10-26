@@ -80,7 +80,8 @@ get_header(); ?>
 
 					/*person quoted*/
 					if ( isset ( $m['title'] ) ) {
-						$quoteMakerName = $m['title'];	
+						$quoteMakerName = $m['title'];
+						$quoteMakerName = str_replace("on Twitter","", $quoteMakerName);
 					}
 
 					if ( isset ( $m['author_name'] ) ) {
@@ -156,15 +157,17 @@ get_header(); ?>
 
 
 				<header class='entry-header'>
-					<h5 class='entry-category'><a href='' style='float:none;'>Twitter</a></h5>
+					<h5 class='entry-category'><a href='' style='float:none;'>OVERHEARD ON TWITTER</a></h5>
 				</header>
 				<div class='entry-content'>
 					<a href='https://twitter.com/<?php echo $author; ?>'>
-						<div class='twitterUserPhoto' style='background:url(<?php echo $twitterImage ?>) no-repeat center center /cover; width: 70px; height: 70px; border-radius: 35px; display: inline-block;'></div>
-						<p style='display: inline-block; vertical-align: 30%;'>@<?php echo $author; ?></p>
+						<div class='twitterUserPhoto' style='background:url(<?php echo $twitterImage ?>) no-repeat center center /cover; width: 70px; height: 70px; border-radius: 35px; float:left;'></div>
 					</a>
-					<p><?php echo $desc; ?></p>
-					<div class='quotedTweet' style='padding:20px; border-radius: 5px; background-color: #CCC;width: 90%; margin: 10px 5%;'>
+					<div style='float: left; margin-left: 80px;'>
+						<p style='display: inline-block; vertical-align: 30%;'>@<?php echo $author; ?></p>
+						<p><?php echo $desc; ?></p>
+					</div>
+					<div class='quotedTweet' style='padding:20px; border-radius: 5px; background-color: #F1F1F1; width: 90%; margin: 10px 5%;'>
 						<a href='https://twitter.com/drawinghands'>
 							<div class='twitterUserPhoto' style='background:url(<?php echo $quoteMakerImage; ?>) no-repeat center center /cover; width: 70px; height: 70px; border-radius: 35px; display: inline-block;'></div>
 							<p style='display: inline-block; vertical-align: 30%;'><?php echo $quoteMakerName; ?> <span>| @<?php echo $quoteMakerHandle; ?></span></p>
