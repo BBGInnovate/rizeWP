@@ -30,10 +30,10 @@ get_header(); ?>
 			$url = $item['url'];
 			$desc = '<p>'.$item['tw_text'].'</p>';
 			$author = $item['tw_screen_name'];
-			$image="";
-			$provider_name="Africa Rizing";
-			$provider_url="https://africa.rizing.org";
-			$iframe="";
+			$image = "";
+			$provider_name = "Africa Rizing";
+			$provider_url = "https://africa.rizing.org";
+			$iframe = "";
 			/* often times some metadata values are set and others aren't, so we check each one.  The fuego backend process fills this section using an embed.ly api key */
 			if ( isset ($item['metadata']) ) {
 				$m = $item['metadata'];
@@ -77,7 +77,7 @@ get_header(); ?>
 
 		?>
 			<article>
-				<?php if ($iframe==""){ ?>
+				<?php if ($iframe == ""){ ?>
 				<header class='entry=header'>
 					<h5 class='entry-category'><a href='<?php echo $provider_url; ?>'><?php echo $provider_name; ?></a></h5>
 					<h1 class='entry-title'><?php echo "<a href='$url'>$title</a>"; ?></h1>
@@ -99,9 +99,9 @@ get_header(); ?>
 					<span class="sep sep-byline"> | </span>
 					<time class="entry-date" datetime="2015-10-14T16:56:08+00:00" itemprop="datePublished" pubdate="pubdate">date</time>
 				</footer>
-				<?php } /*else { 
-					echo "<iframe src='".$iframe."' />";
-				} */?>
+				<?php } else { ?>
+					<iframe src='<?php echo $iframe; ?>' />"
+				<?php } ?>
 			</article>
 		<?php 
 
