@@ -101,7 +101,8 @@ get_header(); ?>
 				</footer>
 				<?php } else { ?>
 
-<iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" class="twitter-tweet twitter-tweet-rendered" style="position: static; visibility: visible; display: block; width: 100%; height: 202.766px; padding: 0px; border: none; max-width: 500px; min-width: 220px; margin-top: 10px; margin-bottom: 10px;" data-tweet-id="657211437249601536" title="Twitter Tweet"></iframe>
+<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">we ask the ?, you have answers…<a href="https://twitter.com/hashtag/AccraRedLine?src=hash">#AccraRedLine</a> <a href="https://twitter.com/victoria_okoye">@victoria_okoye</a> <a href="https://twitter.com/KwameAnim">@KwameAnim</a> <a href="https://twitter.com/kajsaha">@kajsaha</a> <a href="https://twitter.com/ofoli_kwei">@ofoli_kwei</a> <a href="https://twitter.com/CityLab">@CityLab</a> <a href="https://twitter.com/kristoncapps">@kristoncapps</a> <a href="https://t.co/OEjjWz47tq">pic.twitter.com/OEjjWz47tq</a></p>&mdash; Africa Rizing (@africarizing) <a href="https://twitter.com/africarizing/status/658658394857979905">October 26, 2015</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 				<?php } ?>
 			</article>
