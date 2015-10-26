@@ -167,6 +167,7 @@ get_header(); ?>
 						<p style='display: inline-block; vertical-align: 30%;'>@<?php echo $author; ?></p>
 						<?php echo $desc; ?>
 					</div>
+					<div class='clearAll'></div>
 					<div class='quotedTweet' style='padding:20px; border-radius: 5px; background-color: #F1F1F1; width: 90%; margin: 10px 5%;'>
 						<a href='https://twitter.com/drawinghands'>
 							<div class='twitterUserPhoto' style='background:url(<?php echo $quoteMakerImage; ?>) no-repeat center center /cover; width: 70px; height: 70px; border-radius: 35px; display: inline-block;'></div>
