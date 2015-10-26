@@ -1544,3 +1544,35 @@ div.size-medium + blockquote {
 .single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul li a#facebook:after{
 	content:"";
 }
+
+
+/* --------------- INTERVIEW STYLES ------------------*/
+
+div.interview {
+	font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
+	color: #333;
+}
+
+.interview-speaker {
+	/* font-family: "Myriad Pro", Helvetica, Arial, sans-serif;*/
+	font-weight: 600;
+	text-transform: capitalize;
+	letter-spacing: .02em;
+	color: #000;
+}
+
+.interview-q {
+	/* font-family: "Myriad Pro", Helvetica, Arial, sans-serif;*/
+	font-weight: 600;
+	/*margin-top: 2.25em;*/
+	margin-top: 1.5em;
+	margin-bottom: .5em;
+	color: #000;
+}
+@media only screen and (min-width: 500px){
+	.interview-q {
+		margin-top: 2em;
+	}
+}
+
+

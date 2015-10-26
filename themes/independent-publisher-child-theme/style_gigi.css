@@ -1,62 +1,39 @@
 /* STYLE_GIGI.css - temporary styles file for collaboration */
 
 li {
-    margin-bottom: .75em;
+	margin-bottom: .75em;
 }
 
 /* Special reports banner */
 #series-banner {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: .5em 1.25em .5em;
-    background-color: rgba(87, 173, 104, 0.7);
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: .5em 1.25em .5em;
+	background-color: rgba(87, 173, 104, 0.7);
 }
 
 h6.series-name {
-    position: relative;
-    max-width: 175px;
-    top: 0;
-    left: 0;
-    margin: 0;
-    font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
-    font-size: .7em;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: .03em;
-    text-align: center;
+	position: relative;
+	max-width: 175px;
+	top: 0;
+	left: 0;
+	margin: 0;
+	font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
+	font-size: .7em;
+	text-transform: uppercase;
+	font-weight: 600;
+	letter-spacing: .03em;
+	text-align: center;
 }
 
 @media (min-width: 1020px) {
-  h6.series-name {
-    font-size: .85em;
-    line-height: 1.5em;
-  }
+	h6.series-name {
+		font-size: .85em;
+		line-height: 1.5em;
+	}
 }
 
 h6.series-name a {
-  color: #fff;
+	color: #fff;
 }
-
-
-div.interview {
-  font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
-  color: #333;
-}
-
-.interview-speaker {
-  font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
-    font-weight: 600;
-    text-transform: capitalize;
-    letter-spacing: .02em;
-    color: #000;
-}
-
-.interview-q {
-  font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
-  font-weight: 600;
-  margin-top: 2.25em;
-  margin-bottom: .5em;
-  color: #000;
-}
-
