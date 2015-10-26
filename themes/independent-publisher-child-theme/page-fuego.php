@@ -41,7 +41,9 @@ get_header(); ?>
 					$title = $m['title'];	
 				}
 				if ( isset ($m['url'] ) ) {
-					$url = $m['url'];
+					if ($m['provider_name'] != 'Twitter'){
+						$url = $m['url'];
+					}
 				}
 				
 				if ( isset ($m['description'] ) ) {
