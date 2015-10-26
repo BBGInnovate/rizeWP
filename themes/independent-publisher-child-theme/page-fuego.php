@@ -101,8 +101,18 @@ get_header(); ?>
 				</footer>
 				<?php } else { ?>
 
-<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">we ask the ?, you have answers…<a href="https://twitter.com/hashtag/AccraRedLine?src=hash">#AccraRedLine</a> <a href="https://twitter.com/victoria_okoye">@victoria_okoye</a> <a href="https://twitter.com/KwameAnim">@KwameAnim</a> <a href="https://twitter.com/kajsaha">@kajsaha</a> <a href="https://twitter.com/ofoli_kwei">@ofoli_kwei</a> <a href="https://twitter.com/CityLab">@CityLab</a> <a href="https://twitter.com/kristoncapps">@kristoncapps</a> <a href="https://t.co/OEjjWz47tq">pic.twitter.com/OEjjWz47tq</a></p>&mdash; Africa Rizing (@africarizing) <a href="https://twitter.com/africarizing/status/658658394857979905">October 26, 2015</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+				<a href='https://twitter.com/drawinghands'>
+					<div class='twitterUserPhoto' style='background:url(http://pbs.twimg.com/profile_images/649550853574144000/fgcPWqbU_normal.jpg) no-repeat center center /cover; width: 25px; height: 25px;'></div>
+				</a>
+				<div><a href='https://twitter.com/drawinghands'>@drawinghands</a></div>
+				<div><p><a href=''>The text of the tweet.</a></p></div>
+				<div class='quotedTweet' style='padding:20px; border-radius: 5px; background-color: #CCC;'>
+					<a href='https://twitter.com/drawinghands'>
+						<div class='twitterUserPhoto' style='background:url(http://pbs.twimg.com/profile_images/649550853574144000/fgcPWqbU_normal.jpg) no-repeat center center /cover; width: 25px; height: 25px;'></div>
+					</a>
+					<div>Brian Williamson <span>| <a href='https://twitter.com/drawinghands'>@quotedPerson</a></span></div>
+					<p>The quoted tweet the quick brown fox jumped over the lazy dog's back.</p>
+				</div>
 
 				<?php } ?>
 			</article>
