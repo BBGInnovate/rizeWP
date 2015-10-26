@@ -39,11 +39,15 @@ get_header(); ?>
 			$quotedMakerImage = "";
 			$quotedTweet = "";
 			$quotedTweetUrl = "";
+
+			$isTwitter = false;
+
 			/* often times some metadata values are set and others aren't, so we check each one.  The fuego backend process fills this section using an embed.ly api key */
 			if ( isset ($item['metadata']) ) {
 				$m = $item['metadata'];
 
 				if ($m['provider_name'] == 'Twitter'){
+					$isTwitter = true;
 					/*If it's a quoted tweet... */
 					/*
 					if ( isset ( $m['title'] ) ) {
@@ -118,8 +122,8 @@ get_header(); ?>
 
 		?>
 			<article>
-				<?php if ($iframe == ""){ ?>
-				<header class='entry=header'>
+				<?php if (!$isTwitter){ ?>
+				<header class='entry-header'>
 					<h5 class='entry-category'><a href='<?php echo $provider_url; ?>'><?php echo $provider_name; ?></a></h5>
 					<h1 class='entry-title'><?php echo "<a href='$url'>$title</a>"; ?></h1>
 				</header>
@@ -140,10 +144,12 @@ get_header(); ?>
 					<span class="sep sep-byline"> | </span>
 					<time class="entry-date" datetime="2015-10-14T16:56:08+00:00" itemprop="datePublished" pubdate="pubdate">date</time>
 				</footer>
+
+
 				<?php } else { ?>
 
 
-				<header class='entry=header'>
+				<header class='entry-header'>
 					<h5 class='entry-category'><a href='' style='float:none;'>Twitter</a></h5>
 				</header>
 				<div class='entry-content'>
