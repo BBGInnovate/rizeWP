@@ -164,7 +164,7 @@ get_header(); ?>
 				</header>
 				<div class='entry-content twitter-conversation'>
 					<a href='https://twitter.com/<?php echo $author; ?>'>
-						<div class='twitterUserPhoto' style='background-image:url(<?php echo $twitterImage ?>)' class='twitterProfilePhoto'>
+						<div class='twitterProfilePhoto' style='background-image:url(<?php echo $twitterImage ?>)'>
 							<img src='../wp-content/images/transparentSquare.png'>
 						</div>
 					</a>
@@ -183,7 +183,7 @@ get_header(); ?>
 					<div class='clearAll'></div>
 					<div class='quotedTweet'>
 						<a href='https://twitter.com/<?php echo $quoteMakerHandle; ?>'>
-							<div class='twitterUserPhoto' style='background-image:url(<?php echo $quoteMakerImage; ?>)' class='twitterProfilePhoto'>
+							<div class='twitterProfilePhoto' style='background-image:url(<?php echo $quoteMakerImage; ?>)' >
 								<img src='../wp-content/images/transparentSquare.png'>
 							</div>
 						</a>
