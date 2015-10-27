@@ -1576,3 +1576,26 @@ div.interview {
 }
 
 
+/* ----------------- FUEGO STYLES -------------------*/
+.twitter-conversation{
+	font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
+}
+.quotedTweet{
+	padding:20px; 
+	border-radius: 5px; 
+	border: 1px solid #EFEFEF;
+}
+.twitterProfilePhoto{
+	float:left;
+	width: 10%; 
+	height: auto; 
+	border-radius: 50%;
+	background-position: no-repeat center center;
+	background-size: cover; 
+}
+/* no-repeat center center /cover; width: 10%; height: auto; border-radius: 50%; float:left; */
+.twitterProfilePhoto img{
+	display: block;
+	width: 100%;
+	height: auto;
+}

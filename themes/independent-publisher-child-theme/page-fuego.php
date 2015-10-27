@@ -162,10 +162,10 @@ get_header(); ?>
 				<header class='entry-header'>
 					<h5 class='entry-category'><a href='<?php echo $tweetUrl; ?>' style='float:none;'>OVERHEARD ON TWITTER</a></h5>
 				</header>
-				<div class='entry-content' style='font-family: sans-serif;'>
+				<div class='entry-content twitter-conversation'>
 					<a href='https://twitter.com/<?php echo $author; ?>'>
-						<div class='twitterUserPhoto' style='background:url(<?php echo $twitterImage ?>) no-repeat center center /cover; width: 10%; height: auto; border-radius: 50%; float:left;'>
-							<img src='../wp-content/images/transparentSquare.png' style='display: block; width: 100%; height: auto;'>
+						<div class='twitterUserPhoto' style='background-image:url(<?php echo $twitterImage ?>)' class='twitterProfilePhoto'>
+							<img src='../wp-content/images/transparentSquare.png'>
 						</div>
 					</a>
 					<div style='float: right; width:88%; margin-top: 5px;'>
@@ -181,10 +181,10 @@ get_header(); ?>
 						<?php echo $desc; ?>
 					</div>
 					<div class='clearAll'></div>
-					<div class='quotedTweet' style='padding:20px; border-radius: 5px; border: 1px solid #EFEFEF;'>
+					<div class='quotedTweet'>
 						<a href='https://twitter.com/<?php echo $quoteMakerHandle; ?>'>
-							<div class='twitterUserPhoto' style='background:url(<?php echo $quoteMakerImage; ?>) no-repeat center center /cover; width: 10%; height: auto; border-radius: 50%; float:left;'>
-							<img src='../wp-content/images/transparentSquare.png' style='display: block; width: 100%; height: auto;'>
+							<div class='twitterUserPhoto' style='background-image:url(<?php echo $quoteMakerImage; ?>)' class='twitterProfilePhoto'>
+								<img src='../wp-content/images/transparentSquare.png'>
 							</div>
 						</a>
 						<div style='float: right; width:88%; margin-top: 5px;'>
