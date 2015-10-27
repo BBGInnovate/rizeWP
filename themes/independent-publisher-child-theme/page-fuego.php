@@ -51,7 +51,7 @@ get_header(); ?>
 			$convertedTime = $item['first_seen'];
 			$dt = new DateTime("@$convertedTime");
 			/*$dateStamp = $dt->format('Y-m-d H:i:s');*/
-			$dateStamp = $dt->format('F-d-Y g:i e');
+			$dateStamp = $dt->format('F d, Y g:i e');
 
 			$imageSize = false;
 
