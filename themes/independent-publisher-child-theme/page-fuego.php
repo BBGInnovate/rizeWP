@@ -35,7 +35,7 @@ get_header(); ?>
 			$provider_url = "https://africa.rizing.org";
 
 			$string = 'April 15, 2003';
-			$pattern = '/^(https:\/\/t\.co)$/';
+			$pattern = '/^(https:\/\/t\.co)*/';
 			$replacement = '';
 
 
