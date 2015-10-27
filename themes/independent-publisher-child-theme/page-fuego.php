@@ -196,7 +196,7 @@ get_header(); ?>
 							</p>
 						</div>
 						<div class='clearAll'></div>
-						<div style='float: right; width:88%; font-size: 1.3em;'>
+						<div style='width:88%; padding-left: 12%;'>
 							<p><?php echo $quotedTweet; ?></p>
 						</div>
 					</div>
