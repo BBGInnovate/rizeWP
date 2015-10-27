@@ -196,7 +196,9 @@ get_header(); ?>
 							</p>
 						</div>
 						<div class='clearAll'></div>
-						<p><?php echo $quotedTweet; ?></p>
+						<div style='float: right; width:88%; font-size: 1.3em;'>
+							<p><?php echo $quotedTweet; ?></p>
+						</div>
 					</div>
 				</div>
 				<footer class="entry-meta" style='border-top:none;'>
