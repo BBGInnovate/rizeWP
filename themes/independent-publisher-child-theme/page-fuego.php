@@ -105,8 +105,8 @@ get_header(); ?>
 					if ( isset ($m['thumbnail_url'] ) ) {
 						$image=$m['thumbnail_url'];
 					}
-					if ( isset ($m['width'] ) ){
-						if ($m['width'] < 800){
+					if ( isset ($m['thumbnail_width'] ) ){
+						if ($m['thumbnail_width'] <= 500 && $m['thumbnail_height'] <= 500){
 							$imageSize = true;
 						}
 					}
