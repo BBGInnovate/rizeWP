@@ -180,11 +180,20 @@ get_header(); ?>
 						<?php echo $desc; ?>
 					</div>
 					<div class='clearAll'></div>
-					<div class='quotedTweet' style='padding:20px; border-radius: 5px; border: 1px solid #EFEFEF; width: 90%; margin: 10px 5%;'>
+					<div class='quotedTweet' style='padding:20px; border-radius: 5px; border: 1px solid #EFEFEF;'>
 						<a href='https://twitter.com/<?php echo $quoteMakerHandle; ?>'>
-							<div class='twitterUserPhoto' style='background:url(<?php echo $quoteMakerImage; ?>) no-repeat center center /cover; width: 70px; height: 70px; border-radius: 35px; display: inline-block;'></div>
-							<p style='display: inline-block; vertical-align: 30%;'><?php echo $quoteMakerName; ?> <span>| @<?php echo $quoteMakerHandle; ?></span></p>
+							<div class='twitterUserPhoto' style='background:url(<?php echo $quoteMakerImage; ?>) no-repeat center center /cover; width: 10%; height: auto; border-radius: 50%; float:left;'>
+							<img src='../wp-content/images/transparentSquare.png' style='display: block; width: 100%; height: auto;'>
+							</div>
 						</a>
+						<div style='float: right; width:88%; margin-top: 5px;'>
+							<p style='font-weight: bold;'><?php echo $quoteMakerName; ?> </p>
+							<p style=''>
+								<a href='https://twitter.com/<?php echo $quoteMakerHandle; ?>'>
+									@<?php echo $quoteMakerHandle; ?>
+								</a>
+							</p>
+						</div>
 						<p><?php echo $quotedTweet; ?></p>
 					</div>
 				</div>
