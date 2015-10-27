@@ -46,7 +46,8 @@ get_header(); ?>
 
 			$convertedTime = $item['first_seen'];
 			$dt = new DateTime("@$convertedTime");
-			$dateStamp = $dt->format('Y-m-d H:i:s');
+			/*$dateStamp = $dt->format('Y-m-d H:i:s');*/
+			$dateStamp = $dt->format('m-d-Y g:i');
 
 
 
@@ -153,8 +154,8 @@ get_header(); ?>
 							<img src='../wp-content/images/transparentSquare.png'>
 						</div>
 					</a>
-					<div style='float: right; width:88%;'>
-						<p style='display: block; margin-bottom:0; font-weight: bold; line-height: 1.3em;'>
+					<div class='tweetAuthor'>
+						<p class='tweetAuthorName'>
 							<?php echo $author; ?>
 						</p>
 						<p style='display: block; margin-bottom:0;'>
@@ -162,7 +163,7 @@ get_header(); ?>
 						</p>
 					</div>
 					<div class='clearAll'></div>
-					<div style='float: right; width:88%; font-size: 1.5em; line-height: 1.2em; font-weight: 600;'>
+					<div class='tweet' style=''>
 						<?php echo $desc; ?>
 					</div>
 
@@ -174,16 +175,16 @@ get_header(); ?>
 								<img src='../wp-content/images/transparentSquare.png'>
 							</div>
 						</a>
-						<div style='float: right; width:88%;'>
-							<p style='font-weight: bold; margin:0;'><?php echo $quoteMakerName; ?> </p>
-							<p style=' margin:0;'>
+						<div class='quoteMaker'>
+							<p class='quoteMakerName'><?php echo $quoteMakerName; ?> </p>
+							<p>
 								<a href='https://twitter.com/<?php echo $quoteMakerHandle; ?>'>
 									@<?php echo $quoteMakerHandle; ?>
 								</a>
 							</p>
 						</div>
 						<div class='clearAll'></div>
-						<div style='width:88%; padding-left: 12%;'>
+						<div class='quotedTweetText'>
 							<p><?php echo $quotedTweet; ?></p>
 						</div>
 					</div>

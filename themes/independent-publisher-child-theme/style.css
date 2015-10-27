@@ -1587,7 +1587,7 @@ div.interview {
 }
 #fuego h1.entry-title {
 	font-size: 1.3em;
-	margin-top:20px;
+	margin-top:15px;
 }
 #fuego .entry-meta {
 	border-top: 1px solid #eee;
@@ -1599,14 +1599,48 @@ div.interview {
 	color: #333;
 }
 
+/*a:active, a:focus, */
+#fuego .entry-content a:hover p{
+	text-decoration: none;
+}
+
 .twitter-conversation{
 	font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
+	margin-top: 15px;
+}
+.tweet{
+	float: right; 
+	width:88%; 
+	font-size: 1.5em; 
+	line-height: 1.2em; 
+	font-weight: 600;
+}
+.tweetAuthor p{
+	display: block; 
+	margin-bottom:0; 
+	font-weight: bold; 
+	line-height: 1.3em;
 }
 .quotedTweet{
 	padding:20px; 
 	border-radius: 5px; 
 	/*border: 1px solid #EFEFEF;*/
 	border: 1px solid #CCC;
+}
+.quoteMaker, .tweetAuthor{
+	float: right;
+	width:88%;
+}
+.quoteMaker p{
+	margin:0;
+}
+.quoteMakerName{
+	font-weight: bold; 
+}
+
+.quotedTweetText{
+	width:88%;
+	padding-left: 12%;
 }
 .twitterProfilePhoto{
 	float:left;
@@ -1624,8 +1658,12 @@ div.interview {
 }
 
 @media only screen and (min-width: 500px){
-	#fuego.page h1.entry-title {
+	#fuego h1.entry-title {
 		font-size: 1.6em;
+		margin-top:20px;
+	}
+	.twitter-conversation{
+		margin-top: 20px;
 	}
 }
 
