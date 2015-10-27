@@ -1629,8 +1629,10 @@ div.interview {
 .quotedTweet{
 	padding:20px; 
 	border-radius: 5px; 
-	/*border: 1px solid #EFEFEF;*/
-	border: 1px solid #CCC;
+	/*border: 1px solid #CCC;*/
+	-moz-box-shadow:    inset 0 0 10px #CCC;
+	-webkit-box-shadow: inset 0 0 10px #CCC;
+	box-shadow:         inset 0 0 10px #CCC;
 }
 .quotedTweetText{
 	width:88%;

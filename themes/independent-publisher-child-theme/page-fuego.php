@@ -49,6 +49,8 @@ get_header(); ?>
 			/*$dateStamp = $dt->format('Y-m-d H:i:s');*/
 			$dateStamp = $dt->format('F-d-Y g:i e');
 
+			$imageSize = false;
+
 			$isTwitter = false;
 
 			/* often times some metadata values are set and others aren't, so we check each one.  The fuego backend process fills this section using an embed.ly api key */
@@ -103,6 +105,11 @@ get_header(); ?>
 					if ( isset ($m['thumbnail_url'] ) ) {
 						$image=$m['thumbnail_url'];
 					}
+					if ( isset ($m['width'] ) ){
+						if ($m['width'] <500 && $m['height'] <= 500){
+							$imageSize = true;
+						}
+					}
 
 					if ( isset ($m['provider_name'] ) ) {
 						$provider_name=$m['provider_name'];
@@ -123,7 +130,7 @@ get_header(); ?>
 				</header>
 				<div class='entry-content'>
 				<?php 
-					if ($image != "") {
+					if ($image != "" && $imageSize) {
 						echo "<a href='$url'>"; 
 						echo "<div class='listThumbnail' style='background-image: url($image);'></div>";
 						echo "</a>"; 
