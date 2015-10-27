@@ -1583,7 +1583,8 @@ div.interview {
 .quotedTweet{
 	padding:20px; 
 	border-radius: 5px; 
-	border: 1px solid #EFEFEF;
+	/*border: 1px solid #EFEFEF;*/
+	border: 1px solid #CCC;
 }
 .twitterProfilePhoto{
 	float:left;

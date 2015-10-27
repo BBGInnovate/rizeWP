@@ -44,6 +44,12 @@ get_header(); ?>
 			$quotedTweet = "";
 			$quotedTweetUrl = "";
 
+			$convertedTime = $item['first_seen'];
+			$dt = new DateTime("@$convertedTime");
+			$dateStamp = $dt->format('Y-m-d H:i:s');
+
+
+
 			$isTwitter = false;
 
 			/* often times some metadata values are set and others aren't, so we check each one.  The fuego backend process fills this section using an embed.ly api key */
@@ -168,7 +174,7 @@ get_header(); ?>
 							<img src='../wp-content/images/transparentSquare.png'>
 						</div>
 					</a>
-					<div style='float: right; width:88%; margin-top: 5px;'>
+					<div style='float: right; width:88%;'>
 						<p style='display: block; margin-bottom:0; font-weight: bold; line-height: 1.3em;'>
 							<?php echo $author; ?>
 						</p>
@@ -180,14 +186,16 @@ get_header(); ?>
 					<div style='float: right; width:88%; font-size: 1.3em;'>
 						<?php echo $desc; ?>
 					</div>
+
 					<div class='clearAll'></div>
+
 					<div class='quotedTweet'>
 						<a href='https://twitter.com/<?php echo $quoteMakerHandle; ?>'>
 							<div class='twitterProfilePhoto' style='background-image:url(<?php echo $quoteMakerImage; ?>)' >
 								<img src='../wp-content/images/transparentSquare.png'>
 							</div>
 						</a>
-						<div style='float: right; width:88%; margin-top: 5px;'>
+						<div style='float: right; width:88%;'>
 							<p style='font-weight: bold; margin:0;'><?php echo $quoteMakerName; ?> </p>
 							<p style=' margin:0;'>
 								<a href='https://twitter.com/<?php echo $quoteMakerHandle; ?>'>
@@ -204,7 +212,7 @@ get_header(); ?>
 				<footer class="entry-meta" style='border-top:none;'>
 					<span class="byline"><span class="author vcard">first shared by <a class="url fn n" href="http://wprize/wprize/author/jflowers45/" title="View all posts by jflowers45" rel="author"><?php echo "<a href='http://twitter.com/$author'>@$author</a>"; ?></span></span>						
 					<span class="sep sep-byline"> | </span>
-					<time class="entry-date" datetime="2015-10-14T16:56:08+00:00" itemprop="datePublished" pubdate="pubdate">date</time>
+					<time class="entry-date" datetime="2015-10-14T16:56:08+00:00" itemprop="datePublished" pubdate="pubdate"><?php echo $dateStamp ?></time>
 				</footer>
 				<?php } ?>
 			</article>
