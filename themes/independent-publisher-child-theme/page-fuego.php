@@ -176,6 +176,7 @@ get_header(); ?>
 							<a href='https://twitter.com/<?php echo $author; ?>'>@<?php echo $author; ?></a>
 						</p>
 					</div>
+					<div class='clearAll'></div>
 					<div style='float: right; width:88%; font-size: 1.3em;'>
 						<?php echo $desc; ?>
 					</div>
@@ -187,13 +188,14 @@ get_header(); ?>
 							</div>
 						</a>
 						<div style='float: right; width:88%; margin-top: 5px;'>
-							<p style='font-weight: bold;'><?php echo $quoteMakerName; ?> </p>
-							<p style=''>
+							<p style='font-weight: bold; margin:0;'><?php echo $quoteMakerName; ?> </p>
+							<p style=' margin:0;'>
 								<a href='https://twitter.com/<?php echo $quoteMakerHandle; ?>'>
 									@<?php echo $quoteMakerHandle; ?>
 								</a>
 							</p>
 						</div>
+						<div class='clearAll'></div>
 						<p><?php echo $quotedTweet; ?></p>
 					</div>
 				</div>
