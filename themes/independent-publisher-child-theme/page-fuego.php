@@ -183,7 +183,7 @@ get_header(); ?>
 						</p>
 					</div>
 					<div class='clearAll'></div>
-					<div style='float: right; width:88%; font-size: 1.5em; line-height: 1.2em;'>
+					<div style='float: right; width:88%; font-size: 1.5em; line-height: 1.2em; font-weight: 600;'>
 						<?php echo $desc; ?>
 					</div>
 
