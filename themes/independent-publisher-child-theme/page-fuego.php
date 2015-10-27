@@ -35,9 +35,16 @@ get_header(); ?>
 			$provider_url = "https://africa.rizing.org";
 
 			$string = 'April 15, 2003';
-			$pattern = '/^(https:\/\/t\.co)*/';
+			$pattern = '/(https:\/\/t\.co\/)[A-z0-9\.]*/';
 			$replacement = '';
 
+/*
+			$text = preg_replace(
+				'#((https?|ftp)://(\S*?\.\S*?))([\s)\[\]{},;"\':<]|\.\s|$)#i',
+				"''",
+				$text
+			);
+			*/
 
 
 			$twitterImage = "";
@@ -176,7 +183,7 @@ get_header(); ?>
 					<div class='clearAll'></div>
 					<div class='tweet' style=''>
 						<?php echo $desc; ?>
-						<?php /*echo preg_replace($pattern, $replacement, $desc); */?>
+						<?php echo preg_replace($pattern, $replacement, $desc); ?>
 					</div>
 
 					<div class='clearAll'></div>
