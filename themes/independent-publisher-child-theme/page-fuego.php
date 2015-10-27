@@ -65,7 +65,7 @@ get_header(); ?>
 					/*If it's a quoted tweet... */
 					$isTwitter = true;
 
-					$desc = preg_replace($pattern, $replacement, $desc)
+					$desc = preg_replace($pattern, $replacement, $desc);
 
 					$twitterImage=$item['tw_profile_image_url_bigger'];
 
