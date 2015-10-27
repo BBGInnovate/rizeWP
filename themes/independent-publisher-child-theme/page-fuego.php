@@ -113,7 +113,7 @@ get_header(); ?>
 						$image=$m['thumbnail_url'];
 					}
 					if ( isset ($m['thumbnail_width'] ) ){
-						if ($m['thumbnail_width'] <= 500 && $m['thumbnail_height'] <= 500){
+						if ($m['thumbnail_width'] <= 700 && $m['thumbnail_height'] <= 500){
 							$imageSize = true;
 						}
 					}
@@ -213,7 +213,7 @@ get_header(); ?>
 						<span class="sep sep-byline"> | </span>
 						<time class="entry-date" datetime="2015-10-14T16:56:08+00:00" itemprop="datePublished" pubdate="pubdate"><?php echo $dateStamp ?></time>
 					</footer>
-					
+
 				<?php } ?>
 			</article>
 		<?php 
