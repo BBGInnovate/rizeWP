@@ -34,6 +34,11 @@ get_header(); ?>
 			$provider_name = "Africa Rizing";
 			$provider_url = "https://africa.rizing.org";
 
+			$string = 'April 15, 2003';
+			$pattern = '/^(https:\/\/t\.co)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/';
+			$replacement = '';
+
+
 
 			$twitterImage = "";
 			$tweetUrl = "";
@@ -137,6 +142,8 @@ get_header(); ?>
 					}
 					echo "<a href='$url'>"; 
 					echo $desc; 
+					echo preg_replace($pattern, $replacement, $desc);
+
 					echo "</a>"; 
 				?>
 				</div>
