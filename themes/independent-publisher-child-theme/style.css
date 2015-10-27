@@ -1654,17 +1654,22 @@ div.interview {
 }
 
 .twitterImageCredit{
+	display: inline-block;
 	width: 30px; 
 	height: auto; 
+	vertical-align: -10px;
 	border-radius: 50%;
 	background-position: center center;
 	background-size: cover; 
 	background-repeat: no-repeat;
 }
 .twitterImageCredit img{
-	display: inline-block;
+	display: block;
 	width: 100%;
 	height: auto;
+}
+a:hover .twitterImageCredit{
+	text-decoration: none;
 }
 
 @media only screen and (min-width: 500px){
