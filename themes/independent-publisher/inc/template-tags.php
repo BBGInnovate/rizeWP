@@ -544,8 +544,7 @@ if ( ! function_exists( 'independent_publisher_get_post_word_count' ) ) :
 			$separator = '';
 		}
 
-
-		return sprintf( '<span>' . __( '%1$s Minutes', 'independent-publisher' ) . '</span>%2$s', independent_publisher_post_word_count(), $separator );
+		return sprintf( '<span>' . __( '%1$s', 'independent-publisher' ) . '</span>%2$s', independent_publisher_post_word_count(), $separator );
 		/*return sprintf( '<span>' . __( '%1$s Words', 'independent-publisher' ) . '</span>%2$s', independent_publisher_post_word_count(), $separator );*/
 	}
 endif;

@@ -825,8 +825,14 @@ if ( ! function_exists( 'independent_publisher_post_word_count' ) ):
 		$wordsPerMinute = 200;
 
 		$count = $count / $wordsPerMinute;
-
-		return number_format( $count );
+		$count = number_format( $count );
+		$units = " Minutes";
+		if ($count == 1){
+			$units = " Minute";
+		}
+		$count = $count.$units;
+		return $count;
+		/*return number_format( $count );*/
 	}
 endif;
 
