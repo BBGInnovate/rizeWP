@@ -176,7 +176,7 @@ get_header(); ?>
 					<div class='clearAll'></div>
 					<div class='tweet' style=''>
 						<?php echo $desc; ?>
-						<?php echo preg_replace($pattern, $replacement, $desc); ?>
+						<?php /*echo preg_replace($pattern, $replacement, $desc); */?>
 					</div>
 
 					<div class='clearAll'></div>
