@@ -34,17 +34,9 @@ get_header(); ?>
 			$provider_name = "Africa Rizing";
 			$provider_url = "https://africa.rizing.org";
 
-			$string = 'April 15, 2003';
+			/*Removes the twitter link */
 			$pattern = '/(https:\/\/t\.co\/)[A-z0-9\.]*/';
 			$replacement = '';
-
-/*
-			$text = preg_replace(
-				'#((https?|ftp)://(\S*?\.\S*?))([\s)\[\]{},;"\':<]|\.\s|$)#i',
-				"''",
-				$text
-			);
-			*/
 
 
 			$twitterImage = "";
@@ -72,6 +64,8 @@ get_header(); ?>
 				if ($m['provider_name'] == 'Twitter'){
 					/*If it's a quoted tweet... */
 					$isTwitter = true;
+
+					$desc = preg_replace($pattern, $replacement, $desc)
 
 					$twitterImage=$item['tw_profile_image_url_bigger'];
 
@@ -183,7 +177,7 @@ get_header(); ?>
 					<div class='clearAll'></div>
 					<div class='tweet' style=''>
 						<?php echo $desc; ?>
-						<?php echo preg_replace($pattern, $replacement, $desc); ?>
+						<?php /* echo preg_replace($pattern, $replacement, $desc);  */ ?>
 					</div>
 
 					<div class='clearAll'></div>
