@@ -18,7 +18,7 @@ $algo="recent";
 $displayFormat="json";
 $minWeightedCount=2;
 $maxItems=20;
-$hours=20;
+$hours=48;
 
 $showConsole = true;
 $requireQuality=false;
@@ -50,6 +50,7 @@ $recentChecked = ($algo == 'recent' ? 'checked' : '');
 $smartChecked = ($algo == 'smart' ? 'checked' : '');
 $rssChecked = ($displayFormat == 'rss' ? 'checked' : '');
 $jsonChecked = ($displayFormat == 'json' ? 'checked' : '');
+$humanChecked = ($displayFormat == 'human' ? 'checked' : '');
 
 
 $fuego = new Getter();
@@ -71,6 +72,7 @@ if ($showConsole) : ?>
 		<label for='maxItems'>Max Items</label><input id='maxItems' name='maxItems' type='text' value='<?php echo $maxItems; ?>'>
 		<BR><BR>
 		Display Type: 
+		<input type='radio' name='displayFormat' value='human' <?php echo "$humanChecked"; ?> >human
 		<input type='radio' name='displayFormat' value='rss' <?php echo "$rssChecked"; ?> >rss
 		<input type='radio' name='displayFormat' value='json' <?php echo "$jsonChecked"; ?> >json
 		<BR><BR>
@@ -96,7 +98,58 @@ if ($displayFormat=='json') {
 	print '<pre>';
 	print_r($items);
 	print '</pre>';	
-} else  {
+} else if ($displayFormat=='human')  {
+	echo '
+		<html>
+			<head>
+				<title>RIZE Fuego</title>
+				<style>
+					IMG {max-width:800; max-height:400;}
+				</style>
+			</head>
+			<body>
+';
+	if ( $items ) {
+		$counter=0;
+		foreach ($items as $key => $item) {
+			$counter=$counter+1;
+			$title = $item['tw_text'];
+			$url = $item['url'];
+			$desc = $item['tw_text'];
+			$image="";
+
+			/* often times some metadata values are set and others aren't, so we check each one.  The fuego backend process fills this section using an embed.ly api key */
+			if ( isset ($item['metadata']) ) {
+				$m = $item['metadata'];
+
+				if ( isset ( $m['title'] ) ) {
+					$title = $m['title'];	
+				}
+				if ( isset ($m['url'] ) ) {
+					$url = $m['url'];
+				}
+				
+				if ( isset ($m['description'] ) ) {
+					$desc = $m['description'];
+				}
+
+				if ( isset ($m['thumbnail_url'] ) ) {
+					$image=$m['thumbnail_url'];
+				}
+			}
+			echo '<h2><a href="' . $url . '">' . $title . '</a> (' . $counter . ')</h2>';
+			if ($image != "") {
+				echo '<img src="' . $image . '">';
+			}
+			echo 'Count: ' . $item['count'] . ' <BR>
+			Weighted Count: ' . $item['weighted_count'] . '<BR>
+			Desc: ' . $desc . ' <BR>';
+		};
+	}
+	
+} else {
+
+
 
 	echo '
 <?xml version="1.0" ?>
