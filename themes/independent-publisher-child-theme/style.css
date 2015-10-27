@@ -1578,30 +1578,25 @@ div.interview {
 
 /* ----------------- FUEGO STYLES -------------------*/
 
-#fuego.page h5.entry-category a{
+#fuego h5.entry-category a{
 	float:none;
 }
-/*
-#fuego.page h5.entry-category{
-	margin-bottom: 15px;
-}
-*/
-
-#fuego.page article {
-    padding: 20px 0;
+#fuego article {
+    padding: 0 0 20px 0;
     border-bottom: solid 1px #ddd;
 }
-
-#fuego.page h1.entry-title {
+#fuego h1.entry-title {
 	font-size: 1.3em;
 	margin-top:20px;
 }
-
-#fuego.page .entry-meta {
+#fuego .entry-meta {
 	border-top: 1px solid #eee;
 	margin-bottom: 0;
 	margin-top: 0;
 	padding-top: 10px;
+}
+#fuego .entry-content a p {
+	color: #333;
 }
 
 .twitter-conversation{
