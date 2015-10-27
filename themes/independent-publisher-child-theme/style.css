@@ -1581,6 +1581,9 @@ div.interview {
 #fuego.page h5.entry-category a{
 	float:none;
 }
+#fuego.page h5.entry-category{
+	margin-bottom: 15px;
+}
 
 #fuego.page .entry-meta {
     border-top: 1px solid #eee;
