@@ -164,7 +164,9 @@ get_header(); ?>
 				</header>
 				<div class='entry-content'>
 					<a href='https://twitter.com/<?php echo $author; ?>'>
-						<div class='twitterUserPhoto' style='background:url(<?php echo $twitterImage ?>) no-repeat center center /cover; width: 70px; height: 70px; border-radius: 35px; float:left;'></div>
+						<div class='twitterUserPhoto' style='background:url(<?php echo $twitterImage ?>) no-repeat center center /cover; width: 10%; height: auto; border-radius: 50%; float:left;'>
+							<img src='../images/transparentSquare.png'>
+						</div>
 					</a>
 					<div style='float: left; max-width:600px;'>
 						<p style='display: inline-block; vertical-align: 30%;'>
