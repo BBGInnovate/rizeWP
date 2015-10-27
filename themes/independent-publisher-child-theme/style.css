@@ -1578,6 +1578,10 @@ div.interview {
 
 /* ----------------- FUEGO STYLES -------------------*/
 
+#fuego.page h5.entry-category a{
+	float:none;
+}
+
 #fuego.page .entry-meta {
     border-top: 1px solid #eee;
     margin-bottom: 0;
