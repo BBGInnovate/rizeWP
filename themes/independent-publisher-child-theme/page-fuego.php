@@ -165,10 +165,10 @@ get_header(); ?>
 				<div class='entry-content' style='font-family: sans-serif;'>
 					<a href='https://twitter.com/<?php echo $author; ?>'>
 						<div class='twitterUserPhoto' style='background:url(<?php echo $twitterImage ?>) no-repeat center center /cover; width: 10%; height: auto; border-radius: 50%; float:left;'>
-							<img src='../wp-content/images/transparentSquare.png' style='width: 100%; height: auto;'>
+							<img src='../wp-content/images/transparentSquare.png' style='display: block; width: 100%; height: auto;'>
 						</div>
 					</a>
-					<div style='float: right; width:88%;;'>
+					<div style='float: right; width:88%; margin-top: 5px;'>
 						<p style='display: block; margin-bottom:0; font-weight: bold; line-height: 1.3em;'>
 							<?php echo $author; ?>
 						</p>
@@ -176,11 +176,11 @@ get_header(); ?>
 							<a href='https://twitter.com/<?php echo $author; ?>'>@<?php echo $author; ?></a>
 						</p>
 					</div>
-					<div style='float: right; width:88%; font-size: 1.4em;'>
+					<div style='float: right; width:88%; font-size: 1.3em;'>
 						<?php echo $desc; ?>
 					</div>
 					<div class='clearAll'></div>
-					<div class='quotedTweet' style='padding:20px; border-radius: 5px; border-color: #CCC; width: 90%; margin: 10px 5%;'>
+					<div class='quotedTweet' style='padding:20px; border-radius: 5px; border: 1px solid #EFEFEF; width: 90%; margin: 10px 5%;'>
 						<a href='https://twitter.com/<?php echo $quoteMakerHandle; ?>'>
 							<div class='twitterUserPhoto' style='background:url(<?php echo $quoteMakerImage; ?>) no-repeat center center /cover; width: 70px; height: 70px; border-radius: 35px; display: inline-block;'></div>
 							<p style='display: inline-block; vertical-align: 30%;'><?php echo $quoteMakerName; ?> <span>| @<?php echo $quoteMakerHandle; ?></span></p>
