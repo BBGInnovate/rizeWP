@@ -1590,8 +1590,9 @@ div.interview {
 	width: 10%; 
 	height: auto; 
 	border-radius: 50%;
-	background-position: no-repeat center center;
+	background-position: center center;
 	background-size: cover; 
+	background-repeat: no-repeat;
 }
 /* no-repeat center center /cover; width: 10%; height: auto; border-radius: 50%; float:left; */
 .twitterProfilePhoto img{
