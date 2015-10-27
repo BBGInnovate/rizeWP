@@ -57,34 +57,13 @@ get_header(); ?>
 				$m = $item['metadata'];
 
 				if ($m['provider_name'] == 'Twitter'){
+					/*If it's a quoted tweet... */
 					$isTwitter = true;
 
 					$twitterImage=$item['tw_profile_image_url_bigger'];
 
 					$tweetUrl = $item[tw_tweet_url];
 
-					/*If it's a quoted tweet... */
-					/*
-					if ( isset ( $m['title'] ) ) {
-						$quoteMakerName = $m['title'];	
-					}
-
-					if ( isset ( $m['author_name'] ) ) {
-						$quoteMakerHandle = $m['author_name'];	
-					}
-
-					if ( isset ($m['url'] ) ) {
-						$quotedTweetUrl = $m['url'];
-					}
-					
-					if ( isset ($m['description'] ) ) {
-						$quotedTweet = $m['description'];
-					}
-
-					if ( isset ($m['thumbnail_url'] ) ) {
-						$quotedMakerImage = $m['thumbnail_url'];
-					}
-					*/
 
 
 					/*person quoted*/

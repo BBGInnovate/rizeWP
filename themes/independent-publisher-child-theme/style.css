@@ -1581,11 +1581,20 @@ div.interview {
 #fuego.page h5.entry-category a{
 	float:none;
 }
+/*
 #fuego.page h5.entry-category{
 	margin-bottom: 15px;
 }
+*/
+
+#fuego.page article {
+    padding: 20px 0;
+    border-bottom: solid 1px #ddd;
+}
+
 #fuego.page h1.entry-title {
-	font-size: 1.8em;
+	font-size: 1.3em;
+	margin-top:20px;
 }
 
 #fuego.page .entry-meta {
@@ -1618,3 +1627,13 @@ div.interview {
 	width: 100%;
 	height: auto;
 }
+
+@media only screen and (min-width: 500px){
+	#fuego.page h1.entry-title {
+		font-size: 1.6em;
+	}
+}
+
+
+
+
