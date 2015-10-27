@@ -165,11 +165,11 @@ get_header(); ?>
 				<div class='entry-content'>
 					<a href='https://twitter.com/<?php echo $author; ?>'>
 						<div class='twitterUserPhoto' style='background:url(<?php echo $twitterImage ?>) no-repeat center center /cover; width: 10%; height: auto; border-radius: 50%; float:left;'>
-							<img src='../wp-content/images/transparentSquare.png'>
+							<img src='../wp-content/images/transparentSquare.png' style='width: 100%; height: auto;'>
 						</div>
 					</a>
 					<div style='float: left; max-width:600px;'>
-						<p style='display: inline-block; vertical-align: 30%;'>
+						<p style='display: inline-block; vertical-align: 30%; margin-bottom:0;'>
 							<a href='https://twitter.com/<?php echo $author; ?>'>@<?php echo $author; ?></a>
 						</p>
 						<?php echo $desc; ?>
