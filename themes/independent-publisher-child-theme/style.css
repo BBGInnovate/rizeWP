@@ -1600,7 +1600,7 @@ div.interview {
 }
 
 /*a:active, a:focus, */
-#fuego .entry-content a:hover p{
+#fuego .entry-content a:hover{
 	text-decoration: none;
 }
 
@@ -1615,7 +1615,12 @@ div.interview {
 	line-height: 1.2em; 
 	font-weight: 600;
 }
-.tweetAuthor p{
+.tweetAuthor, .quoteMaker{
+	float: right;
+	width:88%;
+}
+
+.tweetAuthor p, .quoteMaker p{
 	display: block; 
 	margin-bottom:0; 
 	font-weight: bold; 
@@ -1627,17 +1632,6 @@ div.interview {
 	/*border: 1px solid #EFEFEF;*/
 	border: 1px solid #CCC;
 }
-.quoteMaker, .tweetAuthor{
-	float: right;
-	width:88%;
-}
-.quoteMaker p{
-	margin:0;
-}
-.quoteMakerName{
-	font-weight: bold; 
-}
-
 .quotedTweetText{
 	width:88%;
 	padding-left: 12%;

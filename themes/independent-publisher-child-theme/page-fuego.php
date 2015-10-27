@@ -47,9 +47,7 @@ get_header(); ?>
 			$convertedTime = $item['first_seen'];
 			$dt = new DateTime("@$convertedTime");
 			/*$dateStamp = $dt->format('Y-m-d H:i:s');*/
-			$dateStamp = $dt->format('m-d-Y g:i');
-
-
+			$dateStamp = $dt->format('F-d-Y g:i e');
 
 			$isTwitter = false;
 
