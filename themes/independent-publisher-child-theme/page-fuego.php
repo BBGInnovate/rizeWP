@@ -142,7 +142,6 @@ get_header(); ?>
 					}
 					echo "<a href='$url'>"; 
 					echo $desc; 
-					echo preg_replace($pattern, $replacement, $desc);
 
 					echo "</a>"; 
 				?>
@@ -177,6 +176,7 @@ get_header(); ?>
 					<div class='clearAll'></div>
 					<div class='tweet' style=''>
 						<?php echo $desc; ?>
+						<?php echo preg_replace($pattern, $replacement, $desc); ?>
 					</div>
 
 					<div class='clearAll'></div>
