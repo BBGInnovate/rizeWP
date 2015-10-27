@@ -1639,7 +1639,7 @@ div.interview {
 	padding-left: 12%;
 }
 .quotedTweetText p{
-	margin-bottom: 0;
+	margin: 10px 0 0 0;
 }
 
 .twitterProfilePhoto{
@@ -1683,6 +1683,9 @@ a:hover .twitterImageCredit{
 	}
 	.twitter-conversation{
 		margin-top: 20px;
+	}
+	.quotedTweetText p{
+		margin: 0;
 	}
 }
 
