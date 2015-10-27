@@ -1584,12 +1584,15 @@ div.interview {
 #fuego.page h5.entry-category{
 	margin-bottom: 15px;
 }
+#fuego.page .page h1.entry-title {
+	font-size: 1.8em;
+}
 
 #fuego.page .entry-meta {
-    border-top: 1px solid #eee;
-    margin-bottom: 0;
-    margin-top: 0;
-    padding-top: 10px;
+	border-top: 1px solid #eee;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding-top: 10px;
 }
 
 .twitter-conversation{
@@ -1610,7 +1613,6 @@ div.interview {
 	background-size: cover; 
 	background-repeat: no-repeat;
 }
-/* no-repeat center center /cover; width: 10%; height: auto; border-radius: 50%; float:left; */
 .twitterProfilePhoto img{
 	display: block;
 	width: 100%;
