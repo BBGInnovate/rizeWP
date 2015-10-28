@@ -112,6 +112,10 @@ get_header(); ?>
 				}else{
 					if ( isset ( $m['title'] ) ) {
 						$title = $m['title'];	
+
+						/*trying to remove offending news org credits */
+						$search = array(' - BBC News', ' - BBC World Service', ' - CNN.com', ' - FT.com');
+						$title = str_replace($search, '', $title);
 					}
 
 					if ( isset ($m['url'] ) ) {
