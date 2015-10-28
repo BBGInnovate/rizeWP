@@ -168,14 +168,14 @@ get_header(); ?>
 					</div>
 					<footer class="entry-meta" style='border-top:none;'>
 						<span class="byline">
-							<span class="author vcard">first shared by <a class="url fn n" href="http://wprize/wprize/author/jflowers45/" title="View all posts by jflowers45" rel="author">
+							<span class="author vcard">first shared by <a class="url fn n" href="http://twitter.com/<?php echo $author ?>" rel="author">
 							<?php echo "<span class='twitterImageCredit' style='background-image: url(".$twitterImage.");'>" ?>
 								<img src='../wp-content/images/transparentSquare.png'>
 							</span>
 							<?php echo "<a href='http://twitter.com/$author'>@$author</a>"; ?></span>
 						</span>						
 						<span class="sep sep-byline"> | </span>
-						<time class="entry-date" datetime="2015-10-14T16:56:08+00:00" itemprop="datePublished" pubdate="pubdate"><?php echo $dateStamp ?></time>
+						<time class="entry-date" itemprop="datePublished" pubdate="pubdate"><?php echo $dateStamp ?></time>
 					</footer>
 
 				<?php } else { ?>
