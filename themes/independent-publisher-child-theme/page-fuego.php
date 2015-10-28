@@ -57,9 +57,11 @@ get_header(); ?>
 			$convertedTime = $item['first_seen'];
 			$dt = new DateTime("@$convertedTime");
 			/*$dateStamp = $dt->format('Y-m-d H:i:s');*/
-			$dateStamp = $dt->format('F d, Y g:i e');
+			$dateStamp = $dt->format('F d, Y g:i');
 
-			$imageSize = false;
+			$imageSize = false; //Test if the image falls within a range of sizes (not too big, not too small).
+			$imageSizeMax = 500; //Sets the max size for images to include as a thumbnail.
+			$imageSizeMin = 125; //Sets the min size for images to include as a thumbnail.
 
 			$isTwitter = false;
 
@@ -122,7 +124,7 @@ get_header(); ?>
 						$image=$m['thumbnail_url'];
 					}
 					if ( isset ($m['thumbnail_width'] ) ){
-						if ($m['thumbnail_width'] <= 700 && $m['thumbnail_height'] <= 500){
+						if ($m['thumbnail_width'] <= $imageSizeMax && $m['thumbnail_height'] <= $imageSizeMax && m['thumbnail_width'] >= $imageSizeMin){
 							$imageSize = true;
 						}
 					}
