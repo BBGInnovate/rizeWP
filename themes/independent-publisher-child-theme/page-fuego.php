@@ -124,7 +124,7 @@ get_header(); ?>
 						$image=$m['thumbnail_url'];
 					}
 					if ( isset ($m['thumbnail_width'] ) ){
-						if ($m['thumbnail_width'] <= $imageSizeMax && $m['thumbnail_height'] <= $imageSizeMax && m['thumbnail_width'] >= $imageSizeMin){
+						if ($m['thumbnail_width'] <= $imageSizeMax && $m['thumbnail_height'] <= $imageSizeMax && $m['thumbnail_width'] >= $imageSizeMin){
 							$imageSize = true;
 						}
 					}
