@@ -217,17 +217,19 @@ endif;
 						$featuredImageCaption="";
 						$featuredImageAltCaption="";
 
-						$featuredImageCreditRaw="";
+						$featuredImageCredit="";
+						$featuredImageCreditLink="";
 
 						$featured_image_data = get_post(get_post_thumbnail_id());
 
 						/* var_dump($featured_image_data); */
 						if ($featured_image_data) {
 							$featuredImageCaptionRaw=$featured_image_data->post_excerpt;
-							$featuredImageCreditRaw= get_post_meta(get_post_thumbnail_id(), '_wp_attachment_source_name', true);
-							
+							$featuredImageCredit= get_post_meta(get_post_thumbnail_id(), '_wp_attachment_source_name', true);
+							$featuredImageCreditLink=get_post_meta(get_post_thumbnail_id(), '_wp_attachment_source_url', true);
+
 							/** if we have either a caption or a credit, we're going to show the <p> **/
-							if ($featuredImageCaptionRaw != "" || $featuredImageCreditRaw != "") {
+							if ($featuredImageCaptionRaw != "" || $featuredImageCredit != "") {
 								$featuredImageCaption="<p id='featuredCutline' class='wp-caption-text'>";
 								$featuredImageAltCaption="<p id='featuredAltCutline' class='wp-caption-text'>";
 
@@ -235,13 +237,17 @@ endif;
 									$featuredImageCaption .= $featuredImageCaptionRaw;
 									$featuredImageAltCaption .= $featuredImageCaptionRaw;
 								}
-								if ($featuredImageCreditRaw != "") {
-									$featuredImageCaption .= "<span id='featuredCredit'>$featuredImageCreditRaw</span>";
-									$featuredImageAltCaption .= "<span id='featuredAltCredit'>$featuredImageCreditRaw</span>";
+								if ($featuredImageCredit != "") {
+									if ($featuredImageCreditLink != "") {
+										$featuredImageCaption .= "<a href='$featuredImageCreditLink' id='featuredCredit'>$featuredImageCredit</a>";
+										$featuredImageAltCaption .= "<a href='$featuredImageCreditLink' id='featuredAltCredit'>$featuredImageCredit</a>";
+									} else {
+										$featuredImageCaption .= "<span id='featuredCredit'>$featuredImageCredit</span>";
+										$featuredImageAltCaption .= "<span id='featuredAltCredit'>$featuredImageCredit</span>";
+									}
 								}
 								$featuredImageCaption .= "</p>";
 								$featuredImageAltCaption .= "</p>";
-
 							}
 						}
 
@@ -617,13 +623,16 @@ endif;
 			$atts['caption']='';
 		}
 		$rawCredit = get_post_meta($idOnly, '_wp_attachment_source_name', true);
+		$rawCreditUrl = get_post_meta($idOnly, '_wp_attachment_source_url', true);
 
 		$credit='';
 		if ($rawCredit != '') {
-			$credit="<span class='postDetailCredit'>$rawCredit</span>";
+			if ($rawCreditUrl != '') {
+				$credit="<a class='postDetailCredit' href='$rawCreditUrl'>$rawCredit</a>";
+			} else 
+				$credit="<span class='postDetailCredit'>$rawCredit</span>";
+			}
 		}
-		
-
 
 		return '<div ' . $atts['id'] . $style . 'class="' . esc_attr( $class ) . '">'
 		. do_shortcode( $content ) . '<p class="wp-caption-text">' . $atts['caption'] . $credit . '</p></div>';
