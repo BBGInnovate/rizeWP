@@ -218,8 +218,6 @@ endif;
 						$featuredImageAltCaption="";
 
 						$featuredImageCreditRaw="";
-						$featuredImageCredit="";
-						
 
 						$featured_image_data = get_post(get_post_thumbnail_id());
 
@@ -227,12 +225,23 @@ endif;
 						if ($featured_image_data) {
 							$featuredImageCaptionRaw=$featured_image_data->post_excerpt;
 							$featuredImageCreditRaw= get_post_meta(get_post_thumbnail_id(), '_wp_attachment_source_name', true);
-							if ($featuredImageCaptionRaw!=""){
-								$featuredImageCaption="<p id='featuredCutline' class='wp-caption-text'>".$featuredImageCaptionRaw."</p>";
-								$featuredImageAltCaption="<p id='featuredAltCutline' class='wp-caption-text'>".$featuredImageCaptionRaw."</p>";
-							}
-							if ($featuredImageCreditRaw != "") {
-								$featuredImageCredit="<p id='featuredCredit' >".$featuredImageCreditRaw."</p>";
+							
+							/** if we have either a caption or a credit, we're going to show the <p> **/
+							if ($featuredImageCaptionRaw != "" || $featuredImageCreditRaw != "") {
+								$featuredImageCaption="<p id='featuredCutline' class='wp-caption-text'>";
+								$featuredImageAltCaption="<p id='featuredAltCutline' class='wp-caption-text'>";
+
+								if ($featuredImageCaptionRaw != "") {
+									$featuredImageCaption .= $featuredImageCaptionRaw;
+									$featuredImageAltCaption .= $featuredImageCaptionRaw;
+								}
+								if ($featuredImageCreditRaw != "") {
+									$featuredImageCaption .= "<span id='featuredCredit'>$featuredImageCreditRaw</span>";
+									$featuredImageAltCaption .= "<span id='featuredAltCredit'>$featuredImageCreditRaw</span>";
+								}
+								$featuredImageCaption .= "</p>";
+								$featuredImageAltCaption .= "</p>";
+
 							}
 						}
 
@@ -288,7 +297,6 @@ endif;
 										
 										<?php
 											echo $featuredImageCaption;
-											echo $featuredImageCredit;
 										?>
 
 		
