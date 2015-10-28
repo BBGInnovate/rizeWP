@@ -381,32 +381,36 @@ and Blueprint http://www.blueprintcss.org/
 	}
 	#footerNav ul li.home{
 		/*background: url(/wp-content/uploads/2015/09/menu_icons_150.png) no-repeat center 0px / 35px 150px;*/
-		background: url(../../images/menu_icons_unselected.png) no-repeat center 0px / 35px 200px;
+		background: url(../../images/menu_icons_unselected.png) no-repeat center 0px / 35px 250px;
 	}
 	#footerNav ul li.focus{
-		background: url(../../images/menu_icons_unselected.png) no-repeat center -50px / 35px 200px;
+		background: url(../../images/menu_icons_unselected.png) no-repeat center -50px / 35px 250px;
 	}
 	#footerNav ul li.mission{
-		background: url(../../images/menu_icons_unselected.png) no-repeat center -100px / 35px 200px;
+		background: url(../../images/menu_icons_unselected.png) no-repeat center -100px / 35px 250px;
 	}
 	#footerNav ul li.trending{
-		background: url(../../images/menu_icons_unselected.png) no-repeat center -150px / 35px 200px;
+		background: url(../../images/menu_icons_unselected.png) no-repeat center -150px / 35px 250px;
+	}
+	#footerNav ul li.fuego{
+		background: url(../../images/menu_icons_unselected.png) no-repeat center -200px / 35px 250px;
 	}
 
 	/* Hightlight the footer nav for the current page */
 	#frontPage #footerNav ul li.home{
-		background: url(../../images/menu_icons_selected.png) no-repeat center 0px / 35px 200px;
+		background: url(../../images/menu_icons_selected.png) no-repeat center 0px / 35px 250px;
 	}
-
 	#footerNav ul li.focus.menuOpen{
-		background: url(../../images/menu_icons_selected.png) no-repeat center -50px / 35px 200px;
+		background: url(../../images/menu_icons_selected.png) no-repeat center -50px / 35px 250px;
 	}
-
 	#pageMission #footerNav ul li.mission{
-		background: url(../../images/menu_icons_selected.png) no-repeat center -100px / 35px 200px;
+		background: url(../../images/menu_icons_selected.png) no-repeat center -100px / 35px 250px;
 	}
 	#trending #footerNav ul li.trending{
-		background: url(../../images/menu_icons_selected.png) no-repeat center -150px / 35px 200px;
+		background: url(../../images/menu_icons_selected.png) no-repeat center -150px / 35px 250px;
+	}
+	#fuego #footerNav ul li.fuego{
+		background: url(../../images/menu_icons_selected.png) no-repeat center -200px / 35px 250px;
 	}
 
 
@@ -453,6 +457,13 @@ and Blueprint http://www.blueprintcss.org/
 	}
 	.wp-caption img{
 		margin:0;
+	}
+	p#listFirstPostCredit{
+		text-align: right;
+		font-size: .8em;
+	}
+	p#listFirstPostCredit a{
+		font-weight:normal;
 	}
 
 	#postDetail .entry-content ul li, .entry-content ol li,
