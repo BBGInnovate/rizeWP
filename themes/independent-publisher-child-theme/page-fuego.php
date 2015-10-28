@@ -181,10 +181,10 @@ get_header(); ?>
 				<?php } else { ?>
 
 					<header class='entry-header'>
-						<h5 class='entry-category'><a href='<?php echo $tweetUrl; ?>' style='float:none;'>OVERHEARD ON TWITTER</a></h5>
+						<h5 class='entry-category'><a href='<?php echo $tweetUrl; ?>' style='float:none;'>Overheard on Twitter</a></h5>
 					</header>
 					<div class='entry-content twitter-conversation'>
-						<a href='https://twitter.com/<?php echo $author; ?>'>
+						<a href='https://twitter.com/<?php echo $author; ?>' target='_blank'>
 							<div class='twitterProfilePhoto' style='background-image:url(<?php echo $twitterImage ?>)'>
 								<img src='../wp-content/images/transparentSquare.png'>
 							</div>
@@ -194,7 +194,7 @@ get_header(); ?>
 								<?php echo $author; ?>
 							</p>
 							<p style='display: block; margin-bottom:0;'>
-								<a href='https://twitter.com/<?php echo $author; ?>'>@<?php echo $author; ?></a>
+								<a href='https://twitter.com/<?php echo $author; ?>' target='_blank'>@<?php echo $author; ?></a>
 							</p>
 						</div>
 						<div class='clearAll'></div>
@@ -206,7 +206,7 @@ get_header(); ?>
 						<div class='clearAll'></div>
 
 						<div class='quotedTweet'>
-							<a href='https://twitter.com/<?php echo $quoteMakerHandle; ?>'>
+							<a href='https://twitter.com/<?php echo $quoteMakerHandle; ?>' target='_blank'>
 								<div class='twitterProfilePhoto' style='background-image:url(<?php echo $quoteMakerImage; ?>)' >
 									<img src='../wp-content/images/transparentSquare.png'>
 								</div>
@@ -214,7 +214,7 @@ get_header(); ?>
 							<div class='quoteMaker'>
 								<p class='quoteMakerName'><?php echo $quoteMakerName; ?> </p>
 								<p>
-									<a href='https://twitter.com/<?php echo $quoteMakerHandle; ?>'>
+									<a href='https://twitter.com/<?php echo $quoteMakerHandle; ?>' target='_blank'>
 										@<?php echo $quoteMakerHandle; ?>
 									</a>
 								</p>
@@ -226,9 +226,9 @@ get_header(); ?>
 						</div>
 					</div>
 					<footer class="entry-meta" style='border-top:none;'>
-						<span class="byline"><span class="author vcard">first shared by <a class="url fn n" href="http://wprize/wprize/author/jflowers45/" title="View all posts by jflowers45" rel="author"><?php echo "<a href='http://twitter.com/$author'>@$author</a>"; ?></span></span>						
+						<span class="byline"><span class="author vcard">first shared by <a class="url fn n" href="http://twitter.com/<?php echo $author ?>" rel="author"><?php echo "<a href='http://twitter.com/$author'>@$author</a>"; ?></span></span>						
 						<span class="sep sep-byline"> | </span>
-						<time class="entry-date" datetime="2015-10-14T16:56:08+00:00" itemprop="datePublished" pubdate="pubdate"><?php echo $dateStamp ?></time>
+						<time class="entry-date" itemprop="datePublished" pubdate="pubdate"><?php echo $dateStamp ?></time>
 					</footer>
 
 				<?php } ?>

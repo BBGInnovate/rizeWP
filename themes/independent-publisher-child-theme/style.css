@@ -1580,6 +1580,7 @@ div.interview {
 
 #fuego h5.entry-category a{
 	float:none;
+	text-transform: none;
 }
 #fuego article {
     padding: 0 0 20px 0;
