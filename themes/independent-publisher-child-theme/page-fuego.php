@@ -24,7 +24,7 @@ get_header(); ?>
 		$fuego = new Getter();
 		$items = $fuego->getItems(20, 24, FALSE, TRUE, 2); // quantity, hours, scoring, metadata
 		$counter=0;
-		/*
+
 		function twitterify($ret) {
 			$ret = preg_replace("#(^|[\n ])([\w]+?://[\w]+[^ \"\n\r\t< ]*)#", "\\1<a href=\"\\2\" target=\"_blank\">\\2", $ret);
 			$ret = preg_replace("#(^|[\n ])((www|ftp)\.[^ \"\t\n\r< ]*)#", "\\1<a href=\"http://\\2\" target=\"_blank\">\\2", $ret);
@@ -32,7 +32,6 @@ get_header(); ?>
 			$ret = preg_replace("/#(\w+)/", "<a href=\"http://search.twitter.com/search?q=\\1\" target=\"_blank\">#\\1</a>", $ret);
 			return $ret;
 		}
-		*/
 
 		foreach ($items as $key => $item) {
 			$counter=$counter+1;
@@ -53,10 +52,9 @@ get_header(); ?>
 
 			/*replaces hashtag with links*/
 			$patternHashtag = '/(^|\s)#(\w*[a-zA-Z_]+\w*)/';
-			$replacementHashtag = '\1#<a href="http://twitter.com/search?q=%23\2">\2</a>'
+			$replacementHashtag = '\1#<a href="http://twitter.com/search?q=%23\2">\2</a>';
 
-
-			$twitterImage = $item['tw_profile_image_url'];
+			$twitterImage = $item['tw_profile_image_url'];;
 			$tweetUrl = "";
 
 			$quoteMakerName = "";
@@ -86,7 +84,8 @@ get_header(); ?>
 					$desc = preg_replace($pattern, $replacement, $desc);
 					//Replace hashtags with links.
 					//$desc = preg_replace($patternHashtag, $replacementHashtag, $desc);
-					//$desc = twitterify($desc);
+					$desc = twitterify($desc);
+
 
 
 					$twitterImage=$item['tw_profile_image_url_bigger'];
