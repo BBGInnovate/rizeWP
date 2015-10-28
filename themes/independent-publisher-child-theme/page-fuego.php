@@ -49,11 +49,6 @@ get_header(); ?>
 			$pattern = '/(https:\/\/t\.co\/)[A-z0-9\.]*/';
 			$replacement = '';
 
-
-			/*replaces hashtag with links*/
-			$patternHashtag = '/(^|\s)#(\w*[a-zA-Z_]+\w*)/';
-			$replacementHashtag = '\1#<a href="http://twitter.com/search?q=%23\2">\2</a>';
-
 			$twitterImage = $item['tw_profile_image_url'];;
 			$tweetUrl = "";
 
@@ -80,18 +75,15 @@ get_header(); ?>
 					/*If it's a quoted tweet... */
 					$isTwitter = true;
 
-					//Replace twitter link to quoted material
+					//Remove twitter link to quoted material
 					$desc = preg_replace($pattern, $replacement, $desc);
-					//Replace hashtags with links.
-					//$desc = preg_replace($patternHashtag, $replacementHashtag, $desc);
+
+					//Convert twitter links.
 					$desc = twitterify($desc);
-
-
 
 					$twitterImage=$item['tw_profile_image_url_bigger'];
 
 					$tweetUrl = $item[tw_tweet_url];
-
 
 
 					/*person quoted*/
@@ -110,6 +102,7 @@ get_header(); ?>
 					
 					if ( isset ($m['description'] ) ) {
 						$quotedTweet = $m['description'];
+						$quotedTweet = twitterify($quotedTweet);
 					}
 
 					if ( isset ($m['thumbnail_url'] ) ) {
