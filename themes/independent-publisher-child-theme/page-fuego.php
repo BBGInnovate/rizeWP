@@ -74,7 +74,7 @@ get_header(); ?>
 					$isTwitter = true;
 
 					//Remove twitter link to quoted material
-					$desc = preg_replace($'/(https:\/\/t\.co\/)[A-z0-9\.]*/', '', $desc);
+					$desc = preg_replace('/(https:\/\/t\.co\/)[A-z0-9\.]*/', '', $desc);
 
 					//Convert links, #hashtags and @name to clickable links.
 					$desc = twitterify($desc);
