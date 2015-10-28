@@ -68,8 +68,29 @@
 			if ( $useFullThumbnail) : 
 		?>
 				<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'independent-publisher' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">
-				<?php the_post_thumbnail(); ?>
+				<?php 
+					the_post_thumbnail(); 
+				?>
 				</a>
+				<?php 
+					$featured_image_data = get_post(get_post_thumbnail_id());
+					if ($featured_image_data) {
+						$featuredImageCaptionRaw=$featured_image_data->post_excerpt;
+						$featuredImageCreditRaw= get_post_meta(get_post_thumbnail_id(), '_wp_attachment_source_name', true);
+						$featuredImageCreditLink=get_post_meta(get_post_thumbnail_id(), '_wp_attachment_source_url', true);
+
+						/* PER ajm on 10/28, only show credit here*/
+						if ($featuredImageCreditRaw != "") {
+							echo "<p id='listFirstPostCredit'>";
+							if ($featuredImageCreditLink != "") {
+								echo "<a href='$featuredImageCreditLink'>$featuredImageCreditRaw</a>";
+							} else {
+								echo "$featuredImageCreditRaw";
+							}
+							echo "</p>";
+						}
+					}
+				?>
 		<?php 
 			endif; 
 			if ( $pageBodyID != "categoryPage" && strlen(independent_publisher_post_categories())>0) :
