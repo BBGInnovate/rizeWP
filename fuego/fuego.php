@@ -18,7 +18,7 @@ $algo="recent";
 $displayFormat="json";
 $minWeightedCount=2;
 $maxItems=20;
-$hours=48;
+$hours=24;
 
 $showConsole = true;
 $requireQuality=false;
