@@ -45,10 +45,6 @@ get_header(); ?>
 
 			$weightedCount = $item['weighted_count'];
 
-			/*Removes the twitter link */
-			$pattern = '/(https:\/\/t\.co\/)[A-z0-9\.]*/';
-			$replacement = '';
-
 			$twitterImage = $item['tw_profile_image_url'];;
 			$tweetUrl = "";
 
@@ -76,9 +72,9 @@ get_header(); ?>
 					$isTwitter = true;
 
 					//Remove twitter link to quoted material
-					$desc = preg_replace($pattern, $replacement, $desc);
+					$desc = preg_replace($'/(https:\/\/t\.co\/)[A-z0-9\.]*/', '', $desc);
 
-					//Convert twitter links.
+					//Convert links, #hashtags and @name to clickable links.
 					$desc = twitterify($desc);
 
 					$twitterImage=$item['tw_profile_image_url_bigger'];
