@@ -302,7 +302,10 @@ endif;
 										<?php if ( independent_publisher_categorized_blog() ) { ?>
 										
 										<?php
-											echo $featuredImageCaption;
+											if (independent_publisher_has_full_width_featured_image() ) {
+												echo $featuredImageCaption;
+											}
+											
 										?>
 
 		
@@ -360,7 +363,7 @@ endif;
 							</div>
 							<?php
 								/*Add second caption below the header div for tablet 500 - 1200px widths  views*/
-								if ($postCoverTitleWrapperExtraClass!="postCoverTitleAlwaysBelow"){
+								if ( independent_publisher_has_full_width_featured_image() &&  ($postCoverTitleWrapperExtraClass!="postCoverTitleAlwaysBelow") ) {
 									echo $featuredImageAltCaption; 
 								}
 							?>
