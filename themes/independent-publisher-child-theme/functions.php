@@ -629,7 +629,7 @@ endif;
 		if ($rawCredit != '') {
 			if ($rawCreditUrl != '') {
 				$credit="<a class='postDetailCredit' href='$rawCreditUrl'>$rawCredit</a>";
-			} else 
+			} else {
 				$credit="<span class='postDetailCredit'>$rawCredit</span>";
 			}
 		}
