@@ -35,7 +35,7 @@ get_header(); ?>
 			$ret = preg_replace("#(^|[\n ])([\w]+?://[\w]+[^ \"\n\r\t< ]*)#", "\\1<a href=\"\\2\" target=\"_blank\">\\2", $ret);
 			$ret = preg_replace("#(^|[\n ])((www|ftp)\.[^ \"\t\n\r< ]*)#", "\\1<a href=\"https://\\2\" target=\"_blank\">\\2", $ret);
 			$ret = preg_replace("/@(\w+)/", "<a href=\"https://www.twitter.com/\\1\" target=\"_blank\">@\\1</a>", $ret);
-			$ret = preg_replace("/#(\w+)/", "<a href=\"https://search.twitter.com/search?q=\\1\" target=\"_blank\">#\\1</a>", $ret);
+			$ret = preg_replace("/#(\w+)/", "<a href=\"https://twitter.com/#\\1\" target=\"_blank\">#\\1</a>", $ret);
 			return $ret;
 		}
 
@@ -145,7 +145,7 @@ get_header(); ?>
 						$title = $m['title'];	
 
 						/*trying to remove offending news org credits */
-						$search = array(' - BBC News', ' - BBC World Service', ' - CNN.com', ' - FT.com', ' - CNNPolitics.com');
+						$search = array(' - BBC News', ' - BBC World Service', ' - CNN.com', ' - FT.com', ' - CNNPolitics.com', ' - TODAY.ng');
 						$title = str_replace($search, '', $title);
 					}
 
