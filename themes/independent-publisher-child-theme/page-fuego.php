@@ -260,7 +260,6 @@ get_header(); ?>
 						</div>
 					</div>
 					<footer class="entry-meta" style='border-top:none;'>
-						<?php echo $agoTime ?>
 						<span class="byline"><span class="author vcard"><span class='firstShared'>first shared by </span><a class="url fn n" href="http://twitter.com/<?php echo $author ?>" rel="author"><?php echo "<a href='http://twitter.com/$author'>@$author</a>"; ?></span></span>						
 						<span class="sep sep-byline"> | </span>
 						<time class="entry-date" itemprop="datePublished" pubdate="pubdate"><?php echo $agoTime ?></time>
