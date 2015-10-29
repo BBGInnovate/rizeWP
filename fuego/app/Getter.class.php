@@ -15,6 +15,24 @@ class Getter {
 		return $this->_dbh;
 	}
 
+	public function hideLink($linkID) {
+		try {
+			$dbh = $this->getDbh();
+			$sql = "
+				UPDATE openfuego_links 
+				SET hiddenFlag='Y' 
+				WHERE link_id=  :linkID
+			";
+			$sth = $this->_dbh->prepare($sql);
+			$sth->bindParam('linkID', $linkID, \PDO::PARAM_INT);
+			$sth->execute();
+	
+		} catch (\PDOException $e) {
+			Logger::error($e);
+			return FALSE;
+		}
+	}
+
 	public function getItems($quantity = 10, $hours = 24, $scoring = TRUE, $metadata = FALSE, $min_weighted_count = 24) {
 	
 		$now = time();
@@ -48,6 +66,7 @@ class Getter {
 				FROM openfuego_links
 				WHERE weighted_count >= :min_weighted_count
 					AND count > 1
+					AND hiddenFlag='N'
 					AND first_seen BETWEEN DATE_SUB(:date, INTERVAL :hours HOUR) AND :date
 				ORDER BY weighted_count DESC
 				LIMIT :limit;
@@ -100,7 +119,8 @@ class Getter {
 				'first_user' => $first_user,
 				'age' => $age,
 				'multiplier' => $multiplier,
-				'score' => $score
+				'score' => $score,
+				'count' => $item['count']
 			);
 		}
 		

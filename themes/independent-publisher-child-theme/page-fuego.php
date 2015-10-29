@@ -9,6 +9,13 @@
  */
 
 $pageBodyID = "fuego";
+require(dirname(__FILE__).'/../../fuego/init.php');
+use OpenFuego\app\Getter as Getter;
+$fuego = new Getter();
+		
+if ( isset( $_GET['hideLink'] ) ) {
+	$fuego -> hideLink( $_GET['hideLink'] );
+}
 
 
 get_header(); ?>
@@ -19,9 +26,6 @@ get_header(); ?>
 		<?php 
 
 		//require('../../fuego/init.php');
-		require(dirname(__FILE__).'/../../fuego/init.php');
-		use OpenFuego\app\Getter as Getter;
-		$fuego = new Getter();
 		$items = $fuego->getItems(20, 24, FALSE, TRUE, 2); // quantity, hours, scoring, metadata
 		$counter=0;
 
@@ -44,6 +48,7 @@ get_header(); ?>
 			$image = "";
 			$provider_name = "Africa Rizing";
 			$provider_url = "https://africa.rizing.org";
+			$linkID=$item['link_id'];
 
 			$weightedCount = $item['weighted_count'];
 
@@ -232,6 +237,13 @@ get_header(); ?>
 					</footer>
 
 				<?php } ?>
+
+				<?php 
+
+					if (current_user_can('publish_posts')) {
+						echo "<a href='/fuego?hideLink=$linkID'>HIDE THIS LINK</a><BR>";
+					}
+				?>
 			</article>
 		<?php 
 
