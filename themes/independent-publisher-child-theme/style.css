@@ -1707,10 +1707,15 @@ a:hover .twitterImageCredit{
     font-family: Arial, sans-serif;
     font-weight: bold;
     background-color: #900;
-    color:#FFF;
+    color: #FFF;
     border-radius: 8px;
-    padding:5px 10px;
+    padding: 5px 10px;
+    font-size: .8em;
 }
+.hideLink:hover{
+	color: #FFF;
+}
+
 @media only screen and (min-width: 500px){
 	#fuego h1.entry-title {
 		font-size: 1.6em;
