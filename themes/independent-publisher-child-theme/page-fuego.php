@@ -161,6 +161,7 @@ get_header(); ?>
 					if ( isset ($item['localImage'] ) ) {
 						//$image=$m['thumbnail_url'];
 						$image = $item['localImage'];
+						$image = str_replace('/var/www/wordpress/','',$image);
 					}
 					if ( $image != '' ) {
 						if ($m['thumbnail_width'] <= $imageSizeMax && $m['thumbnail_height'] <= $imageSizeMax && $m['thumbnail_width'] >= $imageSizeMin){
