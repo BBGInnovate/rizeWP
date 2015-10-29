@@ -1691,7 +1691,7 @@ a:hover .twitterImageCredit{
 	display: none;
 }
 #fuego .byline{
-	display: block;
+	display: inline-block;
 }
 @media only screen and (min-width: 500px){
 	#fuego h1.entry-title {
@@ -1699,7 +1699,7 @@ a:hover .twitterImageCredit{
 		margin-top:20px;
 	}
 	#fuego .firstShared{
-		display: block;
+		display: inline-block;
 	}
 	.twitter-conversation{
 		margin-top: 20px;
