@@ -462,6 +462,7 @@ and Blueprint http://www.blueprintcss.org/
 		text-align: right;
 		font-size: .8em;
 		font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
+		color: #b3b3b1;
 	}
 	p#listFirstPostCredit a{
 		font-weight:normal;
