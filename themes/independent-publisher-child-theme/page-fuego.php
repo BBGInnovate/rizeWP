@@ -39,6 +39,30 @@ get_header(); ?>
 			return $ret;
 		}
 
+		function ago($time)
+		{
+			$periods = array("second", "minute", "hour", "day", "week", "month", "year", "decade");
+			$lengths = array("60","60","24","7","4.35","12","10");
+
+			$now = time();
+
+				$difference     = $now - $time;
+				$tense         = "ago";
+
+			for($j = 0; $difference >= $lengths[$j] && $j < count($lengths)-1; $j++) {
+			   $difference /= $lengths[$j];
+			}
+
+			$difference = round($difference);
+
+			if($difference != 1) {
+			   $periods[$j].= "s";
+			}
+
+			return "$difference $periods[$j] 'ago' ";
+		}
+
+
 		foreach ($items as $key => $item) {
 			$counter=$counter+1;
 			$title = $item['tw_text'];
@@ -62,6 +86,9 @@ get_header(); ?>
 			$quotedTweetUrl = "";
 
 			$convertedTime = $item['first_seen'];
+
+			$agoTime = ago($item['first_seen'])
+
 			$dt = new DateTime("@$convertedTime");
 			/*$dateStamp = $dt->format('Y-m-d H:i:s');*/
 			$dateStamp = $dt->format('F d, Y g:i');
@@ -175,6 +202,7 @@ get_header(); ?>
 					?>
 					</div>
 					<footer class="entry-meta" style='border-top:none;'>
+						<?php echo $agoTime ?>
 						<span class="byline">
 							<span class="author vcard"><span class='firstShared'>first shared by </span><a class="url fn n" href="http://twitter.com/<?php echo $author ?>" rel="author">
 							<?php echo "<span class='twitterImageCredit' style='background-image: url(".$twitterImage.");'>" ?>
@@ -234,6 +262,7 @@ get_header(); ?>
 						</div>
 					</div>
 					<footer class="entry-meta" style='border-top:none;'>
+						<?php echo $agoTime ?>
 						<span class="byline"><span class="author vcard"><span class='firstShared'>first shared by </span><a class="url fn n" href="http://twitter.com/<?php echo $author ?>" rel="author"><?php echo "<a href='http://twitter.com/$author'>@$author</a>"; ?></span></span>						
 						<span class="sep sep-byline"> | </span>
 						<time class="entry-date" itemprop="datePublished" pubdate="pubdate"><?php echo $dateStamp ?></time>
