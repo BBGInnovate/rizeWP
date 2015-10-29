@@ -239,11 +239,11 @@ endif;
 								}
 								if ($featuredImageCredit != "") {
 									if ($featuredImageCreditLink != "") {
-										$featuredImageCaption .= "<a href='$featuredImageCreditLink' id='featuredCredit'>$featuredImageCredit</a>";
-										$featuredImageAltCaption .= "<a href='$featuredImageCreditLink' id='featuredAltCredit'>$featuredImageCredit</a>";
+										$featuredImageCaption .= "<a class='featuredCutlineCredit' href='$featuredImageCreditLink'>$featuredImageCredit</a>";
+										$featuredImageAltCaption .= "<a class='featuredAltCutlineCredit' href='$featuredImageCreditLink'>$featuredImageCredit</a>";
 									} else {
-										$featuredImageCaption .= "<span id='featuredCredit'>$featuredImageCredit</span>";
-										$featuredImageAltCaption .= "<span id='featuredAltCredit'>$featuredImageCredit</span>";
+										$featuredImageCaption .= "<span class='featuredCutlineCredit'>$featuredImageCredit</span>";
+										$featuredImageAltCaption .= "<span class='featuredAltCutlineCredit'>$featuredImageCredit</span>";
 									}
 								}
 								$featuredImageCaption .= "</p>";
