@@ -158,9 +158,9 @@ get_header(); ?>
 					}
 
 					$image ='';
-					if ( isset ($m['localImage'] ) ) {
+					if ( isset ($item['localImage'] ) ) {
 						//$image=$m['thumbnail_url'];
-						$image = $m['localImage'];
+						$image = $item['localImage'];
 					}
 					if ( $image != '' ) {
 						if ($m['thumbnail_width'] <= $imageSizeMax && $m['thumbnail_height'] <= $imageSizeMax && $m['thumbnail_width'] >= $imageSizeMin){
