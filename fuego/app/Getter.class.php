@@ -64,6 +64,28 @@ class Getter {
 		}
 	}
 
+	public function updateLinkImage($linkID,$remoteImage,$localImage) {
+		try {
+			$dbh = $this->getDbh();
+			
+			$sql = "
+				UPDATE openfuego_links 
+				SET localImage=:localImage,
+					remoteImage=:remoteImage
+				WHERE link_id=  :linkID
+			";
+			$sth = $this->_dbh->prepare($sql);
+			$sth->bindParam('linkID', $linkID, \PDO::PARAM_INT);
+			$sth->bindParam('remoteImage', $remoteImage, \PDO::PARAM_STR);
+			$sth->bindParam('localImage', $localImage, \PDO::PARAM_STR);
+			$sth->execute();
+			
+		} catch (\PDOException $e) {
+			Logger::error($e);
+			return FALSE;
+		}
+	}
+
 
 	public function checkEmbedlyCache($linkIDArray) {
 		$sql = '
@@ -208,7 +230,7 @@ class Getter {
 			}
 			
 			if (count($urlsToFetch) > 0) {
-				echo "<!-- fetching these urls from EMBEDLY. " . implode($urlsToFetch) . "-->";
+				//echo "<!-- fetching these urls from EMBEDLY. " . implode($urlsToFetch) . "-->";
 			}
 
 			$urls_chunked = array_chunk($urlsToFetch, 20);  // Embedly handles maximum 20 URLs per request
@@ -224,10 +246,23 @@ class Getter {
 					$link_meta[$currentLinkID]=$m;
 
 					if ( isset ($m['thumbnail_url'] ) ) {
-						$image=$m['thumbnail_url'];
+						$remoteImagePath=$m['thumbnail_url'];
 
-						//currentLinkID
+						$imageSizeMax = 500; //Sets the max size for images to include as a thumbnail.
+						$imageSizeMin = 125; //Sets the min size for images to include as a thumbnail.
 						
+						if ($m['thumbnail_width'] <= $imageSizeMax && $m['thumbnail_height'] <= $imageSizeMax && $m['thumbnail_width'] >= $imageSizeMin){
+							$remoteImageArray=explode("/", $remoteImagePath);
+							$remoteImageFilename=$remoteImageArray[count($remoteImageArray)-1];
+							$extension="jpg";
+							if (stripos($remoteImageFilename,"png")) {
+								$extension="png";
+							}
+							$localFilename="/var/www/wordpress/wp-content/fuego/imgcache/" . $currentLinkID . ".$extension";;
+							self::updateLinkImage($currentLinkID, $remoteImagePath, $localFilename);
+							
+							file_put_contents($localFilename, file_get_contents($remoteImagePath));
+						}
 
 					}
 
