@@ -11,7 +11,7 @@
 
 /* ODDI CUSTOM: several variables can be passed into the header */ 
 global $ogImage, $ogTitle, $ogDescription, $ogUrl;
-global $pageBodyID, $metaAuthor, $metaKeywords;
+global $pageBodyID, $metaAuthor, $metaAuthorTwitter, $metaKeywords;
 
 if (! isset( $pageBodyID ) ) {
 	$pageBodyID="defaultPageBody";
@@ -31,6 +31,12 @@ if (! isset( $ogDescription ) ) {
 
 if (! isset( $metaAuthor ) ) {
 	$metaAuthor=DEFAULT_AUTHOR;
+}
+
+$metaTwitter = "";
+if (isset( $metaAuthorTwitter ) ) {
+	$metaAuthorTwitter = str_replace("@","", $metaAuthorTwitter);
+	$metaTwitter = '<meta name="twitter:creator" content="@'.$metaAuthorTwitter.'">';
 }
 
 if (! isset( $metaKeywords ) ) {
@@ -83,7 +89,9 @@ $ogDescription = str_replace('"','&qout;',$ogDescription);
 	<meta property="og:url" content="<?php echo $ogUrl; ?>" />
 
 	<!-- for Twitter -->
-	<meta property="twitter:card" content="summary">
+	<meta property="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@AfricaRizing">
+	<?php echo $metaTwitter ?>
 	<meta property="twitter:title" content="<?php echo $ogTitle; ?>">
 	<meta property="twitter:description" content="<?php echo $ogDescription; ?>">
 	<meta property="twitter:image" content="<?php echo $ogImage; ?>">
