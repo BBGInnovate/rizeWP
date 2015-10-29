@@ -13,7 +13,7 @@ require(dirname(__FILE__).'/../../fuego/init.php');
 use OpenFuego\app\Getter as Getter;
 $fuego = new Getter();
 		
-if ( isset( $_GET['hideLink'] ) ) {
+if (  isset( $_GET['hideLink'] ) && current_user_can('publish_posts') ) {
 	$fuego -> hideLink( $_GET['hideLink'] );
 }
 
