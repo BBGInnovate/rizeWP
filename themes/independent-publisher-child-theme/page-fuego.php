@@ -93,8 +93,8 @@ get_header(); ?>
 			$dateStamp = $dt->format('F d, Y g:i');
 
 			$imageSize = false; //Test if the image falls within a range of sizes (not too big, not too small).
-			$imageSizeMax = 500; //Sets the max size for images to include as a thumbnail.
-			$imageSizeMin = 125; //Sets the min size for images to include as a thumbnail.
+			$imageSizeMax = IMAGE_SIZE_MAX; //defined in init.php
+			$imageSizeMin = IMAGE_SIZE_MIN; //defined in init.php
 
 			$isTwitter = false;
 
@@ -158,7 +158,8 @@ get_header(); ?>
 					}
 
 					if ( isset ($m['thumbnail_url'] ) ) {
-						$image=$m['thumbnail_url'];
+						//$image=$m['thumbnail_url'];
+						$image = $m['localImage'];
 					}
 					if ( isset ($m['thumbnail_width'] ) ){
 						if ($m['thumbnail_width'] <= $imageSizeMax && $m['thumbnail_height'] <= $imageSizeMax && $m['thumbnail_width'] >= $imageSizeMin){

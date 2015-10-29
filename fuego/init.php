@@ -86,6 +86,10 @@ const
 	DB_DRIVER = 'mysql',
 	USER_AGENT = 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)',
 	REFERRER = 'http://google.com';
+
+const 
+	IMAGE_SIZE_MAX=500, 
+	IMAGE_SIZE_MIN=125;	
 /*
 if (file_exists(OPENFUEGO_DIR . '/openfuego-overrides.php')) {
 	include_once(OPENFUEGO_DIR . '/openfuego-overrides.php');
