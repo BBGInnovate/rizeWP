@@ -87,7 +87,7 @@ get_header(); ?>
 
 			$convertedTime = $item['first_seen'];
 
-			$agoTime = ago($item['first_seen'])
+			$agoTime = ago($item['first_seen']);
 
 			$dt = new DateTime("@$convertedTime");
 			/*$dateStamp = $dt->format('Y-m-d H:i:s');*/
