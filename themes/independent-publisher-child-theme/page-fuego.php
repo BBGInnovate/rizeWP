@@ -39,8 +39,7 @@ get_header(); ?>
 			return $ret;
 		}
 
-		function ago($time)
-		{
+		function ago($time) {
 			$periods = array("second", "minute", "hour", "day", "week", "month", "year", "decade");
 			$lengths = array("60","60","24","7","4.35","12","10");
 
@@ -59,7 +58,7 @@ get_header(); ?>
 			   $periods[$j].= "s";
 			}
 
-			return "$difference $periods[$j] 'ago' ";
+			return "$difference $periods[$j] ago ";
 		}
 
 
@@ -202,7 +201,6 @@ get_header(); ?>
 					?>
 					</div>
 					<footer class="entry-meta" style='border-top:none;'>
-						<?php echo $agoTime ?>
 						<span class="byline">
 							<span class="author vcard"><span class='firstShared'>first shared by </span><a class="url fn n" href="http://twitter.com/<?php echo $author ?>" rel="author">
 							<?php echo "<span class='twitterImageCredit' style='background-image: url(".$twitterImage.");'>" ?>
@@ -210,8 +208,7 @@ get_header(); ?>
 							</span>
 							<?php echo "<a href='http://twitter.com/$author'>@$author</a>"; ?></span>
 						</span>						
-						<span class="sep sep-byline"> | </span>
-						<time class="entry-date" itemprop="datePublished" pubdate="pubdate"><?php echo $dateStamp ?></time>
+						<time class="entry-date" itemprop="datePublished" pubdate="pubdate"><?php echo $agoTime ?></time>
 					</footer>
 
 				<?php } else { ?>
@@ -264,8 +261,7 @@ get_header(); ?>
 					<footer class="entry-meta" style='border-top:none;'>
 						<?php echo $agoTime ?>
 						<span class="byline"><span class="author vcard"><span class='firstShared'>first shared by </span><a class="url fn n" href="http://twitter.com/<?php echo $author ?>" rel="author"><?php echo "<a href='http://twitter.com/$author'>@$author</a>"; ?></span></span>						
-						<span class="sep sep-byline"> | </span>
-						<time class="entry-date" itemprop="datePublished" pubdate="pubdate"><?php echo $dateStamp ?></time>
+						<time class="entry-date" itemprop="datePublished" pubdate="pubdate"><?php echo $agoTime ?></time>
 					</footer>
 
 				<?php } ?>
