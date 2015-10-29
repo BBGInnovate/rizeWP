@@ -1687,11 +1687,19 @@ div.interview {
 a:hover .twitterImageCredit{
 	text-decoration: none;
 }
-
+#fuego .firstShared{
+	display: none;
+}
+#fuego .byline{
+	display: block;
+}
 @media only screen and (min-width: 500px){
 	#fuego h1.entry-title {
 		font-size: 1.6em;
 		margin-top:20px;
+	}
+	#fuego .firstShared{
+		display: block;
 	}
 	.twitter-conversation{
 		margin-top: 20px;

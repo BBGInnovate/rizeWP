@@ -119,7 +119,7 @@ get_header(); ?>
 						$title = $m['title'];	
 
 						/*trying to remove offending news org credits */
-						$search = array(' - BBC News', ' - BBC World Service', ' - CNN.com', ' - FT.com');
+						$search = array(' - BBC News', ' - BBC World Service', ' - CNN.com', ' - FT.com', ' - CNNPolitics.com');
 						$title = str_replace($search, '', $title);
 					}
 
@@ -173,7 +173,7 @@ get_header(); ?>
 					</div>
 					<footer class="entry-meta" style='border-top:none;'>
 						<span class="byline">
-							<span class="author vcard">first shared by <a class="url fn n" href="http://twitter.com/<?php echo $author ?>" rel="author">
+							<span class="author vcard"><span class='firstShared'>first shared by </span><a class="url fn n" href="http://twitter.com/<?php echo $author ?>" rel="author">
 							<?php echo "<span class='twitterImageCredit' style='background-image: url(".$twitterImage.");'>" ?>
 								<img src='../wp-content/images/transparentSquare.png'>
 							</span>
@@ -231,7 +231,7 @@ get_header(); ?>
 						</div>
 					</div>
 					<footer class="entry-meta" style='border-top:none;'>
-						<span class="byline"><span class="author vcard">first shared by <a class="url fn n" href="http://twitter.com/<?php echo $author ?>" rel="author"><?php echo "<a href='http://twitter.com/$author'>@$author</a>"; ?></span></span>						
+						<span class="byline"><span class="author vcard"><span class='firstShared'>first shared by </span><a class="url fn n" href="http://twitter.com/<?php echo $author ?>" rel="author"><?php echo "<a href='http://twitter.com/$author'>@$author</a>"; ?></span></span>						
 						<span class="sep sep-byline"> | </span>
 						<time class="entry-date" itemprop="datePublished" pubdate="pubdate"><?php echo $dateStamp ?></time>
 					</footer>
