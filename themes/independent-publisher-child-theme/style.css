@@ -1690,7 +1690,7 @@ a:hover .twitterImageCredit{
 #fuego .firstShared{
 	display: none;
 }
-#fuego .byline{
+#fuego .byline, #fuego footer.entry-meta .sep.sep-byline{
 	display: inline-block;
 }
 @media only screen and (min-width: 500px){

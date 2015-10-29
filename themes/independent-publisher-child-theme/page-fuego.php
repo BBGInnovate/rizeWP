@@ -121,6 +121,10 @@ get_header(); ?>
 						/*trying to remove offending news org credits */
 						$search = array(' - BBC News', ' - BBC World Service', ' - CNN.com', ' - FT.com', ' - CNNPolitics.com');
 						$title = str_replace($search, '', $title);
+
+						/* fix bad capitalization on BBC */
+						$BBC = 'Bbc';
+						$title = str_replace($BBC, 'BBC', $title);
 					}
 
 					if ( isset ($m['url'] ) ) {
