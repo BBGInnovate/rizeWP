@@ -33,36 +33,76 @@ class Getter {
 		}
 	}
 
+	public function updateEmbedlyCache($linkID,$embedlyJsonStr) {
+		try {
+			$dbh = $this->getDbh();
+			/*
+			$sql = "
+				UPDATE embedlyCache 
+				SET embedlyJson=:embedlyJsonStr 
+				WHERE link_id=  :linkID
+			";
+			$sth = $this->_dbh->prepare($sql);
+			$sth->bindParam('linkID', $linkID, \PDO::PARAM_INT);
+			$sth->bindParam('embedlyJsonStr', $embedlyJsonStr, \PDO::PARAM_STR);
+			$sth->execute();
+			*/
+
+			$sql="
+			INSERT IGNORE INTO embedlyCache (link_id, embedlyJson)
+			VALUES (:link_id, :embedlyJson);
+			";
+			$sth = $dbh->prepare($sql);
+			$sth->bindParam('link_id', $linkID);
+			$sth->bindParam('embedlyJson', $embedlyJsonStr);
+			$sth->execute();
+
+	
+		} catch (\PDOException $e) {
+			Logger::error($e);
+			return FALSE;
+		}
+	}
+
+
+	public function checkEmbedlyCache($linkIDArray) {
+		$sql = '
+			SELECT link_id, embedlyJSON
+			FROM embedlyCache
+			WHERE link_id IN ('.str_pad('',count($linkIDArray)*2-1,'?,').')
+		';
+		$dbh = self::getDbh();
+		$sth = $dbh->prepare($sql);
+		$sth->execute($linkIDArray);
+		$rows =$sth->fetchAll(\PDO::FETCH_ASSOC);
+
+		$embedlyData=[];
+		foreach ($rows as $row) {
+			$currentLinkID=$row['link_id'];
+			$embedlyData[$currentLinkID]= array(
+				'link_id' => $currentLinkID,
+				'embedlyJSON' => $row['embedlyJSON']
+			);
+		}
+		return $embedlyData;
+	}
+
 	public function getItems($quantity = 10, $hours = 24, $scoring = TRUE, $metadata = FALSE, $min_weighted_count = 24) {
 	
 		$now = time();
-		
 		$quantity = (int)$quantity;
 		$hours = (int)$hours;
-	
 		$date = date('Y-m-d H:i:s', $now);	
-	
-
-		/*
-		ODDI CUSTOM: we pass min weighted count in as a param
-		if ($scoring) {
-			$min_weighted_count = floor($hours/2.5+8);
-			$limit = 100;	
-		} else {
-			$min_weighted_count = 1;
-			$limit = $quantity;
-		}*/
 
 		$limit=$quantity;
 		if ($scoring === false) {
 			$min_weighted_count=1;
 		}
-
 	
 		try {
 			$dbh = $this->getDbh();
 			$sql = "
-				SELECT link_id, url, first_seen, first_user, weighted_count, count
+				SELECT link_id, url, first_seen, first_user, weighted_count, count, localImage, remoteImage
 				FROM openfuego_links
 				WHERE weighted_count >= :min_weighted_count
 					AND count > 1
@@ -88,9 +128,12 @@ class Getter {
 		if (!$items) {
 			return FALSE;
 		}
+
+		$link_ids=[];
 		foreach ($items as $item) {
 	
 			$link_id = (int)$item['link_id'];
+			$link_ids[]=$link_id;
 	
 			$url = $item['url'];
 			$weighted_count = $item['weighted_count'];
@@ -120,26 +163,18 @@ class Getter {
 				'age' => $age,
 				'multiplier' => $multiplier,
 				'score' => $score,
-				'count' => $item['count']
+				'count' => $item['count'],
+				'localImage' => $item['localImage'],
+				'remoteImage' => $item['remoteImage']
 			);
 		}
-		
+
 		$scores = array();
 		$ages = array();
 		foreach ($items_filtered as $key => $item) {
 			$scores[$key] = $scoring ? $item['score'] : $item['weighted_count'];
 			$ages[$key] = $item['age'];
 		}
-
-/*
-		foreach ($fuego_links_popular_filtered_rows as $key => $fuego_links_popular_filtered_row) {
-			if ($scoring) {	$a[$key] = $fuego_links_popular_filtered_row[6]; } // sort by score
-			else { $a[$key] = $fuego_links_popular_filtered_row[2]; } // sort by count
-			$b[$key] = $fuego_links_popular_filtered_row[4]; // then by age
-		}
-		
-		array_multisort($a, SORT_DESC, $b, SORT_ASC, $fuego_links_popular_filtered_rows);
-*/
 	
 		array_multisort($scores, SORT_DESC, $ages, SORT_ASC, $items_filtered);  // sort by score, then by age
 		
@@ -149,16 +184,54 @@ class Getter {
 	
 			$metadata_params = is_array($metadata) ? $metadata : NULL;
 			
+			/* the goal is to fill out link_meta as [$key] => [$jsonObj] */
+			$cachedLinkedIDs = self::checkEmbedlyCache($link_ids);
+
+			$linkIDsFromURL=[];
+			$linkIDsToFetch=[];
+			$urlsToFetch=[];
+			$link_meta = [];
+
 			foreach ($items_filtered as $item_filtered) {
-				$urls[] = $item_filtered['url'];
+				$thisLinkID = $item_filtered['link_id'];
+				$thisUrl = $item_filtered['url'];
+				//if this item wasn't in the DB, append it to the list of URL's to grab from the embedly API
+				if ( ! isset ( $cachedLinkedIDs[$thisLinkID] ) ) {
+					$urlsToFetch[] = $thisUrl;
+					$linkIDsToFetch[] = $thisLinkID;
+					$linkIDsFromURL[$thisUrl]=$thisLinkID;
+				} else {
+					$cacheHit=$cachedLinkedIDs[$thisLinkID]['embedlyJSON'];
+				//	var_dump($cacheHit);
+					$link_meta[$thisLinkID]=json_decode($cacheHit, TRUE);
+				}
 			}
 			
-			$link_meta = array();
-			$urls_chunked = array_chunk($urls, 20);  // Embedly handles maximum 20 URLs per request
+			if (count($urlsToFetch) > 0) {
+				echo "<!-- fetching these urls from EMBEDLY. " . implode($urlsToFetch) . "-->";
+			}
+
+			$urls_chunked = array_chunk($urlsToFetch, 20);  // Embedly handles maximum 20 URLs per request
+			$urlCounter=-1;
 			foreach ($urls_chunked as $urls_chunk) {
-				$link_meta_chunk = Metadata::instantiate()->get($urls_chunk, $metadata_params);
-				$link_meta_chunk = json_decode($link_meta_chunk, TRUE);
-				$link_meta = array_merge($link_meta, $link_meta_chunk);
+				$link_meta_json_str = Metadata::instantiate()->get($urls_chunk, $metadata_params);
+				$link_meta_chunk = json_decode($link_meta_json_str, TRUE);
+				foreach ($link_meta_chunk as $m) {
+					$urlCounter++;
+					$embedlyUrl=$m['url'];
+					$currentLinkID=$linkIDsToFetch[$urlCounter];
+					self::updateEmbedlyCache( $currentLinkID, json_encode($m));
+					$link_meta[$currentLinkID]=$m;
+
+					if ( isset ($m['thumbnail_url'] ) ) {
+						$image=$m['thumbnail_url'];
+
+						//currentLinkID
+						
+
+					}
+
+				}
 			}
 			unset($urls, $urls_chunked, $urls_chunk, $link_meta_chunk);
 		}
@@ -204,7 +277,7 @@ class Getter {
 			$item_filtered['tw_tweet_url'] = $tw_tweet_url;
 	
 			if (isset($link_meta)) {
-				$item_filtered['metadata'] = $link_meta[$key];
+				$item_filtered['metadata'] = $link_meta[$link_id];
 			}
 			
 		}
