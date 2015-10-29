@@ -244,7 +244,7 @@ get_header(); ?>
 				<?php 
 
 					if (current_user_can('publish_posts')) {
-						echo "<a href='/fuego?hideLink=$linkID' class='hideLink'>HIDE THIS LINK?</a><BR>";
+						echo "<a href='/fuego?hideLink=$linkID' class='hideLink'>Hide this link</a><BR>";
 					}
 				?>
 			</article>

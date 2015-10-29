@@ -1706,6 +1706,10 @@ a:hover .twitterImageCredit{
     top: -30px;
     font-family: Arial, sans-serif;
     font-weight: bold;
+    background-color: #900;
+    color:#FFF;
+    border-radius: 8px;
+    padding:5px 10px;
 }
 @media only screen and (min-width: 500px){
 	#fuego h1.entry-title {
