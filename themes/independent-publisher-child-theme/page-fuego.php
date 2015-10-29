@@ -157,11 +157,12 @@ get_header(); ?>
 						$desc = '<p>'.$m['description'].'</p>';
 					}
 
-					if ( isset ($m['thumbnail_url'] ) ) {
+					$image ='';
+					if ( isset ($m['localImage'] ) ) {
 						//$image=$m['thumbnail_url'];
 						$image = $m['localImage'];
 					}
-					if ( isset ($m['thumbnail_width'] ) ){
+					if ( $image != '' ) {
 						if ($m['thumbnail_width'] <= $imageSizeMax && $m['thumbnail_height'] <= $imageSizeMax && $m['thumbnail_width'] >= $imageSizeMin){
 							$imageSize = true;
 						}
