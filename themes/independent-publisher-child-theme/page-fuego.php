@@ -121,10 +121,6 @@ get_header(); ?>
 						/*trying to remove offending news org credits */
 						$search = array(' - BBC News', ' - BBC World Service', ' - CNN.com', ' - FT.com', ' - CNNPolitics.com');
 						$title = str_replace($search, '', $title);
-
-						/* fix bad capitalization on BBC */
-						$BBC = 'Bbc';
-						$title = str_replace($BBC, 'BBC', $title);
 					}
 
 					if ( isset ($m['url'] ) ) {
@@ -146,6 +142,9 @@ get_header(); ?>
 
 					if ( isset ($m['provider_name'] ) ) {
 						$provider_name=$m['provider_name'];
+
+						/* fix bad capitalization on BBC */
+						$provider_name = str_replace('Bbc', 'BBC', $provider_name);
 					}
 
 					if ( isset ($m['provider_url'] ) ) {
