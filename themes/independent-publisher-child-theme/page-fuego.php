@@ -255,26 +255,17 @@ get_header(); ?>
 
 		?>
 
+		<script type="text/javascript">
+			jQuery(document).ready(function(){
+				setTimeout(function() {window.location.reload();}, 300000);
+			});
+		</script>
+
 		</main>
 		<!-- #content .site-content -->
 	</div><!-- #primary .content-area -->
 
 <?php 
-
-/* 
-			<article>
-				<header class='entry=header'>
-					<h5 class='entry-category'><a>fuego</a></h5>
-					<h1 class='entry-title'>title</h1>
-				</header>
-				<div class='entry-content'>body</div>
-				<footer class="entry-meta" style='border-top:none;'>
-					<span class="byline"><span class="author vcard"><a class="url fn n" href="http://wprize/wprize/author/jflowers45/" title="View all posts by jflowers45" rel="author">twitterHandle</a></span></span>						
-					<span class="sep sep-byline"> | </span>
-					<time class="entry-date" datetime="2015-10-14T16:56:08+00:00" itemprop="datePublished" pubdate="pubdate">date</time>
-				</footer>
-			</article>*/
-
 
 get_sidebar(); ?>
 <?php get_footer(); ?>
