@@ -631,9 +631,9 @@ endif;
 		$credit='';
 		if ($rawCredit != '') {
 			if ($rawCreditUrl != '') {
-				$credit="<a class='postDetailCredit' href='$rawCreditUrl'>$rawCredit</a>";
+				$credit=" <a class='postDetailCredit' href='$rawCreditUrl'>$rawCredit</a>";
 			} else {
-				$credit="<span class='postDetailCredit'>$rawCredit</span>";
+				$credit=" <span class='postDetailCredit'>$rawCredit</span>";
 			}
 		}
 
