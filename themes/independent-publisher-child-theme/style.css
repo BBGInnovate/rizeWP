@@ -466,6 +466,14 @@ and Blueprint http://www.blueprintcss.org/
 		font-weight:normal;
 	}
 
+	.featuredCreditNoCover, .featuredCutlineCredit{
+		font-weight: normal !important;
+	}
+
+	.archive .wp-post-image, .blog .wp-post-image, .page .wp-post-image, .single .wp-post-image, .single-attachment .entry-title-meta{
+		margin-bottom: 0;
+	}
+
 	#postDetail .entry-content ul li, .entry-content ol li,
 	#trending .entry-content ul li, .entry-content ol li,
 	{
