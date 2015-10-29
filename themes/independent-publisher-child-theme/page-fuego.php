@@ -93,8 +93,8 @@ get_header(); ?>
 			$dateStamp = $dt->format('F d, Y g:i');
 
 			$imageSize = false; //Test if the image falls within a range of sizes (not too big, not too small).
-			$imageSizeMax = OpenFuego\IMAGE_SIZE_MAX;IMAGE_SIZE_MAX; //defined in init.php
-			$imageSizeMin = OpenFuego\IMAGE_SIZE_MAX;IMAGE_SIZE_MIN; //defined in init.php
+			$imageSizeMax = OpenFuego\IMAGE_SIZE_MAX; //defined in init.php
+			$imageSizeMin = OpenFuego\IMAGE_SIZE_MAX; //defined in init.php
 
 			$isTwitter = false;
 
