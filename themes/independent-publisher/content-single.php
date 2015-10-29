@@ -7,7 +7,48 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
 	<?php if ( has_post_thumbnail() && ! independent_publisher_has_full_width_featured_image() ) : ?>
-		<?php the_post_thumbnail( 'independent_publisher_post_thumbnail', array( 'itemprop' => 'image' ) ); ?>
+		<?php 
+
+			the_post_thumbnail( 'independent_publisher_post_thumbnail', array( 'itemprop' => 'image' ) ); 
+			/* ODDI CUSTOM: SHOW CAPTION + CREDIT */
+			$featuredImageCaptionRaw="";
+			$featuredImageCaption="";
+			$featuredImageAltCaption="";
+
+			$featuredImageCredit="";
+			$featuredImageCreditLink="";
+			$featured_image_data = get_post(get_post_thumbnail_id());
+
+			/* var_dump($featured_image_data); */
+
+			if ($featured_image_data) {
+				$featuredImageCaptionRaw=$featured_image_data->post_excerpt;
+				$featuredImageCredit= get_post_meta(get_post_thumbnail_id(), '_wp_attachment_source_name', true);
+				$featuredImageCreditLink=get_post_meta(get_post_thumbnail_id(), '_wp_attachment_source_url', true);
+
+				/** if we have either a caption or a credit, we're going to show the <p> **/
+				if ($featuredImageCaptionRaw != "" || $featuredImageCredit != "") {
+					$featuredImageCaption="<p class='wp-caption-text'>";
+					
+					if ($featuredImageCaptionRaw != "") {
+						$featuredImageCaption .= $featuredImageCaptionRaw;
+					}
+					if ($featuredImageCredit != "") {
+						if ($featuredImageCreditLink != "") {
+							$featuredImageCaption .= "<a id='featuredCredit' href='$featuredImageCreditLink'>$featuredImageCredit</a>";
+						} else {
+							$featuredImageCaption .= "<span id='featuredCredit'>$featuredImageCredit</span>";
+						}
+					}
+					$featuredImageCaption .= "</p>";
+					
+				}
+			}
+
+			echo $featuredImageCaption;
+
+
+		?>
 	<?php endif; ?>
 
 	<header class="entry-header">
