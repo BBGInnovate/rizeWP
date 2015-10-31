@@ -248,8 +248,8 @@ class Getter {
 					if ( isset ($m['thumbnail_url'] ) ) {
 						$remoteImagePath=$m['thumbnail_url'];
 
-						$imageSizeMax = OpenFuego\IMAGE_SIZE_MAX; //Sets the max size for images to include as a thumbnail.
-						$imageSizeMin = OpenFuego\IMAGE_SIZE_MIN; //Sets the min size for images to include as a thumbnail.
+						$imageSizeMax = \OpenFuego\IMAGE_SIZE_MAX; //Sets the max size for images to include as a thumbnail.
+						$imageSizeMin = \OpenFuego\IMAGE_SIZE_MIN; //Sets the min size for images to include as a thumbnail.
 						
 						if ($m['thumbnail_width'] <= $imageSizeMax && $m['thumbnail_height'] <= $imageSizeMax && $m['thumbnail_width'] >= $imageSizeMin){
 							$remoteImageArray=explode("/", $remoteImagePath);
