@@ -113,6 +113,7 @@ get_header(); ?>
 					$desc = twitterify($desc);
 
 					$twitterImage=$item['tw_profile_image_url_bigger'];
+					$twitterImage=str_replace("http:","https:",$twitterImage);
 
 					$tweetUrl = $item[tw_tweet_url];
 
