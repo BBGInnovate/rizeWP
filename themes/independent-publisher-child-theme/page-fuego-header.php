@@ -137,9 +137,6 @@ img.emoji {
 												
 <div id="page" class="hfeed site">
 
-	<header id="masthead" class="site-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
-
-
 
 
 <div class="author-bio">
@@ -154,6 +151,9 @@ img.emoji {
 	<!-- .author-description -->
 </div>
 
+
+
+	<header id="masthead" class="site-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
 		<div class="site-header-info">
 											
