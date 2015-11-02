@@ -2,8 +2,7 @@
 <!DOCTYPE html>
 <html itemscope="itemscope" itemtype="http://schema.org/Article" lang="en-US">
 <head>
-	<?php $trendingDescription = 'an auto-generated stream of trending links, stories and conversations from our community of influencers — inspired by <a href="https://github.com/niemanlab/openfuego" target="_blank">Fuego</a>'; ?>
-	
+	<?php $trendingDescription = 'A collection of the stories and conversations that are trending across our audience.'; ?>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 	<title>Trending &#8211; Africa Rizing</title>
@@ -96,45 +95,6 @@ img.emoji {
 <li id="menu-item-418" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-418"><a href="http://tinyletter.com/africarizing"><span class="screen-reader-text">Newsletter</span></a></li>
 </ul></div>	</div>
 
-
-
-
-						<!--<div class="post-cover-title-wrapper postCoverTitleAlwaysBelow">
-							
-								<div class="post-cover-title-head">
-									<header class="post-cover-title">
-																				
-										
-		-->
-									<?php 
-									/*
-									<h5 class="entry-category"><a href="<?php echo site_url() . "/"; ?>category/trending" title="View all posts in Trending">Trending</a></h5>										
-									*/
-									?><!--
-										<div id='socialPost'>
-											<ul>
-												<li class='facebook'><a class="share" id="facebook" href="//www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fafrica2.rizing.org%2Fredsummit-obasanjo-ofori-harlem-wash-your-hands"></a></li>
-												<li class='twitter'><a class="share" id="twitter" href="//twitter.com/intent/tweet?text=%23TheREDSummit%2C+Obasanjo%2C+Ofori%2C+Harlem%2C+Wash+your+hands+by+%40AfricaRizing+https%3A%2F%2Fafrica2.rizing.org%2Fredsummit-obasanjo-ofori-harlem-wash-your-hands"></a></li>
-											</ul>
-										</div>
-
-										
-																					
-																				
-																																									<h3 class="entry-title-meta">
-												<span class="entry-title-meta-author">
-													<a class="author-avatar" href="<?php echo site_url() . "/"; ?>author/trending">
-														<img src="<?php echo site_url() . "/"; ?>wp-content/uploads/2015/10/trending-150x150.png" width="32" height="32" alt="Trending" class="avatar avatar-32 wp-user-avatar wp-user-avatar-32 alignnone photo" />													</a>
-													<span class="byline"><span class="author vcard"><a class="url fn n" href="<?php echo site_url() . "/"; ?>author/trending" title="View all posts by Trending" rel="author">Trending</a></span></span>												</span>
-																								<span class="entry-title-meta-post-date">
-													<span class="sep"> | </span>
-													<time class="entry-date" datetime="2015-10-15T11:39:10+00:00" itemprop="datePublished" pubdate="pubdate">October 15, 2015</time> 
-												</span>
-																							</h3>
-																			</header>
-								</div>
-
-							</div>-->
 												
 <div id="page" class="hfeed site">
 
