@@ -123,7 +123,7 @@ img.emoji {
 				<img src="<?php echo site_url() . "/"; ?>wp-content/uploads/2015/10/trending-150x150.png" width="100" height="100" alt="Trending" class="avatar avatar-100 wp-user-avatar wp-user-avatar-100 alignnone photo" />			</a>
 		
 		<h1 class="site-title"><span class="byline"><span class="author vcard"><a class="url fn n" href="<?php echo site_url() . "/"; ?>author/trending" title="View all posts by Trending" rel="author">Trending</a></span></span></h1>
-		<h2 class="site-description">A collection of the stories and conversations that are trending across our audience.</h2>
+		<h2 class="site-description"><?php echo $trendingDescription ?></h2>
 
 		<div id="menu-social" class="menu"><ul id="menu-social-items" class="menu-items"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-28"><a href="https://www.facebook.com/africarizing"><span class="screen-reader-text">Facebook</span></a></li>
 <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27"><a href="http://twitter.com/africarizing"><span class="screen-reader-text">@AfricaRizing</span></a></li>
