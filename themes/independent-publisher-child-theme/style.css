@@ -654,7 +654,7 @@ and Blueprint http://www.blueprintcss.org/
 		max-width: 150px;
 	}
 
-	#authorPage.author div.author-bio{
+	#authorPage.author div.author-bio, #fuego div.author-bio{
 		border-bottom: 1px dashed #CCC;
 	    padding-bottom: 20px;
 	    margin-bottom: 40px;
@@ -666,7 +666,7 @@ and Blueprint http://www.blueprintcss.org/
 	    margin-bottom: 30px;
 	}
 
-	#categoryPage .archive-avatar{
+	#categoryPage .archive-avatar, #fuego .author-avatar img{
 		display: none;
 		width: 70px;
 		height:70px;
@@ -681,13 +681,12 @@ and Blueprint http://www.blueprintcss.org/
 		background: url(../../images/trending.png) no-repeat center / cover;
 	}
 
-
 	.archive.author .archive-title{max-width: 100%; margin:0;}
-	.author h1.archive-title, .category h1.archive-title{text-align: center; width: 100%; /*text-align:left;*/}
-	.author .author-avatar, #categoryPage .archive-avatar{text-align: center; margin-top: 10px;/*text-align:left;*/}
-	.author .author-avatar img, #categoryPage .archive-avatar img{margin-top: 0; float: none;/* margin-top: -85; float: left;*/}
+	.author h1.archive-title, .category h1.archive-title, #fuego  h1.archive-title {text-align: center; width: 100%; /*text-align:left;*/}
+	.author .author-avatar, #categoryPage .archive-avatar, #fuego .author-avatar {text-align: center; margin-top: 10px;/*text-align:left;*/}
+	.author .author-avatar img, #categoryPage .archive-avatar img, #fuego .author-avatar img {margin-top: 0; float: none;/* margin-top: -85; float: left;*/}
 
-	.author .author-description, .category .category-description{
+	.author .author-description, .category .category-description, #fuego .author-description{
 		margin:0;
 		text-align: center;
 		color: #999;
@@ -728,7 +727,7 @@ and Blueprint http://www.blueprintcss.org/
 	}
 	@media (min-width: 700px){
 
-		.author h1.archive-title, #categoryPage h1.archive-title{font-size: 3.5em;}
+		.author h1.archive-title, #categoryPage h1.archive-title, #fuego h1.archive-title{font-size: 3.5em;}
 	}
 
 
@@ -1752,87 +1751,3 @@ a:hover .twitterImageCredit{
 		margin: 0;
 	}
 }
-
-
-
-
-
-#fuego div.author-bio{
-		border-bottom: 1px dashed #CCC;
-	    padding-bottom: 20px;
-	    margin-bottom: 40px;
-	}
-/*
-	#categoryPage div.archive-bio{
-		border-bottom: 1px dashed #CCC;
-	    padding-bottom: 20px;
-	    margin-bottom: 30px;
-	}
-
-	#categoryPage .archive-avatar{
-		display: none;
-		width: 70px;
-		height:70px;
-		border-radius: 50%;
-		background-color: orange;
-		margin:0 auto;
-	}
-*/
-	/* Add background images for categories with icons. */
-	/*
-	#categoryPage.category-trending .archive-avatar{
-		display: block;
-		background: url(../../images/trending.png) no-repeat center / cover;
-	}
-	*/
-
-
-	/*.archive.author .archive-title{max-width: 100%; margin:0;}*/
-	#fuego  h1.archive-title {text-align: center; width: 100%; /*text-align:left;*/}
-	#fuego  .author-avatar {text-align: center; margin-top: 10px;/*text-align:left;*/}
-	#fuego .author-avatar img {margin-top: 0; float: none;/* margin-top: -85; float: left;*/}
-
-	#fuego .author-description{
-		margin:0;
-		text-align: center;
-		color: #999;
-		/*font-style: italic;*/
-		font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
-	}
-
-	@media (min-width: 500px){
-		/*#categoryPage .archive-avatar{
-			width: 150px;
-			height:150px;
-		}
-
-		.author .author-avatar, #categoryPage .archive-avatar{text-align: left; margin-top: 10px; float:left;}
-		.author .author-avatar img, #categoryPage .archive-avatar img{margin-top: 0; float: left;}
-
-		.author h1.archive-title, #categoryPage.category-trending h1.archive-title{text-align: left; width: auto; clear:none; font-size: 2.5em;}
-
-
-		#categoryPage .archive-bio h1.archive-title{
-			margin:0; 
-			text-align: left;
-		}
-		#categoryPage .category-description{
-			text-align: left;
-		}
-
-		.archive.author .archive-title, 
-		#categoryPage.category-trending .archive-bio h1.archive-title{
-			padding: 0 0 0 170px;
-		}
-		.author .author-description, 
-		#categoryPage.category-trending .category-description{
-			padding:0 0 0 170px;
-			text-align: left;
-		}
-		*/
-	}
-	@media (min-width: 700px){
-
-		#fuego  h1.archive-title{font-size: 3.5em;}
-	}
-
