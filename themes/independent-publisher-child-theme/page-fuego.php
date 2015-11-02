@@ -138,6 +138,7 @@ get_header(); ?>
 
 					if ( isset ($m['thumbnail_url'] ) ) {
 						$quoteMakerImage = $m['thumbnail_url'];
+						$quoteMakerImage = str_replace("http:","https:", $quoteMakerImage);
 					}
 
 				}else{
