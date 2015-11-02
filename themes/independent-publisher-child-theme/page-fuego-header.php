@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html itemscope="itemscope" itemtype="http://schema.org/Article" lang="en-US">
 <head>
+	<?php var $trendingDescription = 'A collection of the stories and conversations that are trending across our audience.'; ?>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 	<title>Trending &#8211; Africa Rizing</title>
@@ -15,23 +16,23 @@
 	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="/wp-content/images/retina-icon.png" />
 
 	<!-- for Google -->
-	<meta name="description" content="The RED Summit is streaming live from Lagos. The 2-day conference features some of West Africa&#8217;s most influential media figures, including two of our favorites, Binyavanga Wainaina (@BinyavangaW) and Bankole Oluwafemi (@MrBankole). Look for hashtag, #TheREDSummit to follow it live."/>
+	<meta name="description" content="<?php echo $trendingDescription; ?>"/>
 	<meta name="keywords" content="" />
 	<meta name="author" content="Trending" />
 
 	<!-- for Facebook -->
 	<meta property="og:locale" content="en_US">
 	<meta property="og:type" content="website" />
-	<meta property="og:title" content="#TheREDSummit, Obasanjo, Ofori, Harlem, Wash your hands" />
-	<meta property="og:description" content="The RED Summit is streaming live from Lagos. The 2-day conference features some of West Africa&#8217;s most influential media figures, including two of our favorites, Binyavanga Wainaina (@BinyavangaW) and Bankole Oluwafemi (@MrBankole). Look for hashtag, #TheREDSummit to follow it live." />
+	<meta property="og:title" content="Africa Rizing: Trending" />
+	<meta property="og:description" content="<?php echo $trendingDescription; ?>" />
 	<meta property="og:image" content="<?php echo site_url() . "/"; ?>wp-content/uploads/2015/09/cropped-Rize-socialprofiles_500.png" />
 	<meta property="og:url" content="<?php echo site_url() . "/"; ?>redsummit-obasanjo-ofori-harlem-wash-your-hands" />
 
 	<!-- for Twitter -->
 	<meta property="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@AfricaRizing">
-		<meta property="twitter:title" content="#TheREDSummit, Obasanjo, Ofori, Harlem, Wash your hands">
-	<meta property="twitter:description" content="The RED Summit is streaming live from Lagos. The 2-day conference features some of West Africa&#8217;s most influential media figures, including two of our favorites, Binyavanga Wainaina (@BinyavangaW) and Bankole Oluwafemi (@MrBankole). Look for hashtag, #TheREDSummit to follow it live.">
+		<meta property="twitter:title" content="Africa Rizing: Trending">
+	<meta property="twitter:description" content="<?php echo $trendingDescription; ?>">
 	<meta property="twitter:image" content="<?php echo site_url() . "/"; ?>wp-content/uploads/2015/09/cropped-Rize-socialprofiles_500.png">
 	<meta property="twitter:url" content="<?php echo site_url() . "/"; ?>redsummit-obasanjo-ofori-harlem-wash-your-hands">
 
@@ -140,7 +141,7 @@ img.emoji {
 				<img src="<?php echo site_url() . "/"; ?>wp-content/uploads/2015/10/trending-150x150.png" width="100" height="100" alt="Trending" class="avatar avatar-100 wp-user-avatar wp-user-avatar-100 alignnone photo" />			</a>
 		
 		<h1 class="site-title"><span class="byline"><span class="author vcard"><a class="url fn n" href="<?php echo site_url() . "/"; ?>author/trending" title="View all posts by Trending" rel="author">Trending</a></span></span></h1>
-		<h2 class="site-description">Our daily digest of the links, trends, hashtags and stories that matter most</h2>
+		<h2 class="site-description">A collection of the stories and conversations that are trending across our audience.</h2>
 
 		<div id="menu-social" class="menu"><ul id="menu-social-items" class="menu-items"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-28"><a href="https://www.facebook.com/africarizing"><span class="screen-reader-text">Facebook</span></a></li>
 <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27"><a href="http://twitter.com/africarizing"><span class="screen-reader-text">@AfricaRizing</span></a></li>
