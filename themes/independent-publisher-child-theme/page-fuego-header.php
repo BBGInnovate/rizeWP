@@ -95,18 +95,34 @@ img.emoji {
 <li id="menu-item-418" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-418"><a href="http://tinyletter.com/africarizing"><span class="screen-reader-text">Newsletter</span></a></li>
 </ul></div>	</div>
 
-						<div class="post-cover-title-wrapper postCoverTitleAlwaysBelow">
+
+
+<div class="author-bio">
+	<div class="author-avatar">
+		<img src="https://africa2.rizing.org/wp-content/uploads/2015/10/trending-150x150.png" width="150" height="150" alt="Trending" class="avatar avatar-150 wp-user-avatar wp-user-avatar-150 alignnone photo" data-pin-nopin="true">	</div>
+	
+	<h1 class="archive-title"><span class="vcard"><a class="url fn n" href="https://africa2.rizing.org/author/trending" title="Trending" rel="me">Trending</a></span></h1>
+
+	<div class="author-description">
+			<div id="authorContact"><a href="//www.twitter.com/AfricaRizing">@AfricaRizing</a> </div>		<p class="author-bio">
+							Our daily digest of the links, trends, hashtags and stories that matter most					</p>
+		<div class="clearAll"></div>
+	</div>
+	<!-- .author-description -->
+</div>
+
+						<!--<div class="post-cover-title-wrapper postCoverTitleAlwaysBelow">
 							
 								<div class="post-cover-title-head">
 									<header class="post-cover-title">
 																				
 										
-		
+		-->
 									<?php 
 									/*
 									<h5 class="entry-category"><a href="<?php echo site_url() . "/"; ?>category/trending" title="View all posts in Trending">Trending</a></h5>										
 									*/
-									?>
+									?><!--
 										<div id='socialPost'>
 											<ul>
 												<li class='facebook'><a class="share" id="facebook" href="//www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fafrica2.rizing.org%2Fredsummit-obasanjo-ofori-harlem-wash-your-hands"></a></li>
@@ -130,7 +146,7 @@ img.emoji {
 																			</header>
 								</div>
 
-							</div>
+							</div>-->
 												
 <div id="page" class="hfeed site">
 	<header id="masthead" class="site-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
