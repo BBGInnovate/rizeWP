@@ -105,7 +105,11 @@ img.emoji {
 																				
 										
 		
-																					<h5 class="entry-category"><a href="<?php echo site_url() . "/"; ?>category/trending" title="View all posts in Trending">Trending</a></h5>										
+									<?php 
+									/*
+									<h5 class="entry-category"><a href="<?php echo site_url() . "/"; ?>category/trending" title="View all posts in Trending">Trending</a></h5>										
+									*/
+									?>
 										<div id='socialPost'>
 											<ul>
 												<li class='facebook'><a class="share" id="facebook" href="//www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fafrica2.rizing.org%2Fredsummit-obasanjo-ofori-harlem-wash-your-hands"></a></li>
@@ -114,8 +118,7 @@ img.emoji {
 										</div>
 
 										
-																					<h1 class="entry-title" itemprop="name">
-												#TheREDSummit, Obasanjo, Ofori, Harlem, Wash your hands											</h1>
+																					
 																				
 																																									<h3 class="entry-title-meta">
 												<span class="entry-title-meta-author">
