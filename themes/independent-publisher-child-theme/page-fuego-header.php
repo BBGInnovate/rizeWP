@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html itemscope="itemscope" itemtype="http://schema.org/Article" lang="en-US">
 <head>
-	<?php var $trendingDescription = 'A collection of the stories and conversations that are trending across our audience.'; ?>
+	<?php $trendingDescription = 'A collection of the stories and conversations that are trending across our audience.'; ?>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 	<title>Trending &#8211; Africa Rizing</title>
