@@ -75,7 +75,9 @@ get_header(); ?>
 
 			$weightedCount = $item['weighted_count'];
 
-			$twitterImage = $item['tw_profile_image_url'];;
+			$twitterImage = $item['tw_profile_image_url'];
+			$twitterImage=str_replace("http:","https:",$twitterImage);
+
 			$tweetUrl = "";
 
 			$quoteMakerName = "";
