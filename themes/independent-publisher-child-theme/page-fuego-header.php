@@ -2,7 +2,8 @@
 <!DOCTYPE html>
 <html itemscope="itemscope" itemtype="http://schema.org/Article" lang="en-US">
 <head>
-	<?php $trendingDescription = 'A collection of the stories and conversations that are trending across our audience.'; ?>
+	<?php /*$trendingDescription = 'A collection of the stories and conversations that are trending across our audience.'; */ ?>
+	<?php $trendingDescription = 'an auto-generated stream of trending links, stories and conversations from our community of influencers — inspired by <a href="https://github.com/niemanlab/openfuego" target="_blank">Fuego</a>'; ?>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 	<title>Trending &#8211; Africa Rizing</title>
