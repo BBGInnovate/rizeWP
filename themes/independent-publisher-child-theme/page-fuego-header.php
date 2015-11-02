@@ -2,7 +2,8 @@
 <!DOCTYPE html>
 <html itemscope="itemscope" itemtype="http://schema.org/Article" lang="en-US">
 <head>
-	<?php $trendingDescription = 'A collection of the stories and conversations that are trending across our audience.'; ?>
+	<?php $trendingDescription = 'an auto-generated stream of trending links, stories and conversations from our community of influencers — inspired by <a href="https://github.com/niemanlab/openfuego" target="_blank">Fuego</a>'; ?>
+	
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 	<title>Trending &#8211; Africa Rizing</title>
@@ -138,17 +139,17 @@ img.emoji {
 <div id="page" class="hfeed site">
 
 
-
 <div class="author-bio">
 	<div class="author-avatar">
-		<img src="https://africa2.rizing.org/wp-content/uploads/2015/10/trending-150x150.png" width="150" height="150" alt="Trending" class="avatar avatar-150 wp-user-avatar wp-user-avatar-150 alignnone photo" data-pin-nopin="true">	</div>
+		<img src="https://africa2.rizing.org/wp-content/uploads/2015/10/trending-150x150.png" width="150" height="150" alt="Trending" class="avatar avatar-150 wp-user-avatar wp-user-avatar-150 alignnone photo" data-pin-nopin="true">
+	</div>
 	
-	<h1 class="archive-title"><span class="vcard"><a class="url fn n" href="https://africa2.rizing.org/author/trending" title="Trending" rel="me">Trending</a></span></h1>
+	<h1 class="archive-title"><span class="vcard">Trending</span></h1>
 
-	<div class="author-description"><?php echo $trendingDescription ?></p>
+	<div class="author-description">
+		<p><?php echo $trendingDescription ?></p>
 		<div class="clearAll"></div>
 	</div>
-	<!-- .author-description -->
 </div>
 
 
