@@ -95,7 +95,7 @@ $ogDescription = str_replace('"','&qout;',$ogDescription);
 	<meta property="twitter:title" content="<?php echo $ogTitle; ?>">
 	<meta property="twitter:description" content="<?php echo $ogDescription; ?>">
 	<meta property="twitter:image" content="<?php echo $ogImage; ?>">
-	<meta property="twitter:url" content="<?php echo $ogUrl; ?>">
+	<?php /* <meta property="twitter:url" content="<?php echo $ogUrl; ?>"> */ ?>
 
 	<!-- other og:tags -->
 	<meta property="og:site_name" content="<?php echo get_bloginfo('name'); ?>" />
