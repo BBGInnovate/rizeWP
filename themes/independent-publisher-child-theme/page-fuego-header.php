@@ -97,19 +97,6 @@ img.emoji {
 
 
 
-<div class="author-bio">
-	<div class="author-avatar">
-		<img src="https://africa2.rizing.org/wp-content/uploads/2015/10/trending-150x150.png" width="150" height="150" alt="Trending" class="avatar avatar-150 wp-user-avatar wp-user-avatar-150 alignnone photo" data-pin-nopin="true">	</div>
-	
-	<h1 class="archive-title"><span class="vcard"><a class="url fn n" href="https://africa2.rizing.org/author/trending" title="Trending" rel="me">Trending</a></span></h1>
-
-	<div class="author-description">
-			<div id="authorContact"><a href="//www.twitter.com/AfricaRizing">@AfricaRizing</a> </div>		<p class="author-bio">
-							Our daily digest of the links, trends, hashtags and stories that matter most					</p>
-		<div class="clearAll"></div>
-	</div>
-	<!-- .author-description -->
-</div>
 
 						<!--<div class="post-cover-title-wrapper postCoverTitleAlwaysBelow">
 							
@@ -149,7 +136,24 @@ img.emoji {
 							</div>-->
 												
 <div id="page" class="hfeed site">
+
 	<header id="masthead" class="site-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+
+
+
+
+<div class="author-bio">
+	<div class="author-avatar">
+		<img src="https://africa2.rizing.org/wp-content/uploads/2015/10/trending-150x150.png" width="150" height="150" alt="Trending" class="avatar avatar-150 wp-user-avatar wp-user-avatar-150 alignnone photo" data-pin-nopin="true">	</div>
+	
+	<h1 class="archive-title"><span class="vcard"><a class="url fn n" href="https://africa2.rizing.org/author/trending" title="Trending" rel="me">Trending</a></span></h1>
+
+	<div class="author-description"><?php echo $trendingDescription ?></p>
+		<div class="clearAll"></div>
+	</div>
+	<!-- .author-description -->
+</div>
+
 
 		<div class="site-header-info">
 											
