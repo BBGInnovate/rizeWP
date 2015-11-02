@@ -18,7 +18,10 @@ if (  isset( $_GET['hideLink'] ) && current_user_can('publish_posts') ) {
 }
 
 
-get_header(); ?>
+//get_header(); 
+include("page-fuego-header.php");
+
+?>
 
 	<div id="primary" class="content-area">
 		<main id="content" class="site-content" role="main">
@@ -294,11 +297,10 @@ get_header(); ?>
 			});
 		</script>
 
-		</main>
-		<!-- #content .site-content -->
-	</div><!-- #primary .content-area -->
+		
 
 <?php 
 
-get_sidebar(); ?>
-<?php get_footer(); ?>
+include("page-fuego-footer.php");
+
+?>
