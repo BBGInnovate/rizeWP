@@ -95,13 +95,10 @@ img.emoji {
 <li id="menu-item-418" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-418"><a href="http://tinyletter.com/africarizing"><span class="screen-reader-text">Newsletter</span></a></li>
 </ul></div>	</div>
 
-
-<style>
-</style>
-						<div class="post-cover-title-wrapper postCoverTitleAlwaysBelow">
+					<!--	<div class="post-cover-title-wrapper postCoverTitleAlwaysBelow">
 							
-															<div class="post-cover-title-head">
-									<header class="post-cover-title">
+								<div class="post-cover-title-head">
+									<header class="post-cover-title">-->
 																				
 										
 		
@@ -110,7 +107,7 @@ img.emoji {
 									<h5 class="entry-category"><a href="<?php echo site_url() . "/"; ?>category/trending" title="View all posts in Trending">Trending</a></h5>										
 									*/
 									?>
-										<div id='socialPost'>
+							<!--			<div id='socialPost'>
 											<ul>
 												<li class='facebook'><a class="share" id="facebook" href="//www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fafrica2.rizing.org%2Fredsummit-obasanjo-ofori-harlem-wash-your-hands"></a></li>
 												<li class='twitter'><a class="share" id="twitter" href="//twitter.com/intent/tweet?text=%23TheREDSummit%2C+Obasanjo%2C+Ofori%2C+Harlem%2C+Wash+your+hands+by+%40AfricaRizing+https%3A%2F%2Fafrica2.rizing.org%2Fredsummit-obasanjo-ofori-harlem-wash-your-hands"></a></li>
@@ -133,7 +130,7 @@ img.emoji {
 																			</header>
 								</div>
 
-							</div>
+							</div>-->
 												
 <div id="page" class="hfeed site">
 	<header id="masthead" class="site-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
