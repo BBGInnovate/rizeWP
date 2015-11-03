@@ -1666,7 +1666,9 @@ div.interview {
 	float: right;
 	width:88%;
 }
-
+.tweetAuthor{
+	margin: 15px 0;
+}
 .tweetAuthor p, .quoteMaker p{
 	display: block; 
 	margin-bottom:0; 
@@ -1698,6 +1700,11 @@ div.interview {
 	background-size: cover; 
 	background-repeat: no-repeat;
 }
+
+.twitter-conversation .twitterProfilePhoto:first-of-type{
+	margin: 15px 0;
+}
+
 .twitterProfilePhoto img{
 	display: block;
 	width: 100%;
