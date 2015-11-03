@@ -145,7 +145,7 @@ class Getter {
 			Logger::error($e);
 			return FALSE;
 		}
-	
+	error_reporting(E_ALL);
 		$items = $sth->fetchAll(\PDO::FETCH_ASSOC);
 	
 		if (!$items) {
@@ -252,12 +252,18 @@ class Getter {
 						$imageSizeMax = \OpenFuego\IMAGE_SIZE_MAX; //Sets the max size for images to include as a thumbnail.
 						$imageSizeMin = \OpenFuego\IMAGE_SIZE_MIN; //Sets the min size for images to include as a thumbnail.
 						
-						if ($m['thumbnail_width'] <= $imageSizeMax && $m['thumbnail_height'] <= $imageSizeMax && $m['thumbnail_width'] >= $imageSizeMin){
+						//if ($m['thumbnail_width'] <= $imageSizeMax && $m['thumbnail_height'] <= $imageSizeMax && $m['thumbnail_width'] >= $imageSizeMin){
+						if ($m['thumbnail_width'] >= $imageSizeMin){
 							$remoteImageArray=explode("/", $remoteImagePath);
 							$remoteImageFilename=$remoteImageArray[count($remoteImageArray)-1];
 							$extension="jpg";
 							if (stripos($remoteImageFilename,"png")) {
 								$extension="png";
+							}
+							$folderNum=$currentLinkID % 1000;
+							$dirPath="/var/www/wordpress/wp-content/fuego/imgcache/$folderNum/";
+							if (!file_exists($dirPath)) {
+								mkdir($dirPath,0755);
 							}
 							$localFilename="/var/www/wordpress/wp-content/fuego/imgcache/" . $currentLinkID . ".$extension";;
 							self::updateLinkImage($currentLinkID, $remoteImagePath, $localFilename);
