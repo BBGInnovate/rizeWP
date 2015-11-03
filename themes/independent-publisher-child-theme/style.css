@@ -1758,3 +1758,8 @@ a:hover .twitterImageCredit{
 		margin: 0;
 	}
 }
+@media only screen and (min-width: 1200px){
+	#fuego .author-bio{
+		display: none;
+	}
+}
