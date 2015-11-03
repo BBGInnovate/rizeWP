@@ -1762,4 +1762,7 @@ a:hover .twitterImageCredit{
 	#fuego .author-bio{
 		display: none;
 	}
+	#fuego #page.site{
+		margin-top: 0;
+	}
 }

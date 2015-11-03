@@ -135,16 +135,5 @@ img.emoji {
 				
 								</div>
 
-
-
-
-
-
-				
 			</header>
 	<!-- #masthead .site-header -->
-
-
-	<div id="main" class="site-main">
-	<div id="primary" class="content-area">
-		<main id="content" class="site-content" role="main">

@@ -1,11 +1,3 @@
-</main>
-		<!-- #content .site-content -->
-	</div><!-- #primary .content-area -->
-
-<div id="secondary" class="widget-area" role="complementary">
-						</div><!-- #secondary .widget-area -->
-
-</div><!-- #main .site-main -->
 
 <footer id="colophon" class="site-footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter" role="contentinfo">
 	<div class="site-info">

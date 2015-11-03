@@ -22,7 +22,7 @@ if (  isset( $_GET['hideLink'] ) && current_user_can('publish_posts') ) {
 include("page-fuego-header.php");
 
 ?>
-
+<div id="main" class="site-main">
 	<div id="primary" class="content-area">
 		<main id="content" class="site-content" role="main">
 
@@ -296,8 +296,15 @@ include("page-fuego-header.php");
 				setTimeout(function() {window.location.reload();}, 300000);
 			});
 		</script>
+	</main>
+	<!-- #content .site-content -->
+</div><!-- #primary .content-area -->
 
-		
+<div id="secondary" class="widget-area" role="complementary">
+</div><!-- #secondary .widget-area -->
+
+</div><!-- #main .site-main -->
+
 
 <?php 
 
