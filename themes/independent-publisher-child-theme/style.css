@@ -1625,6 +1625,11 @@ div.interview {
 
 /* ----------------- FUEGO STYLES -------------------*/
 
+#fuego #menu-social {
+	margin-top: 20px;
+	margin-right: 40px;
+}
+
 #fuego h1.archive-title{
 	margin: 0;
 }
@@ -1771,6 +1776,17 @@ a:hover .twitterImageCredit{
 	}
 	.quotedTweetText p{
 		margin: 0;
+	}
+	#fuego .author-avatar img{
+		width: 150px;
+		height:150px;
+		text-align: left;
+    	margin-top: 10px;
+    	float: left;
+    }
+	#fuego h1.archive-title{
+		padding: 0 0 0 170px;
+		width: auto;
 	}
 }
 @media only screen and (min-width: 1200px){
