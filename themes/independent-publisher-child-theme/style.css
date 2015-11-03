@@ -1701,8 +1701,11 @@ div.interview {
 	background-repeat: no-repeat;
 }
 
-.twitter-conversation .twitterProfilePhoto:first-of-type{
+.twitterProfilePhoto{
 	margin: 15px 0;
+}
+.quotedTweet .twitterProfilePhoto:first-of-type{
+	margin: 0;
 }
 
 .twitterProfilePhoto img{
