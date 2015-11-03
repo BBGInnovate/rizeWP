@@ -1787,6 +1787,12 @@ a:hover .twitterImageCredit{
 	#fuego h1.archive-title{
 		padding: 0 0 0 170px;
 		width: auto;
+		text-align: left;
+		clear: none;
+	}
+	#fuego .author-description{
+		text-align: left;
+		padding-left: 170px;
 	}
 }
 @media only screen and (min-width: 1200px){
