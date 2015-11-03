@@ -265,7 +265,7 @@ class Getter {
 							if (!file_exists($dirPath)) {
 								mkdir($dirPath,0755);
 							}
-							$localFilename="/var/www/wordpress/wp-content/fuego/imgcache/" . $currentLinkID . ".$extension";;
+							$localFilename=$dirPath . $currentLinkID . ".$extension";;
 							self::updateLinkImage($currentLinkID, $remoteImagePath, $localFilename);
 							
 							file_put_contents($localFilename, file_get_contents($remoteImagePath));

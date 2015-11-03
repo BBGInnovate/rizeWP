@@ -88,7 +88,7 @@ const
 	REFERRER = 'http://google.com';
 
 const 
-	IMAGE_SIZE_MAX=500, 
+	IMAGE_SIZE_MAX=5000, 
 	IMAGE_SIZE_MIN=125,
 	DAYS_TO_KEEP_ANY_LINK=2,	//regardless of weighted count, we keep links this long
 	MIN_WEIGHTED_COUNT_PERMANENT_KEEP=10,  //never delete a link if it hits this threshold
