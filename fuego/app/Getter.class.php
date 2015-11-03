@@ -145,7 +145,6 @@ class Getter {
 			Logger::error($e);
 			return FALSE;
 		}
-	error_reporting(E_ALL);
 		$items = $sth->fetchAll(\PDO::FETCH_ASSOC);
 	
 		if (!$items) {
@@ -269,10 +268,8 @@ class Getter {
 							self::updateLinkImage($currentLinkID, $remoteImagePath, $localFilename);
 							
 							//file_put_contents($localFilename, file_get_contents($remoteImagePath));
-							echo "fetching " . $remoteImagePath . " fo resize";
-							$img = new Imagick($remoteImagePath);
+							$img = new \Imagick($remoteImagePath);
 					        $img->scaleImage(300,0);
-					        echo "writing to " . $localFilename;
 					        $img->writeImage($localFilename);
 						}
 
