@@ -225,7 +225,7 @@ and Blueprint http://www.blueprintcss.org/
 		.site-description, #masthead .site-navigation{
 			display: block;
 		}
-		#footerNav {display: none;}
+		/*#footerNav {display: none;}*/
 	}
 
 
@@ -284,11 +284,14 @@ and Blueprint http://www.blueprintcss.org/
 			padding: 5px 40px;
 		}
 	}
+	/*
 	@media (min-width: 1200px){
 		#focusMenu ul  {
 			display: none !important;
 		}
 	}
+	*/
+
 	/* ------- Category Menu */
 
 
@@ -1704,7 +1707,7 @@ div.interview {
 .twitterProfilePhoto{
 	margin: 15px 0;
 }
-.quotedTweet .twitterProfilePhoto:first-of-type{
+.quotedTweet .twitterProfilePhoto{
 	margin: 0;
 }
 
