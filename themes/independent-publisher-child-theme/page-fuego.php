@@ -152,7 +152,7 @@ include("page-fuego-header.php");
 						$title = $m['title'];	
 
 						/*trying to remove offending news org credits */
-						$search = array(' - BBC News', ' - BBC World Service', ' - CNN.com', ' - FT.com', ' - CNNPolitics.com', ' - TODAY.ng');
+						$search = array(' - BBC News', ' - BBC World Service', ' - CNN.com', ' - FT.com', ' - CNNPolitics.com', ' - TODAY.ng', ' - Premium Times Nigeria');
 						$title = str_replace($search, '', $title);
 					}
 

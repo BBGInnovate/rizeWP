@@ -1802,4 +1802,7 @@ a:hover .twitterImageCredit{
 	#fuego #page.site{
 		margin-top: 0;
 	}
+	#fuego #masthead #menu-social{
+		display: none;
+	}
 }
