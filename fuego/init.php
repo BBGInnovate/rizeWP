@@ -89,7 +89,10 @@ const
 
 const 
 	IMAGE_SIZE_MAX=500, 
-	IMAGE_SIZE_MIN=125;	
+	IMAGE_SIZE_MIN=125,
+	DAYS_TO_KEEP_ANY_LINK=2,	//regardless of weighted count, we keep links this long
+	MIN_WEIGHTED_COUNT_PERMANENT_KEEP=10,  //never delete a link if it hits this threshold
+	DAYS_TO_KEEP_SHORT_LINK_CACHE=2;  //the 'expanded urls' will be deleted after this number of days (since last_seen).  If a link is shared again later, the row will be inserted again
 /*
 if (file_exists(OPENFUEGO_DIR . '/openfuego-overrides.php')) {
 	include_once(OPENFUEGO_DIR . '/openfuego-overrides.php');

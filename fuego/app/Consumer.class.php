@@ -227,25 +227,22 @@ class Consumer {
 	
 
 	public function cleanUp() {	
-		/*
-		$expiration_days = \OpenFuego\EXPIRATION_DAYS;
-		$now = time();
-		$date = date('Y-m-d H:i:s', $now);
-		
+
 		$dbh = $this->getDbh();
 		
 		$sql = "
 			DELETE FROM openfuego_links
-			WHERE first_seen < DATE_SUB(:date, INTERVAL :expiration_int DAY);
+			WHERE (weighted_count < :weighted_count and first_seen < DATE_SUB(NOW(), INTERVAL :expiration_int DAY));
 			
 			DELETE FROM openfuego_short_links
-			WHERE last_seen < DATE_SUB(:date, INTERVAL :expiration_int DAY);
+			WHERE last_seen < DATE_SUB(NOW(), INTERVAL :short_link_cache_days DAY);
 		";
 		$sth = $dbh->prepare($sql);
-		$sth->bindParam('date', $date, \PDO::PARAM_INT);
-		$sth->bindParam('expiration_int', $expiration_days, \PDO::PARAM_INT);
+		$sth->bindParam('weighted_count', \OpenFuego\MIN_WEIGHTED_COUNT_PERMANENT_KEEP, \PDO::PARAM_INT);
+		$sth->bindParam('expiration_int', \OpenFuego\DAYS_TO_KEEP_ANY_LINK, \PDO::PARAM_INT);
+		$sth->bindParam('short_link_cache_days', \OpenFuego\DAYS_TO_KEEP_SHORT_LINK_CACHE, \PDO::PARAM_INT);
 		$sth->execute();
-		*/
+		
 	
 	  return TRUE;
 	}
