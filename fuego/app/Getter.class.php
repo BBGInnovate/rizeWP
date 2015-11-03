@@ -269,8 +269,10 @@ class Getter {
 							self::updateLinkImage($currentLinkID, $remoteImagePath, $localFilename);
 							
 							//file_put_contents($localFilename, file_get_contents($remoteImagePath));
+							echo "fetching " . $remoteImagePath . " fo resize";
 							$img = new Imagick($remoteImagePath);
 					        $img->scaleImage(300,0);
+					        echo "writing to " . $localFilename;
 					        $img->writeImage($localFilename);
 						}
 
