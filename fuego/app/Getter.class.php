@@ -130,6 +130,7 @@ class Getter {
 					AND count > 1
 					AND hiddenFlag='N'
 					AND first_seen BETWEEN DATE_SUB(:date, INTERVAL :hours HOUR) AND :date
+					AND url not like '%nytimes.com%'
 				ORDER BY weighted_count DESC
 				LIMIT :limit;
 			";
