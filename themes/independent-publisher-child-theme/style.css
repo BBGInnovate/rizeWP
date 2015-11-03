@@ -674,6 +674,9 @@ and Blueprint http://www.blueprintcss.org/
 		background-color: orange;
 		margin:0 auto;
 	}
+	#fuego .author-avatar img{
+		display: block;
+	}
 
 	/* Add background images for categories with icons. */
 	#categoryPage.category-trending .archive-avatar{
@@ -1616,6 +1619,10 @@ div.interview {
 
 
 /* ----------------- FUEGO STYLES -------------------*/
+
+#fuego h1.archive-title{
+	margin: 0;
+}
 
 #fuego h5.entry-category a{
 	float:none;
