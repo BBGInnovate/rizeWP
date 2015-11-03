@@ -240,6 +240,7 @@ and Blueprint http://www.blueprintcss.org/
 		bottom: 30px;
 		width: 100%;
 		background-color: #FFF;
+		z-index: 9998;
 	}
 	#focusMenu ul  {
 		margin: 0;
@@ -359,6 +360,7 @@ and Blueprint http://www.blueprintcss.org/
 		padding:0; 
 		background-color: #FFF; 
 		border-top: 1px solid #CCC;
+		z-index: 9999;
 	}
 	#footerNav .maxWidth1200{
 		max-width: 700px; 
