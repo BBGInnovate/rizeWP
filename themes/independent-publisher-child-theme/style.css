@@ -1660,6 +1660,9 @@ div.interview {
 #fuego .entry-content a:hover{
 	text-decoration: none;
 }
+#fuego #masthead h1.site-title{
+	text-transform: uppercase;
+}
 
 .twitter-conversation{
 	font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
