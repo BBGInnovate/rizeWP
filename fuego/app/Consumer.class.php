@@ -238,9 +238,14 @@ class Consumer {
 			WHERE last_seen < DATE_SUB(NOW(), INTERVAL :short_link_cache_days DAY);
 		";
 		$sth = $dbh->prepare($sql);
-		$sth->bindParam('weighted_count', \OpenFuego\MIN_WEIGHTED_COUNT_PERMANENT_KEEP, \PDO::PARAM_INT);
-		$sth->bindParam('expiration_int', \OpenFuego\DAYS_TO_KEEP_ANY_LINK, \PDO::PARAM_INT);
-		$sth->bindParam('short_link_cache_days', \OpenFuego\DAYS_TO_KEEP_SHORT_LINK_CACHE, \PDO::PARAM_INT);
+
+		$minWeightedCount=\OpenFuego\MIN_WEIGHTED_COUNT_PERMANENT_KEEP;
+		$daysKeepAnyLink=\OpenFuego\DAYS_TO_KEEP_ANY_LINK;
+		$shortLinkCacheDays=\OpenFuego\DAYS_TO_KEEP_SHORT_LINK_CACHE;
+
+		$sth->bindParam('weighted_count', $minWeightedCount, \PDO::PARAM_INT);
+		$sth->bindParam('expiration_int', $daysKeepAnyLink, \PDO::PARAM_INT);
+		$sth->bindParam('short_link_cache_days', $shortLinkCacheDays, \PDO::PARAM_INT);
 		$sth->execute();
 		
 	
