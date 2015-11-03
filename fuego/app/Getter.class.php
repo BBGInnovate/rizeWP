@@ -268,7 +268,10 @@ class Getter {
 							$localFilename=$dirPath . $currentLinkID . ".$extension";;
 							self::updateLinkImage($currentLinkID, $remoteImagePath, $localFilename);
 							
-							file_put_contents($localFilename, file_get_contents($remoteImagePath));
+							//file_put_contents($localFilename, file_get_contents($remoteImagePath));
+							$img = new Imagick($remoteImagePath);
+					        $image->scaleImage(300,0);
+					        $image->writeImage($localFilename);
 						}
 
 					}
