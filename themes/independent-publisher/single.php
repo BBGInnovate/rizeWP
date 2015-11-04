@@ -64,7 +64,10 @@ Sign up to have our newsletter sent to your inbox.</a></p>
 <script type="text/javascript">
 	var showOffer = true;
 	var documentHeight = jQuery(document).height();
-	var deltaBottom = jQuery(window).height(); //windowHeight
+	var windowHeight = jQuery(window).height();
+	var promoScrollConstant = 250;
+	var deltaBottom = windowHeight + promoScrollConstant //windowHeight
+
 	jQuery(document).scroll(function() {
 		var y = jQuery(this).scrollTop();
 		if (documentHeight - y < deltaBottom&&showOffer==true) {
