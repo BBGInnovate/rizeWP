@@ -1875,6 +1875,9 @@ a:hover .twitterImageCredit{
 	border-radius: 2px;
 }
 @media only screen and (min-width: 400px){
+	.promoOffer{
+		width: 85%;
+	}
 	.promoOffer p, .promoOffer h3, .promoOffer form, .promoOffer label, .promoOffer input{
 		text-align: left;
 	}
