@@ -1833,14 +1833,14 @@ a:hover .twitterImageCredit{
 	width: 80%;
 	max-width: 700px; 
 	margin: 0 auto; 
-	padding: 5px 20px 50px 20px;
+	padding: 5px 20px 70px 20px;
 	background-color:#000; 
 	color: #FFF;
 	display: none;
 	border-radius: 5px 5px 0 0;
 	/*box-shadow: 0px 0px 6px #999;*/
 }
-.promoOffer p, .promoOffer h3{
+.promoOffer p, .promoOffer h3, .promoOffer label, .promoOffer input{
 	font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
 	color:#FFF;
 }
@@ -1859,6 +1859,17 @@ a:hover .twitterImageCredit{
 	border-radius: 3px;
 }
 
+.tinyletterhider {width:1px; height:1px; overflow:hidden; position:absolute; left:-99999em; visibility:hidden; top:0;}
+.tinyletter-confirmation {
+	display:none; 
+	float: left; 
+	margin:20px 0; 
+	background: green; 
+	padding: 20px; 
+	color: white; 
+	text-shadow: 1px 0 0 black; 
+	border-radius: 2px;
+}
 
 
 

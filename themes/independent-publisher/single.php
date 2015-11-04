@@ -57,8 +57,15 @@ get_header(); ?>
 		<div id='closeX'>X</div>
 		<h3>Have smarter conversations</h3>
 		<div class='clearAll'></div>
-		<p>Want to always know what’s trending with the Africa Rizing Team? <a href='http://tinyletter.com/africarizing'>
-Sign up to have our newsletter sent to your inbox.</a></p>
+		<p>Want to always know what’s trending? Signup for the daily Africa Rizing newsletter</p>
+		<form action="https://tinyletter.com/africarizing" method="post" target="tinyletterhider" class="tinyletter-form">
+			<label></label>
+			<input type="email" placeholder="Your email address" name="email" />
+			<span class="tinyletter-confirmation">You’re almost done! Check your email to confirm subscription.</span>
+			<input type="hidden" value="1" name="embed"/>
+			<button type="submit">Subscribe</button>
+		</form>
+		<iframe class="tinyletterhider" name="tinyletterhider"></iframe>
 	</div>
 </div>
 <script type="text/javascript">
@@ -80,4 +87,13 @@ Sign up to have our newsletter sent to your inbox.</a></p>
 			jQuery('.promoOffer').fadeOut();
 		})
 	});
+
+	jQuery(document).ready(function(){
+		jQuery( '.tinyletter-form' ).submit(function() {
+			jQuery('.fieldtogglization').hide();
+			jQuery('.tinyletter-confirmation').slideDown();
+		});
+	})
 </script>
+
+
