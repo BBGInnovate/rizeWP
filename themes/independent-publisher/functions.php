@@ -204,7 +204,8 @@ function independent_publisher_scripts() {
 	}
 
 	//if ( is_singular() ) {
-	wp_enqueue_script( 'oddiCustom', get_template_directory_uri() . '/js/oddiCustom.js', array( 'jquery' ));	
+	wp_enqueue_script( 'oddiCustom', get_template_directory_uri() . '/js/oddiCustom.js', array( 'jquery' ));
+	wp_enqueue_script( 'jsCookie', get_template_directory_uri() . '/js/js.cookie.js', array( 'jquery' ));	
 	//}
 
 	/**

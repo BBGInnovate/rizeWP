@@ -77,6 +77,9 @@ get_header(); ?>
 
 	jQuery(document).scroll(function() {
 		var y = jQuery(this).scrollTop();
+		if (Cookies.get('promoOfferClosed') == 'true') {
+			showOffer=false;
+		}
 		if (documentHeight - y < deltaBottom && showOffer) {
 			jQuery('.promoOffer').fadeIn();
 		} else {
@@ -85,11 +88,17 @@ get_header(); ?>
 		jQuery('#closeX').click(function(){
 			showOffer = false;
 			jQuery('.promoOffer').fadeOut();
+
+			//3 day expiration if they click the 'X'
+			Cookies.set('promoOfferClosed', 'true', { expires: 3 });
 		})
 	});
 
 	jQuery(document).ready(function(){
 		jQuery( '.tinyletter-form' ).submit(function() {
+			//2 year expiration if they click the 'X'
+			Cookies.set('promoOfferClosed', 'true', { expires: 730 });
+
 			jQuery('.fieldtogglization').hide();
 			jQuery('form input#name').hide();
 			jQuery('form button').hide();
