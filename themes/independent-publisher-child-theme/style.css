@@ -1598,10 +1598,13 @@ div.size-medium + blockquote {
 div.interview {
 	font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
 	color: #333;
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #999;
+	padding: 0;
+	margin: 20px 0 25px 0;
 }
 
 .interview-speaker {
-	/* font-family: "Myriad Pro", Helvetica, Arial, sans-serif;*/
 	font-weight: 600;
 	text-transform: capitalize;
 	letter-spacing: .02em;
@@ -1609,9 +1612,7 @@ div.interview {
 }
 
 .interview-q {
-	/* font-family: "Myriad Pro", Helvetica, Arial, sans-serif;*/
 	font-weight: 600;
-	/*margin-top: 2.25em;*/
 	margin-top: 1.5em;
 	margin-bottom: .25em;
 	color: #000;
@@ -1811,8 +1812,7 @@ a:hover .twitterImageCredit{
 }
 
 
-
-/* Add a twitter mugshot inline. */
+/* ----------------- Add a twitter mugshot inline -------------------*/
 /* <img scr='(copy the url for the twitter avatar)' class='twitterMugshot' /> */
 .twitterMugshot{
 	display: inline-block;
@@ -1823,7 +1823,9 @@ a:hover .twitterImageCredit{
 	margin-right: 5px;
 }
 
-/* Newsletter promo styles */
+
+
+/* ----------------- Newsletter promo styles -------------------*/
 #promo{
 	position: fixed; 
 	bottom: 0; 
