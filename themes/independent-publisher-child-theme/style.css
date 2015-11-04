@@ -1812,7 +1812,8 @@ a:hover .twitterImageCredit{
 
 
 
-
+/* Add a twitter mugshot inline. */
+/* <img scr='(copy the url for the twitter avatar)' class='twitterMugshot' /> */
 .twitterMugshot{
 	display: inline-block;
 	width: 30px;
@@ -1821,3 +1822,43 @@ a:hover .twitterImageCredit{
 	vertical-align: -25%;
 	margin-right: 5px;
 }
+
+/* Newsletter promo styles */
+#promo{
+	position: fixed; 
+	bottom: 0; 
+	width: 100%;
+}
+.promoOffer{
+	width: 80%;
+	max-width: 700px; 
+	margin: 0 auto; 
+	padding: 5px 20px 50px 20px;
+	background-color:#000; 
+	color: #FFF;
+	display: none;
+	border-radius: 5px 5px 0 0;
+	/*box-shadow: 0px 0px 6px #999;*/
+}
+.promoOffer p, .promoOffer h3{
+	font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
+	color:#FFF;
+}
+.promoOffer h3{
+	float:left;
+	clear: none;
+	width:90%;
+}
+.promoOffer #closeX{
+	float: right;
+	border: 1px solid #666;
+	font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
+	cursor: pointer; cursor: hand;
+	padding: 2px 5px 0 5px;
+	margin-top: 15px;
+	border-radius: 3px;
+}
+
+
+
+

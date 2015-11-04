@@ -48,12 +48,6 @@ get_header(); ?>
 			<?php endwhile; // end of the loop. ?>
 
 		</main>
-		<div class='bottomMenu' style='width: 80%; margin: 0 auto; max-width: 700px; padding: 5px 20px 50px 20px;background-color:#000; position: fixed; bottom: 0; display:none; color: #FFF;'>
-			<div id='closeX'>X</div>
-			<h3>Have smarter conversations</h3>
-			<p>Want to always know what’s trending with the Africa Rizing Team? <a href='http://tinyletter.com/africarizing'>
-Sign up to have our newsletter sent to your inbox.</a></p>
-		</div>
 		<!-- #content .site-content -->
 	</div><!-- #primary .content-area -->
 <script type="text/javascript">
@@ -63,15 +57,24 @@ Sign up to have our newsletter sent to your inbox.</a></p>
 	jQuery(document).scroll(function() {
 		var y = jQuery(this).scrollTop();
 		if (documentHeight - y < deltaBottom&&showOffer==true) {
-			jQuery('.bottomMenu').fadeIn();
+			jQuery('.promoOffer').fadeIn();
 		} else {
-			jQuery('.bottomMenu').fadeOut();
+			jQuery('.promoOffer').fadeOut();
 		}
 		jQuery('#closeX').click(function(){
 			showOffer = false;
-			jQuery('.bottomMenu').fadeOut();
+			jQuery('.promoOffer').fadeOut();
 		})
 	});
 </script>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
+<div id='promo'>
+	<div class='promoOffer'>
+		<div id='closeX'>X</div>
+		<h3>Have smarter conversations</h3>
+		<div class='clearAll'></div>
+		<p>Want to always know what’s trending with the Africa Rizing Team? <a href='http://tinyletter.com/africarizing'>
+Sign up to have our newsletter sent to your inbox.</a></p>
+	</div>
+</div>
