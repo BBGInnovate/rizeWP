@@ -1834,16 +1834,22 @@ a:hover .twitterImageCredit{
 	max-width: 700px; 
 	margin: 0 auto; 
 	padding: 5px 20px 70px 20px;
-	background-color:#000; 
-	color: #FFF;
+	background-color:#CCC; 
+	color: #333;
 	display: none;
 	border-radius: 5px 5px 0 0;
 	/*box-shadow: 0px 0px 6px #999;*/
 }
 .promoOffer p, .promoOffer h3, .promoOffer form, .promoOffer label, .promoOffer input{
 	font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
-	color:#FFF;
+	color:#333;
+	text-align: center;
 }
+.promoOffer input{
+	width: 90%;
+	margin-bottom: 10px
+}
+
 .promoOffer h3{
 	float:left;
 	clear: none;
@@ -1851,10 +1857,10 @@ a:hover .twitterImageCredit{
 }
 .promoOffer #closeX{
 	float: right;
-	border: 1px solid #666;
+	border: 1px solid #FFF;
 	font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
 	cursor: pointer; cursor: hand;
-	padding: 2px 5px 0 5px;
+	padding: 4px 8px 0 8px;
 	margin-top: 15px;
 	border-radius: 3px;
 }
@@ -1868,6 +1874,15 @@ a:hover .twitterImageCredit{
 	color: white; 
 	border-radius: 2px;
 }
+@media only screen and (min-width: 400px){
+	.promoOffer p, .promoOffer h3, .promoOffer form, .promoOffer label, .promoOffer input{
+		text-align: left;
+	}
+	.promoOffer input{
+		width: 60%;
+		margin: 0 5px 0 0;
+	}
 
+}
 
 
