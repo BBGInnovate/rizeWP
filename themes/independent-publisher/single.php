@@ -89,8 +89,11 @@ get_header(); ?>
 			showOffer = false;
 			jQuery('.promoOffer').fadeOut();
 
-			//3 day expiration if they click the 'X'
-			Cookies.set('promoOfferClosed', 'true', { expires: 3 });
+			//3 day expiration if they click the 'X' without subscribing
+			//but if the cookie is already set, that means they hit subscribe and then X, so stick with the original 365 and don't overwrite
+			if (Cookies.get('promoOfferClosed') != 'true') {
+				Cookies.set('promoOfferClosed', 'true', { expires: 3 });
+			}
 		})
 	});
 
