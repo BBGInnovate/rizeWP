@@ -60,7 +60,7 @@ get_header(); ?>
 		<p>Want to always know what’s trending? Signup for the daily Africa Rizing newsletter</p>
 		<form action="https://tinyletter.com/africarizing" method="post" target="tinyletterhider" class="tinyletter-form">
 			<label></label>
-			<input type="email" placeholder="Your email address" name="email" />
+			<input type="email" placeholder="Your email address" name="email" id="name" />
 			<span class="tinyletter-confirmation">You’re almost done! Check your email to confirm subscription.</span>
 			<input type="hidden" value="1" name="embed"/>
 			<button type="submit">Subscribe</button>
@@ -91,6 +91,8 @@ get_header(); ?>
 	jQuery(document).ready(function(){
 		jQuery( '.tinyletter-form' ).submit(function() {
 			jQuery('.fieldtogglization').hide();
+			jQuery('form input#name').hide();
+			jQuery('form button').hide();
 			jQuery('.tinyletter-confirmation').slideDown();
 		});
 	})
