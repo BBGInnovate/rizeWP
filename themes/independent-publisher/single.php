@@ -50,10 +50,21 @@ get_header(); ?>
 		</main>
 		<!-- #content .site-content -->
 	</div><!-- #primary .content-area -->
+<?php get_sidebar(); ?>
+<?php get_footer(); ?>
+<div id='promo'>
+	<div class='promoOffer'>
+		<div id='closeX'>X</div>
+		<h3>Have smarter conversations</h3>
+		<div class='clearAll'></div>
+		<p>Want to always know what’s trending with the Africa Rizing Team? <a href='http://tinyletter.com/africarizing'>
+Sign up to have our newsletter sent to your inbox.</a></p>
+	</div>
+</div>
 <script type="text/javascript">
 	var showOffer = true;
 	var documentHeight = jQuery(document).height();
-	var deltaBottom = 1000; //windowHeight
+	var deltaBottom = jQuery(window).height(); //windowHeight
 	jQuery(document).scroll(function() {
 		var y = jQuery(this).scrollTop();
 		if (documentHeight - y < deltaBottom&&showOffer==true) {
@@ -67,14 +78,3 @@ get_header(); ?>
 		})
 	});
 </script>
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
-<div id='promo'>
-	<div class='promoOffer'>
-		<div id='closeX'>X</div>
-		<h3>Have smarter conversations</h3>
-		<div class='clearAll'></div>
-		<p>Want to always know what’s trending with the Africa Rizing Team? <a href='http://tinyletter.com/africarizing'>
-Sign up to have our newsletter sent to your inbox.</a></p>
-	</div>
-</div>
