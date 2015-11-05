@@ -380,10 +380,10 @@ and Blueprint http://www.blueprintcss.org/
 	#footerNav ul li.mission{
 		background: url(../../images/menu_icons_unselected.png) no-repeat center -98px / 35px 250px;
 	}
-	#footerNav ul li.newsletter{
+	#footerNav ul li.trending{
 		background: url(../../images/menu_icons_unselected.png) no-repeat center -146px / 35px 250px;
 	}
-	#footerNav ul li.trending{
+	#footerNav ul li.newsletter{
 		background: url(../../images/menu_icons_unselected.png) no-repeat center -195px / 35px 250px;
 	}
 
@@ -398,10 +398,10 @@ and Blueprint http://www.blueprintcss.org/
 	#pageMission #footerNav ul li.mission{
 		background: url(../../images/menu_icons_selected.png) no-repeat center -98px / 35px 250px;
 	}
-	#newsletter #footerNav ul li.newsletter{
+	#trending #footerNav ul li.trending{
 		background: url(../../images/menu_icons_selected.png) no-repeat center -146px / 35px 250px;
 	}
-	#trending #footerNav ul li.trending{
+	#newsletter #footerNav ul li.newsletter{
 		background: url(../../images/menu_icons_selected.png) no-repeat center -195px / 35px 250px;
 	}
 
@@ -444,10 +444,10 @@ and Blueprint http://www.blueprintcss.org/
 		#footerNav ul li.mission{
 			background-position: center -103px;
 		}
-		#footerNav ul li.newsletter{
+		#footerNav ul li.trending{
 			background-position: center -153px;
 		}
-		#footerNav ul li.trending{
+		#footerNav ul li.newsletter{
 			background-position: center -200px;
 		}
 
@@ -461,10 +461,10 @@ and Blueprint http://www.blueprintcss.org/
 		#pageMission #footerNav ul li.mission{
 			background-position: center -103px;
 		}
-		#newsletter #footerNav ul li.newsletter{
+		#trending #footerNav ul li.trending{
 			background-position: center -153px;
 		}
-		#trending #footerNav ul li.trending{
+		#newsletter #footerNav ul li.newsletter{
 			background-position: center -200px;
 		}
 
