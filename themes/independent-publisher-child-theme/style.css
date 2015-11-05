@@ -375,8 +375,8 @@ and Blueprint http://www.blueprintcss.org/
 	#footerNav ul li{
 		display: inline-block;
 		/*width: 18.5%;*/
-		width: 23.5%;
-		/*width: 31%; */
+		width: 18.5%;
+		/*width: 23.5%;*/
 		height: 50px; 
 		padding: 0; 
 		margin: 0; 

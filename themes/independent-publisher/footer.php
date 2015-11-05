@@ -56,9 +56,9 @@
 	<div class='maxWidth1200'>
 		<ul>
 			<li class='home'><a href='<?php echo site_url() . "/"; ?>'>home</a></li>
+			<li class='fuego'><a href='<?php echo site_url() . "/"; ?>index.php/fuego/'>fuego</a></li>
 			<li class='trending'><a href='<?php echo site_url() . "/"; ?>index.php/trending/'>trending</a></li>
 			<li class='focus'><a>in focus</a></li>
-			<!--<li class='fuego'><a href='<?php echo site_url() . "/"; ?>index.php/fuego/'>fuego</a></li>-->
 			<li class='mission'><a href='<?php echo site_url() . "/"; ?>index.php/about/'>mission</a></li>
 		</ul>
 	</div>
