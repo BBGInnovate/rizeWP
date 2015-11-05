@@ -19,7 +19,7 @@ if (  isset( $_GET['hideLink'] ) && current_user_can('publish_posts') ) {
 
 
 //get_header(); 
-include("page-fuego-header.php");
+include("page-trending-header.php");
 
 ?>
 <div id="main" class="site-main">
@@ -308,6 +308,6 @@ include("page-fuego-header.php");
 
 <?php 
 
-include("page-fuego-footer.php");
+include("page-trending-footer.php");
 
 ?>
