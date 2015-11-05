@@ -406,7 +406,7 @@ endif;
 		
 		/* don't show in focus posts on homepage */
 		if ($query -> is_home()) {
-			$trending_cat_id=get_cat_id('Guide');
+			$trending_cat_id=get_cat_id('Compass');
 			$guidebook_cat_id=get_cat_id('Guidebook');
 			$tax_query = array(
 			    array(

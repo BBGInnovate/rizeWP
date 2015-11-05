@@ -9,7 +9,7 @@
  */
 
 $pageBodyID = "newsletter";
-$trendingCatID=get_cat_id('Guide');
+$trendingCatID=get_cat_id('Compass');
 
 /**** GET A SPECIAL PERMALINK FOR THE TWITTER AND FB SHARE BUTTONS *****/
 $qParams=array( 
