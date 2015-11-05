@@ -81,7 +81,7 @@ img.emoji {
 <meta name="msapplication-TileImage" content="<?php echo site_url() . "/"; ?>wp-content/uploads/2015/09/cropped-Rize-socialprofiles_5001-270x270.png">
 </head>
 
-<body id="fuego" class="category-69 single post-cover-overlay-post-title multi-author-mode" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<body id="trending" class="category-69 single post-cover-overlay-post-title multi-author-mode" itemscope="itemscope" itemtype="http://schema.org/WebPage">
 
 	<div id="logoOnPostPages">
 					<a class="site-logo" href="<?php echo site_url() . "/"; ?>" title="Africa Rizing" rel="home">
