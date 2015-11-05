@@ -4,11 +4,11 @@
  *
  * @package Independent Publisher
  * @since   Independent Publisher 1.0 
-  template name: Trending
+  template name: Newsletter
 
  */
 
-$pageBodyID = "trending";
+$pageBodyID = "newsletter";
 $trendingCatID=get_cat_id('Trending');
 
 /**** GET A SPECIAL PERMALINK FOR THE TWITTER AND FB SHARE BUTTONS *****/

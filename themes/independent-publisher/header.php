@@ -111,7 +111,7 @@ $ogDescription = str_replace('"','&qout;',$ogDescription);
 			the_post(); 
 			if ( (is_single()) && !(independent_publisher_has_full_width_featured_image() && has_post_thumbnail())   ) {
 				$extraBodyClass="post-cover-overlay-post-title";
-			} elseif ($pageBodyID=="trending") {
+			} elseif ($pageBodyID=="newsletter") {
 				$extraBodyClass= ["single","post-cover-overlay-post-title"];
 			}
 			
@@ -123,7 +123,7 @@ $ogDescription = str_replace('"','&qout;',$ogDescription);
 <body id="<?php echo $pageBodyID; ?>" <?php body_class($extraBodyClass); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
 
 <?php // Adding the logo/branding to single post pages. ?>
-<?php if ( independent_publisher_is_multi_author_mode() && (is_single() || ($pageBodyID=='trending')) ) : ?>
+<?php if ( independent_publisher_is_multi_author_mode() && (is_single() || ($pageBodyID=='newsletter')) ) : ?>
 	<div id="logoOnPostPages">
 		<?php independent_publisher_site_info(); ?>
 	</div>
@@ -131,13 +131,13 @@ $ogDescription = str_replace('"','&qout;',$ogDescription);
 
 
 <?php // Displays full-width featured image on Single Posts if applicable ?>
-<?php if (is_single() || $pageBodyID=="trending") { independent_publisher_full_width_featured_image(); }; ?>
+<?php if (is_single() || $pageBodyID=="newsletter") { independent_publisher_full_width_featured_image(); }; ?>
 
 <div id="page" class="hfeed site">
 	<header id="masthead" class="site-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
 		<div class="site-header-info">
-			<?php if ( is_single() || ($pageBodyID=='trending') ) : ?>
+			<?php if ( is_single() || ($pageBodyID=='newsletter') ) : ?>
 				<?php // Show only post author info on Single Pages ?>
 				<?php independent_publisher_posted_author_card(); ?>
 			<?php else : ?>
@@ -152,12 +152,12 @@ $ogDescription = str_replace('"','&qout;',$ogDescription);
 
 
 		<?php // Show navigation menu on everything except Single pages, unless Show Primary Nav Menu on Single Pages is enabled ?>
-		<?php if ( ! (is_single() || ($pageBodyID=='trending')) || independent_publisher_show_nav_on_single() ) : ?>
+		<?php if ( ! (is_single() || ($pageBodyID=='newsletter')) || independent_publisher_show_nav_on_single() ) : ?>
 			<nav role="navigation" class="site-navigation main-navigation">
 				<a class="screen-reader-text skip-link" href="#content" title="<?php esc_attr_e( 'Skip to content', 'independent-publisher' ); ?>"><?php _e( 'Skip to content', 'independent-publisher' ); ?></a>
 
 				<?php // If this is a Single Post and we have a menu assigned to the "Single Posts Menu", show that ?>
-				<?php if ( (is_single() || ($pageBodyID=='trending')) && has_nav_menu( 'single' ) ) : ?>
+				<?php if ( (is_single() || ($pageBodyID=='newsletter')) && has_nav_menu( 'single' ) ) : ?>
 					<?php wp_nav_menu( array( 'theme_location' => 'single', 'depth' => 1 ) ); ?>
 				<?php else : ?>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 1 ) ); ?>

@@ -191,15 +191,15 @@ function independent_publisher_scripts() {
 		wp_enqueue_script( 'nprogress', get_template_directory_uri() . '/js/nprogress.js', array(), '0.1.3' );
 	}
 
-	if ( (is_singular() || $pageBodyID=="trending") && comments_open() && get_option( 'thread_comments' ) && ! independent_publisher_hide_comments() ) {
+	if ( (is_singular() || $pageBodyID=="newsletter") && comments_open() && get_option( 'thread_comments' ) && ! independent_publisher_hide_comments() ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	if ( (is_singular() || $pageBodyID=="trending") && wp_attachment_is_image( $post->ID ) ) {
+	if ( (is_singular() || $pageBodyID=="newsletter") && wp_attachment_is_image( $post->ID ) ) {
 		wp_enqueue_script( 'keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 	}
 
-	if ( (is_singular() || $pageBodyID=="trending") ) {
+	if ( (is_singular() || $pageBodyID=="newsletter") ) {
 		wp_enqueue_script( 'fade-post-title', get_template_directory_uri() . '/js/fade-post-title.js', array( 'jquery' ));
 	}
 
@@ -610,7 +610,7 @@ function independent_publisher_has_full_width_featured_image() {
 
 	global $pageBodyID;
 	// If this isn't a Single post type or we don't have a Featured Image set
-	if ( ! ( is_single() || ($pageBodyID=='trending') || is_page() ) || ! has_post_thumbnail() ) {
+	if ( ! ( is_single() || ($pageBodyID=='newsletter') || is_page() ) || ! has_post_thumbnail() ) {
 		return false;
 	}
 
@@ -773,10 +773,11 @@ add_filter( 'body_class', 'independent_publisher_multi_author_mode_body_class' )
  * Add no-post-excerpts to body class when Post Excerpts option is disabled
  */
 function independent_publisher_no_post_excerpts_body_class( $classes ) {
+	global $pageBodyID;
 	if ( ! independent_publisher_use_post_excerpts()
 		 && ! independent_publisher_generate_one_sentence_excerpts()
 		 && ! is_singular()
-		 && ! ($pageBodyID=="trending")
+		 && ! ($pageBodyID=="newsletter")
 	) {
 		$classes[] = 'no-post-excerpts';
 	}
@@ -791,7 +792,7 @@ add_filter( 'body_class', 'independent_publisher_no_post_excerpts_body_class' );
  */
 function independent_publisher_enhanced_excerpts_body_class( $classes ) {
 	global $pageBodyID;
-	if ( independent_publisher_generate_one_sentence_excerpts() && ! is_singular() && ! ($pageBodyID=="trending") ) {
+	if ( independent_publisher_generate_one_sentence_excerpts() && ! is_singular() && ! ($pageBodyID=="newsletter") ) {
 		$classes[] = 'enhanced-excerpts';
 	}
 
@@ -805,7 +806,7 @@ add_filter( 'body_class', 'independent_publisher_enhanced_excerpts_body_class' )
  */
 function independent_publisher_post_excerpts_body_class( $classes ) {
 	global $pageBodyID;
-	if ( independent_publisher_use_post_excerpts() && ! is_singular() && ! ($pageBodyID=="trending") ) {
+	if ( independent_publisher_use_post_excerpts() && ! is_singular() && ! ($pageBodyID=="newsletter") ) {
 		$classes[] = 'post-excerpts';
 	}
 
@@ -1142,7 +1143,7 @@ if ( ! function_exists( 'independent_publisher_maybe_linkify_the_content' ) ) :
 	 */
 	function independent_publisher_maybe_linkify_the_content( $content ) {
 		global $pageBodyID;
-		if ( ! (is_single() || $pageBodyID=="trending") && ( 'aside' === get_post_format() || 'quote' === get_post_format() ) ) {
+		if ( ! (is_single() || $pageBodyID=="newsletter") && ( 'aside' === get_post_format() || 'quote' === get_post_format() ) ) {
 
 			// Asides and Quotes might have footnotes with anchor tags, or just anchor tags, both of which would screw things up when linking the content to itself (anchors cannot have anchors inside them), so let's clean things up
 			$content = independent_publisher_clean_content( $content );
@@ -1163,7 +1164,7 @@ if ( ! function_exists( 'independent_publisher_maybe_linkify_the_excerpt' ) ) :
 	 */
 	function independent_publisher_maybe_linkify_the_excerpt( $content ) {
 		global $pageBodyID;
-		if ( ! is_single() && ! ($pageBodyID=='trending') ) {
+		if ( ! is_single() && ! ($pageBodyID=='newsletter') ) {
 			$content = '<a href="' . get_permalink() . '" rel="bookmark" title="' . esc_attr( sprintf( __( 'Permalink to %s', 'independent-publisher' ), the_title_attribute( 'echo=0' ) ) ) . '">' . $content . '</a>';
 		}
 
@@ -1192,7 +1193,7 @@ if ( ! function_exists( 'independent_publisher_html_tag_schema' ) ) :
 		$schema = 'http://schema.org/';
 		global $pageBodyID;
 		// Is single post
-		if ( is_single() || ($pageBodyID=='trending') ) {
+		if ( is_single() || ($pageBodyID=='newsletter') ) {
 			$type = "Article";
 		} // Contact form page ID
 		else {

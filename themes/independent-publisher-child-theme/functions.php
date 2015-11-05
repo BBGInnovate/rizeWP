@@ -256,9 +256,9 @@ endif;
 						/*** PREPARE TWITTER AND FB SHARE URLS ****/
 						$shareLink=get_permalink();
 						global $pageBodyID;
-						if ($pageBodyID=="trending") {
-							global $trendingPostPermalink;
-							$shareLink=$trendingPostPermalink;
+						if ($pageBodyID=="newsletter") {
+							global $newsletterPostPermalink;
+							$shareLink=$newsletterPostPermalink;
 						}
 						
 						/* remove html tags, smart quotes and trailing ellipses from description */
@@ -309,7 +309,7 @@ endif;
 										?>
 
 		
-										<?php if (true || $pageBodyID != "trending") : ?>
+										<?php if (true || $pageBodyID != "newsletter") : ?>
 											<?php echo independent_publisher_post_categories( '', false ); ?>
 										<?php endif; ?>
 
@@ -322,7 +322,7 @@ endif;
 
 										<?php } ?>
 
-										<?php if (true || $pageBodyID != "trending") : ?>
+										<?php if (true || $pageBodyID != "newsletter") : ?>
 											<h1 class="entry-title" itemprop="name">
 												<?php echo get_the_title(); ?>
 											</h1>
@@ -334,7 +334,7 @@ endif;
 												<?php echo $subtitle;?>
 											</h2>
 										<?php endif; ?>
-										<?php if ( $pageBodyID == "trending" || (! is_page()) ) : ?>
+										<?php if ( $pageBodyID == "newsletter" || (! is_page()) ) : ?>
 											<h3 class="entry-title-meta">
 												<span class="entry-title-meta-author">
 													<a class="author-avatar" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
