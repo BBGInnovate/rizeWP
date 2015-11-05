@@ -27,7 +27,7 @@
 	/* Since the in-focus and mission pages are already part of the footer nav, we exclude them.
 	   Simply add more entries to the list as needed */
 	
-	$excludeList=["/trending","/about","/guide"];
+	$excludeList=["/trending","/about","/guide", "/compass"];
     $menu_name = 'primary';
     if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_name ] ) ) {
 		$menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
