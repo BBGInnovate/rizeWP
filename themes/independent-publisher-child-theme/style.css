@@ -371,11 +371,55 @@ and Blueprint http://www.blueprintcss.org/
 		padding:0; 
 	}
 
+	#footerNav ul li.home{
+		background: url(../../images/menu_icons_unselected.png) no-repeat center 2px / 35px 250px;
+	}
+	#footerNav ul li.focus{
+		background: url(../../images/menu_icons_unselected.png) no-repeat center -48px / 35px 250px;
+	}
+	#footerNav ul li.mission{
+		background: url(../../images/menu_icons_unselected.png) no-repeat center -98px / 35px 250px;
+	}
+	#footerNav ul li.trending{
+		background: url(../../images/menu_icons_unselected.png) no-repeat center -146px / 35px 250px;
+	}
+	#footerNav ul li.fuego{
+		background: url(../../images/menu_icons_unselected.png) no-repeat center -195px / 35px 250px;
+	}
 
+	/* Hightlight the footer nav for the current page */
+	#frontPage #footerNav ul li.home{
+		background: url(../../images/menu_icons_selected.png) no-repeat center 2px / 35px 250px;
+		color: orange;
+	}
+	#footerNav ul li.focus.menuOpen{
+		background: url(../../images/menu_icons_selected.png) no-repeat center -48px / 35px 250px;
+	}
+	#pageMission #footerNav ul li.mission{
+		background: url(../../images/menu_icons_selected.png) no-repeat center -98px / 35px 250px;
+	}
+	#trending #footerNav ul li.trending{
+		background: url(../../images/menu_icons_selected.png) no-repeat center -146px / 35px 250px;
+	}
+	#fuego #footerNav ul li.fuego{
+		background: url(../../images/menu_icons_selected.png) no-repeat center -195px / 35px 250px;
+	}
+
+	#frontPage #footerNav ul li.home a, 
+	#footerNav ul li.focus.menuOpen a, 
+	#pageMission #footerNav ul li.mission a, 
+	#trending #footerNav ul li.trending a, 
+	#fuego #footerNav ul li.fuego a{
+		color: orange;
+	}
+
+
+
+	#footerNav ul li span.text{display: none;}
 	#footerNav ul li{
 		display: inline-block;
 		/*width: 18.5%;*/
-		width: 18.5%;
+		width: 18%;
 		/*width: 23.5%;*/
 		height: 50px; 
 		padding: 0; 
@@ -384,38 +428,46 @@ and Blueprint http://www.blueprintcss.org/
 		border-right: 1px dotted #CCC;
 		vertical-align: bottom;
 	}
-	#footerNav ul li.home{
-		/*background: url(/wp-content/uploads/2015/09/menu_icons_150.png) no-repeat center 0px / 35px 150px;*/
-		background: url(../../images/menu_icons_unselected.png) no-repeat center -4px / 35px 250px;
-	}
-	#footerNav ul li.focus{
-		background: url(../../images/menu_icons_unselected.png) no-repeat center -53px / 35px 250px;
-	}
-	#footerNav ul li.mission{
-		background: url(../../images/menu_icons_unselected.png) no-repeat center -103px / 35px 250px;
-	}
-	#footerNav ul li.trending{
-		background: url(../../images/menu_icons_unselected.png) no-repeat center -153px / 35px 250px;
-	}
-	#footerNav ul li.fuego{
-		background: url(../../images/menu_icons_unselected.png) no-repeat center -200px / 35px 250px;
-	}
+	@media (min-width: 300px) {
+		#footerNav ul li span.text{display: block;}
+		#footerNav ul li{
+			width: 18.5%;
+			/*width: 23.5%;*/
+		}
+		#footerNav ul li.home{
+			background-position: center -4px;
+		}
+		#footerNav ul li.focus{
+			background-position: center -53px;
+		}
+		#footerNav ul li.mission{
+			background-position: center -103px;
+		}
+		#footerNav ul li.trending{
+			background-position: center -153px;
+		}
+		#footerNav ul li.fuego{
+			background-position: center -200px;
+		}
 
-	/* Hightlight the footer nav for the current page */
-	#frontPage #footerNav ul li.home{
-		background: url(../../images/menu_icons_selected.png) no-repeat center -4px / 35px 250px;
-	}
-	#footerNav ul li.focus.menuOpen{
-		background: url(../../images/menu_icons_selected.png) no-repeat center -53px / 35px 250px;
-	}
-	#pageMission #footerNav ul li.mission{
-		background: url(../../images/menu_icons_selected.png) no-repeat center -103px / 35px 250px;
-	}
-	#trending #footerNav ul li.trending{
-		background: url(../../images/menu_icons_selected.png) no-repeat center -153px / 35px 250px;
-	}
-	#fuego #footerNav ul li.fuego{
-		background: url(../../images/menu_icons_selected.png) no-repeat center -200px / 35px 250px;
+		/* Hightlight the footer nav for the current page */
+		#frontPage #footerNav ul li.home{
+			background-position: center -4px;
+		}
+		#footerNav ul li.focus.menuOpen{
+			background-position: center -53px;
+		}
+		#pageMission #footerNav ul li.mission{
+			background-position: center -103px;
+		}
+		#trending #footerNav ul li.trending{
+			background-position: center -153px;
+		}
+		#fuego #footerNav ul li.fuego{
+			background-position: center -200px;
+		}
+
+
 	}
 
 
