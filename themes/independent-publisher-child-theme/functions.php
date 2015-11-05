@@ -740,7 +740,19 @@ add_action( 'admin_init', 'my_theme_add_editor_styles' );
 /* ODDI CUSTOM: Clear FB Cache when someone updates a post */
 function clearFBCache( $post_ID, $post, $update ) {
 	//$urlToClear="https://africa2.rizing.org/testing-how-to-add-css-that-wont-get-stripped/";
-	$urlToClear = $post->permalink;
+	/*
+	global $wpdb;
+	error_reporting(E_ALL);
+	
+	$wpdb->insert( 
+		'dbug', 
+		array( 
+			'something' => get_permalink($post_ID)
+		) 
+	);
+	*/
+
+	$urlToClear = get_permalink($post_ID);
 	$ch = curl_init();
 	curl_setopt ($ch, CURLOPT_URL,"https://graph.facebook.com");
 	curl_setopt ($ch, CURLOPT_POST, 1);
