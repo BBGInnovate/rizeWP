@@ -56,8 +56,8 @@
 	<div class='maxWidth1200'>
 		<ul>
 			<li class='home'><a href='<?php echo site_url() . "/"; ?>'><span class='text'>home</span></a></li>
-			<li class='trending'><a href='<?php echo site_url() . "/"; ?>trending/'><span class='text'>trending</span></a></li>
-			<li class='newsletter'><a href='<?php echo site_url() . "/"; ?>compass/'><span class='text'>guide</span></a></li>
+			<li class='trending'><a href='<?php echo site_url() . "/"; ?>trending'><span class='text'>trending</span></a></li>
+			<li class='newsletter'><a href='<?php echo site_url() . "/"; ?>compass'><span class='text'>guide</span></a></li>
 			<li class='focus'><a><span class='text'>in focus</span></a></li>
 			<!--<li class='mission'><a href='<?php echo site_url() . "/"; ?>index.php/about/'><span class='text'>mission</span></a></li>-->
 		</ul>
