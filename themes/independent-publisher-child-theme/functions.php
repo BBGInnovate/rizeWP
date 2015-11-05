@@ -269,7 +269,7 @@ endif;
 
 						//the title/headline field, followed by the URL and the author's twitter handle
 						$twitterText= "";
-						$twitterText .= get_the_title();
+						$twitterText .= html_entity_decode(get_the_title());
 						$twitterHandle = get_the_author_meta( 'twitterHandle' );
 						$twitterHandle=str_replace("@", "", $twitterHandle);
 						if ( $twitterHandle && $twitterHandle != '' ) {
