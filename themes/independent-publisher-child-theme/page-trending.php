@@ -29,12 +29,12 @@ include("page-trending-header.php");
 		<?php 
 
 		//require('../../fuego/init.php');
-		$linkID=0;
+		$linkDetailID=0;
 
 		if ( isset ( $_GET['linkID']) ) {
-			$linkID = $_GET['linkID'];
+			$linkDetailID = $_GET['linkID'];
 		} 
-		$items = $fuego->getItems(20, 24, FALSE, TRUE, 2, $linkID); // quantity, hours, scoring, metadata
+		$items = $fuego->getItems(20, 24, FALSE, TRUE, 2, $linkDetailID); // quantity, hours, scoring, metadata
 		
 		$counter=0;
 
@@ -196,7 +196,7 @@ include("page-trending-header.php");
 			}
 
 		?>
-			<article data-weighted-count='<?php echo $weightedCount ?>'>
+			<article data-weighted-count='<?php echo $weightedCount ?>' data-id='<?php echo $linkID ?>'>
 
 				<?php if (!$isTwitter){ ?>
 					<header class='entry-header'>
