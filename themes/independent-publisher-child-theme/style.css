@@ -726,7 +726,7 @@ and Blueprint http://www.blueprintcss.org/
 	}
 
 	.archive.author .archive-title{max-width: 100%; margin:0;}
-	.author h1.archive-title, .category h1.archive-title, #trending  h1.archive-title {text-align: center; width: 100%; /*text-align:left;*/}
+	.author h1.archive-title, .category h1.archive-title, #trending  h1.archive-title {text-align: center; width: 100%; clear:none; /*text-align:left;*/}
 	.author .author-avatar, #categoryPage .archive-avatar, #trending .author-avatar {text-align: center; margin-top: 10px;/*text-align:left;*/}
 	.author .author-avatar img, #categoryPage .archive-avatar img, #trending .author-avatar img {margin-top: 0; float: none;/* margin-top: -85; float: left;*/}
 
@@ -747,7 +747,14 @@ and Blueprint http://www.blueprintcss.org/
 		.author .author-avatar, #categoryPage .archive-avatar{text-align: left; margin-top: 10px; float:left;}
 		.author .author-avatar img, #categoryPage .archive-avatar img{margin-top: 0; float: left;}
 
-		.author h1.archive-title, #categoryPage.category-newsletter h1.archive-title{text-align: left; width: auto; clear:none; font-size: 2.5em;}
+		.author h1.archive-title, 
+		#categoryPage.category-newsletter h1.archive-title, 
+		#categoryPage.category-guide h1.archive-title{
+			text-align: left; 
+			width: auto; 
+			clear:none; 
+			font-size: 2.5em;
+		}
 
 
 		#categoryPage .archive-bio h1.archive-title{
@@ -760,11 +767,14 @@ and Blueprint http://www.blueprintcss.org/
 
 		/* Add categories with icons to these two rules. */
 		.archive.author .archive-title, 
-		#categoryPage.category-newsletter .archive-bio h1.archive-title{
+		#categoryPage.category-newsletter .archive-bio h1.archive-title,
+		#categoryPage.category-guide .archive-bio h1.archive-title
+		{
 			padding: 0 0 0 170px;
 		}
 		.author .author-description, 
-		#categoryPage.category-newsletter .category-description{
+		#categoryPage.category-newsletter .category-description,
+		#categoryPage.category-guide .category-description{
 			padding:0 0 0 170px;
 			text-align: left;
 		}
