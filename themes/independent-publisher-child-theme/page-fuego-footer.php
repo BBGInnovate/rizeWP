@@ -13,11 +13,11 @@
 <div id="focusMenu"><ul id="dropdown"><a href="<?php echo site_url() . "/"; ?>trending"><li>Trending</li></a><a href="<?php echo site_url() . "/"; ?>fuego"><li>Fuego</li></a><a href="<?php echo site_url() . "/"; ?>category/generation-next"><li>Generation Next</li></a><a href="<?php echo site_url() . "/"; ?>category/you-should-know"><li>You Should Know</li></a><a href="<?php echo site_url() . "/"; ?>category/identity"><li>Identity</li></a><a href="<?php echo site_url() . "/"; ?>category/culture"><li>Culture</li></a><a href="<?php echo site_url() . "/"; ?>category/civic-tech"><li>Civic Tech</li></a><a href="<?php echo site_url() . "/"; ?>about"><li>Our mission</li></a></ul></div><div id='footerNav'>
 	<div class='maxWidth1200'>
 		<ul>
-			<li class='home'><a href='<?php echo site_url() . "/"; ?>'>home</a></li>
-			<li class='trending'><a href='<?php echo site_url() . "/"; ?>index.php/trending/'>trending</a></li>
-			<li class='focus'><a>in focus</a></li>
-			<!--<li class='fuego'><a href='<?php echo site_url() . "/"; ?>index.php/fuego/'>fuego</a></li>-->
-			<li class='mission'><a href='<?php echo site_url() . "/"; ?>index.php/about/'>mission</a></li>
+			<li class='home'><a href='<?php echo site_url() . "/"; ?>'><span class='text'>home</span></a></li>
+			<li class='fuego'><a href='<?php echo site_url() . "/"; ?>index.php/fuego/'><span class='text'>fuego</span></a></li>
+			<li class='trending'><a href='<?php echo site_url() . "/"; ?>index.php/trending/'><span class='text'>trending</span></a></li>
+			<li class='focus'><a><span class='text'>in focus</span></a></li>
+			<li class='mission'><a href='<?php echo site_url() . "/"; ?>index.php/about/'><span class='text'>mission</span></a></li>
 		</ul>
 	</div>
 </div>

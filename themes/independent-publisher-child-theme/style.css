@@ -431,8 +431,9 @@ and Blueprint http://www.blueprintcss.org/
 	@media (min-width: 300px) {
 		#footerNav ul li span.text{display: block;}
 		#footerNav ul li{
-			width: 18.5%;
-			/*width: 23.5%;*/
+			width: 18.5%;/*5 icons. <br/> b/w <li/>*/
+			/*width: 19.5%;*/ /*5 icons. no <br/> b/w <li/>
+			/*width: 23.5%;*/ /*4 icons. <br/> b/w <li/>*/
 		}
 		#footerNav ul li.home{
 			background-position: center -4px;
