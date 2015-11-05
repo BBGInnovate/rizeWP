@@ -4,7 +4,7 @@
 <head>
 	<?php /*$trendingDescription = 'A collection of the stories and conversations that are trending across our audience.'; */ ?>
 	<?php /*$trendingDescription = "an auto-generated stream of trending links, stories and conversations from our community of influencers — inspired by <a href='https://github.com/niemanlab/openfuego' target='_blank'>Fuego</a>"; */?>
-	<?php $trendingDescription = "an auto-generated stream of trending links, stories and conversations from our community of influencers — inspired by <a href='https://github.com/niemanlab/openfuego' target='_blank'>Fuego</a>"; ?>
+	<?php $trendingDescription = "an auto-generated stream of links and conversations from our community — powered by <a href='https://github.com/niemanlab/openfuego' target='_blank'>Fuego</a>"; ?>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 	<title>Trending - Africa Rizing</title>
