@@ -722,7 +722,7 @@ and Blueprint http://www.blueprintcss.org/
 	/* Add background images for categories with icons. */
 	#categoryPage.category-newsletter .archive-avatar{
 		display: block;
-		background: url(../../images/newsletter.png) no-repeat center / cover;
+		background: url(../../images/category_icons_compass.png) no-repeat center / cover;
 	}
 
 	.archive.author .archive-title{max-width: 100%; margin:0;}
@@ -1681,7 +1681,7 @@ div.interview {
 }
 #trending h1.entry-title {
 	font-size: 1.3em;
-	margin-top:15px;
+	margin-top: 15px;
 }
 #trending .entry-meta {
 	border-top: 1px solid #eee;
@@ -1691,6 +1691,10 @@ div.interview {
 }
 #trending .entry-content a p {
 	color: #333;
+	margin-bottom: 0;
+}
+#trending .entry-content {
+	padding-bottom:0;
 }
 
 #trending .entry-content a:hover{
@@ -1727,6 +1731,7 @@ div.interview {
 .quotedTweet{
 	padding:20px; 
 	border-radius: 5px; 
+	margin-bottom: 20px;
 	/*border: 1px solid #CCC;*/
 	-moz-box-shadow:    inset 0 0 10px #CCC;
 	-webkit-box-shadow: inset 0 0 10px #CCC;
