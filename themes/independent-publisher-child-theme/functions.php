@@ -752,13 +752,18 @@ function clearFBCache( $post_ID, $post, $update ) {
 	);
 	*/
 
-	$urlToClear = get_permalink($post_ID);
-	$ch = curl_init();
-	curl_setopt ($ch, CURLOPT_URL,"https://graph.facebook.com");
-	curl_setopt ($ch, CURLOPT_POST, 1);
-	curl_setopt ($ch, CURLOPT_POSTFIELDS, http_build_query(array('scrape' => 'true','id' => $urlToClear)));
-	curl_exec ($ch);
-	curl_close ($ch);
+	/* this hook ends up getting fired 2x when an update is done - once with the new post, once with the old revision.  
+	we only want to clear it once so we check wp_is_post_revision */
+	
+	if ( ! wp_is_post_revision($post_ID)) {
+		$urlToClear = get_permalink($post_ID);
+		$ch = curl_init();
+		curl_setopt ($ch, CURLOPT_URL,"https://graph.facebook.com");
+		curl_setopt ($ch, CURLOPT_POST, 1);
+		curl_setopt ($ch, CURLOPT_POSTFIELDS, http_build_query(array('scrape' => 'true','id' => $urlToClear)));
+		curl_exec ($ch);
+		curl_close ($ch);
+	}
 }
 add_action( 'save_post', 'clearFBCache', 10, 3 );
 
