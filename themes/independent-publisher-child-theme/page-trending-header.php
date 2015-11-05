@@ -102,7 +102,7 @@ img.emoji {
 
 <div class="author-bio">
 	<div class="author-avatar">
-		<img src="<?php echo site_url() . "/"; ?>wp-content/images/category_icons_compass.png" width="150" height="150" alt="Trending" class="avatar avatar-150 wp-user-avatar wp-user-avatar-150 alignnone photo" data-pin-nopin="true">
+		<img src="https://africa.rizing.org/wp-content/uploads/2015/10/trending-150x150.png" width="150" height="150" alt="Trending" class="avatar avatar-150 wp-user-avatar wp-user-avatar-150 alignnone photo" data-pin-nopin="true">
 	</div>
 	
 	<h1 class="archive-title"><span class="vcard">Trending</span></h1>
@@ -120,7 +120,7 @@ img.emoji {
 		<div class="site-header-info">
 											
 					<a class="site-logo">
-				<img src="<?php echo site_url() . "/"; ?>wp-content/images/category_icons_compass.png" width="100" height="100" alt="Trending" class="avatar avatar-100 wp-user-avatar wp-user-avatar-100 alignnone photo" />			</a>
+				<img src="https://africa.rizing.org/wp-content/uploads/2015/10/trending-150x150.png" width="100" height="100" alt="Trending" class="avatar avatar-100 wp-user-avatar wp-user-avatar-100 alignnone photo" />			</a>
 		
 		<h1 class="site-title"><span class="byline"><span class="author vcard">Trending</span></span></h1>
 		<h2 class="site-description"><?php echo $trendingDescription ?></h2>
