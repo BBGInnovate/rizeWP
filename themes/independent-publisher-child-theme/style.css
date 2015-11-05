@@ -720,7 +720,7 @@ and Blueprint http://www.blueprintcss.org/
 	}
 
 	/* Add background images for categories with icons. */
-	#categoryPage.category-newsletter .archive-avatar{
+	#categoryPage.category-guide .archive-avatar, #categoryPage.category-newsletter .archive-avatar{
 		display: block;
 		background: url(../../images/category_icons_compass.png) no-repeat center / cover;
 	}
