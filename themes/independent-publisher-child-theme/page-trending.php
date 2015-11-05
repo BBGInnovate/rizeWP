@@ -29,7 +29,13 @@ include("page-trending-header.php");
 		<?php 
 
 		//require('../../fuego/init.php');
-		$items = $fuego->getItems(20, 24, FALSE, TRUE, 2); // quantity, hours, scoring, metadata
+		$linkID=0;
+
+		if ( isset ( $_GET['linkID']) ) {
+			$linkID = $_GET['linkID'];
+		} 
+		$items = $fuego->getItems(20, 24, FALSE, TRUE, 2, $linkID); // quantity, hours, scoring, metadata
+		
 		$counter=0;
 
 		function twitterify($ret) {

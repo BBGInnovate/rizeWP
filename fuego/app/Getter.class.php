@@ -109,7 +109,7 @@ class Getter {
 		return $embedlyData;
 	}
 
-	public function getItems($quantity = 10, $hours = 24, $scoring = TRUE, $metadata = FALSE, $min_weighted_count = 24) {
+	public function getItems($quantity = 10, $hours = 24, $scoring = TRUE, $metadata = FALSE, $min_weighted_count = 24, $linkID=0) {
 	
 		$now = time();
 		$quantity = (int)$quantity;
@@ -123,30 +123,44 @@ class Getter {
 	
 		try {
 			$dbh = $this->getDbh();
-			$sql = "
-				SELECT link_id, url, first_seen, first_user, weighted_count, count, localImage, remoteImage
-				FROM openfuego_links
-				WHERE weighted_count >= :min_weighted_count
-					AND count > 1
-					AND hiddenFlag='N'
-					AND first_seen BETWEEN DATE_SUB(:date, INTERVAL :hours HOUR) AND :date
-					AND url not like '%nytimes.com%'
-				ORDER BY weighted_count DESC
-				LIMIT :limit;
-			";
-			$sth = $this->_dbh->prepare($sql);
-			$sth->bindParam('date', $date, \PDO::PARAM_STR);
-			$sth->bindParam('hours', $hours, \PDO::PARAM_INT);
-			$sth->bindParam('min_weighted_count', $min_weighted_count, \PDO::PARAM_INT);
-			$sth->bindParam('limit', $limit, \PDO::PARAM_INT);
-			$sth->execute();
+			
+			if ($linkID > 0) {
+				$sql = "
+					SELECT link_id, url, first_seen, first_user, weighted_count, count, localImage, remoteImage
+					FROM openfuego_links
+					WHERE link_id = :link_id
+				";
+				$sth = $this->_dbh->prepare($sql);
+				$sth->bindParam('link_id', $linkID, \PDO::PARAM_INT);
+				$sth->execute();
+
+
+			} else {
+				$sql = "
+					SELECT link_id, url, first_seen, first_user, weighted_count, count, localImage, remoteImage
+					FROM openfuego_links
+					WHERE weighted_count >= :min_weighted_count
+						AND count > 1
+						AND hiddenFlag='N'
+						AND first_seen BETWEEN DATE_SUB(:date, INTERVAL :hours HOUR) AND :date
+						AND url not like '%nytimes.com%'
+					ORDER BY weighted_count DESC
+					LIMIT :limit;
+				";
+				$sth = $this->_dbh->prepare($sql);
+				$sth->bindParam('date', $date, \PDO::PARAM_STR);
+				$sth->bindParam('hours', $hours, \PDO::PARAM_INT);
+				$sth->bindParam('min_weighted_count', $min_weighted_count, \PDO::PARAM_INT);
+				$sth->bindParam('limit', $limit, \PDO::PARAM_INT);
+				$sth->execute();
+			}
+			
 	
 		} catch (\PDOException $e) {
 			Logger::error($e);
 			return FALSE;
 		}
 		$items = $sth->fetchAll(\PDO::FETCH_ASSOC);
-	
 		if (!$items) {
 			return FALSE;
 		}
