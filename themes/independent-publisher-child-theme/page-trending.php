@@ -4,11 +4,11 @@
  *
  * @package Independent Publisher
  * @since   Independent Publisher 1.0 
-  template name: Fuego
+  template name: Trending
 
  */
 
-$pageBodyID = "fuego";
+$pageBodyID = "trending";
 require(dirname(__FILE__).'/../../fuego/init.php');
 use OpenFuego\app\Getter as Getter;
 $fuego = new Getter();
@@ -280,7 +280,7 @@ include("page-fuego-header.php");
 				<?php 
 
 					if (current_user_can('publish_posts')) {
-						echo "<a href='/fuego?hideLink=$linkID' class='hideLink'>Hide this link</a><BR>";
+						echo "<a href='/trending?hideLink=$linkID' class='hideLink'>Hide this link</a><BR>";
 					}
 				?>
 			</article>
