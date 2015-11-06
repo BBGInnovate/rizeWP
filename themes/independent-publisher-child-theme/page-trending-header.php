@@ -130,10 +130,11 @@ img.emoji {
 <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27"><a href="http://twitter.com/africarizing"><span class="screen-reader-text">@AfricaRizing</span></a></li>
 <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-418"><a href="http://tinyletter.com/africarizing"><span class="screen-reader-text">Newsletter</span></a></li>
 </ul></div>
-		<div class="site-published-separator"></div>
+<!--
+	<div class="site-published-separator"></div>
 		<h2 class="site-published">Published</h2>
 		<h2 class="site-published-date"><time class="entry-date" datetime="2015-10-15T11:39:10+00:00" itemprop="datePublished" pubdate="pubdate">October 15, 2015</time></h2>
-				
+-->
 								</div>
 
 			</header>
