@@ -458,6 +458,7 @@ and Blueprint http://www.blueprintcss.org/
 		#trending #footerNav ul li.trending{
 			background-position: center -153px;
 		}
+		#footerNav ul li.newsletter,
 		#newsletter #footerNav ul li.newsletter,
 		#authorPage.author-trending #footerNav ul li.newsletter{
 			background-position: center -200px;
@@ -1821,6 +1822,9 @@ a:hover .twitterImageCredit{
 }
 .hideLink:hover{
 	color: #FFF;
+}
+#trending .author-bio{
+	display: none;
 }
 
 @media only screen and (min-width: 500px){

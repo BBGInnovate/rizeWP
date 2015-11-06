@@ -309,6 +309,8 @@ include("page-trending-header.php");
 <div id="secondary" class="widget-area" role="complementary">
 </div><!-- #secondary .widget-area -->
 
+	<?php independent_publisher_posted_author_bottom_card() ?>
+
 </div><!-- #main .site-main -->
 
 
