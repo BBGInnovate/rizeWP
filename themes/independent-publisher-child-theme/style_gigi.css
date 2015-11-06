@@ -37,3 +37,7 @@ h6.series-name {
 h6.series-name a {
 	color: #fff;
 }
+
+.paged footer.entry-meta{
+	text-align: left;
+}
