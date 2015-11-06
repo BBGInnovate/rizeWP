@@ -1830,7 +1830,11 @@ a:hover .twitterImageCredit{
 	float: none;
 	margin: 0 auto 60px auto;
 }
-
+#trending .post-author-bottom {
+	max-width: 700px;
+	margin: 0 auto 20px auto;
+	border-top: none;
+}
 @media only screen and (min-width: 500px){
 	#trending h1.entry-title {
 		font-size: 1.6em;
