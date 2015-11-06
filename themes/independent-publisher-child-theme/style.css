@@ -403,7 +403,8 @@ and Blueprint http://www.blueprintcss.org/
 		background: url(../../images/menu_icons_selected.png) no-repeat center -146px / 35px 250px;
 	}
 	#newsletter #footerNav ul li.newsletter,
-	#authorPage.author-trending #footerNav ul li.newsletter
+	#authorPage.author-trending #footerNav ul li.newsletter,
+	.category-compass .category-69 #footerNav ul li.newsletter
 	{
 		background: url(../../images/menu_icons_selected.png) no-repeat center -195px / 35px 250px;
 	}
@@ -414,7 +415,10 @@ and Blueprint http://www.blueprintcss.org/
 	#footerNav ul li.focus.menuOpen a, 
 	#pageMission #footerNav ul li.mission a, 
 	#newsletter #footerNav ul li.newsletter a, 
-	#trending #footerNav ul li.trending a{
+	#trending #footerNav ul li.trending a,
+	#authorPage.author-trending #footerNav ul li.newsletter a,
+	.category-compass .category-69 #footerNav ul li.newsletter a
+	{
 		color: orange;
 	}
 
