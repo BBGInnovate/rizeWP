@@ -309,6 +309,8 @@ include("page-trending-header.php");
 <div id="secondary" class="widget-area" role="complementary">
 </div><!-- #secondary .widget-area -->
 </div>
+</div><!-- #main .site-main -->
+
 		<div class="post-author-bottom">
 			<div class="post-author-card">
 				<a class="site-logo" href="https://africa2.rizing.org/trending/">
@@ -323,9 +325,6 @@ include("page-trending-header.php");
 				</div>
 			</div>
 		</div>
-
-</div><!-- #main .site-main -->
-
 
 
 <?php 
