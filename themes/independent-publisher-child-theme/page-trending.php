@@ -310,7 +310,7 @@ include("page-trending-header.php");
 </div><!-- #secondary .widget-area -->
 </div>
 </div><!-- #main .site-main -->
-
+</div>
 		<div class="post-author-bottom">
 			<div class="post-author-card">
 				<a class="site-logo" href="https://africa2.rizing.org/trending/">
