@@ -1800,6 +1800,7 @@ div.interview {
 	background-position: center center;
 	background-size: cover; 
 	background-repeat: no-repeat;
+	box-shadow: 0 0 3px #999;
 }
 .twitterImageCredit img{
 	display: block;
@@ -1895,6 +1896,7 @@ a:hover .twitterImageCredit{
 	border-radius: 50%;
 	vertical-align: -25%;
 	margin-right: 5px;
+	box-shadow: 0 0 3px #999;
 }
 
 
