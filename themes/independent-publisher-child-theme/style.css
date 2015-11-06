@@ -1826,6 +1826,10 @@ a:hover .twitterImageCredit{
 #trending .author-bio{
 	display: none;
 }
+#trending #colophon.site-footer{
+	float: none;
+	margin: 0 auto 60px auto;
+}
 
 @media only screen and (min-width: 500px){
 	#trending h1.entry-title {
