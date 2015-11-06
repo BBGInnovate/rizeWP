@@ -309,8 +309,27 @@ include("page-trending-header.php");
 <div id="secondary" class="widget-area" role="complementary">
 </div><!-- #secondary .widget-area -->
 
-	<?php independent_publisher_posted_author_bottom_card() ?>
+<div class="post-author-bottom">
+			<div class="post-author-card">
+				<a class="site-logo" href="https://africa2.rizing.org/author/trending/">
+					<img src="https://africa2.rizing.org/wp-content/uploads/2015/11/category_icons_trending-150x150.png" width="100" height="100" alt="Trending" class="avatar avatar-100 wp-user-avatar wp-user-avatar-100 alignnone photo">				</a>
 
+				<div class="post-author-info">
+					<h1 class="site-title">
+						<span class="byline"><span class="author vcard"><a class="url fn n" href="https://africa.rizing.org/author/trending/">Trending</a></span></span>					</h1>
+					<div id="authorContact"><a href="//www.twitter.com/AfricaRizing">@AfricaRizing</a> </div>
+					<h2 class="site-description">an auto-generated stream of links and conversations from our community — powered by <a href='https://github.com/niemanlab/openfuego' target='_blank'>Fuego</a></h2>
+
+
+				</div>
+				<div class="post-published-date">
+					<h2 class="site-published">Published</h2>
+					<h2 class="site-published-date"><time class="entry-date" datetime="2015-10-12T23:50:40+00:00" itemprop="datePublished" pubdate="pubdate">October 12, 2015</time></h2>
+										
+					
+				</div>
+			</div>
+		</div>
 </div><!-- #main .site-main -->
 
 
