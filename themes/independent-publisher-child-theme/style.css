@@ -376,6 +376,7 @@ and Blueprint http://www.blueprintcss.org/
 	}
 	#footerNav ul li.focus{
 		background: url(../../images/menu_icons_unselected.png) no-repeat center -48px / 35px 250px;
+		cursor: pointer; cursor: hand;
 	}
 	#footerNav ul li.mission{
 		background: url(../../images/menu_icons_unselected.png) no-repeat center -98px / 35px 250px;
@@ -401,9 +402,13 @@ and Blueprint http://www.blueprintcss.org/
 	#trending #footerNav ul li.trending{
 		background: url(../../images/menu_icons_selected.png) no-repeat center -146px / 35px 250px;
 	}
-	#newsletter #footerNav ul li.newsletter{
+	#newsletter #footerNav ul li.newsletter,
+	#authorPage.author-trending #footerNav ul li.newsletter
+	{
 		background: url(../../images/menu_icons_selected.png) no-repeat center -195px / 35px 250px;
 	}
+	
+
 
 	#frontPage #footerNav ul li.home a, 
 	#footerNav ul li.focus.menuOpen a, 
@@ -696,9 +701,9 @@ and Blueprint http://www.blueprintcss.org/
 	}
 
 	#authorPage.author div.author-bio, #trending div.author-bio{
-		border-bottom: 1px dashed #CCC;
+		border-bottom: none; /*1px dashed #CCC*/
 	    padding-bottom: 20px;
-	    margin-bottom: 40px;
+	    margin-bottom: 0;/*40px*/
 	}
 
 	#categoryPage div.archive-bio{
@@ -1809,7 +1814,7 @@ a:hover .twitterImageCredit{
 	text-decoration: none;
 }
 #trending .firstShared{
-	display: none;
+	/*display: none;*/
 }
 #trending .byline, #trending footer.entry-meta .sep.sep-byline{
 	display: inline-block;
