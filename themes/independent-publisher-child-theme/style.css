@@ -919,7 +919,9 @@ and Blueprint http://www.blueprintcss.org/
 
 /* list view specific styles ----------- */
 
-	.blog article {padding: 5px 0;}
+	.blog article {
+		padding: 8px 0;
+	}
 
 	.post .entry-content a p {
 		color: #333;
