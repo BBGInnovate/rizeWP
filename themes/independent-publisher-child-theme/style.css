@@ -720,7 +720,11 @@ and Blueprint http://www.blueprintcss.org/
 	}
 
 	/* Add background images for categories with icons. */
-	#categoryPage.category-guide .archive-avatar, #categoryPage.category-newsletter .archive-avatar{
+	#categoryPage.category-newsletter .archive-avatar,
+	#categoryPage.category-69 .archive-avatar,
+	#categoryPage.category-guide .archive-avatar, 
+	#categoryPage.category-compass .archive-avatar
+	{
 		display: block;
 		background: url(../../images/category_icons_compass.png) no-repeat center / cover;
 	}
@@ -748,8 +752,11 @@ and Blueprint http://www.blueprintcss.org/
 		.author .author-avatar img, #categoryPage .archive-avatar img{margin-top: 0; float: left;}
 
 		.author h1.archive-title, 
-		#categoryPage.category-newsletter h1.archive-title, 
-		#categoryPage.category-guide h1.archive-title{
+		#categoryPage.category-newsletter h1.archive-title,
+		#categoryPage.category-69 h1.archive-title, 
+		#categoryPage.category-guide h1.archive-title,
+		#categoryPage.category-compass h1.archive-title
+		{
 			text-align: left; 
 			width: auto; 
 			clear:none; 
@@ -768,13 +775,18 @@ and Blueprint http://www.blueprintcss.org/
 		/* Add categories with icons to these two rules. */
 		.archive.author .archive-title, 
 		#categoryPage.category-newsletter .archive-bio h1.archive-title,
-		#categoryPage.category-guide .archive-bio h1.archive-title
+		#categoryPage.category-69 .archive-bio h1.archive-title,
+		#categoryPage.category-guide .archive-bio h1.archive-title,
+		#categoryPage.category-compass .archive-bio h1.archive-title
 		{
 			padding: 0 0 0 170px;
 		}
 		.author .author-description, 
 		#categoryPage.category-newsletter .category-description,
-		#categoryPage.category-guide .category-description{
+		#categoryPage.category-69 .category-description,
+		#categoryPage.category-guide .category-description,
+		#categoryPage.category-compass .category-description
+		{
 			padding:0 0 0 170px;
 			text-align: left;
 		}
