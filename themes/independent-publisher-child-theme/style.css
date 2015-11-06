@@ -407,7 +407,7 @@ and Blueprint http://www.blueprintcss.org/
 	{
 		background: url(../../images/menu_icons_selected.png) no-repeat center -195px / 35px 250px;
 	}
-	
+
 
 
 	#frontPage #footerNav ul li.home a, 
@@ -440,39 +440,28 @@ and Blueprint http://www.blueprintcss.org/
 			/*width: 19.5%;*/ /*5 icons. no <br/> b/w <li/>*/
 			width: 23.5%; /*4 icons. <br/> b/w <li/>*/
 		}
-		#footerNav ul li.home{
-			background-position: center -4px;
-		}
-		#footerNav ul li.focus{
-			background-position: center -53px;
-		}
-		#footerNav ul li.mission{
-			background-position: center -103px;
-		}
-		#footerNav ul li.trending{
-			background-position: center -153px;
-		}
-		#footerNav ul li.newsletter{
-			background-position: center -200px;
-		}
 
-		/* Hightlight the footer nav for the current page */
+		/* Adjusting icon positions to make room for the labels */
+		#footerNav ul li.home,
 		#frontPage #footerNav ul li.home{
 			background-position: center -4px;
 		}
+		#footerNav ul li.focus,
 		#footerNav ul li.focus.menuOpen{
 			background-position: center -53px;
 		}
+		#footerNav ul li.mission,
 		#pageMission #footerNav ul li.mission{
 			background-position: center -103px;
 		}
+		#footerNav ul li.trending,
 		#trending #footerNav ul li.trending{
 			background-position: center -153px;
 		}
-		#newsletter #footerNav ul li.newsletter{
+		#newsletter #footerNav ul li.newsletter,
+		#authorPage.author-trending #footerNav ul li.newsletter{
 			background-position: center -200px;
 		}
-
 
 	}
 
