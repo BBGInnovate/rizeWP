@@ -60,6 +60,9 @@
 	if ($pageBodyID=='inFocus' && ($featuredInFocusPostID == $post->ID)) {
 		$customClass="inFocusSticky";
 	}
+
+
+
 ?>
 <article id="post-<?php the_ID(); ?>" <?php independent_publisher_post_classes($customClass); ?>>
 	<header class="entry-header">
@@ -178,7 +181,14 @@
 			/* Show author name and post categories only when post type == post AND 
 			 * we're not showing the first post full content 
 			 */ 
+			/* wordpress's get_avatar function outputs a full image tag ... we just want the src */
+			$fullImageHTML=get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'independent_publisher_author_bio_avatar_size', 100 ) );
+			$xpath = new DOMXPath(@DOMDocument::loadHTML($fullImageHTML));
+			$ogImage = $xpath->evaluate("string(//img/@src)");
+			echo "<img src='".$ogImage."' class='twitterMugshot' style='vertical-align: -50%;'/>";
+
 			?>
+
 			<?php if ( 'post' == get_post_type() && independent_publisher_is_not_first_post_full_content() ) : // post type == post conditional hides category text for Pages on Search ?>
 				<?php /*independent_publisher_posted_author_cats()*/ ?>
 				<?php independent_publisher_posted_author() ?>
