@@ -14,10 +14,9 @@
 <div id="focusMenu">
 	<ul id="dropdown">
 		<a href="<?php echo site_url() . "/"; ?>category/generation-next"><li>Generation Next</li></a>
-		<a href="<?php echo site_url() . "/"; ?>category/you-should-know"><li>You Should Know</li></a>
-		<a href="<?php echo site_url() . "/"; ?>category/identity"><li>Identity</li></a>
-		<a href="<?php echo site_url() . "/"; ?>category/culture"><li>Culture</li></a>
-		<a href="<?php echo site_url() . "/"; ?>category/civic-tech"><li>Civic Tech</li></a>
+		<a href="<?php echo site_url() . "/"; ?>category/biz-dev"><li>Biz Dev</li></a>
+		<a href="<?php echo site_url() . "/"; ?>category/environment/road-to-resilience"><li>Road to Resilience</li></a>
+		<a href="<?php echo site_url() . "/"; ?>category/what-we-need"><li>What We Need</li></a>
 		<a href="<?php echo site_url() . "/"; ?>about"><li>Our mission</li></a>
 	</ul>
 </div>
