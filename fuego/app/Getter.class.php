@@ -150,7 +150,7 @@ class Getter {
 								AND hiddenFlag='N'
 								AND first_seen BETWEEN DATE_SUB(:date, INTERVAL :hours HOUR) AND :date
 								AND url not like '%nytimes.com%'
-							ORDER BY (2 -TIMESTAMPDIFF(MINUTE,first_seen, CONVERT_TZ(now(),'+00:00','-5:00'))/1440) DESC
+							ORDER BY (2 -TIMESTAMPDIFF(MINUTE,first_seen, CONVERT_TZ(now(),'+00:00','-5:00'))/1440) * weighted_count DESC
 							LIMIT :limit;
 					";
 					$sth = $this->_dbh->prepare($sql);
