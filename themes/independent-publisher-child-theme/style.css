@@ -300,7 +300,7 @@ and Blueprint http://www.blueprintcss.org/
 
 	/* Archive pages (page 2+ of pagination) ------- */
 	.post-excerpts.paged h1.entry-title {
-		font-size: 1em;
+		font-size: 1.1em;
 		font-weight: 600;
 	}
 	.post-excerpts.paged .first-post h1.entry-title {
