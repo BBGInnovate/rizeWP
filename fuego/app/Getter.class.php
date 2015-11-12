@@ -136,23 +136,49 @@ class Getter {
 
 
 			} else {
-				$sql = "
-					SELECT link_id, url, first_seen, first_user, weighted_count, count, localImage, remoteImage
-					FROM openfuego_links
-					WHERE weighted_count >= :min_weighted_count
-						AND count > 1
-						AND hiddenFlag='N'
-						AND first_seen BETWEEN DATE_SUB(:date, INTERVAL :hours HOUR) AND :date
-						AND url not like '%nytimes.com%'
-					ORDER BY weighted_count DESC
-					LIMIT :limit;
-				";
-				$sth = $this->_dbh->prepare($sql);
-				$sth->bindParam('date', $date, \PDO::PARAM_STR);
-				$sth->bindParam('hours', $hours, \PDO::PARAM_INT);
-				$sth->bindParam('min_weighted_count', $min_weighted_count, \PDO::PARAM_INT);
-				$sth->bindParam('limit', $limit, \PDO::PARAM_INT);
-				$sth->execute();
+				
+
+				if ( isset ($_GET['fresh'])) {
+					$sql = "
+						SELECT first_seen, weighted_count, link_id, url, first_user,  count, localImage, remoteImage,
+							TIMESTAMPDIFF(MINUTE,first_seen, CONVERT_TZ(now(),'+00:00','-5:00')) AS DiffMinutes,
+							2 -TIMESTAMPDIFF(MINUTE,first_seen, CONVERT_TZ(now(),'+00:00','-5:00'))/1440 AS freshMultiplier,
+							weighted_count * (2 -TIMESTAMPDIFF(MINUTE,first_seen, CONVERT_TZ(now(),'+00:00','-5:00'))/1440) AS freshAdjustedScore
+							FROM openfuego_links
+							WHERE weighted_count >= :min_weighted_count
+								AND count > 1
+								AND hiddenFlag='N'
+								AND first_seen BETWEEN DATE_SUB(:date, INTERVAL :hours HOUR) AND :date
+								AND url not like '%nytimes.com%'
+							ORDER BY (2 -TIMESTAMPDIFF(MINUTE,first_seen, CONVERT_TZ(now(),'+00:00','-5:00'))/1440)
+							LIMIT :limit;
+					";
+					$sth->bindParam('date', $date, \PDO::PARAM_STR);
+					$sth->bindParam('hours', $hours, \PDO::PARAM_INT);
+					$sth->bindParam('min_weighted_count', $min_weighted_count, \PDO::PARAM_INT);
+					$sth->bindParam('limit', $limit, \PDO::PARAM_INT);
+					$sth->execute();
+				} else {
+					$sql = "
+						SELECT link_id, url, first_seen, first_user, weighted_count, count, localImage, remoteImage
+						FROM openfuego_links
+						WHERE weighted_count >= :min_weighted_count
+							AND count > 1
+							AND hiddenFlag='N'
+							AND first_seen BETWEEN DATE_SUB(:date, INTERVAL :hours HOUR) AND :date
+							AND url not like '%nytimes.com%'
+						ORDER BY weighted_count DESC
+						LIMIT :limit;
+					";
+					$sth = $this->_dbh->prepare($sql);
+					$sth->bindParam('date', $date, \PDO::PARAM_STR);
+					$sth->bindParam('hours', $hours, \PDO::PARAM_INT);
+					$sth->bindParam('min_weighted_count', $min_weighted_count, \PDO::PARAM_INT);
+					$sth->bindParam('limit', $limit, \PDO::PARAM_INT);
+					$sth->execute();
+				}
+
+				
 			}
 			
 	
