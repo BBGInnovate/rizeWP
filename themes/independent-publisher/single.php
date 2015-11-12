@@ -57,7 +57,7 @@ get_header(); ?>
 		<div id='closeX'>X</div>
 		<h3>Have smarter conversations</h3>
 		<div class='clearAll'></div>
-		<p>Want to always know what’s trending? Signup for the daily Africa Rizing newsletter.</p>
+		<p>Want to always know what’s trending? Sign up for the daily Africa Rizing newsletter.</p>
 		<form action="https://tinyletter.com/africarizing" method="post" target="tinyletterhider" class="tinyletter-form">
 			<label></label>
 			<input type="email" placeholder="Your email address" name="email" id="name" />

@@ -299,10 +299,20 @@ and Blueprint http://www.blueprintcss.org/
 
 
 	/* Archive pages (page 2+ of pagination) ------- */
+	.post-excerpts.paged h1.entry-title {
+		font-size: 1.1em;
+		font-weight: 600;
+	}
 	.post-excerpts.paged .first-post h1.entry-title {
 		font-size: 1.3em;
 		font-weight: 600;
 	}
+	@media (min-width: 500px) {
+		.post-excerpts.paged h1.entry-title {
+			font-size: 1.3em;
+		}
+	}
+
 
 	/* Pagination buttons (older/newer posts) */
 	.paging-navigation button:active, .paging-navigation button:focus {
@@ -376,6 +386,7 @@ and Blueprint http://www.blueprintcss.org/
 	}
 	#footerNav ul li.focus{
 		background: url(../../images/menu_icons_unselected.png) no-repeat center -48px / 35px 250px;
+		cursor: pointer; cursor: hand;
 	}
 	#footerNav ul li.mission{
 		background: url(../../images/menu_icons_unselected.png) no-repeat center -98px / 35px 250px;
@@ -401,15 +412,23 @@ and Blueprint http://www.blueprintcss.org/
 	#trending #footerNav ul li.trending{
 		background: url(../../images/menu_icons_selected.png) no-repeat center -146px / 35px 250px;
 	}
-	#newsletter #footerNav ul li.newsletter{
+	#newsletter #footerNav ul li.newsletter,
+	#authorPage.author-trending #footerNav ul li.newsletter,
+	.category-compass .category-69 #footerNav ul li.newsletter
+	{
 		background: url(../../images/menu_icons_selected.png) no-repeat center -195px / 35px 250px;
 	}
+
+
 
 	#frontPage #footerNav ul li.home a, 
 	#footerNav ul li.focus.menuOpen a, 
 	#pageMission #footerNav ul li.mission a, 
 	#newsletter #footerNav ul li.newsletter a, 
-	#trending #footerNav ul li.trending a{
+	#trending #footerNav ul li.trending a,
+	#authorPage.author-trending #footerNav ul li.newsletter a,
+	.category-compass .category-69 #footerNav ul li.newsletter a
+	{
 		color: orange;
 	}
 
@@ -435,39 +454,29 @@ and Blueprint http://www.blueprintcss.org/
 			/*width: 19.5%;*/ /*5 icons. no <br/> b/w <li/>*/
 			width: 23.5%; /*4 icons. <br/> b/w <li/>*/
 		}
-		#footerNav ul li.home{
-			background-position: center -4px;
-		}
-		#footerNav ul li.focus{
-			background-position: center -53px;
-		}
-		#footerNav ul li.mission{
-			background-position: center -103px;
-		}
-		#footerNav ul li.trending{
-			background-position: center -153px;
-		}
-		#footerNav ul li.newsletter{
-			background-position: center -200px;
-		}
 
-		/* Hightlight the footer nav for the current page */
+		/* Adjusting icon positions to make room for the labels */
+		#footerNav ul li.home,
 		#frontPage #footerNav ul li.home{
 			background-position: center -4px;
 		}
+		#footerNav ul li.focus,
 		#footerNav ul li.focus.menuOpen{
 			background-position: center -53px;
 		}
+		#footerNav ul li.mission,
 		#pageMission #footerNav ul li.mission{
 			background-position: center -103px;
 		}
+		#footerNav ul li.trending,
 		#trending #footerNav ul li.trending{
 			background-position: center -153px;
 		}
-		#newsletter #footerNav ul li.newsletter{
+		#footerNav ul li.newsletter,
+		#newsletter #footerNav ul li.newsletter,
+		#authorPage.author-trending #footerNav ul li.newsletter{
 			background-position: center -200px;
 		}
-
 
 	}
 
@@ -696,9 +705,9 @@ and Blueprint http://www.blueprintcss.org/
 	}
 
 	#authorPage.author div.author-bio, #trending div.author-bio{
-		border-bottom: 1px dashed #CCC;
+		border-bottom: none; /*1px dashed #CCC*/
 	    padding-bottom: 20px;
-	    margin-bottom: 40px;
+	    margin-bottom: 0;/*40px*/
 	}
 
 	#categoryPage div.archive-bio{
@@ -720,7 +729,11 @@ and Blueprint http://www.blueprintcss.org/
 	}
 
 	/* Add background images for categories with icons. */
-	#categoryPage.category-guide .archive-avatar, #categoryPage.category-newsletter .archive-avatar{
+	#categoryPage.category-newsletter .archive-avatar,
+	#categoryPage.category-69 .archive-avatar,
+	#categoryPage.category-guide .archive-avatar, 
+	#categoryPage.category-compass .archive-avatar
+	{
 		display: block;
 		background: url(../../images/category_icons_compass.png) no-repeat center / cover;
 	}
@@ -748,8 +761,11 @@ and Blueprint http://www.blueprintcss.org/
 		.author .author-avatar img, #categoryPage .archive-avatar img{margin-top: 0; float: left;}
 
 		.author h1.archive-title, 
-		#categoryPage.category-newsletter h1.archive-title, 
-		#categoryPage.category-guide h1.archive-title{
+		#categoryPage.category-newsletter h1.archive-title,
+		#categoryPage.category-69 h1.archive-title, 
+		#categoryPage.category-guide h1.archive-title,
+		#categoryPage.category-compass h1.archive-title
+		{
 			text-align: left; 
 			width: auto; 
 			clear:none; 
@@ -768,13 +784,18 @@ and Blueprint http://www.blueprintcss.org/
 		/* Add categories with icons to these two rules. */
 		.archive.author .archive-title, 
 		#categoryPage.category-newsletter .archive-bio h1.archive-title,
-		#categoryPage.category-guide .archive-bio h1.archive-title
+		#categoryPage.category-69 .archive-bio h1.archive-title,
+		#categoryPage.category-guide .archive-bio h1.archive-title,
+		#categoryPage.category-compass .archive-bio h1.archive-title
 		{
 			padding: 0 0 0 170px;
 		}
 		.author .author-description, 
 		#categoryPage.category-newsletter .category-description,
-		#categoryPage.category-guide .category-description{
+		#categoryPage.category-69 .category-description,
+		#categoryPage.category-guide .category-description,
+		#categoryPage.category-compass .category-description
+		{
 			padding:0 0 0 170px;
 			text-align: left;
 		}
@@ -908,7 +929,9 @@ and Blueprint http://www.blueprintcss.org/
 
 /* list view specific styles ----------- */
 
-	.blog article {padding: 5px 0;}
+	.blog article {
+		padding: 8px 0;
+	}
 
 	.post .entry-content a p {
 		color: #333;
@@ -1787,6 +1810,7 @@ div.interview {
 	background-position: center center;
 	background-size: cover; 
 	background-repeat: no-repeat;
+	box-shadow: 0 0 3px #999;
 }
 .twitterImageCredit img{
 	display: block;
@@ -1797,7 +1821,7 @@ a:hover .twitterImageCredit{
 	text-decoration: none;
 }
 #trending .firstShared{
-	display: none;
+	/*display: none;*/
 }
 #trending .byline, #trending footer.entry-meta .sep.sep-byline{
 	display: inline-block;
@@ -1816,7 +1840,18 @@ a:hover .twitterImageCredit{
 .hideLink:hover{
 	color: #FFF;
 }
-
+#trending .author-bio{
+	display: none;
+}
+#trending #colophon.site-footer{
+	float: none;
+	margin: 0 auto 60px auto;
+}
+#trending .post-author-bottom {
+	max-width: 700px;
+	margin: 0 auto 20px auto;
+	border-top: none;
+}
 @media only screen and (min-width: 500px){
 	#trending h1.entry-title {
 		font-size: 1.6em;
@@ -1871,6 +1906,7 @@ a:hover .twitterImageCredit{
 	border-radius: 50%;
 	vertical-align: -25%;
 	margin-right: 5px;
+	box-shadow: 0 0 2px #999;
 }
 
 

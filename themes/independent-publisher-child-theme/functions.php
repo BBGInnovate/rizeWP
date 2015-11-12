@@ -61,7 +61,7 @@ function independent_publisher_footer_credits() {
 	$creativecommons = '';
 
 	//$my_custom_footer = '<div id="attribution">Project Rize is a new digital media startup developed by <a href="http://bbg.gov/" target="_blank">US International Media</a> in partnership with <a href="http://voanews.com/" target="_blank">VOA News</a> to promote open discourse, democratic ideals and sustainable, civil societies throughout the world.</div>'.$creativecommons;
-	$my_custom_footer = '<div id="attribution">Africa Rizing is the first publication from Project Rize, a new initiative from the <a href="http://bbg.gov/" target="_blank">BBG</a> to promote open discourse, democratic ideals and sustainable, civil societies throughout the world.<br/><a href="https://africa.rizing.org/privacy">Privacy Policy</a> & <a href="https://africa.rizing.org/terms">Terms</a> </div>'.$creativecommons;
+	$my_custom_footer = '<div id="attribution">Africa Rizing is the first publication from Project Rize, a new initiative from the <a href="http://bbg.gov/" target="_blank">BBG</a> to promote open discourse, democratic ideals and sustainable, civil societies throughout the world.<br/><a href="https://africa.rizing.org/about">Mission</a>, <a href="https://africa.rizing.org/privacy">Privacy Policy</a> & <a href="https://africa.rizing.org/terms">Terms</a> </div>'.$creativecommons;
 	return $my_custom_footer;
 }
 
