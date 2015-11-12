@@ -153,6 +153,7 @@ class Getter {
 							ORDER BY (2 -TIMESTAMPDIFF(MINUTE,first_seen, CONVERT_TZ(now(),'+00:00','-5:00'))/1440)
 							LIMIT :limit;
 					";
+					$sth = $this->_dbh->prepare($sql);
 					$sth->bindParam('date', $date, \PDO::PARAM_STR);
 					$sth->bindParam('hours', $hours, \PDO::PARAM_INT);
 					$sth->bindParam('min_weighted_count', $min_weighted_count, \PDO::PARAM_INT);
