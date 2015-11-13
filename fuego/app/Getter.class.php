@@ -133,31 +133,53 @@ class Getter {
 				$sth = $this->_dbh->prepare($sql);
 				$sth->bindParam('link_id', $linkID, \PDO::PARAM_INT);
 				$sth->execute();
-
-
 			} else {
-				
-
-				if ( isset ($_GET['fresh'])) {
+				if ( isset ($_GET['union'])) {
+					$sql = "
+						SELECT link_id, url, first_seen, first_user, weighted_count, count, localImage, remoteImage
+						FROM 
+							(
+								(
+									SELECT link_id, url, first_seen, first_user, weighted_count, count, localImage, remoteImage
+									FROM openfuego_links
+									WHERE weighted_count >= 10
+										AND hiddenFlag='N'
+										AND first_seen BETWEEN DATE_SUB(CONVERT_TZ(now(),'+00:00','-5:00'), INTERVAL 6 HOUR) AND CONVERT_TZ(now(),'+00:00','-5:00')
+										AND url NOT LIKE '%nytimes.com%'
+									ORDER BY weighted_count DESC
+									LIMIT 20
+								)
+							UNION
+								(
+									SELECT link_id, url, first_seen, first_user, weighted_count, count, localImage, remoteImage
+									FROM openfuego_links
+									WHERE weighted_count >= 65
+										AND hiddenFlag='N'
+										AND first_seen BETWEEN DATE_SUB(CONVERT_TZ(now(),'+00:00','-5:00'), INTERVAL 24 HOUR) AND CONVERT_TZ(now(),'+00:00','-5:00')
+										AND url NOT LIKE '%nytimes.com%'
+									ORDER BY weighted_count DESC
+									LIMIT 4
+								)
+							) 
+						AS combinedQueries
+						ORDER BY weighted_count DESC
+					";
+					$sth = $this->_dbh->prepare($sql);
+					$sth->execute();
+				} elseif (isset($_GET['multiply'])) {
 					$sql = "
 						SELECT first_seen, weighted_count, link_id, url, first_user,  count, localImage, remoteImage,
 							TIMESTAMPDIFF(MINUTE,first_seen, CONVERT_TZ(now(),'+00:00','-5:00')) AS DiffMinutes,
 							2 -TIMESTAMPDIFF(MINUTE,first_seen, CONVERT_TZ(now(),'+00:00','-5:00'))/1440 AS freshMultiplier,
 							weighted_count * (2 -TIMESTAMPDIFF(MINUTE,first_seen, CONVERT_TZ(now(),'+00:00','-5:00'))/1440) AS freshAdjustedScore
-							FROM openfuego_links
-							WHERE weighted_count >= :min_weighted_count
-								AND count > 1
-								AND hiddenFlag='N'
-								AND first_seen BETWEEN DATE_SUB(:date, INTERVAL :hours HOUR) AND :date
-								AND url not like '%nytimes.com%'
-							ORDER BY ((2 -TIMESTAMPDIFF(MINUTE,first_seen, CONVERT_TZ(now(),'+00:00','-5:00'))/1440) * weighted_count) DESC
-							LIMIT :limit;
-					";
+						FROM openfuego_links
+						WHERE TIMESTAMPDIFF(HOUR,first_seen, CONVERT_TZ(now(),'+00:00','-5:00')) < 24
+							AND hiddenFlag='N'
+							AND url NOT LIKE '%nytimes.com%'
+						ORDER BY weighted_count * (2 -TIMESTAMPDIFF(MINUTE,first_seen, CONVERT_TZ(now(),'+00:00','-5:00'))/1440) DESC
+						LIMIT 20
+					"
 					$sth = $this->_dbh->prepare($sql);
-					$sth->bindParam('date', $date, \PDO::PARAM_STR);
-					$sth->bindParam('hours', $hours, \PDO::PARAM_INT);
-					$sth->bindParam('min_weighted_count', $min_weighted_count, \PDO::PARAM_INT);
-					$sth->bindParam('limit', $limit, \PDO::PARAM_INT);
 					$sth->execute();
 				} else {
 					$sql = "
@@ -167,7 +189,7 @@ class Getter {
 							AND count > 1
 							AND hiddenFlag='N'
 							AND first_seen BETWEEN DATE_SUB(:date, INTERVAL :hours HOUR) AND :date
-							AND url not like '%nytimes.com%'
+							AND url NOT LIKE '%nytimes.com%'
 						ORDER BY weighted_count DESC
 						LIMIT :limit;
 					";
@@ -178,11 +200,7 @@ class Getter {
 					$sth->bindParam('limit', $limit, \PDO::PARAM_INT);
 					$sth->execute();
 				}
-
-				
 			}
-			
-	
 		} catch (\PDOException $e) {
 			Logger::error($e);
 			return FALSE;
