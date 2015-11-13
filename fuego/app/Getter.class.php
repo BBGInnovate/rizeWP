@@ -178,7 +178,7 @@ class Getter {
 							AND url NOT LIKE '%nytimes.com%'
 						ORDER BY weighted_count * (2 -TIMESTAMPDIFF(MINUTE,first_seen, CONVERT_TZ(now(),'+00:00','-5:00'))/1440) DESC
 						LIMIT 20
-					"
+					";
 					$sth = $this->_dbh->prepare($sql);
 					$sth->execute();
 				} else {
