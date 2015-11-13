@@ -134,7 +134,22 @@ class Getter {
 				$sth->bindParam('link_id', $linkID, \PDO::PARAM_INT);
 				$sth->execute();
 			} else {
-				if ( isset ($_GET['union'])) {
+
+				$doUnion = false;
+				$doMultiply = false;
+				$doOriginal = false;
+				if (isset ( $_GET['union'] ) ) {
+					$doUnion = true;
+				} elseif (isset ( $_GET['multiply'] ) ) {
+					$doMultiply = true;
+				} elseif (isset ( $_GET['original'] ) ) {
+					$doOriginal = true;
+				}
+				if ( !$doUnion && !$doMultiply && !$doOriginal) {
+					$doUnion = true;
+				}
+
+				if ($doUnion) {
 					$sql = "
 						SELECT link_id, url, first_seen, first_user, weighted_count, count, localImage, remoteImage
 						FROM 
@@ -166,7 +181,7 @@ class Getter {
 					";
 					$sth = $this->_dbh->prepare($sql);
 					$sth->execute();
-				} elseif (isset($_GET['multiply'])) {
+				} elseif ($doMultiply) {
 					$sql = "
 						SELECT first_seen, weighted_count, link_id, url, first_user,  count, localImage, remoteImage,
 							TIMESTAMPDIFF(MINUTE,first_seen, CONVERT_TZ(now(),'+00:00','-5:00')) AS DiffMinutes,
@@ -181,7 +196,7 @@ class Getter {
 					";
 					$sth = $this->_dbh->prepare($sql);
 					$sth->execute();
-				} else {
+				} elseif ($doOriginal) {
 					$sql = "
 						SELECT link_id, url, first_seen, first_user, weighted_count, count, localImage, remoteImage
 						FROM openfuego_links
