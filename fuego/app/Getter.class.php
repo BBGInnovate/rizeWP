@@ -173,11 +173,11 @@ class Getter {
 										AND first_seen BETWEEN DATE_SUB(CONVERT_TZ(now(),'+00:00','-5:00'), INTERVAL 24 HOUR) AND CONVERT_TZ(now(),'+00:00','-5:00')
 										AND url NOT LIKE '%nytimes.com%'
 									ORDER BY weighted_count DESC
-									LIMIT 4
 								)
 							) 
 						AS combinedQueries
 						ORDER BY weighted_count DESC
+						LIMIT 20
 					";
 					$sth = $this->_dbh->prepare($sql);
 					$sth->execute();
