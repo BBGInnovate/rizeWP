@@ -839,10 +839,6 @@ h5.entry-category a{
 	font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
 }
 
-#trending .site-header{
-	margin-top: 225px;
-}
-
 @media (min-width: 500px){
 	#categoryPage .archive-avatar{
 		width: 150px;
@@ -2089,6 +2085,9 @@ a:hover .twitterImageCredit {
 	}
 	#trending #masthead #menu-social {
 		display: none;
+	}
+	#trending .site-header{
+		margin-top: 225px;
 	}
 }
 
