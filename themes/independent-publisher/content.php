@@ -35,7 +35,7 @@
 		if (!is_paged()) {
 
 			//first page behavior different than all that follow
-			if (is_sticky() || ( ($wp_query->current_post == 0) && ! $stickyDisplayed)) {
+			if ( (is_sticky() && is_home() )  || ( ($wp_query->current_post == 0) && ! $stickyDisplayed)) {
 				//show full thumbnail for first post
 				$useFullThumbnail=true;
 				$stickyDisplayed=true;
