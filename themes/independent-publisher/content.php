@@ -154,7 +154,14 @@
 					   ( ! ( independent_publisher_show_full_content_first_post() && independent_publisher_is_very_first_standard_post() && is_home() ) )
 			) :
 				?>
-				<?php the_excerpt(); ?>
+				<?php 
+					$showFullPost 	= get_post_meta( get_the_ID(), 'show_full_post', true);
+					if ( ( $showFullPost === '1' || $showFullPost === 'true' ) ) {
+						the_content();
+					} else {
+						the_excerpt(); 	
+					}
+				?>
 			<?php endif; ?>
 		<?php endif; ?>
 	</div>
