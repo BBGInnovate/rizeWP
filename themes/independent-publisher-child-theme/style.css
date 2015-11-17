@@ -839,6 +839,10 @@ h5.entry-category a{
 	font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
 }
 
+#trending .site-header{
+	margin-top: 225px;
+}
+
 @media (min-width: 500px){
 	#categoryPage .archive-avatar{
 		width: 150px;
@@ -2101,6 +2105,9 @@ a:hover .twitterImageCredit {
 	box-shadow: 0 0 2px #999;
 }
 
+.twitterMugshot[src*="Rize-socialprofiles_5001-150x150.png"]{
+	box-shadow: none;
+}
 
 
 /* ----------------- Newsletter promo styles -------------------*/
