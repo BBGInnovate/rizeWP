@@ -159,6 +159,8 @@ class Consumer {
 			$first_tweet = $status['id_str'];
 	
 			$first_user = $status['user']['screen_name'];
+
+			$first_user_fullname = $status['user']['name'];
 	
 			$first_user_id = $status['user']['id_str'];
 	
@@ -173,7 +175,8 @@ class Consumer {
 					first_user_id,
 					weighted_count,
 					count,
-					last_seen
+					last_seen,
+					first_user_fullname
 				)
 				VALUES (
 					:url,
@@ -183,7 +186,8 @@ class Consumer {
 					:first_user_id,
 					:weighted_count,
 					1,
-					:first_seen
+					:first_seen,
+					:first_user_fullname
 				)
 				ON DUPLICATE KEY UPDATE
 				weighted_count = CASE WHEN
@@ -216,6 +220,7 @@ class Consumer {
 				$sth->bindParam('first_tweet', $first_tweet);
 				$sth->bindParam('first_user', $first_user);
 				$sth->bindParam('first_user_id', $first_user_id);
+				$sth->bindParam('first_user_fullname', $first_user_fullname);
 				$sth->bindParam('weighted_count', $weighted_count);
 				$sth->execute();
 			} catch (\PDOException $e) {
