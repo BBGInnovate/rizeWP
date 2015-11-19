@@ -126,7 +126,7 @@ class Getter {
 			
 			if ($linkID > 0) {
 				$sql = "
-					SELECT link_id, url, first_seen, first_user, weighted_count, count, localImage, remoteImage
+					SELECT link_id, url, first_seen, first_user, weighted_count, count, localImage, remoteImage, first_user_fullname
 					FROM openfuego_links
 					WHERE link_id = :link_id
 				";
@@ -151,11 +151,11 @@ class Getter {
 
 				if ($doUnion) {
 					$sql = "
-						SELECT link_id, url, first_seen, first_user, weighted_count, count, localImage, remoteImage
+						SELECT link_id, url, first_seen, first_user, weighted_count, count, localImage, remoteImage, first_user_fullname
 						FROM 
 							(
 								(
-									SELECT link_id, url, first_seen, first_user, weighted_count, count, localImage, remoteImage
+									SELECT link_id, url, first_seen, first_user, weighted_count, count, localImage, remoteImage, first_user_fullname
 									FROM openfuego_links
 									WHERE weighted_count >= 10
 										AND hiddenFlag='N'
@@ -166,7 +166,7 @@ class Getter {
 								)
 							UNION
 								(
-									SELECT link_id, url, first_seen, first_user, weighted_count, count, localImage, remoteImage
+									SELECT link_id, url, first_seen, first_user, weighted_count, count, localImage, remoteImage, first_user_fullname
 									FROM openfuego_links
 									WHERE weighted_count >= 65
 										AND hiddenFlag='N'
@@ -183,7 +183,7 @@ class Getter {
 					$sth->execute();
 				} elseif ($doMultiply) {
 					$sql = "
-						SELECT first_seen, weighted_count, link_id, url, first_user,  count, localImage, remoteImage,
+						SELECT first_seen, weighted_count, link_id, url, first_user,  count, localImage, remoteImage, first_user_fullname,
 							TIMESTAMPDIFF(MINUTE,first_seen, CONVERT_TZ(now(),'+00:00','-5:00')) AS DiffMinutes,
 							2 -TIMESTAMPDIFF(MINUTE,first_seen, CONVERT_TZ(now(),'+00:00','-5:00'))/1440 AS freshMultiplier,
 							weighted_count * (2 -TIMESTAMPDIFF(MINUTE,first_seen, CONVERT_TZ(now(),'+00:00','-5:00'))/1440) AS freshAdjustedScore
@@ -198,7 +198,7 @@ class Getter {
 					$sth->execute();
 				} elseif ($doOriginal) {
 					$sql = "
-						SELECT link_id, url, first_seen, first_user, weighted_count, count, localImage, remoteImage
+						SELECT link_id, url, first_seen, first_user, weighted_count, count, localImage, remoteImage, first_user_fullname
 						FROM openfuego_links
 						WHERE weighted_count >= :min_weighted_count
 							AND count > 1
@@ -256,6 +256,7 @@ class Getter {
 				'weighted_count' => $weighted_count,
 				'first_seen' => $first_seen,
 				'first_user' => $first_user,
+				'first_user_fullname' => $item['first_user_fullname'],
 				'age' => $age,
 				'multiplier' => $multiplier,
 				'score' => $score,
