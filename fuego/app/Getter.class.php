@@ -16,6 +16,8 @@ class Getter {
 	}
 
 	public function hideLink($linkID) {
+		/*** When a user is logged into wordpress, they can click 'hide link' on the fuego page to get rid of 
+		individual links */
 		try {
 			$dbh = $this->getDbh();
 			$sql = "
@@ -36,17 +38,6 @@ class Getter {
 	public function updateEmbedlyCache($linkID,$embedlyJsonStr) {
 		try {
 			$dbh = $this->getDbh();
-			/*
-			$sql = "
-				UPDATE embedlyCache 
-				SET embedlyJson=:embedlyJsonStr 
-				WHERE link_id=  :linkID
-			";
-			$sth = $this->_dbh->prepare($sql);
-			$sth->bindParam('linkID', $linkID, \PDO::PARAM_INT);
-			$sth->bindParam('embedlyJsonStr', $embedlyJsonStr, \PDO::PARAM_STR);
-			$sth->execute();
-			*/
 
 			$sql="
 			INSERT IGNORE INTO embedlyCache (link_id, embedlyJson)
@@ -65,6 +56,8 @@ class Getter {
 	}
 
 	public function updateLinkImage($linkID,$remoteImage,$localImage) {
+		/** we store references to the remote and local image that's associated with an openfuego_link.  
+			these images come from the embedly api ****/
 		try {
 			$dbh = $this->getDbh();
 			
@@ -88,6 +81,7 @@ class Getter {
 
 
 	public function checkEmbedlyCache($linkIDArray) {
+		/** given array of link_ids, return all the ones that don't have an entry in embedlyCache table */
 		$sql = '
 			SELECT link_id, embedlyJSON
 			FROM embedlyCache
@@ -111,6 +105,21 @@ class Getter {
 
 	public function getItems($quantity = 10, $hours = 24, $scoring = TRUE, $metadata = FALSE, $min_weighted_count = 24, $linkID=0) {
 	
+		/**** 
+			This function hits the openfuego_links table.  
+			Basic Flow:
+				1) Fetch links from openfuego_links table.  Depending on URL params it may be one of 3 queries.
+				2) Created items_filtered[] array, which has some logic to tack on additional variables.  
+				   --this step was inherited from original Fuego code - it doesn't do a whole lot for us right now
+				3) Figure out which of those have an entry in the embedlycache table
+				4) Group all of those items together into a request for the embedly API - it takes up to 20 at a time so we should only have one
+				   --store the results in the embedlycache table as pure json
+				   --fetch & resize images into the imgcache folder
+				   --updating openfuego_links with a reference to the remote image path and the local (newly resized) image path
+				5) Attach tweet data to items_filtered
+		***/
+
+
 		$now = time();
 		$quantity = (int)$quantity;
 		$hours = (int)$hours;
@@ -121,6 +130,8 @@ class Getter {
 			$min_weighted_count=1;
 		}
 	
+
+		/****** BEGIN RUNNING SQL QUERY *****/
 		try {
 			$dbh = $this->getDbh();
 			
@@ -224,8 +235,16 @@ class Getter {
 		if (!$items) {
 			return FALSE;
 		}
+		/****** DONE RUNNING SQL QUERY *****/
 
-		$link_ids=[];
+
+
+		/****** BEGIN CREATING ITEMS_FILTERED ARRAY 
+			--note that we don't currently leverage the score/age/multiplier stuff as we've moved that to the sql queries
+			--also note that we create the link_ids array here which we pass to the checkEmbedlyCache function later on.
+		*****/
+		
+		$link_ids=[];  
 		foreach ($items as $item) {
 	
 			$link_id = (int)$item['link_id'];
@@ -265,18 +284,21 @@ class Getter {
 				'remoteImage' => $item['remoteImage']
 			);
 		}
-
 		$scores = array();
 		$ages = array();
 		foreach ($items_filtered as $key => $item) {
 			$scores[$key] = $scoring ? $item['score'] : $item['weighted_count'];
 			$ages[$key] = $item['age'];
 		}
-	
 		array_multisort($scores, SORT_DESC, $ages, SORT_ASC, $items_filtered);  // sort by score, then by age
-		
 		$items_filtered = array_slice($items_filtered, 0, $quantity);
-	
+		/****** DONE CREATING ITEMS_FILTERED ARRAY *****/
+
+		/****** 
+				BEGIN POPULATING LINK_META FROM EMBEDLYCACHE TABLE.  
+				Hit the embedly API if necessary to update embedlyCache w/ new data
+				Save remote images locally
+		*****/	
 		if ($metadata && defined('\OpenFuego\EMBEDLY_API_KEY') && \OpenFuego\EMBEDLY_API_KEY) {
 	
 			$metadata_params = is_array($metadata) ? $metadata : NULL;
@@ -288,6 +310,7 @@ class Getter {
 			$linkIDsToFetch=[];
 			$urlsToFetch=[];
 			$link_meta = [];
+
 
 			foreach ($items_filtered as $item_filtered) {
 				$thisLinkID = $item_filtered['link_id'];
@@ -347,16 +370,16 @@ class Getter {
 					        $img->scaleImage(300,0);
 					        $img->writeImage($localFilename);
 						}
-
 					}
-
 				}
 			}
 			unset($urls, $urls_chunked, $urls_chunk, $link_meta_chunk);
 		}
+		/******* DONE POPULATING LINK_META ****/
 		
-		$row_count = count($items_filtered);
 
+		/**** BEGIN ATTACHING TWEET DATA TO ITEMS_FILTERED ****/
+		$row_count = count($items_filtered);
 		foreach ($items_filtered as $key => &$item_filtered) {
 			$link_id = $item_filtered['link_id'];
 			$url = $item_filtered['url'];
@@ -400,7 +423,8 @@ class Getter {
 			}
 			
 		}
+		/**** DONE ATTACHING TWEET DATA TO ITEMS_FILTERED ****/
 
-	 return $items_filtered;
+		return $items_filtered;
 	}
 }
