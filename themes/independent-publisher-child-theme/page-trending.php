@@ -80,7 +80,7 @@ include("page-trending-header.php");
 
 			$authorDisplayName=$author;
 			if ( ($item['tw_screen_name'] == $item['first_user']) && $item['first_user_fullname'] != "") {
-				$authorDisplayName == $item['first_user_fullname'];
+				$authorDisplayName = $item['first_user_fullname'];
 			}
  
 			$image = "";
