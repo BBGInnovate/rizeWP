@@ -77,6 +77,12 @@ include("page-trending-header.php");
 			$url = $item['url'];
 			$desc = '<p>'.$item['tw_text'].'</p>';
 			$author = $item['tw_screen_name'];
+
+			$authorDisplayName=$author;
+			if ( ($item['tw_screen_name'] == $item['first_user']) && $item['first_user_fullname'] != "") {
+				$authorDisplayName == $item['first_user_fullname'];
+			}
+ 
 			$image = "";
 			$provider_name = "Africa Rizing";
 			$provider_url = "https://africa.rizing.org";
@@ -241,7 +247,7 @@ include("page-trending-header.php");
 						</a>
 						<div class='tweetAuthor'>
 							<p class='tweetAuthorName'>
-								<?php echo $author; ?>
+								<?php echo $authorDisplayName; ?>
 							</p>
 							<p style='display: block; margin-bottom:0;'>
 								<a href='https://twitter.com/<?php echo $author; ?>' target='_blank'>@<?php echo $author; ?></a>
