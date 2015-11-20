@@ -263,11 +263,13 @@ include("page-trending-header.php");
 							</a>
 							<div class='quoteMaker'>
 								<p class='quoteMakerName'><?php echo $quoteMakerName; ?> </p>
+								<?php if ($quoteMakerHandle != ""): ?>
 								<p>
 									<a href='https://twitter.com/<?php echo $quoteMakerHandle; ?>' target='_blank'>
 										@<?php echo $quoteMakerHandle; ?>
 									</a>
 								</p>
+								<?php endif; ?>
 							</div>
 							<div class='clearAll'></div>
 							<div class='quotedTweetText'>
