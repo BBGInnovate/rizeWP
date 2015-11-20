@@ -45,7 +45,9 @@ class Metadata {
 	
 	
 	public function get($input_urls, $params = NULL, $format = 'json') {
-		
+		/*****
+			Hit's the Embedly API with input_urls (which is an array of up to 20 urls) and returns the metadata
+		*****/
 		if (is_array($input_urls)) {
 			
 			$urls = '';
@@ -80,6 +82,11 @@ class Metadata {
 	
 	
 	public function getTweet($link_id) {
+		/****
+			check the tweet cache table
+			--if not there, use first_tweet (which is a status id) to query twitter api and insert into cache
+			----if twitter api doesn't return it, search twitter api to find a new tweet and cache that one instead
+		***/
 	
 		$dbh = $this->getDbh();
 			
@@ -187,7 +194,14 @@ class Metadata {
 	
 	
 	public function updateTweet($link_id) {
-		
+		/***** 
+			updateTweet is called when 
+				--we have a link_id without an associated tweet id, 
+				--or when a tweetID no longer returns info (deleted?).  
+			It searches the twitter API for the long/short URL's.  It loops through all the results and takes the first that matches the first_user_id
+			and if none do it just takes the last one 
+		****/
+
 		$dbh = $this->getDbh();
 	
 		$sql = "
