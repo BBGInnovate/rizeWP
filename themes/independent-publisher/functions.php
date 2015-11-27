@@ -207,6 +207,9 @@ function independent_publisher_scripts() {
 	wp_enqueue_script( 'oddiCustom', get_template_directory_uri() . '/js/oddiCustom.js', array( 'jquery' ));
 	wp_enqueue_script( 'jsCookie', get_template_directory_uri() . '/js/js.cookie.js', array( 'jquery' ));	
 	//}
+	wp_enqueue_script( 'jquery-ui-core');
+	wp_enqueue_script( 'jquery-ui-tooltip');
+	wp_enqueue_style('jquery-ui-tooltip-style','http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css');
 
 	/**
 	 * Load JetPack Sharing Buttons Style Enhancements

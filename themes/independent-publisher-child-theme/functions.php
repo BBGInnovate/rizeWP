@@ -768,3 +768,46 @@ function clearFBCache( $post_ID, $post, $update ) {
 add_action( 'save_post', 'clearFBCache', 10, 3 );
 
 
+/* initial hook for functions.php */
+function rizeButton() {
+	if ( ! current_user_can( 'edit_posts' ) && ! current_user_can( 'edit_pages' ) ) {
+		return;
+	}
+	if ( get_user_option( 'rich_editing' ) == 'true' ) {
+		add_filter( 'mce_buttons_2', 'registerRizeButton'  );
+		add_filter( 'mce_external_plugins',  'addRizePlugin'  );
+		
+	}
+}
+add_action( 'init', 'rizeButton' ); // TinyMCE button
+
+/** Add buttons to TinyMCE interface @param $buttons @return array */
+function registerRizeButton( $buttons ) {
+	//$p = array_search( 'wp_help', $buttons );
+	//array_splice( $buttons, count($buttons), 0, 'rizeDB' );
+	$buttons[]='rizeDB';
+	return $buttons;
+}
+
+/** Some JavaScript for our TinyMCE buttons @param $plugin_array @return mixed */
+function addRizePlugin( $plugin_array ) {
+	$plugin_array['rizeDB'] = get_stylesheet_directory_uri() . '/rizePlugin.js?ver=1.0';
+	return $plugin_array;
+}
+
+function rizeDBShortcode($atts) {
+	$returnStr="";
+	$returnStr.="<p>Render RizeDB entry " . $atts['id'] . " here </p>";
+	
+	$remote=wp_remote_get('http://wprize/wprize/wp-content/themes/independent-publisher-child-theme/rizeAPI.php?id=' . $atts['id']);
+	$str=$remote['body'];
+	$jsonObj=json_decode($str);
+	$image = $jsonObj-> image;
+	$name= $jsonObj -> name;
+	$twitter = $jsonObj -> twitter;
+	$description=$jsonObj -> description;
+	$returnStr = "<p ><a class='rizeDBCard' data-description='$description' data-image='$image' data-title='$name' data-twitter='$twitter' href='#'>$name</a></p>";
+
+	return $returnStr;
+}
+add_shortcode('rizeDB', 'rizeDBShortcode');

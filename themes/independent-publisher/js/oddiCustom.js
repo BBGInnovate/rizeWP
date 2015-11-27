@@ -58,4 +58,17 @@ jQuery(document).ready(function() {
 		jQuery( "#focusMenu #dropdown" ).slideToggle("drop");
 		jQuery( "#footerNav .focus" ).toggleClass( "menuOpen" )
 	});
+
+	jQuery( document ).tooltip({
+      items: "a.rizeDBCard",
+      content: function() {
+        var element = jQuery( this );
+        var twitter=element.attr('data-twitter');
+        var image=element.attr('data-image');
+        var name=element.attr('data-title');
+        var description=element.attr('data-description');
+        return "<div'><strong>"+name+"</strong><BR><img width='50' height='50' src='"+image+"'><BR><a href='"+twitter+"'>@"+twitter+"</a><p style='font-size:.5em'>"+description+"</p></div>";
+      }
+    });
+
 });
