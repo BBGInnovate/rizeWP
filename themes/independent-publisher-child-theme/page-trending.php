@@ -164,7 +164,7 @@ include("page-trending-header.php");
 						$title = $m['title'];	
 
 						/*trying to remove offending news org credits */
-						$search = array(' - BBC News', ' - BBC World Service', ' - CNN.com', ' - FT.com', ' - CNNPolitics.com', ' - TODAY.ng', ' - Premium Times Nigeria');
+						$search = array(' - BBC News', ' - BBC World Service', ' - CNN.com', ' - CNNPolitics.com', ' - FT.com', ' - Premium Times Nigeria', ' | Reuters', ' | Reuters.com', ' - TODAY.ng');
 						$title = str_replace($search, '', $title);
 					}
 

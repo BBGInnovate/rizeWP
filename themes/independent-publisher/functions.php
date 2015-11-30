@@ -832,6 +832,12 @@ if ( ! function_exists( 'independent_publisher_post_word_count' ) ):
 		$count = $count / $wordsPerMinute;
 		$count = number_format( $count );
 		$units = " Minutes";
+
+		if ($count == 0){
+			//No article should ever be 0 minutes
+			$count = 1;
+		}
+
 		if ($count == 1){
 			$units = " Minute";
 		}
