@@ -799,7 +799,8 @@ function rizeDBShortcode($atts) {
 	$returnStr="";
 	$returnStr.="<p>Render RizeDB entry " . $atts['id'] . " here </p>";
 	
-	$remote=wp_remote_get('http://wprize/wprize/wp-content/themes/independent-publisher-child-theme/rizeAPI.php?id=' . $atts['id']);
+	$apiURL=get_site_url().'/wp-content/themes/independent-publisher-child-theme/rizeAPI.php?id=' . $atts['id'];
+	$remote=wp_remote_get($apiURL);
 	$str=$remote['body'];
 	$jsonObj=json_decode($str);
 	$image = $jsonObj-> image;
