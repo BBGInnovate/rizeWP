@@ -1,5 +1,5 @@
 <?php
-
+header('Content-Type: application/json');
 	$item1 = array(
 		"id" => "7",
 		"type" => "person", 
