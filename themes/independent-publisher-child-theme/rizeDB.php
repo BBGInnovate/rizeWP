@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Create "Tweet This" Shortcode</title>
+		<title>Rize DB</title>
 		<!-- Disable browser caching of dialog window -->
 		<meta http-equiv="cache-control" content="no-cache" />
 		<meta http-equiv="expires" content="0" />
@@ -104,9 +104,16 @@
 
 				}
 
+				var apiURL="/wp-content/themes/independent-publisher-child-theme/rizeAPI.php";
+				if (window.location.hostname == "wprize") {
+					apiURL = "http://wprize/wprize/"+apiURL;
+				} else if (window.location.hostname == "localhost") {
+					apiURL = "http://localhost/wordpress/"+apiURL;
+				}
+
 				$.ajax({
 					dataType: "json",
-					url: 'http://wprize/wprize/wp-content/themes/independent-publisher-child-theme/rizeAPI.php',
+					url: apiURL,
 					success: success,
 					context:context
 				});
