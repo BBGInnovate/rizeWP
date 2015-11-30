@@ -81,6 +81,12 @@ img.emoji {
 <link rel="apple-touch-icon-precomposed" href="<?php echo site_url() . "/"; ?>wp-content/uploads/2015/09/cropped-Rize-socialprofiles_5001-180x180.png">
 <meta name="msapplication-TileImage" content="<?php echo site_url() . "/"; ?>wp-content/uploads/2015/09/cropped-Rize-socialprofiles_5001-270x270.png">
 
+<?php 
+	//only show GA code on prod
+	if (strpos(get_site_url(), 'africa.rizing.org') !== false) : 
+?>
+
+
 <!-- BEGIN GADWP v4.8.3 Universal Tracking - https://deconf.com/google-analytics-dashboard-wordpress/ -->
 <script type="text/javascript">
 (function($){
@@ -118,6 +124,7 @@ img.emoji {
   ga('send', 'pageview');
 </script>
 <!-- END GADWP Universal Tracking -->
+<?php endif; ?>
 
 </head>
 
