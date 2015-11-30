@@ -209,7 +209,7 @@ function independent_publisher_scripts() {
 	//}
 	wp_enqueue_script( 'jquery-ui-core');
 	wp_enqueue_script( 'jquery-ui-tooltip');
-	wp_enqueue_style('jquery-ui-tooltip-style','http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css');
+	wp_enqueue_style('jquery-ui-tooltip-style','//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css');
 
 	/**
 	 * Load JetPack Sharing Buttons Style Enhancements
