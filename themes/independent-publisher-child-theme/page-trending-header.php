@@ -80,6 +80,45 @@ img.emoji {
 <link rel="icon" href="<?php echo site_url() . "/"; ?>wp-content/uploads/2015/09/cropped-Rize-socialprofiles_5001-192x192.png" sizes="192x192" />
 <link rel="apple-touch-icon-precomposed" href="<?php echo site_url() . "/"; ?>wp-content/uploads/2015/09/cropped-Rize-socialprofiles_5001-180x180.png">
 <meta name="msapplication-TileImage" content="<?php echo site_url() . "/"; ?>wp-content/uploads/2015/09/cropped-Rize-socialprofiles_5001-270x270.png">
+
+<!-- BEGIN GADWP v4.8.3 Universal Tracking - https://deconf.com/google-analytics-dashboard-wordpress/ -->
+<script type="text/javascript">
+(function($){
+    $(window).load(function() {
+        
+            //Track Downloads
+            $('a').filter(function() {
+                return this.href.match(/.*\.(zip|mp3*|mpe*g|pdf|docx*|pptx*|xlsx*|rar*)(\?.*)?$/);
+            }).click(function(e) {
+                ga('send','event', 'download', 'click', this.href);
+            });
+
+            //Track Mailto
+            $('a[href^="mailto"]').click(function(e) {
+                ga('send','event', 'email', 'send', this.href);
+             });
+            
+            //Track Outbound Links
+            $('a[href^="http"]').filter(function() {
+                if (!this.href.match(/.*\.(zip|mp3*|mpe*g|pdf|docx*|pptx*|xlsx*|rar*)(\?.*)?$/)){
+                    if (this.href.indexOf('rizing.org') == -1) return this.href;
+                }
+            }).click(function(e) {
+                ga('send','event', 'outbound', 'click', this.href);
+            });
+		    		                });
+})(jQuery);
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-68383398-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- END GADWP Universal Tracking -->
+
 </head>
 
 <body id="trending" class="category-69 single post-cover-overlay-post-title multi-author-mode" itemscope="itemscope" itemtype="http://schema.org/WebPage">
