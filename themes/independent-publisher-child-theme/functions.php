@@ -807,7 +807,7 @@ function rizeDBShortcode($atts) {
 	$name= $jsonObj -> name;
 	$twitter = $jsonObj -> twitter;
 	$description=$jsonObj -> description;
-	$returnStr = "<p ><a class='rizeDBCard' data-description='$description' data-image='$image' data-title='$name' data-twitter='$twitter' href='#'>$name</a></p>";
+	$returnStr = "<a class='rizeDBCard' data-description='$description' data-image='$image' data-title='$name' data-twitter='$twitter' href='#'>$name</a>";
 
 	return $returnStr;
 }
