@@ -23,7 +23,7 @@ if ( have_posts() ) {
 
 	$socialImageID = get_post_meta( $post->ID, 'social_image',true );
 	if ($socialImageID) {
-		$socialImage = wp_get_attachment_image_src( $socialImageID );
+		$socialImage = wp_get_attachment_image_src( $socialImageID , 'Full');
 		$ogImage = $socialImage[0];
 	}
 	
