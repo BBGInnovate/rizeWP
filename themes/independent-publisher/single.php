@@ -18,9 +18,15 @@ if ( have_posts() ) {
 
 	$metaKeywords= strip_tags(get_the_tag_list('',', ',''));
 
-	//$ogImage=get_the_post_thumbnail($post->ID, 'thumbnail');
 	$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'Full' ); 
-	$ogImage = $thumb['0']; 
+	$ogImage = $thumb['0'];
+
+	$socialImageID = get_post_meta( $post->ID, 'social_image',true );
+	if ($socialImageID) {
+		$socialImage = wp_get_attachment_image_src( $socialImageID );
+		$ogImage = $socialImage[0];
+	}
+	
 	$ogDescription=independent_publisher_first_sentence_excerpt(); //get_the_excerpt()
 
 	rewind_posts();
