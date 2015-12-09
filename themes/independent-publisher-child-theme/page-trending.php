@@ -250,15 +250,6 @@ include("page-trending-header.php");
 
 					<header class='entry-header'>
 						<h5 class='entry-category'><a href='<?php echo $tweetUrl; ?>' style='float:none;'>Overheard on Twitter</a></h5>
-						<?php 
-							/* SOCIAL SHARE INDIVIDUAL FUEGO ITEMS */
-							$twitterText = html_entity_decode($title) . " " . $url;
-							$twitterURL="//twitter.com/intent/tweet?text=" . urlencode($twitterText) . " via @africarizing";
-							$fbUrl="//www.facebook.com/sharer/sharer.php?u=" . urlencode($url);
-							echo '<a class="share rize-trending-share-twitter" id="twitter"  href="' . $twitterURL . '"></a>
-								  <a class="share rize-trending-share-facebook" id="facebook" href="' . $fbUrl . '"></a>';
-						 ?>
-						<div class="clearAll"></div>
 					</header>
 					<div class='entry-content twitter-conversation'>
 						<a href='https://twitter.com/<?php echo $author; ?>' target='_blank'>
