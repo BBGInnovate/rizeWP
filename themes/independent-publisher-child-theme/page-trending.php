@@ -292,7 +292,7 @@ include("page-trending-header.php");
 				<?php }
 					/* SOCIAL SHARE INDIVIDUAL FUEGO ITEMS */
 					$twitterText = html_entity_decode($title) . " " . $url;
-					$twitterURL="//twitter.com/intent/tweet?text=" . urlencode($twitterText);
+					$twitterURL="//twitter.com/intent/tweet?text=" . urlencode($twitterText) . " via @africarizing";
 					$fbUrl="//www.facebook.com/sharer/sharer.php?u=" . urlencode($url);
 					echo '<a class="share" id="facebook" href="' . $fbUrl . '">Share on FB</a> |
 						  <a class="share" id="twitter"  href="' . $twitterURL . '">Share on TWITTER</a>';
