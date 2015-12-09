@@ -249,7 +249,7 @@ include("page-trending-header.php");
 				<?php } else { ?>
 
 					<header class='entry-header'>
-						<h5 class='entry-category'><a href='<?php echo $tweetUrl; ?>' style='float:none;'>Overheard on Twitter</a></h5>
+						<h5 class='entry-category'style='float: none;'><a href='<?php echo $tweetUrl; ?>' style='float: none;'>Overheard on Twitter</a></h5>
 					</header>
 					<div class='entry-content twitter-conversation'>
 						<a href='https://twitter.com/<?php echo $author; ?>' target='_blank'>
