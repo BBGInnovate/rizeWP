@@ -1766,7 +1766,7 @@ div.size-medium + blockquote {
 		color: #ccc;
 		vertical-align: text-top;
 	}
-	.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul li a#facebook {
+	.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul li a#facebook{
 		display: block;
 		width: 30px;
 		height: 30px;
@@ -1841,12 +1841,14 @@ div.size-medium + blockquote {
 }
 
 
-.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul li a#twitter {
+.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul li a#twitter,
+.rize-trending-share-twitter {
 	background: url(../../images/social_icons.png) no-repeat center -30px / 30px 60px;
 	width: 30px;
 	height: 30px;
 }
-.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul li a#facebook {
+.single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul li a#facebook,
+.rize-trending-share-facebook  {
 	background: url(../../images/social_icons.png) no-repeat center 0px / 30px 60px;
 	width: 30px;
 	height: 30px;
@@ -1855,6 +1857,7 @@ div.size-medium + blockquote {
 .single.post-cover-overlay-post-title .post-cover-title-wrapper #socialPost ul li a#facebook:after {
 	content: "";
 }
+body#trending .share{margin:20px 0 0 10px; float: right;}
 
 
 /* --------------- INTERVIEW STYLES ------------------*/
@@ -1897,6 +1900,10 @@ div.interview {
 
 #trending h1.archive-title {
 	margin: 0;
+}
+
+#trending h5.entry-category{
+	float:left;
 }
 
 #trending h5.entry-category a {
