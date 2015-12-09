@@ -289,8 +289,15 @@ include("page-trending-header.php");
 						<time class="entry-date" itemprop="datePublished" pubdate="pubdate"><?php echo $agoTime ?></time>
 					</footer>
 
-				<?php } ?>
-
+				<?php }
+					/* SOCIAL SHARE INDIVIDUAL FUEGO ITEMS */
+					$twitterText = html_entity_decode($title) . " " . $url;
+					$twitterURL="//twitter.com/intent/tweet?text=" . urlencode($twitterText);
+					$fbUrl="//www.facebook.com/sharer/sharer.php?u=" . urlencode($url);
+					echo '<a class="share" id="facebook" href="' . $fbUrl . '">Share on FB</a> |
+						  <a class="share" id="twitter"  href="' . $twitterURL . '">Share on TWITTER</a>';
+				 ?>
+					
 				<?php 
 
 					if (current_user_can('publish_posts')) {
