@@ -285,7 +285,7 @@ endif;
 						//$hashtags="testhashtag1,testhashtag2";
 
 						///$twitterURL="//twitter.com/intent/tweet?url=" . urlencode(get_permalink()) . "&text=" . urlencode($ogDescription) . "&hashtags=" . urlencode($hashtags);
-						$twitterURL="//twitter.com/intent/tweet?text=" . urlencode($twitterText);
+						$twitterURL="//twitter.com/intent/tweet?text=" . rawurlencode($twitterText);
 						$fbUrl="//www.facebook.com/sharer/sharer.php?u=" . urlencode($shareLink);
 
 					?>
