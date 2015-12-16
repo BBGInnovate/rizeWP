@@ -765,7 +765,7 @@ function clearFBCache( $post_ID, $post, $update ) {
 		curl_close ($ch);
 	}
 }
-add_action( 'save_post', 'clearFBCache', 10, 3 );
+//add_action( 'save_post', 'clearFBCache', 10, 3 );
 
 
 /* initial hook for functions.php */
