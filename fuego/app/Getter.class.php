@@ -190,6 +190,7 @@ class Getter {
 						ORDER BY weighted_count DESC
 						LIMIT 20
 					";
+					//$sql = "select * from openfuego_links order by link_id desc";
 					$sth = $this->_dbh->prepare($sql);
 					$sth->execute();
 				} elseif ($doMultiply) {
@@ -232,6 +233,22 @@ class Getter {
 			return FALSE;
 		}
 		$items = $sth->fetchAll(\PDO::FETCH_ASSOC);
+		if (!$items || isset ( $_GET['fallback'])) {
+			/* this is here to make sure we always show SOMETHING in case fuego dies */
+			$sql = "
+				SELECT link_id, url, first_seen, first_user, weighted_count, count, localImage, remoteImage, first_user_fullname
+				FROM openfuego_links
+				WHERE weighted_count >= 65
+					AND hiddenFlag='N'
+					AND url NOT LIKE '%nytimes.com%'
+				ORDER BY first_seen DESC
+				LIMIT 20
+			";
+			$sth = $this->_dbh->prepare($sql);
+			$sth->execute(); 
+			$items = $sth->fetchAll(\PDO::FETCH_ASSOC);
+		}
+
 		if (!$items) {
 			return FALSE;
 		}
