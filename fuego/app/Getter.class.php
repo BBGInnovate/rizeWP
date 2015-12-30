@@ -240,7 +240,7 @@ class Getter {
 			$sql = "
 				SELECT link_id, url, first_seen, first_user, weighted_count, count, localImage, remoteImage, first_user_fullname
 				FROM openfuego_links
-				WHERE weighted_count >= 40
+				WHERE weighted_count >= 30
 					AND hiddenFlag='N'
 					AND url NOT LIKE '%nytimes.com%'
 				ORDER BY first_seen DESC
