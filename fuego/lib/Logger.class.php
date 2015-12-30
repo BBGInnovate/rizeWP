@@ -3,7 +3,7 @@
 class Logger {
 	
 	public static $verbose = \OpenFuego\VERBOSE;
-	public static $logToFile = \OpenFuego\LOG_TO_FILE;
+	public static $logToFile = \OpenFuego\LOG_TO_FILES;
 	public static $logPath = \OpenFuego\LOG_PATH;
 	public static $tmp;
 	
