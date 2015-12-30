@@ -15,7 +15,8 @@ class Logger {
 			echo $messageFormatted;
 		}
 		if (self::$logToFile) {
-			file_put_contents(self::$logPath . "debug.log", $messageFormatted, FILE_APPEND);
+			//the debug logs have too much ... gonna ignore them for now
+			//file_put_contents(self::$logPath . "debug.log", $messageFormatted, FILE_APPEND);
 		}
 	}
 	
