@@ -15,7 +15,7 @@ class Logger {
 			echo $messageFormatted;
 		}
 		if (self::$logToFile) {
-			file_put_contents(self::$logPath, $messageFormatted, FILE_APPEND);
+			file_put_contents(self::$logPath . "debug.log", $messageFormatted, FILE_APPEND);
 		}
 	}
 	
@@ -27,7 +27,7 @@ class Logger {
 			echo $messageFormatted;
 		}
 		if (self::$logToFile) {
-			file_put_contents(self::$logPath, $messageFormatted, FILE_APPEND);
+			file_put_contents(self::$logPath . "info.log", $messageFormatted, FILE_APPEND);
 		}
 		
 		// write to log
@@ -41,7 +41,7 @@ class Logger {
 			echo $messageFormatted;
 		}
 		if (self::$logToFile) {
-			file_put_contents(self::$logPath, $messageFormatted, FILE_APPEND);
+			file_put_contents(self::$logPath . "error.log", $messageFormatted, FILE_APPEND);
 		}
 		
 		// write to log
@@ -60,7 +60,7 @@ class Logger {
 			self::notify($subject, $messageFormatted);	
 		}
 		if (self::$logToFile) {
-			file_put_contents(self::$logPath, $messageFormatted, FILE_APPEND);
+			file_put_contents(self::$logPath, $messageFormatted . "fatal.log", FILE_APPEND);
 		}
 
 		// write to log
