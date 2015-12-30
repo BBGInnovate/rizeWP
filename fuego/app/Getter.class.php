@@ -129,6 +129,7 @@ class Getter {
 		if ($scoring === false) {
 			$min_weighted_count=1;
 		}
+		$fallbackMode=false;
 	
 
 		/****** BEGIN RUNNING SQL QUERY *****/
@@ -235,6 +236,7 @@ class Getter {
 		$items = $sth->fetchAll(\PDO::FETCH_ASSOC);
 		if (!$items || isset ( $_GET['fallback'])) {
 			/* this is here to make sure we always show SOMETHING in case fuego dies */
+			$fallbackMode=true;
 			$sql = "
 				SELECT link_id, url, first_seen, first_user, weighted_count, count, localImage, remoteImage, first_user_fullname
 				FROM openfuego_links
@@ -307,7 +309,9 @@ class Getter {
 			$scores[$key] = $scoring ? $item['score'] : $item['weighted_count'];
 			$ages[$key] = $item['age'];
 		}
-		array_multisort($scores, SORT_DESC, $ages, SORT_ASC, $items_filtered);  // sort by score, then by age
+		if (!$fallbackMode) {
+			array_multisort($scores, SORT_DESC, $ages, SORT_ASC, $items_filtered);  // sort by score, then by age
+		}
 		$items_filtered = array_slice($items_filtered, 0, $quantity);
 		/****** DONE CREATING ITEMS_FILTERED ARRAY *****/
 
