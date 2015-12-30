@@ -3,6 +3,8 @@
 class Logger {
 	
 	public static $verbose = \OpenFuego\VERBOSE;
+	public static $logToFile = \OpenFuego\LOG_TO_FILE;
+	public static $logPath = \OpenFuego\LOG_PATH;
 	public static $tmp;
 	
 	public static function debug($message) {
@@ -12,6 +14,9 @@ class Logger {
 		if (self::$verbose) {
 			echo $messageFormatted;
 		}
+		if (self::$logToFile) {
+			file_put_contents(self::$logPath, $messageFormatted, FILE_APPEND);
+		}
 	}
 	
 	public static function info($message) {
@@ -20,6 +25,9 @@ class Logger {
 
 		if (self::$verbose) {
 			echo $messageFormatted;
+		}
+		if (self::$logToFile) {
+			file_put_contents(self::$logPath, $messageFormatted, FILE_APPEND);
 		}
 		
 		// write to log
@@ -31,6 +39,9 @@ class Logger {
 
 		if (self::$verbose) {
 			echo $messageFormatted;
+		}
+		if (self::$logToFile) {
+			file_put_contents(self::$logPath, $messageFormatted, FILE_APPEND);
 		}
 		
 		// write to log
@@ -47,6 +58,9 @@ class Logger {
 		else {
 			$subject = "OpenFuego encountered a fatal error";
 			self::notify($subject, $messageFormatted);	
+		}
+		if (self::$logToFile) {
+			file_put_contents(self::$logPath, $messageFormatted, FILE_APPEND);
 		}
 
 		// write to log

@@ -44,6 +44,10 @@ const WEBMASTER = 'xxxx@harvard.edu';
 /** For how many days should links remain in the database? Default: 1. Must be an integer. */
 const EXPIRATION_DAYS = 1;
 
+/* do you want to write to log files?  be careful - this is a lot of writing ... */
+const LOG_TO_FILES=false;
+const LOG_PATH="/var/www/wordpress/wp-content/fuego/logs/";
+
 /** Your database credentials.
   * Only MySQL is supported, hipsters. */
 const
