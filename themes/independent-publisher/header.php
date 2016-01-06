@@ -118,6 +118,23 @@ $ogDescription = str_replace('"','&qout;',$ogDescription);
 			rewind_posts();
 		}
 	?>
+
+	<?php 
+		//only show CRAZY EGG code on prod
+		if (strpos(get_site_url(), 'africa.rizing.org') !== false) : 
+	?>
+
+		<!-- BEGIN CRAZY EGG CODE -->
+		<script type="text/javascript">
+		setTimeout(function(){var a=document.createElement("script");
+		var b=document.getElementsByTagName("script")[0];
+		a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0026/0255.js?"+Math.floor(new Date().getTime()/3600000);
+		a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+		</script>
+		<!-- END CRAZY EGG CODE -->
+
+	<?php endif; ?>
+
 </head>
 
 <body id="<?php echo $pageBodyID; ?>" <?php body_class($extraBodyClass); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
