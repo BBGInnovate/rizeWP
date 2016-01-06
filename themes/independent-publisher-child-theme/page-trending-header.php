@@ -82,20 +82,7 @@ img.emoji {
 <meta name="msapplication-TileImage" content="<?php echo site_url() . "/"; ?>wp-content/uploads/2015/09/cropped-Rize-socialprofiles_5001-270x270.png">
 
 
-	<?php 
-		//only show CRAZY EGG code on prod - giving it its own IF block because we may be removing soon.
-		if (strpos(get_site_url(), 'africa.rizing.org') !== false) : 
-	?>
-		<!-- BEGIN CRAZY EGG CODE -->
-		<script type="text/javascript">
-		setTimeout(function(){var a=document.createElement("script");
-		var b=document.getElementsByTagName("script")[0];
-		a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0026/0255.js?"+Math.floor(new Date().getTime()/3600000);
-		a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
-		</script>
-		<!-- END CRAZY EGG CODE -->
-
-	<?php endif; ?>
+	
 
 <?php 
 	//only show GA code on prod
@@ -141,6 +128,23 @@ img.emoji {
 </script>
 <!-- END GADWP Universal Tracking -->
 <?php endif; ?>
+
+
+<?php 
+	//only show CRAZY EGG code on prod - giving it its own IF block because we may be removing soon.
+	if (strpos(get_site_url(), 'africa.rizing.org') !== false) : 
+?>
+	<!-- BEGIN CRAZY EGG CODE -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0026/0255.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+	<!-- END CRAZY EGG CODE -->
+
+<?php endif; ?>
+
 
 </head>
 
