@@ -737,35 +737,33 @@ function my_theme_add_editor_styles() {
 }
 add_action( 'admin_init', 'my_theme_add_editor_styles' );
 
-/* ODDI CUSTOM: Clear FB Cache when someone updates a post */
-function clearFBCache( $post_ID, $post, $update ) {
+/* ODDI CUSTOM: Clear FB Cache when someone updates or publishes a post */
+function clearFBCache( $post_ID, $post) {
 	//$urlToClear="https://africa2.rizing.org/testing-how-to-add-css-that-wont-get-stripped/";
-	/*
+	
 	global $wpdb;
 	error_reporting(E_ALL);
 	
-	$wpdb->insert( 
+	/*$wpdb->insert( 
 		'dbug', 
 		array( 
-			'something' => get_permalink($post_ID)
+			'something' => 'id ' . $post_ID . ' update: ' . $update . ' isRevision: ' . wp_is_post_revision($post_ID)
 		) 
-	);
-	*/
+	);*/
 
 	/* this hook ends up getting fired 2x when an update is done - once with the new post, once with the old revision.  
 	we only want to clear it once so we check wp_is_post_revision */
+
+	$urlToClear = get_permalink($post_ID);
+	$ch = curl_init();
+	curl_setopt ($ch, CURLOPT_URL,"https://graph.facebook.com");
+	curl_setopt ($ch, CURLOPT_POST, 1);
+	curl_setopt ($ch, CURLOPT_POSTFIELDS, http_build_query(array('scrape' => 'true','id' => $urlToClear)));
+	curl_exec ($ch);
+	curl_close ($ch);
 	
-	if ( $update && ! wp_is_post_revision($post_ID)) {
-		$urlToClear = get_permalink($post_ID);
-		$ch = curl_init();
-		curl_setopt ($ch, CURLOPT_URL,"https://graph.facebook.com");
-		curl_setopt ($ch, CURLOPT_POST, 1);
-		curl_setopt ($ch, CURLOPT_POSTFIELDS, http_build_query(array('scrape' => 'true','id' => $urlToClear)));
-		curl_exec ($ch);
-		curl_close ($ch);
-	}
 }
-//add_action( 'save_post', 'clearFBCache', 10, 3 );
+add_action( 'publish_post', 'clearFBCache', 10, 2 );
 
 
 /* initial hook for functions.php */
