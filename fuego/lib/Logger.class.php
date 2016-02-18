@@ -61,7 +61,7 @@ class Logger {
 			self::notify($subject, $messageFormatted);	
 		}
 		if (self::$logToFile) {
-			file_put_contents(self::$logPath, $messageFormatted . "fatal.log", FILE_APPEND);
+			file_put_contents(self::$logPath, "fatal.log", $messageFormatted, FILE_APPEND);
 		}
 
 		// write to log
