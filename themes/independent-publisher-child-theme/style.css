@@ -477,7 +477,7 @@ body #logoOnPostPages .site-title,
 	display: inline-block;
 	/*width: 18.5%;*/
 	/*width: 18%;*/
-	width: 23.5%;
+	width: 32%;
 	height: 50px; 
 	padding: 0; 
 	margin: 0; 
@@ -490,7 +490,7 @@ body #logoOnPostPages .site-title,
 		display: block;
 	}
 	#footerNav ul li {
-		width: 23.5%;
+		width: 32%;
 	}
 
 	/* Adjusting icon positions to make room for the labels */
